@@ -1,0 +1,53 @@
+.navbar {
+    border-bottom: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    .navbar-holder {
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        max-width: 1540px;
+
+        .logo-holder {
+            .navbar-logo {
+                margin-left: 3rem;
+                height: 50px;
+                width: 260px;
+            }
+        }
+
+        .menu-navbar-item {
+            font-size: 20px;
+            cursor: pointer;
+            color: rgb(34, 34, 34);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+            margin-right: 20px;
+        }
+
+        .navbar-icons-holder {
+            border-left: 1px solid rgb(126, 126, 126);
+
+            svg {
+                margin-right: 14px;
+                cursor: pointer;
+                fill: rgb(126, 126, 126);
+                transition: fill .3s ease-in-out;
+            }
+
+            #facebook-icon:hover {
+                fill: rgb(74, 115, 201);
+            }
+
+            #instagram-icon:hover {
+                fill: #405de6;
+            }
+
+            #maps-icon:hover {
+                fill: rgb(225, 105, 91);
+            }
+
+            #tikTok-icon:hover {
+                fill: #69c9d0;
+            }
+        }
+    }
+}

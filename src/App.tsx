@@ -1,9 +1,10 @@
+import Navbar from '../src/components/Navbar';
 
 function App() {
 
   return (
     <>
-      <div className="colorr">Olasssssssssssssssss</div>
+      <Navbar />
     </>
   )
 }
