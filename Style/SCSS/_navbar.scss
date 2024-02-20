@@ -1,5 +1,4 @@
 .navbar {
-    border-bottom: 1px solid black;
     background-color: rgba(255, 255, 255, 0.9);
 
     .navbar-holder {
@@ -8,23 +7,78 @@
         max-width: 1540px;
 
         .logo-holder {
+            @media (max-width: 1450px) {
+                width: 66.666666667%;
+            }
+
             .navbar-logo {
-                margin-left: 3rem;
+                margin-left: 1rem;
                 height: 50px;
                 width: 260px;
             }
         }
 
-        .menu-navbar-item {
-            font-size: 20px;
+        .navbar-menu-holder {
+
+            @media (max-width: 1450px) {
+                display: none !important;
+            }
+
+            .menu-navbar-item {
+                position: relative;
+                font-size: 20px;
+                cursor: pointer;
+                color: rgb(34, 34, 34);
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+                margin-right: 20px;
+                transition: color .25s ease-in-out;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: rgb(255, 125, 251);
+                    transition: width .25s ease-in-out;
+                }
+
+                &:hover {
+                    color: rgb(255, 125, 251);
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .hamburger {
+            display: none;
             cursor: pointer;
-            color: rgb(34, 34, 34);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
-            margin-right: 20px;
+
+            @media (max-width: 1450px) {
+                display: block;
+            }
+
+            .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: rgb(0, 0, 0);
+            }
         }
 
         .navbar-icons-holder {
             border-left: 1px solid rgb(126, 126, 126);
+            padding-left: 1.6rem;
+
+            @media (max-width: 1450px) {
+                border-left: none;
+                justify-content: end;
+            }
 
             svg {
                 margin-right: 14px;
@@ -33,20 +87,44 @@
                 transition: fill .3s ease-in-out;
             }
 
-            #facebook-icon:hover {
-                fill: rgb(74, 115, 201);
+            #facebook-icon {
+                @media (max-width: 1023px) {
+                    fill: rgb(74, 115, 201);
+                }
+
+                &:hover {
+                    fill: rgb(74, 115, 201);
+                }
             }
 
-            #instagram-icon:hover {
-                fill: #405de6;
+            #instagram-icon {
+                @media (max-width: 1023px) {
+                    fill: #405de6;
+                }
+
+                &:hover {
+                    fill: #405de6;
+                }
             }
 
-            #maps-icon:hover {
-                fill: rgb(225, 105, 91);
+            #maps-icon {
+                @media (max-width: 1023px) {
+                    fill: rgb(225, 105, 91);
+                }
+
+                &:hover {
+                    fill: rgb(225, 105, 91);
+                }
             }
 
-            #tikTok-icon:hover {
-                fill: #69c9d0;
+            #tikTok-icon {
+                @media (max-width: 1023px) {
+                    fill: #69c9d0;
+                }
+
+                &:hover {
+                    fill: #69c9d0;
+                }
             }
         }
     }
