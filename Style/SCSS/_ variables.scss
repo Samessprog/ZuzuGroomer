@@ -1,0 +1,17 @@
+//Colors
+$whiteMain: white;
+$pinkSecond: rgb(255, 71, 164);
+$navbarIconsPrimary: rgb(126, 126, 126);
+$tikTokIcon: #69c9d0;
+$mapIcon: rgb(225, 105, 91);
+$instagramIcon: #405de6;
+$facebookIcon: rgb(74, 115, 201);
+
+//
+@mixin navbar-menu-holder-close-open {
+    width: 100%;
+    z-index: -10;
+    left: 0;
+    position: fixed;
+    background-color: $whiteMain;
+}
