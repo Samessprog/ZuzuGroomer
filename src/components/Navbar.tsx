@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="xl:w-2/12 logo-holder flex justify-start sm:justify-center">
+        <div className="xl:w-2/12 logo-holder flex justify-start sm:justify-center ">
           <img
             src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
             alt="loading logo err"
@@ -27,50 +27,50 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           />
         </div>
         <div
-          className={`w-8/12 flex justify-end pr-5 navbar-menu-holder 
-            ${isMenuOpen && displayWidth < 1450 ? "open w-full flex-col items-center" : "close "}
+          className={`w-8/12 flex justify-end pr-5 navbar-menu-holder  
+            ${isMenuOpen ? "open w-full flex-col items-center" : "close"}
             `}
         >
           <ul
-            className={`flex justify-around font-medium main-menu ${isMenuOpen && displayWidth < 1450 ? " flex-col mt-11 open" : " "}`}
+            className={`flex justify-end font-medium main-menu ${isMenuOpen ? " flex-col mt-11 open" : " "}`}
           >
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">O nas</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">Usługi</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">Psi Behawiorysta</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">Program lojalnościowy</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">Galeria</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <a className="item-context">Cennik</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
             >
               <a className="item-context">Kontakt</a>
             </li>
             <li
-              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-5 justify-center items-center open" : ""}`}
+              className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-5 justify-center items-center open" : ""}`}
             >
               <a className="item-context">Regulamin</a>
             </li>

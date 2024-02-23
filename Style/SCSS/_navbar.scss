@@ -1,5 +1,7 @@
+@import "./\ variables";
+
 .navbar {
-    background-color: white;
+    background-color: $whiteMain;
     position: relative;
 
     .navbar-holder {
@@ -10,10 +12,6 @@
 
         .logo-holder {
             order: 2;
-
-            @media (max-width: 1450px) {
-                width: 66.666666667%;
-            }
 
             .navbar-logo {
                 margin-left: 1rem;
@@ -26,40 +24,10 @@
             order: 3;
             display: block;
 
-            &.open {
-                display: block !important;
-                background-color: rgb(255, 255, 255);
-                position: fixed;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                animation: dropdownAnimation .5s forwards ease-out;
-                z-index: -10;
-
-                @keyframes dropdownAnimation {
-                    0% {
-                        top: -100%;
-                    }
-
-                    100% {
-                        top: 10%;
-                    }
-                }
-            }
-
-            @media (max-width: 1450px) {
-                display: none;
-                
-
-            }
-
-
             .main-menu {
-
                 .menu-navbar-item {
                     font-size: 20px;
                     cursor: pointer;
-                    color: rgb(34, 34, 34);
                     font-family: -apple-system,
                         BlinkMacSystemFont,
                         'Segoe UI',
@@ -68,28 +36,12 @@
                         Arial,
                         sans-serif,
                         sans-serif;
-                    margin-right: 20px;
+                    margin-right: 1.25rem;
                     transition: color .25s ease-in-out;
 
                     &.open {
                         animation: fadeIn 1.8s forwards;
                         opacity: 0;
-                    }
-
-                    @keyframes fadeIn {
-                        from {
-                            opacity: 0;
-                            transform: translateY(-40px);
-                            color: transparent;
-                            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                        }
-
-                        to {
-                            color: black;
-                            text-shadow: none;
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
                     }
 
                     .item-context {
@@ -101,8 +53,8 @@
                             left: 0;
                             bottom: 0;
                             width: 0;
-                            height: 2px;
-                            background-color: rgb(255, 71, 164);
+                            height: 3px;
+                            background-color: $pinkSecond;
                             transition: width .25s ease-in-out;
                         }
 
@@ -111,7 +63,7 @@
                         }
 
                         &:hover {
-                            color: rgb(255, 71, 164);
+                            color: $pinkSecond;
                         }
                     }
                 }
@@ -122,10 +74,6 @@
             order: 1;
             display: none;
             cursor: pointer;
-
-            @media (max-width: 1450px) {
-                display: block;
-            }
 
             &.open {
                 .bar {
@@ -145,7 +93,7 @@
 
             .bar {
                 display: block;
-                width: 25px;
+                width: 1.7rem;
                 height: 3px;
                 margin: 5px auto;
                 background-color: rgb(0, 0, 0);
@@ -155,60 +103,137 @@
 
         .navbar-icons-holder {
             order: 3;
-            border-left: 1px solid rgb(126, 126, 126);
+            border-left: 1px solid $navbarIconsPrimary;
             padding-left: 1.6rem;
-
-            @media (max-width: 1450px) {
-                border-left: none;
-                justify-content: end;
-            }
 
             svg {
                 margin-right: 14px;
                 cursor: pointer;
-                fill: rgb(126, 126, 126);
+                fill: $navbarIconsPrimary;
                 transition: fill .3s ease-in-out;
             }
 
             #facebook-icon {
-                @media (max-width: 1023px) {
-                    fill: rgb(74, 115, 201);
-                }
-
                 &:hover {
-                    fill: rgb(74, 115, 201);
+                    fill: $facebookIcon;
                 }
             }
 
             #instagram-icon {
-                @media (max-width: 1023px) {
-                    fill: #405de6;
-                }
-
                 &:hover {
-                    fill: #405de6;
+                    fill: $instagramIcon;
                 }
             }
 
             #maps-icon {
-                @media (max-width: 1023px) {
-                    fill: rgb(225, 105, 91);
-                }
-
                 &:hover {
-                    fill: rgb(225, 105, 91);
+                    fill: $mapIcon;
                 }
             }
 
             #tikTok-icon {
-                @media (max-width: 1023px) {
-                    fill: #69c9d0;
-                }
-
                 &:hover {
-                    fill: #69c9d0;
+                    fill: $tikTokIcon;
                 }
             }
         }
+    }
+}
+
+//Width for the icons 1023px
+@media (max-width: 1023px) {
+    #tikTok-icon {
+        fill: $tikTokIcon;
+    }
+
+    #maps-icon {
+        fill: $mapIcon;
+    }
+
+    #instagram-icon {
+        fill: $instagramIcon;
+    }
+
+    #facebook-icon {
+        fill: $facebookIcon;
+    }
+}
+
+//Width 1450 
+@media (max-width: 1450px) {
+    .navbar {
+        .navbar-holder {
+
+            .logo-holder {
+                width: 75%;
+            }
+
+            .navbar-icons-holder {
+                border-left: none;
+                justify-content: end;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar-menu-holder {
+                &.close {
+                    top: 10%;
+                    animation: closeAnimation .8s forwards ease-in;
+                    @include navbar-menu-holder-close-open
+                }
+
+                &.open {
+                    display: block !important;
+                    top: 100%;
+                    animation: dropdownAnimation .5s forwards ease-out;
+                    @include navbar-menu-holder-close-open
+                }
+
+                .main-menu {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+//Animation for Navbar
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+        color: transparent;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    to {
+        color: black;
+        text-shadow: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownAnimation {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 10%;
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        top: 10%;
+    }
+
+    100% {
+        top: -100%;
     }
 }
