@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  displayWidth: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   return (
     <nav className="navbar flex justify-center">
       <div className="flex navbar-holder w-full items-center ">
         {/*Hamburger*/}
-        <div className="hamburger w-1/12 ">
+        <div
+          className={`hamburger w-1/12 ${isMenuOpen ? "open" : ""}`}
+          onClick={(): void => setIsMenuOpen(!isMenuOpen)}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
@@ -17,16 +26,54 @@ const Navbar: React.FC = () => {
             className="navbar-logo"
           />
         </div>
-        <div className=" w-8/12 flex justify-end pr-5 navbar-menu-holder">
-          <ul className="flex justify-around font-medium">
-            <li className="menu-navbar-item">O nas</li>
-            <li className="menu-navbar-item">Usługi</li>
-            <li className="menu-navbar-item">Psi Behawiorysta</li>
-            <li className="menu-navbar-item">Program lojalnościowy</li>
-            <li className="menu-navbar-item">Galeria</li>
-            <li className="menu-navbar-item">Cennik</li>
-            <li className="menu-navbar-item">Kontakt</li>
-            <li className="menu-navbar-item">Regulamin</li>
+        <div
+          className={`w-8/12 flex justify-end pr-5 navbar-menu-holder 
+            ${isMenuOpen && displayWidth < 1450 ? "open w-full flex-col items-center" : "close "}
+            `}
+        >
+          <ul
+            className={`flex justify-around font-medium main-menu ${isMenuOpen && displayWidth < 1450 ? " flex-col mt-11 open" : " "}`}
+          >
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">O nas</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">Usługi</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">Psi Behawiorysta</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">Program lojalnościowy</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">Galeria</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+            >
+              <a className="item-context">Cennik</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
+            >
+              <a className="item-context">Kontakt</a>
+            </li>
+            <li
+              className={`menu-navbar-item  ${isMenuOpen && displayWidth < 1450 ? "flex flex-col mb-5 justify-center items-center open" : ""}`}
+            >
+              <a className="item-context">Regulamin</a>
+            </li>
           </ul>
         </div>
         <div className="w-2/12 flex navbar-icons-holder ">
