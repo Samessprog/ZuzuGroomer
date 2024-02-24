@@ -544,6 +544,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
 }
@@ -564,8 +572,16 @@ video {
   margin-top: 2.75rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-1\/12 {
@@ -608,12 +624,28 @@ video {
   justify-content: center;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .pr-5 {
   padding-right: 1.25rem;
 }
 
 .font-medium {
   font-weight: 500;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 @media (min-width: 640px) {

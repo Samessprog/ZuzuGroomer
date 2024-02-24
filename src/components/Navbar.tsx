@@ -4,7 +4,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="navbar flex justify-center sticky top-0">
+    <nav className="navbar flex justify-center sticky top-0" >
       <div className="flex navbar-holder w-full items-center ">
         {/*Hamburger*/}
         <div

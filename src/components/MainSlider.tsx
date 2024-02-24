@@ -4,6 +4,7 @@ import p2 from "../assets/isolated-happy-smiling-dog-white-background-portrait-3
 import p3 from "../assets/puppy-2785074_640.jpg";
 
 const MainSlider: React.FC = () => {
+    
   const groomingSalonImg = [p1, p2, p3];
   const [imageIndex, setImageIndex] = useState<number>(0);
   const imgSliderRef = useRef<HTMLImageElement>(null);
@@ -27,14 +28,16 @@ const MainSlider: React.FC = () => {
   }, [imageIndex]);
 
   return (
-    <section className="slider">
-      <img
-        ref={imgSliderRef}
-        src={groomingSalonImg[imageIndex]}
-        alt="img err"
-        className="img-slider"
-      />
-      <div className="shade-holder">
+    <div className="slider w-full h-full overflow-hidden relative ">
+      <figure>
+        <img
+          ref={imgSliderRef}
+          src={groomingSalonImg[imageIndex]}
+          alt="img err"
+          className="img-slider block w-full h-full opacity-0 "
+        />
+      </figure>
+      <div className="shade-holder sticky ">
         <div
           className="elementor-shape elementor-shape-bottom "
           data-negative="false"
@@ -61,7 +64,7 @@ const MainSlider: React.FC = () => {
           </svg>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
