@@ -1,21 +1,10 @@
 .slider {
-
     .img-slider {
-        object-fit: cover;
+        @include max-min-900;
     }
 
     .animate {
         animation: imgZoom 6s infinite ease-out;
-    }
-
-    .shade-holder {
-        bottom: -7%;
-        z-index: 10;
-        transform: rotateX(180deg) scaleY(.3);
-
-        .shade {
-            fill: rgb(255, 255, 255);
-        }
     }
 }
 

@@ -6,12 +6,68 @@ $tikTokIcon: #69c9d0;
 $mapIcon: rgb(225, 105, 91);
 $instagramIcon: #405de6;
 $facebookIcon: rgb(74, 115, 201);
+$specialFont: "Allura", Sans-serif;
 
-//
+$px1d5: 1.5px;
+$px34: 34px;
+
+//mixins
 @mixin navbar-menu-holder-close-open {
     width: 100%;
     z-index: -10;
     left: 0;
     position: fixed;
     background-color: $whiteMain;
+}
+
+
+@mixin max-min-900 {
+    max-height: 900px;
+    min-height: 900px;
+}
+
+@mixin w-100-flex {
+    width: 100%;
+    display: flex;
+}
+
+.fancy-info-holder {
+    background-image: url("https://previews.123rf.com/images/lakshmonchandra/lakshmonchandra2310/lakshmonchandra231002927/215207526-waterco-malta%C5%84ski-pies-bia%C5%82e-t%C5%82o-ilustracja-generatywna-ai.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 7rem;
+    height: 500px;
+    margin-bottom: 10rem;
+
+    .info-header {
+        font-family: $specialFont;
+        font-size: 60px;
+        color: $pinkSecond;
+        letter-spacing: 2px;
+    }
+
+}
+
+.change-fancy-text {
+    font-family: $specialFont;
+    font-size: 45px;
+    letter-spacing: 1px;
+    color: $pinkSecond;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.special-button {
+    color: white;
+    background-color: $pinkSecond;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
