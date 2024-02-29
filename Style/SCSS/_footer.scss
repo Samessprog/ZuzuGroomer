@@ -1,49 +1,5 @@
 footer {
     background-color: rgb(25, 25, 25);
-    color: white;
-
-    .foot-holder {
-        @media (max-width: 1345px) {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .footer-menu-holder {
-            @media (max-width: 1345px) {
-                align-items: center;
-                margin-top: 1.5rem;
-                width: 100%;
-            }
-
-            .menu {
-                @media (max-width: 1345px) {
-                    align-items: center;
-                }
-            }
-        }
-
-        .footer-company-info-holder {
-            @media (max-width: 1345px) {
-                width: 100%;
-                align-items: center;
-
-            }
-        }
-        .footer-contact-info-holder{
-            @media (max-width: 1345px) {
-                width: 100%;
-                margin-top: 1.5rem;
-            }
-        }
-
-        .footer-social-holder{
-            @media (max-width: 1345px) {
-                width: 100%;
-                margin-top: 1.5rem;
-            }
-        }
-    }
 
     .creator-footer {
         color: rgb(255, 132, 0);
@@ -79,4 +35,38 @@ footer {
         align-items: center;
 
     }
+}
+
+@media (max-width: 1345px) {
+    .foot-holder {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .footer-menu-holder {
+            align-items: center;
+            margin-top: 1.5rem;
+            width: 100%;
+
+            .menu {
+                align-items: center;
+            }
+        }
+
+        .footer-company-info-holder {
+            width: 100%;
+            align-items: center;
+        }
+
+        .footer-contact-info-holder {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social-holder {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+    }
+
 }
