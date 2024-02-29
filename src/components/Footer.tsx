@@ -3,7 +3,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="flex w-full pl-10 pr-10 pt-20 pb-20">
+      <div className="flex w-full pl-10 pr-10 pt-20 pb-20 foot-holder">
         <div className="footer-company-info-holder flex flex-col w-4/12">
           <div className="flex justify-center ">
             <img
@@ -12,8 +12,8 @@ const Footer: React.FC = () => {
               style={{ filter: "invert(100%)" }}
             />
           </div>
-          <label className="flex mb-5 mt-10">
-            <label className="footer-item w-12/12 flex flex-col">
+          <label className="flex  mt-10">
+            <label className="footer-item w-12/12 flex flex-col items-center-1345w">
               <label className="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -30,14 +30,14 @@ const Footer: React.FC = () => {
               <label className="mt-1">41-400 Mysłowice</label>
             </label>
           </label>
-          <label className="footer-item mt-4">NIP: 6432347531</label>
-          <label className="footer-item mt-2">REGON: 145434343</label>
-          <label className=" footer-item mt-7">
+          <label className="footer-item mt-1 lg:mt-7 ">NIP: 6432347531</label>
+          <label className="footer-item mt-1 lg:mt-2">REGON: 145434343</label>
+          <label className=" footer-item mt-3 lg:mt-7">
             Prosze o kontakt telefoniczny lub mailowy w celu umówienia wizyty
           </label>
         </div>
         <div className="footer-menu-holder flex w-3/12 justify-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col menu">
             <label className="mb-3 font-semibold text-lg">Menu:</label>
             <a className="footer-item ">Usługi</a>
             <a className="footer-item">Cennik</a>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="footer-contact-info-holder flex flex-col w-2/12 items-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center-1345w">
             <label className="mb-3 font-semibold text-lg">Zapraszamy</label>
             <label className="footer-item">Pon - Pt: 10:00 - 18:00</label>
             <label className="footer-item">Sobota: 10:00 - 14:00</label>
