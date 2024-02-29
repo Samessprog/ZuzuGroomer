@@ -3,6 +3,7 @@ import MainSlider from "../components/MainSlider";
 import MainBio from "../components/MainBio";
 import PhilosophySection from "../components/PhilosophySection";
 import ServicesInfoSection from "../components/ServicesInfoSection";
+import PetCareSection from "../components/PetCareSection";
 
 interface MainPageProps {
   userScroll: boolean;
@@ -37,26 +38,8 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll }) => {
       <MainBio />
       <PhilosophySection />
       <ServicesInfoSection />
-      <section className="w-full flex mt-10 mb-20">
-        <div className="w-7/12 flex justify-center flex-col items-center">
-          <label className="change-fancy-text">Zmiany, zmiany, zmiany</label>
-          <label className="fs-30 font-semibold">
-            BO KAŻDY CHCE, WYGLĄDAĆ DOBRZE
-          </label>
-          <label className="font-semibold">
-            Zapraszam na kompleksową pielęgnację małe i duże psy oraz koty
-          </label>
-          <button className="special-button mt-5 font-semibold ">
-            Dowiedz się więcej
-          </button>
-        </div>
-        <div className="w-5/12 flex justify-center">
-          <label className="text-sm text-gray-800">
-            Przesuń suwak i sprawdź...
-          </label>
-          <div></div>
-        </div>
-      </section>
+      <PetCareSection />
+      <section>My w liczbach Opinie Galeria Zakończenie</section>
       <a
         href="#"
         className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth" : "none"}`}

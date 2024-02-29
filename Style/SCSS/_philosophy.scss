@@ -6,10 +6,32 @@
         font-size: 180px;
         letter-spacing: 10px;
         color: $pinkSecond;
+
+        @media (max-width: 1100px) {
+            font-size: 90px;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 50px;
+        }
+    }
+
+    .header-section {
+        @media (max-width: 1100px) {
+            font-size: 25px;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 20px;
+        }
     }
 
     .motto-description {
-        
+        @media (max-width: 1100px) {
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            align-items: center;
+        }
     }
 }
-
