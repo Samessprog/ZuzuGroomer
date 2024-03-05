@@ -1,0 +1,87 @@
+@import "./\ variables";
+
+.opinion-header {
+    font-family: $specialFont;
+    color: $pinkSecond;
+}
+
+.opinion-holder {
+    margin-top: 4rem;
+    cursor: default;
+
+    .opinion-context {
+        user-select: none;
+        background: rgba(255, 0, 128, 0.142);
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 17px;
+    }
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-arrow {}
+
+.x {
+    div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.slick-next {
+    fill: rgb(0, 0, 0);
+    transition: all .3s ease-in-out;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        fill: white;
+    }
+}
+
+
+.slick-prev {
+    fill: rgb(0, 0, 0);
+    transition: all .3s ease-in-out;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        fill: white;
+    }
+}
+
+@keyframes zoomPulsAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slick-next {
+    display: none;
+}
+
+.slick-arrow {
+    transition: all .5s ease-in-out;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        background-color: rgb(255, 71, 164);
+    }
+
+}

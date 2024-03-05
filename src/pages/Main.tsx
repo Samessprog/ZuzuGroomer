@@ -4,6 +4,9 @@ import MainBio from "../components/MainBio";
 import PhilosophySection from "../components/PhilosophySection";
 import ServicesInfoSection from "../components/ServicesInfoSection";
 import PetCareSection from "../components/PetCareSection";
+import SummaryMain from "../components/SummaryMain";
+import MainOpinions from "../components/MainOpinions";
+import Gallery from "../components/Gallery";
 
 interface MainPageProps {
   userScroll: boolean;
@@ -39,7 +42,38 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll }) => {
       <PhilosophySection />
       <ServicesInfoSection />
       <PetCareSection />
-      <section>My w liczbach Opinie Galeria Zakończenie</section>
+      <section className="number-holder">
+        <div className="flex number-header justify-center font-semibold">
+          My w liczbach
+        </div>
+        <div className="flex  justify-between w-9/12 items-center">
+          <div className="flex flex-col">
+            <span className="font-semibold number-item">7 lat</span>
+            <span className="font-semibold">na rynku</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item ">7 lat</span>
+            <span className="font-semibold">Zadowolonych piesków</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">1000</span>
+            <span className="font-semibold">Wykorzystanytanych litrów </span>
+            <span className="font-semibold">szamponu</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold">Certyfikatów</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold">Zdobyte nagrody i wyróżnienia</span>
+          </div>
+        </div>
+      </section>
+      <MainOpinions />
+      <Gallery />
+      {/* <section>Opinie Galeria</section> */}
+      <SummaryMain />
       <a
         href="#"
         className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth" : "none"}`}

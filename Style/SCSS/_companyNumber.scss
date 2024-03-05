@@ -1,0 +1,22 @@
+@import "./\ variables";
+
+.number-holder {
+    background-color: rgba(240, 240, 240, 0.478);
+    margin-top: 11rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .number-header {
+        font-size: 45px;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .number-item {
+        color: $pinkSecond;
+        font-size: 45px;
+    }
+}

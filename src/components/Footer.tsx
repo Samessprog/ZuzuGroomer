@@ -10,6 +10,7 @@ const Footer: React.FC = () => {
               className="fill-white footer-logo"
               src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
               style={{ filter: "invert(100%)" }}
+              alt="loading err"
             />
           </div>
           <label className="flex  mt-10">
