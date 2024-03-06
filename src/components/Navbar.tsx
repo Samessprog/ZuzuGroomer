@@ -8,7 +8,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="navbar flex justify-center">
+    <nav className="navbar flex justify-center sticky top-0">
       <div className="flex navbar-holder w-full items-center ">
         {/*Hamburger*/}
         <div
@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="xl:w-2/12 logo-holder flex justify-start sm:justify-center ">
+        <div className="xl:w-2/12 logo-holder flex  justify-center ">
           <img
             src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
             alt="loading logo err"
@@ -28,11 +28,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
         </div>
         <div
           className={`w-8/12 flex justify-end pr-5 navbar-menu-holder  
-            ${isMenuOpen ? "open w-full flex-col items-center" : "close"}
+            ${isMenuOpen && displayWidth ? "open w-full flex-col items-center" : "close"}
             `}
         >
           <ul
-            className={`flex justify-end font-medium main-menu ${isMenuOpen ? " flex-col mt-11 open" : " "}`}
+            className={`flex justify-end font-medium main-menu ${isMenuOpen && displayWidth ? " flex-col mt-11 open" : "close"}`}
           >
             <li
               className={`menu-navbar-item  ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
@@ -81,13 +81,13 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              width="26px"
-              height="26px"
+              width="24px"
+              height="24px"
               id="facebook-icon"
               className="mb-3 md:mb-0"
             >
               {" "}
-              <path d="M16.403,9H14V7c0-1.032,0.084-1.682,1.563-1.682h0.868c0.552,0,1-0.448,1-1V3.064c0-0.523-0.401-0.97-0.923-1.005 C15.904,2.018,15.299,1.999,14.693,2C11.98,2,10,3.657,10,6.699V9H8c-0.552,0-1,0.448-1,1v2c0,0.552,0.448,1,1,1l2-0.001V21 c0,0.552,0.448,1,1,1h2c0.552,0,1-0.448,1-1v-8.003l2.174-0.001c0.508,0,0.935-0.381,0.993-0.886l0.229-1.996 C17.465,9.521,17.001,9,16.403,9z" />
+              <path d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z" />
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,6 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
               width="26px"
               height="26px"
               id="instagram-icon"
+              className="mb-3 md:mb-0"
             >
               {" "}
               <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
@@ -104,8 +105,8 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
-              width="26px"
-              height="26px"
+              width="24px"
+              height="24px"
               id="maps-icon"
               className="mb-3 md:mb-0"
             >

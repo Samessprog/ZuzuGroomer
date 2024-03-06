@@ -1,9 +1,20 @@
 import Navbar from "../src/components/Navbar";
+import MainPage from "./pages/Main";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
-  const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
+  const [userScroll, setUserScroll] = useState<boolean>(false);
 
+  useEffect(() => {
+    const setFixed = () => {
+      setUserScroll(window.scrollY >= 1);
+    };
+    window.addEventListener("scroll", setFixed);
+    return () => window.removeEventListener("scroll", setFixed);
+  }, []);
+
+  const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
       setDisplayWidth(window.innerWidth);
@@ -17,6 +28,8 @@ function App() {
   return (
     <>
       <Navbar displayWidth={displayWidth} />
+      <MainPage userScroll={userScroll} />
+      <Footer />
     </>
   );
 }
