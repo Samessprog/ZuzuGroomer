@@ -3,6 +3,10 @@ import MainSlider from "../components/MainSlider";
 import MainBio from "../components/MainBio";
 import PhilosophySection from "../components/PhilosophySection";
 import ServicesInfoSection from "../components/ServicesInfoSection";
+import PetCareSection from "../components/PetCareSection";
+import SummaryMain from "../components/SummaryMain";
+import MainOpinions from "../components/MainOpinions";
+import Gallery from "../components/Gallery";
 
 interface MainPageProps {
   userScroll: boolean;
@@ -37,26 +41,39 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll }) => {
       <MainBio />
       <PhilosophySection />
       <ServicesInfoSection />
-      <section className="w-full flex mt-10 mb-20">
-        <div className="w-7/12 flex justify-center flex-col items-center">
-          <label className="change-fancy-text">Zmiany, zmiany, zmiany</label>
-          <label className="fs-30 font-semibold">
-            BO KAŻDY CHCE, WYGLĄDAĆ DOBRZE
-          </label>
-          <label className="font-semibold">
-            Zapraszam na kompleksową pielęgnację małe i duże psy oraz koty
-          </label>
-          <button className="special-button mt-5 font-semibold ">
-            Dowiedz się więcej
-          </button>
+      <PetCareSection />
+      <section className="number-holder">
+        <div className="flex number-header justify-center font-semibold">
+          My w liczbach
         </div>
-        <div className="w-5/12 flex justify-center">
-          <label className="text-sm text-gray-800">
-            Przesuń suwak i sprawdź...
-          </label>
-          <div></div>
+        <div className="flex  justify-between w-9/12 items-center">
+          <div className="flex flex-col">
+            <span className="font-semibold number-item">7 lat</span>
+            <span className="font-semibold">na rynku</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item ">7 lat</span>
+            <span className="font-semibold">Zadowolonych piesków</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">1000</span>
+            <span className="font-semibold">Wykorzystanytanych litrów </span>
+            <span className="font-semibold">szamponu</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold">Certyfikatów</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold">Zdobyte nagrody i wyróżnienia</span>
+          </div>
         </div>
       </section>
+      <MainOpinions />
+      <Gallery />
+      {/* <section>Opinie Galeria</section> */}
+      <SummaryMain />
       <a
         href="#"
         className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth" : "none"}`}

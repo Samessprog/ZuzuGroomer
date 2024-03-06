@@ -1,0 +1,58 @@
+.gallery-holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    grid-template-rows: 50%;
+
+    .gallery {
+        height: 100%;
+        cursor: pointer;
+        overflow: hidden;
+
+        .gallery-img {
+            height: 100%;
+
+            &:hover {
+                animation: zoomPhotoAnimation 1s forwards;
+            }
+
+            &:not(:hover) {
+                animation: reverseZoomAnimation 1s forwards;
+            }
+        }
+    }
+}
+
+.gallery-header {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+
+    .fancy-header {
+        font-family: "Allura", Sans-serif;
+        color: $pinkSecond;
+    }
+}
+
+
+@keyframes zoomPhotoAnimation {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes reverseZoomAnimation {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

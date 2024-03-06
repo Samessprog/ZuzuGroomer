@@ -56,20 +56,6 @@
         }
     }
 
-    .motto-holder {
-        margin-top: 6.5rem;
-
-        .motto-header {
-            font-family: $specialFont;
-            font-size: 180px;
-            letter-spacing: 10px;
-            color: $pinkSecond;
-        }
-
-        .motto-description {}
-    }
-
-
     .arrow-up-holder {
         background-color: $pinkSecond;
         fill: $whiteMain;
@@ -118,8 +104,8 @@
 
                 .bio-main {
                     width: 100% !important;
-                    margin-left: 1rem;
-                    margin-right: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
                 }
 
                 .bio-footer {
