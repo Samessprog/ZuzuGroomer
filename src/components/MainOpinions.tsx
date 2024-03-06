@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import Opinion from "./Opinion";
 import "slick-carousel/slick/slick.css";
@@ -28,12 +28,14 @@ const MainOpinions: React.FC = () => {
     },
   ];
 
-  let settings = {
+  const settings = {
     dots: true,
-    className: "slider",
     infinite: true,
     slidesToShow: 2,
-    speed: 700,
+    speed: 2000,
+    autoplay: true,
+    autoplaySpeed: 5000,
+
     nextArrow: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,15 +57,15 @@ const MainOpinions: React.FC = () => {
   };
 
   return (
-    <section className="mb-20">
+    <section className="mb-20 ">
       <div className="flex flex-col items-center mt-20 ">
         <div className="opinion-header text-5xl mb-2">Opinie</div>
         <div className="font-bold text-5xl tracking-wide">
           JAK WIDZĄ NAS KLIENCI?
         </div>
       </div>
-      <div className="flex mt-10 opinion-holder justify-center items-center">
-        <div className="w-8/12 mx-auto text-center x">
+      <div className="flex opinion-holder justify-center items-center ">
+        <div className="w-8/12 mx-auto text-center x ">
           <Slider {...settings}>
             {opinions.map((elm) => (
               <Opinion elm={elm} key={elm.data} />

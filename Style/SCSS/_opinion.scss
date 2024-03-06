@@ -6,7 +6,7 @@
 }
 
 .opinion-holder {
-    margin-top: 4rem;
+    margin-top: 5rem;
     cursor: default;
 
     .opinion-context {
@@ -23,8 +23,6 @@
     align-items: center;
     justify-content: center;
 }
-
-.slick-arrow {}
 
 .x {
     div {
@@ -56,20 +54,6 @@
     }
 }
 
-@keyframes zoomPulsAnimation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .slick-next {
     display: none;
 }
@@ -83,5 +67,4 @@
     &:hover {
         background-color: rgb(255, 71, 164);
     }
-
 }

@@ -9,7 +9,7 @@ interface OpinionProps {
 
 const Opinion: React.FC<OpinionProps> = ({ elm }) => {
   return (
-    <div className="flex flex-col items-center w-10/12 z">
+    <div className="flex flex-col items-center w-10/12 ">
       <div>
         <p className="opinion-context">
           <span className="text-center flex ">{elm?.text}</span>
