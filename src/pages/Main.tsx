@@ -46,25 +46,25 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll }) => {
         <div className="flex number-header justify-center font-semibold">
           My w liczbach
         </div>
-        <div className="flex  justify-between w-9/12 items-center">
+        <div className="flex  justify-between w-9/12 items-center number-context-holder">
           <div className="flex flex-col">
             <span className="font-semibold number-item">7 lat</span>
             <span className="font-semibold">na rynku</span>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center context-holder">
             <span className="font-semibold number-item ">7 lat</span>
             <span className="font-semibold">Zadowolonych piesków</span>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center context-holder">
             <span className="font-semibold number-item">1000</span>
             <span className="font-semibold">Wykorzystanytanych litrów </span>
             <span className="font-semibold">szamponu</span>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center context-holder">
             <span className="font-semibold number-item">20</span>
             <span className="font-semibold">Certyfikatów</span>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center context-holder">
             <span className="font-semibold number-item">20</span>
             <span className="font-semibold">Zdobyte nagrody i wyróżnienia</span>
           </div>

@@ -3,16 +3,16 @@ import TwentyTwentyAnimation from "../components/TwentyTwentyAnimation";
 
 const PetCareSection: React.FC = () => {
   return (
-    <section className="w-full flex mt-10 mb-20">
-      <div className="w-7/12 flex justify-center flex-col items-center">
+    <section className="w-full flex mt-10 mb-20 pet-care-holder">
+      <div className="w-7/12 flex justify-center flex-col items-center respo">
         <label className="change-fancy-text">Zmiany, zmiany, zmiany</label>
-        <label className="fs-40 font-semibold mb-10">
+        <label className="fs-40 font-semibold mb-10 respo small-font-resp">
           BO KAŻDY CHCE, WYGLĄDAĆ DOBRZE
         </label>
-        <label className="font-semibold mb-5">
+        <label className="font-semibold mb-5 responsive-font">
           Zapraszam na kompleksową pielęgnację małe i duże psy oraz koty
         </label>
-        <button className="special-button mt-10 font-semibold flex items-center">
+        <button className="special-button  mt-10 font-semibold flex items-center">
           <div>Dowiedz się więcej</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ const PetCareSection: React.FC = () => {
           </svg>
         </button>
       </div>
-      <div className="w-5/12 flex justify-center flex-col">
+      <div className="w-5/12 flex justify-center flex-col TwentyTwenty">
         <label className="text-sm text-gray-800 flex justify-center mb-3">
           Przesuń suwak i sprawdź...
         </label>

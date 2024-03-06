@@ -9,6 +9,22 @@
     align-items: center;
     flex-direction: column;
 
+
+    .number-context-holder {
+        @media (max-width: 1345px) {
+            width: 100%;
+        }
+        @media (max-width: 1000px) {
+           flex-direction: column;
+        }
+    }
+
+    .context-holder {
+        @media (max-width: 1200px) {
+            margin-top: 2rem;
+        }
+    }
+
     .number-header {
         font-size: 45px;
         letter-spacing: 1px;

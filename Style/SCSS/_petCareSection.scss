@@ -1,20 +1,82 @@
-.change-fancy-text {
-    font-family: $specialFont;
-    font-size: 55px;
-    letter-spacing: 1px;
-    color: $pinkSecond;
-}
-.special-button {
-    color: white;
-    background-color: $pinkSecond;
-    border-radius: 25px;
-    padding: 12px;
-    padding-left: 27px;
-    padding-right: 20px;
-}
-.Twentytwenty-holder {
-    box-shadow: 1px 1px 10px 1px black;
-    border-radius: 20px;
-    overflow: hidden;
-}
+.pet-care-holder {
+    @media (max-width: 1345px) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
 
+    }
+
+    .change-fancy-text {
+        font-family: $specialFont;
+        font-size: 55px;
+        letter-spacing: 1px;
+        color: $pinkSecond;
+
+        @media (max-width: 1345px) {
+            text-align: center;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 55px;
+        }
+
+        @media (max-width: 580px) {
+            font-size: 50px;
+        }
+    }
+
+    .special-button {
+        color: white;
+        background-color: $pinkSecond;
+        border-radius: 25px;
+        padding: 12px;
+        padding-left: 27px;
+        padding-right: 20px;
+
+        @media (max-width: 1345px) {
+            margin-top: 2rem;
+        }
+    }
+
+    .Twentytwenty-holder {
+        box-shadow: 1px 1px 10px 1px black;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @media (max-width: 1345px) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .respo {
+        @media (max-width: 1345px) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .TwentyTwenty {
+        @media (max-width: 1345px) {
+            margin-top: 3rem;
+            width: 60%;
+        }
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+    }
+
+    .small-font-resp {
+        @media (max-width: 768px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 580px) {
+            font-size: 20px;
+        }
+    }
+    .responsive-font{
+        font-size: 15px;
+    }
+}
