@@ -7,7 +7,7 @@ const MainBio: React.FC = () => {
         <figure className="w-12/12 img-holder">
           <img
             src="https://www.gry-online.pl/i/h/22/431209879.jpg"
-            alt="loading err w-12/12"
+            alt="loading err w-full"
             className="bio-img"
           />
         </figure>

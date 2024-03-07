@@ -4,7 +4,11 @@ import Opinion from "./Opinion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const MainOpinions: React.FC = () => {
+interface MainOptions {
+  displayWidth: number;
+}
+
+const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   const opinions = [
     {
       text: "Miejsce stworzone dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
@@ -31,7 +35,7 @@ const MainOpinions: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: displayWidth > 900 ? 2 : 1,
     speed: 2000,
     autoplay: true,
     autoplaySpeed: 5000,

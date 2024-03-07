@@ -14,7 +14,7 @@ const MainSlider: React.FC = () => {
       setImageIndex((prevIndex) =>
         prevIndex === groomingSalonImg.length - 1 ? 0 : prevIndex + 1
       );
-    }, 6000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [groomingSalonImg.length]);
@@ -29,7 +29,7 @@ const MainSlider: React.FC = () => {
 
   return (
     <div className="slider w-full h-full overflow-hidden relative ">
-      <figure>
+      <figure className="w-full">
         <img
           ref={imgSliderRef}
           src={groomingSalonImg[imageIndex]}

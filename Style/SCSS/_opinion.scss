@@ -29,6 +29,11 @@
         display: flex;
         justify-content: center;
     }
+
+    @media (max-width: 1445px) {
+        width: 85%;
+    }
+
 }
 
 .slick-next {
@@ -66,5 +71,11 @@
 
     &:hover {
         background-color: rgb(255, 71, 164);
+    }
+}
+
+.w-90 {
+    @media (max-width: 1345px) {
+        width: 90%;
     }
 }

@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Navbar displayWidth={displayWidth} />
-      <MainPage userScroll={userScroll} />
+      <MainPage userScroll={userScroll} displayWidth={displayWidth} />
       <Footer />
     </>
   );

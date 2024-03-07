@@ -1,10 +1,12 @@
 .slider {
+    background-color: rgba(0, 0, 0, 0.880);
+
     .img-slider {
         @include max-min-900;
     }
 
     .animate {
-        animation: imgZoom 6s infinite ease-out;
+        animation: imgZoom 7s infinite ease-out;
     }
 }
 
@@ -21,7 +23,7 @@
         opacity: 100%;
     }
 
-    93% {
+    97% {
         transform: scale(1.1);
         opacity: 100%;
     }

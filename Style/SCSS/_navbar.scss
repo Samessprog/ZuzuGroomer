@@ -1,9 +1,9 @@
 @import "./\ variables";
 
 .navbar {
-    background-color: $whiteMain;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(220, 220, 220);
     z-index: 10;
-    opacity: 95%;
 
     .navbar-holder {
         margin-top: 1.8rem;
@@ -41,7 +41,7 @@
                     transition: color .25s ease-in-out;
 
                     &.open {
-                        animation: fadeIn 1.8s forwards;
+                        animation: fadeIn 1s forwards;
                         opacity: 0;
                     }
 
@@ -163,6 +163,7 @@
 //Width 1450 
 @media (max-width: 1345px) {
     .navbar {
+
         .navbar-holder {
 
             .logo-holder {
@@ -181,12 +182,11 @@
             .navbar-menu-holder {
                 &.close {
                     top: 10%;
-                    animation: closeAnimation .8s forwards ease-in;
+                    animation: closeAnimation .5s forwards ease-in;
                     @include navbar-menu-holder-close-open
                 }
 
                 &.open {
-                    display: block !important;
                     top: 100%;
                     animation: dropdownAnimation .5s forwards ease-out;
                     @include navbar-menu-holder-close-open
@@ -221,7 +221,7 @@
 
 @keyframes dropdownAnimation {
     0% {
-        top: -100%;
+        top: 0;
     }
 
     100% {

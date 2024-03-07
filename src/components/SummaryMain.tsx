@@ -17,7 +17,7 @@ const SummaryMain: React.FC = () => {
           <div className="summary-side text-5xl font-bold ">
             CZUJE SIĘ JAK W NIEBIE
           </div>
-          <p className="summary-dsc text-lg text-center">
+          <p className="summary-dsc text-lg text-center ">
             Profesjonalną i kompleksową obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
@@ -28,8 +28,8 @@ const SummaryMain: React.FC = () => {
           <img src={p2} alt="loading Err" title="Grooming" />
         </div>
       </div>
-      <div className="flex des-holder  w-full pl-10 pr-10 ">
-        <div className="flex flex-col w-4/12  des-holder-elm ml-3">
+      <div className="flex des-holder  w-full pl-10 pr-10 lg:flex-row flex-col">
+        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-3">
           <p className="mb-4">
             {" "}
             <b className="text-black">Psi fryzjer</b> – groomer – Warszawa
@@ -52,7 +52,7 @@ const SummaryMain: React.FC = () => {
             strzyżeniu i kompleksowej pielęgnacji w moim salonie psiej urody!
           </p>
         </div>
-        <div className="flex flex-col w-4/12  des-holder-elm">
+        <div className="flex flex-col  des-holder-elm w-full lg:w-4/12">
           <p className="mb-4">
             {" "}
             <b className="text-black">Behawiorystar</b> – Warszawa
@@ -77,7 +77,7 @@ const SummaryMain: React.FC = () => {
             zachowanie psa.
           </p>
         </div>
-        <div className="flex flex-col w-4/12  des-holder-elm mr-3">
+        <div className="flex flex-col w-4/12  des-holder-elm mr-3  w-full lg:w-4/12">
           <p className="mb-4">
             {" "}
             <b className="text-black">Hotelik dla psów</b> – Warszawa
@@ -105,8 +105,8 @@ const SummaryMain: React.FC = () => {
         <p className="mb-10 c-black-600">
           Zuzu Groomer w mediach społecznościowych
         </p>
-        <div className="flex  w-2/12 justify-between">
-          <div className="icon-holder rounded-full bg-sky-700">
+        <div className="flex  w-12/12 justify-between">
+          <div className="icon-holder rounded-full bg-sky-700 mr-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -118,7 +118,7 @@ const SummaryMain: React.FC = () => {
               <path d="M 12 2 C 6.477 2 2 6.477 2 12 C 2 17.523 6.477 22 12 22 C 17.523 22 22 17.523 22 12 C 22 6.477 17.523 2 12 2 z M 12 4 C 16.418 4 20 7.582 20 12 C 20 15.934398 17.156174 19.198143 13.414062 19.867188 L 13.414062 15.035156 L 15.779297 15.035156 L 16.130859 12.310547 L 13.429688 12.310547 L 13.429688 10.574219 C 13.429687 9.7862188 13.649297 9.2539062 14.779297 9.2539062 L 16.207031 9.2539062 L 16.207031 6.8222656 C 15.512031 6.7512656 14.814234 6.71675 14.115234 6.71875 C 12.041234 6.71875 10.621094 7.9845938 10.621094 10.308594 L 10.621094 12.314453 L 8.2773438 12.314453 L 8.2773438 15.039062 L 10.621094 15.039062 L 10.621094 19.873047 C 6.861695 19.218214 4 15.946666 4 12 C 4 7.582 7.582 4 12 4 z" />
             </svg>
           </div>
-          <div className="icon-holder rounded-full bg-black ">
+          <div className="icon-holder rounded-full bg-black mr-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

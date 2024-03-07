@@ -6,7 +6,7 @@
         font-size: 180px;
         letter-spacing: 10px;
         color: $pinkSecond;
-
+        transition: all .2s ease-in-out;
         @media (max-width: 1100px) {
             font-size: 90px;
         }
