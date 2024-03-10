@@ -48,23 +48,126 @@
     }
 }
 
+.full-screen-IMG-holder {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(22, 22, 22);
+    z-index: 9999;
+    overflow: hidden;
+
+
+    .close-img-viewer {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 2.5rem;
+        padding-top: 1rem;
+
+
+        .close-icon {
+            fill: rgb(142, 142, 142);
+            transition: fill .3s ease-in-out;
+            position: absolute;
+            right: 2%;
+            cursor: pointer;
+            z-index: 999;
+            top: 45%;
+
+            &:hover {
+                fill: white;
+            }
+        }
+
+        .play-icon {
+            fill: rgb(142, 142, 142);
+            transition: fill .3s ease-in-out;
+            position: absolute;
+            top: 50%;
+            right: 4.5%;
+            cursor: pointer;
+            z-index: 999;
+
+            &:hover {
+                fill: white;
+            }
+        }
+
+        .autoplay-active {
+            fill: orange;
+        }
+
+        .lengthImg {
+            color: white;
+        }
+
+
+    }
+}
+
+// .slick-prev {
+//     margin-left: 2.5rem !important;
+//     fill: white;
+// }
+
+// .slick-next {
+//     margin-right: 3.5rem !important;
+//     fill: white;
+// }
+
+
+#slider-arrow-right {
+    fill: rgb(142, 142, 142);
+    margin-right: 5rem;
+    transition: all .3s ease-in-out;
+    z-index: 999;
+    &:hover {
+        fill: rgb(255, 255, 255);
+    }
+}
+
+#slider-arrow-left {
+    fill: rgb(142, 142, 142);
+    margin-left: 4rem;
+    transition: all .3s ease-in-out;
+    z-index: 999;
+    &:hover {
+        fill: rgb(255, 255, 255);
+    }
+
+}
+
+.z {
+    div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.c {
+    height: 100vh;
+}
 
 @keyframes zoomPhotoAnimation {
     from {
-        transform: scale(1);
+        transform: scale(1.05);
     }
 
     to {
-        transform: scale(1.05);
+        transform: scale(1);
     }
 }
 
 @keyframes reverseZoomAnimation {
     from {
-        transform: scale(1.05);
+        transform: scale(1);
     }
 
     to {
-        transform: scale(1);
+        transform: scale(1.05);
     }
 }
