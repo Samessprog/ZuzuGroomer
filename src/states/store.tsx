@@ -1,12 +1,28 @@
-// store.ts
+import { createStore, combineReducers, Action } from "redux";
 
-import { createStore, combineReducers } from "redux";
+interface PhotoState {
+  fullScreen: {
+    isOpen: boolean;
+    params: string;
+  };
+}
 
-const initialPhotoState = {
+interface SetFullScreenAction extends Action {
+  type: "SET_FULL_SCREEN";
+  payload: {
+    isOpen: boolean;
+    params: string;
+  };
+}
+
+const initialPhotoState: PhotoState = {
   fullScreen: { isOpen: false, params: "" },
 };
 
-function generalStates(state = initialPhotoState, action) {
+function generalStates(
+  state: PhotoState = initialPhotoState,
+  action: SetFullScreenAction
+): PhotoState {
   switch (action.type) {
     case "SET_FULL_SCREEN":
       return {

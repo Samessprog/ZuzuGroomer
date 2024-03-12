@@ -20,6 +20,15 @@ $px34: 34px;
     background-color: $whiteMain;
 }
 
+@mixin sliderArrow {
+    fill: rgb(142, 142, 142);
+    transition: all .3s ease-in-out;
+    z-index: 999;
+
+    &:hover {
+        fill: rgb(255, 255, 255);
+    }
+}
 
 @mixin max-min-900 {
     max-height: 900px;
@@ -29,6 +38,18 @@ $px34: 34px;
 @mixin w-100-flex {
     width: 100%;
     display: flex;
+}
+
+@mixin fullScreenSliderIcons {
+    fill: rgb(142, 142, 142);
+    transition: fill .3s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+        fill: white;
+    }
 }
 
 .fs-28 {

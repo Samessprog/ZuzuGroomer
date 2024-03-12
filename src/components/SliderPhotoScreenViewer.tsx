@@ -1,7 +1,12 @@
 import React from "react";
+interface SliderPhotoScreenViewer {
+  imgUrl: string;
+}
 
-const SliderPhotoScreenViewer: React.FC = ({ data }) => {
-  return <img src={data.params.elm} className="w-6/12 c" />;
+const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewer> = ({
+  imgUrl,
+}) => {
+  return <img src={imgUrl} className="w-6/12 h-lvh" />;
 };
 
 export default SliderPhotoScreenViewer;

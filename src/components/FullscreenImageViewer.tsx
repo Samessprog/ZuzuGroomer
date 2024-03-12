@@ -2,23 +2,48 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "../states/action";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import SliderPhotoScreenViewer from "./SliderPhotoScreenViewer";
 
+interface RootState {
+  generalStates: {
+    fullScreen: {
+      isOpen: boolean;
+      params: {
+        index: number;
+      };
+    };
+  };
+}
+
 const FullscreenImageViewer: React.FC = () => {
+  const p1 =
+    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
+  const p2 =
+    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
+  const p3 =
+    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
+  const p4 =
+    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
+  const photos = [p1, p2, p3, p4];
+
   const dispatch = useDispatch();
-  let sliderRef = useRef(null);
-  const [autoPlayOn, setAutoPlay] = useState(false);
+
+  const [autoPlayOn, setAutoPlay] = useState<boolean>(false);
   const data = useSelector(
     (state: RootState) => state.generalStates.fullScreen
   );
 
+  const {
+    params: { index },
+  } = data;
+
+  const sliderRef = useRef<Slider>(null);
+
   useEffect(() => {
-    if (autoPlayOn) {
-      sliderRef.slickPlay();
-    } else {
-      sliderRef.slickPause();
+    if (autoPlayOn && sliderRef.current) {
+      sliderRef.current.slickPlay();
+    } else if (sliderRef.current) {
+      sliderRef.current.slickPause();
     }
   }, [autoPlayOn]);
 
@@ -29,6 +54,14 @@ const FullscreenImageViewer: React.FC = () => {
     autoplay: autoPlayOn,
     autoplaySpeed: 5000,
     slidesToShow: 1,
+    initialSlide: index,
+    afterChange: (currentSlide: number) => {
+      dispatch(
+        dispatch(
+          setFullScreen({ isOpen: true, params: { index: currentSlide } })
+        )
+      );
+    },
     nextArrow: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,13 +85,11 @@ const FullscreenImageViewer: React.FC = () => {
     ),
   };
 
-  const staticlength = 6;
-  const id = 1;
-
   return (
-    <div className="full-screen-IMG-holder">
-      <div className="close-img-viewer">
-        <div className="lengthImg">{`${id} / ${staticlength}`}</div>
+    <div className="full-screen-IMG-holder fixed top-0 left-0 overflow-hidden h-lvh ">
+      <div className={`${autoPlayOn ? "progress-bar absolute rounded-md" : ""}`}></div>
+      <div className="icons-holder absolute w-full pl-10 pt-5">
+        <div className="text-white">{`${index + 1} / ${photos.length}`}</div>
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,11 +115,11 @@ const FullscreenImageViewer: React.FC = () => {
           </svg>
         </div>
       </div>
-      <div className="z ">
-        <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
-          <SliderPhotoScreenViewer data={data} />
-          <SliderPhotoScreenViewer data={data} />
-          <SliderPhotoScreenViewer data={data} />
+      <div className="div-slider">
+        <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+          {photos.map((imgUrl) => (
+            <SliderPhotoScreenViewer imgUrl={imgUrl} />
+          ))}
         </Slider>
       </div>
     </div>
