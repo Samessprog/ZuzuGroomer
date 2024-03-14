@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainSlider from "../components/MainSlider";
 import MainBio from "../components/MainBio";
 import PhilosophySection from "../components/PhilosophySection";
@@ -8,17 +8,45 @@ import SummaryMain from "../components/SummaryMain";
 import MainOpinions from "../components/MainOpinions";
 import Gallery from "../components/Gallery";
 import FullscreenImageViewer from "../components/FullscreenImageViewer";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 interface MainPageProps {
   userScroll: boolean;
   displayWidth: number;
 }
+interface AnimatedNumberProps {
+  value: number;
+  from: number;
+  isVisible: boolean;
+}
 
 const MainPage: React.FC<MainPageProps> = ({ userScroll, displayWidth }) => {
+  const [hasStarted, setHasStarted] = useState(false);
+
   const fullScreenFlag = useSelector(
     (state: RootState) => state.generalStates.fullScreen
   );
+
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  const AnimatedNumber = ({ value, from }: AnimatedNumberProps) => {
+    const { number } = useSpring({
+      from: { number: hasStarted ? from : 0 },
+      to: { number: inView ? value : 0 },
+      config: { duration: 2000 },
+    });
+
+    return (
+      <animated.span>
+        {number.interpolate((num: number) => Math.floor(num))}
+      </animated.span>
+    );
+  };
 
   return (
     <main className="main-container w-full">
@@ -29,30 +57,39 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll, displayWidth }) => {
       <PhilosophySection />
       <ServicesInfoSection />
       <PetCareSection />
-      <section className="number-holder">
+      <section ref={ref} className="number-holder">
         <div className="flex number-header justify-center font-semibold">
           My w liczbach
         </div>
-        <div className="flex  justify-between w-9/12 items-center number-context-holder">
+        <div className="flex justify-between w-9/12 items-center number-context-holder">
           <div className="flex flex-col">
-            <span className="font-semibold number-item">7 lat</span>
+            <span className="font-semibold number-item">
+              <AnimatedNumber value={7} from={20} isVisible={inView} /> lat
+            </span>
             <span className="font-semibold">na rynku</span>
           </div>
           <div className="flex flex-col items-center context-holder">
-            <span className="font-semibold number-item ">7 lat</span>
+            <span className="font-semibold number-item ">
+              <AnimatedNumber value={7} from={20} isVisible={inView} />
+            </span>
             <span className="font-semibold">Zadowolonych piesków</span>
           </div>
           <div className="flex flex-col items-center context-holder">
-            <span className="font-semibold number-item">1000</span>
-            <span className="font-semibold">Wykorzystanytanych litrów </span>
-            <span className="font-semibold">szamponu</span>
+            <span className="font-semibold number-item">
+              <AnimatedNumber value={1000} from={210} isVisible={inView} />
+            </span>
+            <span className="font-semibold">Wykorzystane litry szamponu</span>
           </div>
           <div className="flex flex-col items-center context-holder">
-            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold number-item">
+              <AnimatedNumber value={20} from={30} isVisible={inView} />
+            </span>
             <span className="font-semibold">Certyfikatów</span>
           </div>
           <div className="flex flex-col items-center context-holder">
-            <span className="font-semibold number-item">20</span>
+            <span className="font-semibold number-item">
+              <AnimatedNumber value={20} from={30} isVisible={inView} />
+            </span>
             <span className="font-semibold">Zdobyte nagrody i wyróżnienia</span>
           </div>
         </div>

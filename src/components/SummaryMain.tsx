@@ -1,15 +1,30 @@
 import React from "react";
 import p1 from "../assets/grafika-ms1.png";
 import p2 from "../assets/grafika-ms2.png";
+import { useInView } from "react-intersection-observer";
+import { useSpring, animated } from "react-spring";
 
 const SummaryMain: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+  const servicesInfoAnimate = (inView:boolean, duration:number, translate:string) => {
+    return useSpring({
+      opacity: inView ? 1 : 0,
+      duration:duration,
+      transform: inView ? `translateX(0%)` : `${translate}`,
+      config: { tension: 200, friction: 50 },
+    });
+  };
+
   return (
-    <section>
-      <div className="flex items-center summary-holder">
-        <div className="summary-img-holder w-4/12">
+    <section ref={ref} className="overflow-hidden">
+      <div className="flex items-center summary-holder ">
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(-100%)")} className="summary-img-holder w-4/12">
           <img src={p1} alt="loading Err" title="Grooming" />
-        </div>
-        <div className=" w-4/12 flex justify-center flex-col items-center">
+        </animated.div>
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateY(100%)")} className=" w-4/12 flex justify-center flex-col items-center">
           <div className="summary-header text-6xl mb-3">
             {" "}
             U mnie każdy pupil{" "}
@@ -23,10 +38,10 @@ const SummaryMain: React.FC = () => {
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
             dzielnicy <b>Bończyk, Wielka Skotnica, Rymera, Wesoła, Janów</b>.{" "}
           </p>
-        </div>
-        <div className="summary-img-holder  w-4/12">
+        </animated.div>
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(100%)")} className="summary-img-holder  w-4/12">
           <img src={p2} alt="loading Err" title="Grooming" />
-        </div>
+        </animated.div>
       </div>
       <div className="flex des-holder  w-full pl-10 pr-10 lg:flex-row flex-col">
         <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-3">

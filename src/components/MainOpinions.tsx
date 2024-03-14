@@ -61,8 +61,8 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   };
 
   return (
-    <section className="mb-20 ">
-      <div className="flex flex-col items-center mt-20 ">
+    <section className="mb-20  ">
+      <div className="flex flex-col items-center  mt-30">
         <div className="opinion-header text-5xl mb-2">Opinie</div>
         <div className="font-bold text-5xl tracking-wide">
           JAK WIDZĄ NAS KLIENCI?
