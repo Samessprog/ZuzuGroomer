@@ -34,9 +34,9 @@ const Gallery: React.FC = () => {
   return (
     <section ref={ref} className="">
       <div className="flex flex-col items-center gallery-header">
-        <div className="fancy-header text-5xl">Galeria Zdjęć</div>
-        <div className="text-5xl font-bold mt-2">Nasze dzieła</div>
-        <div className="mt-10 md:text-lg text-sm w-10/12 text-center md:w-full">
+        <div className="fancy-header text-4xl md:text-5xl text-center">Galeria Zdjęć</div>
+        <div className=" text-3xl md:text-5xl font-bold mt-2 text-center">Nasze dzieła</div>
+        <div className="mt-10 md:text-lg text-sm w-10/12 text-center md:w-full font-semibold">
           Zobacz jak Twój pupil będzie wyglądać po kompleksowej pielęgnacji w
           ZUZU HASU
         </div>

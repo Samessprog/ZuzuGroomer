@@ -5,18 +5,10 @@
     color: $pinkSecond;
 }
 
-.opinion-holder {
-    margin-top: 5rem;
-    cursor: default;
-
-    .opinion-context {
-        user-select: none;
-        background: rgba(255, 0, 128, 0.142);
-        padding: 20px;
-        border-radius: 15px;
-        font-size: 17px;
-    }
+.opinion-context {
+    background: rgba(255, 0, 128, 0.142);
 }
+
 
 .slider {
     display: flex;
@@ -33,7 +25,6 @@
     @media (max-width: 1445px) {
         width: 85%;
     }
-
 }
 
 .slick-next {
@@ -80,6 +71,6 @@
     }
 }
 
-.mt-30{
+.mt-30 {
     margin-top: 7rem;
 }

@@ -6,7 +6,7 @@ interface SliderPhotoScreenViewer {
 const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewer> = ({
   imgUrl,
 }) => {
-  return <img src={imgUrl} className="w-6/12 h-lvh" />;
+  return <img src={imgUrl} className="w-7/12 img-viewer" />;
 };
 
 export default SliderPhotoScreenViewer;

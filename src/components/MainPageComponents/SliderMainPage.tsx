@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import p2 from "../assets/isolated-happy-smiling-dog-white-background-portrait-3_1562-692.avif";
-import p3 from "../assets/puppy-2785074_640.jpg";
+import p1 from "../../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import p2 from "../../assets/isolated-happy-smiling-dog-white-background-portrait-3_1562-692.avif";
+import p3 from "../../assets/puppy-2785074_640.jpg";
 
 const MainSlider: React.FC = () => {
     

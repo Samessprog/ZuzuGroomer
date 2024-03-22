@@ -11,7 +11,7 @@ const Opinion: React.FC<OpinionProps> = ({ elm }) => {
   return (
     <div className="flex flex-col items-center w-10/12 w-90">
       <div>
-        <p className="opinion-context">
+        <p className="opinion-context p-5 rounded-2xl text-lg select-none">
           <span className="text-center flex ">{elm?.text}</span>
         </p>
       </div>

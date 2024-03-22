@@ -1,6 +1,6 @@
 import React from "react";
-import p1 from "../assets/grafika-ms1.png";
-import p2 from "../assets/grafika-ms2.png";
+import p1 from "../../assets/grafika-ms1.png";
+import p2 from "../../assets/grafika-ms2.png";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 
@@ -20,26 +20,26 @@ const SummaryMain: React.FC = () => {
 
   return (
     <section ref={ref} className="overflow-hidden">
-      <div className="flex items-center summary-holder ">
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(-100%)")} className="summary-img-holder w-4/12">
+      <div className="flex items-center summary-holder flex-col lg:flex-row ">
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(-100%)")} className="summary-img-holder w-full lg:w-4/12 flex justify-center mb-10 lg:mb-0">
           <img src={p1} alt="loading Err" title="Grooming" />
         </animated.div>
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateY(100%)")} className=" w-4/12 flex justify-center flex-col items-center">
-          <div className="summary-header text-6xl mb-3">
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateY(100%)")} className=" w-full lg:w-4/12 flex justify-center flex-col items-center">
+          <div className="summary-header text-5xl lg:text-6xl mb-3 text-center">
             {" "}
             U mnie każdy pupil{" "}
           </div>
-          <div className="summary-side text-5xl font-bold ">
+          <div className="text-3xl lg:text-5xl font-bold text-center">
             CZUJE SIĘ JAK W NIEBIE
           </div>
-          <p className="summary-dsc text-lg text-center ">
+          <p className="summary-dsc text-lg text-center w-full pl-2 pr-2">
             Profesjonalną i kompleksową obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
             dzielnicy <b>Bończyk, Wielka Skotnica, Rymera, Wesoła, Janów</b>.{" "}
           </p>
         </animated.div>
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(100%)")} className="summary-img-holder  w-4/12">
+        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(100%)")} className="summary-img-holder hidden lg:flex w-4/12">
           <img src={p2} alt="loading Err" title="Grooming" />
         </animated.div>
       </div>

@@ -8,9 +8,12 @@
 @import "./companyNumber.scss";
 @import "./summary.scss";
 @import "./opinion.scss";
-@import "./galery.scss";
+@import "./gallery.scss";
 
 body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(255, 255, 255);
 }
 

@@ -61,14 +61,14 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   };
 
   return (
-    <section className="mb-20  ">
-      <div className="flex flex-col items-center  mt-30">
+    <section className="mb-20">
+      <div className="flex flex-col items-center mt-30">
         <div className="opinion-header text-5xl mb-2">Opinie</div>
-        <div className="font-bold text-5xl tracking-wide">
+        <div className="font-bold xl:text-5xl tracking-wide text-2xl text-center pl-3 pr-3 xl:pl-0 xl:pr-0 ">
           JAK WIDZĄ NAS KLIENCI?
         </div>
       </div>
-      <div className="flex opinion-holder justify-center items-center ">
+      <div className="flex justify-center items-center mt-20 cursor-default">
         <div className="w-8/12 mx-auto text-center x ">
           <Slider {...settings}>
             {opinions.map((elm) => (

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFullScreen } from "../states/action";
+import { setFullScreen } from "../../states/action";
 import Slider from "react-slick";
 import SliderPhotoScreenViewer from "./SliderPhotoScreenViewer";
 

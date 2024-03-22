@@ -1,5 +1,5 @@
 import Navbar from "../src/components/Navbar";
-import MainPage from "./pages/Main";
+import MainPage from "./pages/MainPage";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 

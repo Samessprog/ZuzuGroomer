@@ -1,38 +1,9 @@
 @import "./\ variables";
 
 .number-holder {
-    background-color: rgba(240, 240, 240, 0.478);
-    margin-top: 11rem;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-
-    .number-context-holder {
-        @media (max-width: 1345px) {
-            width: 100%;
-        }
-        @media (max-width: 1000px) {
-           flex-direction: column;
-        }
-    }
-
-    .context-holder {
-        @media (max-width: 1200px) {
-            margin-top: 2rem;
-        }
-    }
-
-    .number-header {
-        font-size: 45px;
-        letter-spacing: 1px;
-        margin-bottom: 2rem;
-    }
+    background-color: rgb(249, 249, 249);
 
     .number-item {
         color: $pinkSecond;
-        font-size: 45px;
     }
 }

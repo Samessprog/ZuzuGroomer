@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setFullScreen } from "../states/action";
+import { setFullScreen } from "../../states/action";
 
 interface GalleryProps {
   imgUrl: string;

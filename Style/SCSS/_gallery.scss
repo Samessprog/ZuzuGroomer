@@ -4,14 +4,15 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 1.5rem;
     column-gap: 1.5rem;
-    grid-template-rows: 50%;
 
     .gallery {
         cursor: pointer;
+        box-shadow: .5px .5px 3px .5px rgb(147, 147, 147);
 
         .gallery-img {
             &:hover {
                 animation: zoomPhotoAnimation 1s forwards;
+
             }
 
             &:not(:hover) {
@@ -20,6 +21,7 @@
         }
     }
 }
+
 
 .gallery-header {
     margin-top: 10rem;
@@ -35,6 +37,7 @@
     width: 100vw;
     background-color: rgb(22, 22, 22);
     z-index: 9999;
+
 
     .progress-bar {
         height: 10px;
@@ -64,10 +67,16 @@
 }
 
 .div-slider {
+
     div {
         display: flex;
         justify-content: center;
     }
+}
+
+.img-slider-viewer {
+    height: 100vh;
+
 }
 
 #slider-arrow-right {
@@ -90,7 +99,6 @@
     .gallery-holder {
         transition: all .2s ease-in-out;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 50%;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }

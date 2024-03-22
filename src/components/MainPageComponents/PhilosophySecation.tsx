@@ -5,50 +5,51 @@ import { useSpring, animated } from "react-spring";
 const PhilosophySection: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.3,
   });
 
-  const getAnimation = (
-    inView: boolean,
-    tension: number,
-    friction: number,
-    translateX: string,
-  ) => {
+  const getAnimation = (inView: boolean, translateX: string) => {
     return useSpring({
       opacity: inView ? 1 : 0,
       transform: inView ? `translateX(0%)` : `translateX(${translateX})`,
-      config: { tension: tension, friction: friction },
+      config: { tension: 150, friction: 80 },
     });
   };
 
   return (
     <section ref={ref} className="overflow-hidden">
-      <div className="flex flex-col motto-holder items-center">
-        <animated.div style={getAnimation(inView, 100, 50, "100%")}>
-          <header className="motto-header">Moja filozofia</header>
+      <div className="flex flex-col items-center mt-20 md:mt-28">
+        <animated.div style={getAnimation(inView, "100%")}>
+          <header className="motto-header text-7xl md:text-9xl  mb-5 md:mb-0 text-center tracking-wider transition-all ease-in-out duration-300">
+            Moja filozofia
+          </header>
         </animated.div>
-        <animated.div style={getAnimation(inView, 120, 80, "-100%")}>
-          <div className="text-lg">Umysł • Ciało • Dusza</div>
+        <animated.div style={getAnimation(inView, "-100%")}>
+          <div className="text-lg mb-5 md:mb-0">Umysł • Ciało • Dusza</div>
         </animated.div>
-        <animated.div style={getAnimation(inView, 100, 50, "100%")}>
-          <div className="font-bold fs-20 mt-5 mb-9 header-section">
+        <animated.div style={getAnimation(inView, "100%")}>
+          <div className="font-bold mt-14 text-xl md:text-2xl xl:text-4xl mb-14 text-center transition-all ease-in-out duration-300">
             KAŻDY Z NAS NOSI W SOBIE PIĘKNO
+          </div>
+          <div className="text-lg mb-10 text-center pl-5 pr-5">
+            Cała sztuka polega na tym, by umieć je odkryć…. – Eric Emmanuel
+            Schmitt
           </div>
         </animated.div>
         <animated.div
-          style={getAnimation(inView, 120, 70, "-100%")}
-          className="w-8/12"
+          style={getAnimation(inView, "-100%")}
+          className="w-full xl:w-8/12"
         >
-          <div className="flex flex-col motto-description pl-5 pr-5 ">
-            <p className="mb-3">
+          <div className="flex flex-col  pl-5 pr-5 items-center  w-full">
+            <p className="mb-10 xl:mb-5 text-lg text-center ">
               Podstawą udanego pobytu u mnie jest poczucie bezpieczeństwa, które
               pozwoli się odpowiednio zrelaksować oraz wypocząć.
             </p>
-            <p className="mb-3">
+            <p className="mb-10 xl:mb-5 text-lg text-center ">
               Efektem takiego stanu jest dobry humor i samopoczucie Twojego
               pupila.
             </p>
-            <p className="mb-3">
+            <p className="text-lg text-center ">
               Do dyspozycji zwierzaków są różnego rodzaju zabawki typu kong,
               piłki, pluszaki, zabawki logiczne i maty węchowe. Każdy znajdzie
               coś dla siebie. Oczywiście nie zapominajmy o świetnym towarzystwie

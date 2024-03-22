@@ -2,14 +2,20 @@
 $whiteMain: white;
 $pinkSecond: rgb(255, 71, 164);
 $navbarIconsPrimary: rgb(126, 126, 126);
-$tikTokIcon: #69c9d0;
-$mapIcon: rgb(225, 105, 91);
-$instagramIcon: #405de6;
-$facebookIcon: rgb(74, 115, 201);
+$tikTokIcon: #2eb9c3;
+$mapIcon: rgb(255, 119, 0);
+$instagramIcon: rgb(255, 0, 204);
+$facebookIcon: rgb(69, 116, 219);
 $specialFont: "Allura", Sans-serif;
 
 $px1d5: 1.5px;
 $px34: 34px;
+
+.fancy-text{
+    font-family: $specialFont;
+    color: $pinkSecond;
+
+}
 
 //mixins
 @mixin navbar-menu-holder-close-open {
@@ -54,6 +60,10 @@ $px34: 34px;
 
 .fs-28 {
     font-size: 28px;
+    transition: all .3s ease-in-out;
+    @media (max-width:  576px) {
+        font-size: 20px;
+    }
 }
 
 .fs-40 {

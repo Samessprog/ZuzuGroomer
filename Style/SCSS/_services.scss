@@ -1,30 +1,33 @@
-.fancy-info-holder {
-    background-image: url("https://previews.123rf.com/images/lakshmonchandra/lakshmonchandra2310/lakshmonchandra231002927/215207526-waterco-malta%C5%84ski-pies-bia%C5%82e-t%C5%82o-ilustracja-generatywna-ai.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    margin-top: 7rem;
+.services-container{
+    background-image: url("https://www.mojasfora.pl/wp-content/uploads/2019/09/tlo_narzedzia.jpg");
     height: 500px;
-    margin-bottom: 10rem;
 
-    @media (max-width: 1100px) {
-        flex-direction: column;
+    @media (max-width: 1280px) {
+        height: 800px;
+    }
+
+    @media (max-width: 764px) {
         height: 700px;
     }
 
-    @media (max-width: 600px) {
-        flex-direction: column;
-        height: 700px;
-
-    }
-    .item-services{
-        width: 100%;
+    .item-services {
+        @media (max-width: 1280px) {
+            margin-bottom: 4rem;
+        }
+        @media (max-width:  764px) {
+            font-size: 15px;
+        }
     }
 
     .info-header {
         font-family: $specialFont;
         font-size: 60px;
         color: $pinkSecond;
+        transition: all .3s ease-in-out;
         letter-spacing: 2px;
+        @media (max-width:  764px) {
+            font-size: 40px;
+        }
     }
 
 }
