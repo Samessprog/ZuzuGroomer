@@ -1,8 +1,17 @@
 .slider {
     background-color: rgba(0, 0, 0, 0.880);
 
+    @media (min-width:1536px) {
+        height: 940px;
+    }
+
     .img-slider {
         @include max-min-900;
+
+        @media (min-width:1536px) {
+            max-height: 940px;
+            min-height: 940px;
+        }
     }
 
     .animate {

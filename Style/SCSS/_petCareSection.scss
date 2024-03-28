@@ -1,11 +1,3 @@
-    .header-text-content {
-        font-family: $specialFont;
-        color: $pinkSecond;
-    }
-
-    .special-button {
-        background-color: $pinkSecond;
-    }
 
     .special-button:hover .special-button-animate {
         transform: translateX(3px);

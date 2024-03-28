@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface OpinionProps {
   elm: {
@@ -8,8 +8,22 @@ interface OpinionProps {
 }
 
 const Opinion: React.FC<OpinionProps> = ({ elm }) => {
+  const [isGrabbing, setIsGrabbing] = useState(false);
+
+  const handleMouseDown = () => {
+    setIsGrabbing(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsGrabbing(false);
+  };
   return (
-    <div className="flex flex-col items-center w-10/12 w-90">
+    <div
+      className={`flex flex-col items-center w-10/12 w-90 ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
       <div>
         <p className="opinion-context p-5 rounded-2xl text-lg select-none">
           <span className="text-center flex ">{elm?.text}</span>

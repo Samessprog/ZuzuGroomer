@@ -5,46 +5,60 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 
 const SummaryMain: React.FC = () => {
-  const [ref, inView] = useInView({
+  const [summaryRefElement, elementInView] = useInView({
     triggerOnce: true,
     threshold: 0.25,
   });
-  const servicesInfoAnimate = (inView:boolean, duration:number, translate:string) => {
+  
+  const servicesInfoAnimate = (
+    inView: boolean,
+    duration: number,
+    translate: string
+  ) => {
     return useSpring({
       opacity: inView ? 1 : 0,
-      duration:duration,
+      duration: duration,
       transform: inView ? `translateX(0%)` : `${translate}`,
       config: { tension: 200, friction: 50 },
     });
   };
 
   return (
-    <section ref={ref} className="overflow-hidden">
-      <div className="flex items-center summary-holder flex-col lg:flex-row ">
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(-100%)")} className="summary-img-holder w-full lg:w-4/12 flex justify-center mb-10 lg:mb-0">
+    <section ref={summaryRefElement} className="overflow-hidden mt-20">
+      <div className="flex items-center summary-holder flex-col lg:flex-row bg-cover bg-fixed">
+        <animated.div
+          style={servicesInfoAnimate(elementInView, 600, "translateX(-100%)")}
+          className="summary-img-holder w-full lg:w-4/12 flex justify-center mb-10 lg:mb-0"
+        >
           <img src={p1} alt="loading Err" title="Grooming" />
         </animated.div>
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateY(100%)")} className=" w-full lg:w-4/12 flex justify-center flex-col items-center">
-          <div className="summary-header text-5xl lg:text-6xl mb-3 text-center">
+        <animated.div
+          style={servicesInfoAnimate(elementInView, 600, "translateY(100%)")}
+          className=" w-full lg:w-4/12 flex justify-center flex-col items-center"
+        >
+          <div className="color-pink special-font text-5xl lg:text-6xl mb-3 text-center">
             {" "}
             U mnie każdy pupil{" "}
           </div>
           <div className="text-3xl lg:text-5xl font-bold text-center">
             CZUJE SIĘ JAK W NIEBIE
           </div>
-          <p className="summary-dsc text-lg text-center w-full pl-2 pr-2">
+          <p className="text-lg text-center w-full pl-2 pr-2 mt-16">
             Profesjonalną i kompleksową obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
             dzielnicy <b>Bończyk, Wielka Skotnica, Rymera, Wesoła, Janów</b>.{" "}
           </p>
         </animated.div>
-        <animated.div style={servicesInfoAnimate(inView, 600, "translateX(100%)")} className="summary-img-holder hidden lg:flex w-4/12">
+        <animated.div
+          style={servicesInfoAnimate(elementInView, 600, "translateX(100%)")}
+          className="summary-img-holder hidden lg:flex w-4/12"
+        >
           <img src={p2} alt="loading Err" title="Grooming" />
         </animated.div>
       </div>
-      <div className="flex des-holder  w-full pl-10 pr-10 lg:flex-row flex-col">
-        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-3">
+      <div className="flex des-holder  w-full pl-10 pr-10 lg:flex-row flex-col mt-16">
+        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-3 p-2.5 text-lg">
           <p className="mb-4">
             {" "}
             <b className="text-black">Psi fryzjer</b> – groomer – Warszawa
@@ -92,7 +106,7 @@ const SummaryMain: React.FC = () => {
             zachowanie psa.
           </p>
         </div>
-        <div className="flex flex-col w-4/12  des-holder-elm mr-3  w-full lg:w-4/12">
+        <div className="flex flex-col des-holder-elm mr-3 w-full lg:w-4/12">
           <p className="mb-4">
             {" "}
             <b className="text-black">Hotelik dla psów</b> – Warszawa
@@ -121,7 +135,7 @@ const SummaryMain: React.FC = () => {
           Zuzu Groomer w mediach społecznościowych
         </p>
         <div className="flex  w-12/12 justify-between">
-          <div className="icon-holder rounded-full bg-sky-700 mr-5">
+          <div className="icon-holder rounded-full bg-sky-700 mr-5 p-3.5 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -133,7 +147,7 @@ const SummaryMain: React.FC = () => {
               <path d="M 12 2 C 6.477 2 2 6.477 2 12 C 2 17.523 6.477 22 12 22 C 17.523 22 22 17.523 22 12 C 22 6.477 17.523 2 12 2 z M 12 4 C 16.418 4 20 7.582 20 12 C 20 15.934398 17.156174 19.198143 13.414062 19.867188 L 13.414062 15.035156 L 15.779297 15.035156 L 16.130859 12.310547 L 13.429688 12.310547 L 13.429688 10.574219 C 13.429687 9.7862188 13.649297 9.2539062 14.779297 9.2539062 L 16.207031 9.2539062 L 16.207031 6.8222656 C 15.512031 6.7512656 14.814234 6.71675 14.115234 6.71875 C 12.041234 6.71875 10.621094 7.9845938 10.621094 10.308594 L 10.621094 12.314453 L 8.2773438 12.314453 L 8.2773438 15.039062 L 10.621094 15.039062 L 10.621094 19.873047 C 6.861695 19.218214 4 15.946666 4 12 C 4 7.582 7.582 4 12 4 z" />
             </svg>
           </div>
-          <div className="icon-holder rounded-full bg-black mr-5">
+          <div className="icon-holder rounded-full bg-black mr-5 p-3.5 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -145,7 +159,7 @@ const SummaryMain: React.FC = () => {
               <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
             </svg>
           </div>
-          <div className="icon-holder rounded-full bg-orange-600">
+          <div className="icon-holder rounded-full bg-orange-600 p-3.5 cursor-pointer">
             {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"

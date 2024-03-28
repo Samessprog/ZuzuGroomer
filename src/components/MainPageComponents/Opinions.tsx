@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import Slider from "react-slick";
-import Opinion from "./Opinion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const Opinion = lazy(() => import("./Opinion"));
 interface MainOptions {
   displayWidth: number;
 }
@@ -63,7 +63,7 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   return (
     <section className="mb-20">
       <div className="flex flex-col items-center mt-30">
-        <div className="opinion-header text-5xl mb-2">Opinie</div>
+        <div className="color-pink special-font text-5xl mb-2">Opinie</div>
         <div className="font-bold xl:text-5xl tracking-wide text-2xl text-center pl-3 pr-3 xl:pl-0 xl:pr-0 ">
           JAK WIDZĄ NAS KLIENCI?
         </div>
@@ -72,7 +72,9 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
         <div className="w-8/12 mx-auto text-center x ">
           <Slider {...settings}>
             {opinions.map((elm) => (
-              <Opinion elm={elm} key={elm.data} />
+              <Suspense key={elm.data} fallback={<div>loading...</div>}>
+                <Opinion elm={elm} key={elm.data} />
+              </Suspense>
             ))}
           </Slider>
         </div>

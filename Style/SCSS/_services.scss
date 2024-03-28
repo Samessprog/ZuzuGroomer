@@ -1,4 +1,4 @@
-.services-container{
+.services-container {
     background-image: url("https://www.mojasfora.pl/wp-content/uploads/2019/09/tlo_narzedzia.jpg");
     height: 500px;
 
@@ -14,18 +14,17 @@
         @media (max-width: 1280px) {
             margin-bottom: 4rem;
         }
-        @media (max-width:  764px) {
+
+        @media (max-width: 764px) {
             font-size: 15px;
         }
     }
 
     .info-header {
-        font-family: $specialFont;
         font-size: 60px;
-        color: $pinkSecond;
         transition: all .3s ease-in-out;
-        letter-spacing: 2px;
-        @media (max-width:  764px) {
+
+        @media (max-width: 764px) {
             font-size: 40px;
         }
     }

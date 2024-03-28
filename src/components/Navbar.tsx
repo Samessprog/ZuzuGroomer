@@ -5,6 +5,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
+  
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (

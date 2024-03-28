@@ -11,10 +11,21 @@ $specialFont: "Allura", Sans-serif;
 $px1d5: 1.5px;
 $px34: 34px;
 
-.fancy-text{
+.fancy-text {
     font-family: $specialFont;
     color: $pinkSecond;
+}
 
+.color-pink {
+    color: $pinkSecond;
+}
+
+.special-font {
+    font-family: $specialFont;
+}
+
+.bg-pink {
+    background-color: $pinkSecond;
 }
 
 //mixins
@@ -41,11 +52,6 @@ $px34: 34px;
     min-height: 900px;
 }
 
-@mixin w-100-flex {
-    width: 100%;
-    display: flex;
-}
-
 @mixin fullScreenSliderIcons {
     fill: rgb(142, 142, 142);
     transition: fill .3s ease-in-out;
@@ -60,8 +66,8 @@ $px34: 34px;
 
 .fs-28 {
     font-size: 28px;
-    transition: all .3s ease-in-out;
-    @media (max-width:  576px) {
+
+    @media (max-width: 576px) {
         font-size: 20px;
     }
 }
