@@ -19,7 +19,7 @@ const Opinion: React.FC<OpinionProps> = ({ elm }) => {
   };
   return (
     <div
-      className={`flex flex-col items-center w-10/12 w-90 ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
+      className={`flex flex-col items-center w-11/12 ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}

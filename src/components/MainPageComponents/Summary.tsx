@@ -7,9 +7,9 @@ import { useSpring, animated } from "react-spring";
 const SummaryMain: React.FC = () => {
   const [summaryRefElement, elementInView] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.1,
   });
-  
+
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
@@ -43,7 +43,7 @@ const SummaryMain: React.FC = () => {
           <div className="text-3xl lg:text-5xl font-bold text-center">
             CZUJE SIĘ JAK W NIEBIE
           </div>
-          <p className="text-lg text-center w-full pl-2 pr-2 mt-16">
+          <p className="text-lg text-center w-full pl-3 sm:pl-2 pr-3 sm:pr-2 mt-16 mb-5 sm:mb-0">
             Profesjonalną i kompleksową obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
@@ -57,26 +57,26 @@ const SummaryMain: React.FC = () => {
           <img src={p2} alt="loading Err" title="Grooming" />
         </animated.div>
       </div>
-      <div className="flex des-holder  w-full pl-10 pr-10 lg:flex-row flex-col mt-16">
-        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-3 p-2.5 text-lg">
-          <p className="mb-4">
+      <div className="flex des-holder  w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 ">
+        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-4  sm:p-2.5 text-lg ">
+          <p className="mb-4 ">
             {" "}
-            <b className="text-black">Psi fryzjer</b> – groomer – Warszawa
+            <b className="text-black ">Psi fryzjer</b> – groomer – Warszawa
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Moja specjalność to grooming, czyli usługa polegająca na pielęgnacji
             psów. W ramach usługi wykonuję kosmetykę uszu i obcinanie pazurków,
             wyczesywanie, kąpiel, trymowanie, strzyżenie oraz usuwanie insektów.
             Twój pupil będzie wyglądał wyjątkowo po wizycie u psiego fryzjera!
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Jestem certyfikowanym psim groomerem, a przy tym stale się
             doszkalam, aby oferować moim klientom obsługę wyłącznie na
             najwyższym poziomie. Pomagam nawet w skomplikowanych przypadkach,
             gdy zwierzę wymaga wytężonej pracy. Dla mnie najważniejsza jest
             najwyższa jakość obsługi i satysfakcja moich klientów.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Zachęcam do bliższego zapoznania się z galerią fotografii przed i po
             strzyżeniu i kompleksowej pielęgnacji w moim salonie psiej urody!
           </p>
@@ -86,20 +86,20 @@ const SummaryMain: React.FC = () => {
             {" "}
             <b className="text-black">Behawiorystar</b> – Warszawa
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Twój pies często się stresuje? Nie przepada za innymi psami i
             wykazuje agresywne zachowania? A może nie możesz nawiązać z nim
             odpowiednich relacji? W takim przypadku warto pomyśleć o konsultacji
             u psiego behawiorysty.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             <b className="text-black">Psi behawiorysta </b> to specjalista w
             zakresie zachowania psów. Można nazwać go także psim psychologiem
             oraz psychoterapeutą zachowania. Behawiorysta posiada wiedzę, która
             pozwala mu na zrozumienie psiego języka oraz zrozumienie potrzeb
             zwierząt, a tym samym potrafi wpłynąć na ich zachowania.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Podczas wizyty obserwuję zachowania zwierzęcia, a także
             przeprowadzam dokładny wywiad z klientem. Następnie przygotowuję
             plan działania, dzięki któremu można „wyleczyć” nieprawidłowe
@@ -111,17 +111,17 @@ const SummaryMain: React.FC = () => {
             {" "}
             <b className="text-black">Hotelik dla psów</b> – Warszawa
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Wybierasz się na wakacje lub w podróż służbową? Zachęcam także do
             skorzystania z moich usług!
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             Prowadzę przytulny<b className="text-black"> hotelik dla psów</b> .
             To kameralne, rodzinne miejsce, gdzie psiaki zawsze znajdują się pod
             dobrą opieką. Dzięki mojemu doświadczeniu i odpowiedniemu podejściu
             do zwierząt każdy pobyt u mnie jest udany!
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-wrap">
             W ramach oferty zapewniam opiekę nad psiakami – zawsze z
             indywidualnym podejściem i zrozumieniem potrzeb pupili, posiłki,
             spacery oraz wyśmienitą zabawę. W hoteliku można korzystać także z
@@ -131,7 +131,7 @@ const SummaryMain: React.FC = () => {
         </div>
       </div>
       <div className="mt-20 flex flex-col items-center mb-20 text-xl font-bold">
-        <p className="mb-10 c-black-600">
+        <p className="mb-10 c-black-600 text-center">
           Zuzu Groomer w mediach społecznościowych
         </p>
         <div className="flex  w-12/12 justify-between">

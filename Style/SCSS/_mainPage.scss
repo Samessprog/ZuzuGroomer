@@ -16,7 +16,7 @@
     .bio-img {
         border-radius: 0px 130px 0px 230px;
         height: 570px;
-
+        
         @media (max-width:768px) {
             border-radius: 50px;
             height: 500px;
@@ -25,6 +25,7 @@
 
         @media (max-width:640px) {
             width: 80%;
+            height: 450px;
         }
     }
 

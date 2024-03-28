@@ -21,7 +21,7 @@ const ServicesInfoSection: React.FC = () => {
       <div className="w-full flex services-container items-center justify-center bg-cover bg-fixed mt-20 flex-col xl:flex-row ">
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(-100%)")}
-          className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-4/12"
+          className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-full sm:w-4/12 mt-8 sm:mt-0"
         >
           <label className="info-header special-font color-pink tracking-wide">
             Przyjazny
@@ -35,7 +35,7 @@ const ServicesInfoSection: React.FC = () => {
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateY(100%)")}
-          className="flex flex-col w-4/12 items-center item-services mb-16 xl:mb-0  text-center "
+          className="flex flex-col w-full sm:w-4/12 items-center item-services mb-16 xl:mb-0  text-center "
         >
           <label className="info-header special-font color-pink tracking-wide">
             Certyfikowany
@@ -49,7 +49,7 @@ const ServicesInfoSection: React.FC = () => {
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(100%)")}
-          className="flex flex-col w-4/12 items-center item-services mb-16 xl:mb-0  text-center"
+          className="flex flex-col w-full sm:w-4/12 items-center item-services sm:mb-16 xl:mb-0 text-center"
         >
           <label className="info-header special-font color-pink tracking-wide">
             Komfortowy

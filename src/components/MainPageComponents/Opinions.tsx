@@ -39,6 +39,7 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
     speed: 2000,
     autoplay: true,
     autoplaySpeed: 5000,
+  
 
     nextArrow: (
       <svg

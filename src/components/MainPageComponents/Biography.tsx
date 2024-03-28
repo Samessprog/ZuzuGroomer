@@ -24,7 +24,7 @@ const MainBio: React.FC = () => {
     <section ref={bioRefElement}>
       <div className={`w-full flex  mt-20 flex-col xl:flex-row `}>
         <div className="overflow-hidden flex object-cover xl:mr-12 justify-center xl:justify-start mr-0 ml-0 w-full xl:w-4/12 ">
-          <figure className="w-12/12 ">
+          <figure className="w-12/12 flex justify-center">
             {!loaded && (
               <div className="bio-img pl-4 overflow-hidden">
                 <Blurhash
@@ -87,7 +87,7 @@ const MainBio: React.FC = () => {
                     ipsum dolor sit amet, consectetur
                   </p>
                 </div>
-                <h2 className="bio-footer font-bold  flex justify-end w-12/12 xl:w-9/12 text-4xl tracking-wider mr-12 mt-8">
+                <h2 className="bio-footer font-bold flex justify-end   w-12/12 xl:w-9/12 text-4xl tracking-wider mr-12 mt-8">
                   <i>Zuzanna Hassa</i>
                 </h2>
               </div>

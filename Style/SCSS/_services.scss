@@ -7,11 +7,15 @@
     }
 
     @media (max-width: 764px) {
-        height: 700px;
+        height: 650px;
     }
 
     .item-services {
         @media (max-width: 1280px) {
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 560px) {
             margin-bottom: 4rem;
         }
 

@@ -5,30 +5,29 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
-  
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
     <nav className="flex justify-center sticky top-0 z-10 opacity-95 bg-white border-b border-gray-300">
-      <div className="flex w-full items-center flex-wrap mb-4 mt-7 max-w-screen-2xl">
+      <div className="flex w-full items-center flex-wrap mb-0 sm:mb-4 mt-7 max-w-screen-2xl">
         {/*Hamburger*/}
         <div
-          className={`hamburger w-1/12 order-1 hidden cursor-pointer ${isMenuOpen ? "open" : ""}`}
+          className={`hamburger w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0  ${isMenuOpen ? "open" : ""}`}
           onClick={(): void => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
-        <div className="xl:w-2/12 logo-holder flex  justify-center order-2">
+        <div className="xl:w-2/12 logo-holder flex justify-center order-2 ">
           <img
             src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
             alt="loading logo err"
-            className="navbar-logo ml-4 h-11 w-64"
+            className="navbar-logo ml-0 sm:ml=4 h-11 w-64"
           />
         </div>
         <div
-          className={`navbar-menu-holder order-3 w-8/12 block pr-5 navbar-menu-holder  
+          className={`navbar-menu-holder order-3 w-8/12 block pr-5 navbar-menu-holder 
             ${isMenuOpen && displayWidth ? "open w-full flex-col items-center" : "close"}
             `}
         >
@@ -77,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             </li>
           </ul>
         </div>
-        <div className="w-2/12 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-0 md:pr-7">
+        <div className="w-2/12 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
             <svg
               xmlns="http://www.w3.org/2000/svg"
