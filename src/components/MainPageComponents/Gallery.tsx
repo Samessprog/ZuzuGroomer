@@ -36,13 +36,13 @@ const Gallery: React.FC = () => {
       {elementInView && (
         <div>
           <div className="flex flex-col items-center pt-20 mb-8">
-            <div className="fancy-header text-4xl md:text-5xl text-center color-pink special-font ">
+            <div className="fancy-header text-4xl sm:text-4xl md:text-5xl text-center color-pink special-font ">
               Galeria Zdjęć
             </div>
-            <div className=" text-3xl md:text-5xl font-bold mt-2 text-center">
+            <div className=" text-4xl sm:text-3xl md:text-4xl  font-bold mt-3 text-center">
               Nasze dzieła
             </div>
-            <div className="mt-10 md:text-lg text-sm w-10/12 text-center md:w-full font-semibold">
+            <div className="mt-10 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full sm:font-semibold">
               Zobacz jak Twój pupil będzie wyglądać po kompleksowej pielęgnacji
               w ZUZU HASU
             </div>

@@ -4,7 +4,6 @@ import p2 from "../../assets/isolated-happy-smiling-dog-white-background-portrai
 import p3 from "../../assets/puppy-2785074_640.jpg";
 
 const MainSlider: React.FC = () => {
-    
   const groomingSalonImg = [p1, p2, p3];
   const [imageIndex, setImageIndex] = useState<number>(0);
   const imgSliderRef = useRef<HTMLImageElement>(null);
@@ -16,7 +15,9 @@ const MainSlider: React.FC = () => {
       );
     }, 7000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [groomingSalonImg.length]);
 
   useEffect(() => {
@@ -28,13 +29,13 @@ const MainSlider: React.FC = () => {
   }, [imageIndex]);
 
   return (
-    <div className="slider w-full h-full overflow-hidden relative ">
+    <div className="slider w-full h-[30rem] sm:h-full overflow-hidden relative ">
       <figure className="w-full">
         <img
           ref={imgSliderRef}
           src={groomingSalonImg[imageIndex]}
           alt="img err"
-          className="img-slider block w-full h-full opacity-0 object-cover"
+          className="img-slider block w-full h-[30.5rem]  sm:h-full opacity-0 sm:object-cover"
         />
       </figure>
     </div>

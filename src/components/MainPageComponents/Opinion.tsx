@@ -25,7 +25,7 @@ const Opinion: React.FC<OpinionProps> = ({ elm }) => {
       onMouseLeave={handleMouseUp}
     >
       <div>
-        <p className="opinion-context p-5 rounded-2xl text-lg select-none">
+        <p className="opinion-context p-5 rounded-2xl text-base select-none">
           <span className="text-center flex ">{elm?.text}</span>
         </p>
       </div>

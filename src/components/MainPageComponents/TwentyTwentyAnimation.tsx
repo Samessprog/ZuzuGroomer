@@ -4,12 +4,7 @@ import imagineRight from "../../assets/puppy-2785074_640.jpg";
 import TwentyTwenty from "react-compare-image";
 
 const TwentyTwentyAnimation: React.FC = () => {
-  return (
-    <TwentyTwenty
-      leftImage={imagineLeft}
-      rightImage={imagineRight}
-    />
-  );
+  return <TwentyTwenty leftImage={imagineLeft} rightImage={imagineRight} />;
 };
 
 export default TwentyTwentyAnimation;

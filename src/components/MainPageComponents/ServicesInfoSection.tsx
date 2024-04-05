@@ -18,7 +18,10 @@ const ServicesInfoSection: React.FC = () => {
 
   return (
     <section ref={servicesRefElement} className="overflow-hidden w-full">
-      <div className="w-full flex services-container items-center justify-center bg-cover bg-fixed mt-20 flex-col xl:flex-row ">
+      <div
+        className="w-full flex services-container items-center justify-center bg-cover bg-fixed mt-20 flex-col xl:flex-row "
+        loading="lazy"
+      >
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(-100%)")}
           className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-full sm:w-4/12 mt-8 sm:mt-0"
@@ -29,9 +32,7 @@ const ServicesInfoSection: React.FC = () => {
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
             GROOMING
           </label>
-          <label className="font-semibold ">
-            DOKŁADNY • BEZPIECZNY • DELIKATNY
-          </label>
+          <label className=" text-sm">DOKŁADNY • BEZPIECZNY • DELIKATNY</label>
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateY(100%)")}
@@ -43,9 +44,7 @@ const ServicesInfoSection: React.FC = () => {
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
             BEHAWIORYSTA
           </label>
-          <label className="font-semibold ">
-            WNIKLIWY • UWAŻNY • KREATYWNY
-          </label>
+          <label className=" text-sm">WNIKLIWY • UWAŻNY • KREATYWNY</label>
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(100%)")}
@@ -57,9 +56,7 @@ const ServicesInfoSection: React.FC = () => {
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
             DOMOWY HOTELIK
           </label>
-          <label className="font-semibold ">
-            CAŁODOBOWY • RODZINNY • KAMERALNY
-          </label>
+          <label className="text-sm ">CAŁODOBOWY • RODZINNY • KAMERALNY</label>
         </animated.div>
       </div>
     </section>

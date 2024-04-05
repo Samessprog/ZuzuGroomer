@@ -13,7 +13,6 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewer> = ({
     setLoaded(true);
   };
 
-
   const handleMouseDown = () => {
     setIsGrabbing(true);
   };
@@ -28,7 +27,6 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewer> = ({
       onMouseLeave={handleMouseUp}
       src={imgUrl}
       className={`img-viewer w-full lg:w-7/12 xl:6/12 cursor-grab ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
-    
     />
   );
 };

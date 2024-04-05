@@ -1,5 +1,6 @@
 @import "./\ variables";
 
+
 .menu-navbar-item {
     font-family: -apple-system,
         BlinkMacSystemFont,
@@ -23,7 +24,7 @@
             left: 0;
             bottom: -20%;
             width: 0;
-            height: 3px;
+            height: 2px;
             background-color: $pinkSecond;
             transition: width .30s ease-in-out;
         }
@@ -114,7 +115,7 @@
 }
 
 //Width 1450 
-@media (max-width: 1345px) {
+@media (max-width: 1280px) {
     .logo-holder {
         width: 75%;
     }

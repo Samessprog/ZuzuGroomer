@@ -1,4 +1,4 @@
-import { createStore, combineReducers, Action } from "redux";
+import { createStore, combineReducers, type Action } from "redux";
 
 interface PhotoState {
   fullScreen: {
@@ -35,7 +35,7 @@ function generalStates(
 }
 
 const rootReducer = combineReducers({
-  generalStates: generalStates,
+  generalStates
 });
 
 const store = createStore(rootReducer);

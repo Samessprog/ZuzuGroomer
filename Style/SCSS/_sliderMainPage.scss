@@ -6,7 +6,11 @@
     }
 
     .img-slider {
-        @include max-min-900;
+
+
+        @media (min-width:560px) {
+            @include max-min-900;
+        }
 
         @media (min-width:1536px) {
             max-height: 940px;

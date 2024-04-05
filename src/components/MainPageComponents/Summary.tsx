@@ -13,11 +13,11 @@ const SummaryMain: React.FC = () => {
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
-    translate: string
+    translate: string,
   ) => {
     return useSpring({
       opacity: inView ? 1 : 0,
-      duration: duration,
+      duration,
       transform: inView ? `translateX(0%)` : `${translate}`,
       config: { tension: 200, friction: 50 },
     });
@@ -40,10 +40,10 @@ const SummaryMain: React.FC = () => {
             {" "}
             U mnie każdy pupil{" "}
           </div>
-          <div className="text-3xl lg:text-5xl font-bold text-center">
+          <div className="text-2xl lg:text-4xl font-bold text-center">
             CZUJE SIĘ JAK W NIEBIE
           </div>
-          <p className="text-lg text-center w-full pl-3 sm:pl-2 pr-3 sm:pr-2 mt-16 mb-5 sm:mb-0">
+          <p className="text-base text-center w-full pl-3 sm:pl-2 pr-3 sm:pr-2 mt-16 mb-5 sm:mb-0">
             Profesjonalną i kompleksową obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
             dyspozycji moich klientów w mieście Mysłowice, w szczególności w
@@ -58,7 +58,7 @@ const SummaryMain: React.FC = () => {
         </animated.div>
       </div>
       <div className="flex des-holder  w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 ">
-        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-4  sm:p-2.5 text-lg ">
+        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-4  pl-8 pr-8 text-base text-[15px]">
           <p className="mb-4 ">
             {" "}
             <b className="text-black ">Psi fryzjer</b> – groomer – Warszawa
@@ -81,7 +81,7 @@ const SummaryMain: React.FC = () => {
             strzyżeniu i kompleksowej pielęgnacji w moim salonie psiej urody!
           </p>
         </div>
-        <div className="flex flex-col  des-holder-elm w-full lg:w-4/12">
+        <div className="flex flex-col des-holder-elm w-full lg:w-4/12 pl-8 pr-8 text-[15px]">
           <p className="mb-4">
             {" "}
             <b className="text-black">Behawiorystar</b> – Warszawa
@@ -106,7 +106,7 @@ const SummaryMain: React.FC = () => {
             zachowanie psa.
           </p>
         </div>
-        <div className="flex flex-col des-holder-elm mr-3 w-full lg:w-4/12">
+        <div className="flex flex-col des-holder-elm mr-3 w-full lg:w-4/12 pl-8 pr-8  text-[15px]">
           <p className="mb-4">
             {" "}
             <b className="text-black">Hotelik dla psów</b> – Warszawa
@@ -130,7 +130,7 @@ const SummaryMain: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="mt-20 flex flex-col items-center mb-20 text-xl font-bold">
+      <div className="mt-20 flex flex-col items-center mb-20 text-lag font-bold">
         <p className="mb-10 c-black-600 text-center">
           Zuzu Groomer w mediach społecznościowych
         </p>

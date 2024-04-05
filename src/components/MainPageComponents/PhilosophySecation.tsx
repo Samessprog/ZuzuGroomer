@@ -20,18 +20,22 @@ const PhilosophySection: React.FC = () => {
     <section ref={philosophyElement} className="overflow-hidden">
       <div className={`flex flex-col items-center mt-20 md:mt-28 `}>
         <animated.div style={philosophyAnimate(elementInView, "100%")}>
-          <header className="motto-header w-full color-pink special-font text-8xl md:text-9xl mb-5 md:mb-0 text-center tracking-wider transition-all ease-in-out duration-300">
-            Moja filozofia
+          <header className="motto-header w-full color-pink special-font text-8xl md:text-9xl mb-5 md:mb-0 text-center tracking-wide transition-all ease-in-out duration-300">
+            <i style={{ textShadow: "5px 3px 4px rgba(0, 0, 0, 0.5)" }}>
+              Moja filozofia
+            </i>
           </header>
         </animated.div>
         <animated.div style={philosophyAnimate(elementInView, "-100%")}>
-          <div className="text-lg mb-5 md:mb-0 mt-5 sm:mt-10">Umysł • Ciało • Dusza</div>
+          <div className="text-lg mb-5 md:mb-0 mt-5 sm:mt-8">
+            Umysł • Ciało • Dusza
+          </div>
         </animated.div>
         <animated.div style={philosophyAnimate(elementInView, "100%")}>
-          <div className="font-bold mt-5 sm:mt-14 text-xl md:text-2xl xl:text-4xl  text-center transition-all ease-in-out duration-300">
+          <div className="font-bold mt-5 sm:mt-14 text-xl md:text-2xl xl:text-4xl tracking-wide md:tracking-wider text-center transition-all ease-in-out duration-300">
             KAŻDY Z NAS NOSI W SOBIE PIĘKNO
           </div>
-          <div className="text-lg mb-10 text-center pl-5 pr-5 mt-10 sm:mt-14">
+          <div className=" text-base mb-10 text-center pl-5 pr-5 mt-10 sm:mt-14">
             Cała sztuka polega na tym, by umieć je odkryć…. – Eric Emmanuel
             Schmitt
           </div>
@@ -40,16 +44,16 @@ const PhilosophySection: React.FC = () => {
           style={philosophyAnimate(elementInView, "-100%")}
           className="w-full xl:w-8/12"
         >
-          <div className="flex flex-col  pl-5 pr-5 items-center  w-full">
-            <p className="mb-8 ms:mb-10 xl:mb-5 text-lg text-center ">
+          <div className="flex flex-col  pl-5 pr-5 items-center  w-full ">
+            <p className="mb-8 ms:mb-12 xl:mb-5  text-center ">
               Podstawą udanego pobytu u mnie jest poczucie bezpieczeństwa, które
               pozwoli się odpowiednio zrelaksować oraz wypocząć.
             </p>
-            <p className="mb-8 ms:mb-10 xl:mb-5 text-lg text-center ">
+            <p className="mb-8 ms:mb-12 xl:mb-5 text-center md:mt-3">
               Efektem takiego stanu jest dobry humor i samopoczucie Twojego
               pupila.
             </p>
-            <p className="text-lg text-center ">
+            <p className="text-center  md:mt-3">
               Do dyspozycji zwierzaków są różnego rodzaju zabawki typu kong,
               piłki, pluszaki, zabawki logiczne i maty węchowe. Każdy znajdzie
               coś dla siebie. Oczywiście nie zapominajmy o świetnym towarzystwie

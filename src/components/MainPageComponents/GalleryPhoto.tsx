@@ -12,7 +12,7 @@ const GalleryPhoto: React.FC<GalleryProps> = ({ imgUrl, index }) => {
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
 
-  const handleImageLoad = () => {
+  const handleImageLoad = (): void => {
     setLoaded(true);
   };
 

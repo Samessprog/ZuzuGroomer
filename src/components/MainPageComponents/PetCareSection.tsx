@@ -3,7 +3,9 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 
-const TwentyTwentyAnimation = lazy(() => import("./TwentyTwentyAnimation"));
+const TwentyTwentyAnimation = lazy(
+  async () => await import("./TwentyTwentyAnimation"),
+);
 
 const PetCareSection: React.FC = () => {
   const [petRef, elementInView] = useInView({
@@ -26,16 +28,16 @@ const PetCareSection: React.FC = () => {
             style={animatePetSection}
             className="flex justify-center flex-col items-center text-center w-full xl:w-7/12"
           >
-            <label className="special-font color-pink mb-5 xl:mb-0 md:text-6xl tracking-wider transition-all ease-in-out duration-200 text-5xl">
+            <label className="special-font color-pink mb-5 xl:mb-0 md:text-5xl tracking-wider transition-all ease-in-out duration-200 text-5xl">
               Zmiany, zmiany, zmiany
             </label>
             <label className="fs-40 font-semibold mb-10  small-font-resp pl-2 pr-2 text-center ">
               BO KAŻDY CHCE, WYGLĄDAĆ DOBRZE
             </label>
-            <label className="font-semibold mb-5 responsive-font sm:text-lg pl-2 pr-2 text-base">
+            <label className="font-semibold mb-5 responsive-font  pl-2 pr-2 text-base">
               Zapraszam na kompleksową pielęgnację małe i duże psy oraz koty
             </label>
-            <button className="special-button bg-pink font-semibold flex items-center text-white rounded-3xl pl-7 pr-5 p-3 mt-8 xl:mt-0 transform hover:transform-x-0 transition-all ease-out duration-200">
+            <button className="special-button bg-pink font-semibold flex items-center text-white rounded-3xl pl-7 pr-5 p-2.5 mt-8 xl:mt-0 transform hover:transform-x-0 transition-all ease-out duration-200">
               <div>Dowiedz się więcej</div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,11 +1,11 @@
-import React, { Suspense, CSSProperties } from "react";
-import ReactDOM from "react-dom";
+import React, { Suspense, type CSSProperties } from "react";
+import { createRoot } from "react-dom/client";
 import { PulseLoader } from "react-spinners";
 import { Provider } from "react-redux";
 import store from "./states/store.js";
-const App = React.lazy(() => import("./App.tsx"));
 import "../Style/CSS/index.css";
 import "../src/input.css";
+const App = React.lazy(async () => await import("./App.tsx"));
 
 const Preloader = () => {
   const override: CSSProperties = {
@@ -34,4 +34,4 @@ const Preloader = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<Preloader />);
+createRoot(document.getElementById("root")!).render(<Preloader />);
