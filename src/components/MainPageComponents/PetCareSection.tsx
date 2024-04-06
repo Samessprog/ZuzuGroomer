@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("./TwentyTwentyAnimation"),
+  async () => await import("./TwentyTwentyAnimation")
 );
 
 const PetCareSection: React.FC = () => {
@@ -50,8 +50,8 @@ const PetCareSection: React.FC = () => {
               </svg>
             </button>
           </animated.div>
-          <div className="xl:mt-6 flex justify-center flex-col TwentyTwenty mt-10 pl-5 pr-5 md:pl-0 md-mr-0 w-full sm:w-10/12 md:w-9/12 xl:w-5/12 transition-all ease-in-out duration-200 ">
-            <label className="text-sm text-gray-800 flex justify-center mb-3">
+          <div className="xl:mt-6 flex justify-center flex-col TwentyTwenty mt-10 pl-5 pr-5 md:pl-0 md-mr-0 w-full sm:w-10/12 md:w-9/12 xl:w-5/12 transition-all ease-in-out duration-200 items-center">
+            <label className="text-sm text-gray-500 flex justify-center mb-3">
               Przesuń suwak i sprawdź...
             </label>
             <div className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center w-full">
@@ -76,6 +76,9 @@ const PetCareSection: React.FC = () => {
                   Po zmianie
                 </div>
               </div>
+            </div>
+            <div className="w-10/12 flex justify-end mt-2  text-gray-500 text-sm">
+              <a href="#">Więcej zmian tutaj!</a>
             </div>
           </div>
         </div>

@@ -23,8 +23,8 @@ const MainBio: React.FC = () => {
   return (
     <section ref={bioRefElement}>
       <div className={`w-full flex  mt-20 flex-col xl:flex-row `}>
-        <div className="overflow-hidden flex object-cover xl:mr-12 justify-center xl:justify-start mr-0 ml-0 w-full xl:w-4/12 ">
-          <figure className="w-full flex justify-center bio-img md:pl-4 transition-all easy-in-out duration-300 ">
+        <div className="overflow-hidden flex object-cover xl:mr-12 justify-center xl:justify-start mr-0 ml-0 w-full xl:w-4/12 md:pl-4">
+          <figure className="w-full flex justify-center bio-img  transition-all easy-in-out duration-300 ">
             {!loaded && (
               <div className="bio-img pl-4 overflow-hidden">
                 <Blurhash
@@ -39,7 +39,7 @@ const MainBio: React.FC = () => {
             <img
               src="https://www.gry-online.pl/i/h/22/431209879.jpg"
               alt="loading err w-full"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover bio-imgs"
               style={{
                 filter: loaded ? "none" : "blur(10px)",
                 display: loaded ? "block" : "none",

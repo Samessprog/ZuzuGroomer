@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <img
             src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
             alt="loading logo err"
-            className="navbar-logo ml-0 sm:ml=4 h-11 w-54 md:w-64 "
+            className="navbar-logo ml-0 sm:ml=4 h-11 w-54 md:w-64 cursor-pointer"
           />
         </div>
         <div

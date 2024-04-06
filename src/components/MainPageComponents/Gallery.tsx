@@ -42,7 +42,7 @@ const Gallery: React.FC = () => {
             <div className=" text-4xl sm:text-3xl md:text-4xl  font-bold mt-3 text-center">
               Nasze dzieła
             </div>
-            <div className="mt-10 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full sm:font-semibold">
+            <div className="mt-8 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full ">
               Zobacz jak Twój pupil będzie wyglądać po kompleksowej pielęgnacji
               w ZUZU HASU
             </div>

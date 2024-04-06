@@ -1,6 +1,6 @@
 import React from "react";
-import p1 from "../../assets/grafika-ms1.png";
-import p2 from "../../assets/grafika-ms2.png";
+import p1 from "../../assets/grafika-ms1.webp";
+import p2 from "../../assets/grafika-ms2.webp";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 
@@ -13,7 +13,7 @@ const SummaryMain: React.FC = () => {
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
-    translate: string,
+    translate: string
   ) => {
     return useSpring({
       opacity: inView ? 1 : 0,
@@ -25,7 +25,9 @@ const SummaryMain: React.FC = () => {
 
   return (
     <section ref={summaryRefElement} className="overflow-hidden mt-20">
-      <div className="flex items-center summary-holder flex-col lg:flex-row bg-cover bg-fixed">
+      <div
+        className="flex items-center summary-holder flex-col lg:flex-row bg-cover bg-fixed"
+      >
         <animated.div
           style={servicesInfoAnimate(elementInView, 600, "translateX(-100%)")}
           className="summary-img-holder w-full lg:w-4/12 flex justify-center mb-10 lg:mb-0"

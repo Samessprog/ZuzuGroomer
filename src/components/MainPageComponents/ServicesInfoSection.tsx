@@ -18,10 +18,7 @@ const ServicesInfoSection: React.FC = () => {
 
   return (
     <section ref={servicesRefElement} className="overflow-hidden w-full">
-      <div
-        className="w-full flex services-container items-center justify-center bg-cover bg-fixed mt-20 flex-col xl:flex-row "
-        loading="lazy"
-      >
+      <div className="w-full flex services-container items-center justify-center bg-cover bg-fixed mt-20 flex-col xl:flex-row ">
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(-100%)")}
           className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-full sm:w-4/12 mt-8 sm:mt-0"

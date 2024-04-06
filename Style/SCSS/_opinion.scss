@@ -10,9 +10,10 @@
     height: 45px;
     margin-bottom: 2rem;
     cursor: pointer;
+
     &:hover {
-        background-color: rgb(255, 71, 164) !important;
-        fill: rgb(255, 255, 255);
+        fill: #ff0080;
+        transform: translateX(10px);
     }
 
     @media (max-width:564px) {
@@ -26,9 +27,10 @@
     height: 45px;
     margin-bottom: 2rem;
     cursor: pointer;
+
     &:hover {
-        background-color: rgb(255, 71, 164) !important;
-        fill: white;
+        fill: #ff0080;
+        transform: translateX(-10px);
     }
 
     @media (max-width:564px) {
