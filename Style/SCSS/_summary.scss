@@ -1,46 +1,22 @@
 @import "./\ variables";
 
-
 .summary-holder {
-    margin-top: 3rem;
-    background-color: rgba(240, 240, 240, 0.478);
-    background-image: url("http://www.mojasfora.pl/wp-content/uploads/2019/09/tlo_lapy.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-
-    .summary-header {
-        font-family: $specialFont;
-        color: $pinkSecond;
-    }
-
-    .summary-side {}
-
-    .summary-dsc {
-        margin-top: 3rem;
-    }
-
-    .summary-img-holder {}
+    background-image: url("../../src/assets/lapyTlo.webp");;
 }
 
-.des-holder {
-    margin-top: 4rem;
-
-    .des-holder-elm {
-        font-size: 17.5px;
-        font-family: "Open Sans", Sans-serif;
-        line-height: 1.7rem;
-        font-weight: 400;
-        color: #2a2f38dc;
-        padding: 10px;
-    }
+.des-holder-elm {
+    font-family: "Open Sans", Sans-serif;
+    line-height: 1.7rem;
+    font-weight: 400;
+    color: #2a2f38dc;
 }
+
 
 .icon-holder {
-    padding: 13px;
-    transition: all .4s ease-in-out;
-    cursor: pointer;
-    transform-origin: center;
     
+    transition: all .4s ease-in-out;
+    transform-origin: center;
+
     &:hover {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;
@@ -49,15 +25,15 @@
 
 @keyframes iconHoverAnimate {
     0% {
-        transform: scale(1); 
+        transform: scale(1);
     }
 
     50% {
-        transform: scale(0.9); 
+        transform: scale(0.9);
     }
 
     100% {
-        transform: scale(1); 
+        transform: scale(1);
     }
 }
 

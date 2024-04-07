@@ -1,148 +1,102 @@
 @import "./\ variables";
 
-.navbar {
-    background-color: $whiteMain;
-    z-index: 10;
-    opacity: 95%;
 
-    .navbar-holder {
-        margin-top: 1.8rem;
-        margin-bottom: 1rem;
-        max-width: 1540px;
-        flex-wrap: wrap;
+.menu-navbar-item {
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        sans-serif;
+    transition: color .25s ease-in-out;
 
-        .logo-holder {
-            order: 2;
+    &.open {
+        animation: fadeIn 1s forwards;
+        opacity: 0;
+    }
 
-            .navbar-logo {
-                margin-left: 1rem;
-                height: 45px;
-                width: 260px;
-            }
+    .item-context {
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -20%;
+            width: 0;
+            height: 2px;
+            background-color: $pinkSecond;
+            transition: width .30s ease-in-out;
         }
 
-        .navbar-menu-holder {
-            order: 3;
-            display: block;
-
-            .main-menu {
-                .menu-navbar-item {
-                    font-size: 18px;
-                    cursor: pointer;
-                    font-family: -apple-system,
-                        BlinkMacSystemFont,
-                        'Segoe UI',
-                        Roboto,
-                        Helvetica,
-                        Arial,
-                        sans-serif,
-                        sans-serif;
-                    margin-right: 1.25rem;
-                    transition: color .25s ease-in-out;
-
-                    &.open {
-                        animation: fadeIn 1.8s forwards;
-                        opacity: 0;
-                    }
-
-                    .item-context {
-                        position: relative;
-
-                        &:after {
-                            content: '';
-                            position: absolute;
-                            left: 0;
-                            bottom: 0;
-                            width: 0;
-                            height: 2px;
-                            background-color: $pinkSecond;
-                            transition: width .25s ease-in-out;
-                        }
-
-                        &:hover::after {
-                            width: 100%;
-                        }
-
-                        &:hover {
-                            color: $pinkSecond;
-                        }
-                    }
-                }
-            }
+        &:hover::after {
+            width: 100%;
         }
 
-        .hamburger {
-            order: 1;
-            display: none;
-            cursor: pointer;
-
-            &.open {
-                .bar {
-                    &:first-child {
-                        transform: translateY(8px) rotate(45deg);
-                    }
-
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
-
-                    &:last-child {
-                        transform: translateY(-8px) rotate(-45deg);
-                    }
-                }
-            }
-
-            .bar {
-                display: block;
-                width: 1.7rem;
-                height: 3px;
-                margin: 5px auto;
-                background-color: rgb(0, 0, 0);
-                transition: all 0.3s ease-in-out;
-            }
-        }
-
-        .navbar-icons-holder {
-            order: 3;
-            border-left: 1px solid rgb(218, 218, 218);
-            padding-left: 1.6rem;
-
-            svg {
-                margin-right: 14px;
-                cursor: pointer;
-                fill: $navbarIconsPrimary;
-                transition: fill .3s ease-in-out;
-            }
-
-            #facebook-icon {
-                &:hover {
-                    fill: $facebookIcon;
-                }
-            }
-
-            #instagram-icon {
-                &:hover {
-                    fill: $instagramIcon;
-                }
-            }
-
-            #maps-icon {
-                &:hover {
-                    fill: $mapIcon;
-                }
-            }
-
-            #tikTok-icon {
-                &:hover {
-                    fill: $tikTokIcon;
-                }
-            }
+        &:hover {
+            color: $pinkSecond;
         }
     }
 }
 
+.hamburger {
+
+    &.open {
+        .bar {
+            &:first-child {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+
+    .bar {
+        height: 3px;
+        margin: 5px auto;
+    }
+}
+
+.navbar-icons-holder {
+
+    svg {
+        fill: $navbarIconsPrimary;
+    }
+
+    #facebook-icon {
+        &:hover {
+            fill: $facebookIcon;
+        }
+    }
+
+    #instagram-icon {
+        &:hover {
+            fill: $instagramIcon;
+        }
+    }
+
+    #maps-icon {
+        &:hover {
+            fill: $mapIcon;
+        }
+    }
+
+    #tikTok-icon {
+        &:hover {
+            fill: $tikTokIcon;
+        }
+    }
+}
+
+
 //Width for the icons 1023px
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     #tikTok-icon {
         fill: $tikTokIcon;
     }
@@ -161,43 +115,37 @@
 }
 
 //Width 1450 
-@media (max-width: 1345px) {
-    .navbar {
-        .navbar-holder {
+@media (max-width: 1280px) {
+    .logo-holder {
+        width: 75%;
+    }
 
-            .logo-holder {
-                width: 75%;
-            }
+    .navbar-icons-holder {
+        border-left: none;
+        justify-content: end;
+    }
 
-            .navbar-icons-holder {
-                border-left: none;
-                justify-content: end;
-            }
+    .hamburger {
+        display: block;
+    }
 
-            .hamburger {
-                display: block;
-            }
+    .navbar-menu-holder {
+        &.close {
+            top: 10%;
+            animation: closeAnimation .5s forwards ease-in;
+            @include navbar-menu-holder-close-open
+        }
 
-            .navbar-menu-holder {
-                &.close {
-                    top: 10%;
-                    animation: closeAnimation .8s forwards ease-in;
-                    @include navbar-menu-holder-close-open
-                }
+        &.open {
+            top: 100%;
+            animation: dropdownAnimation .5s forwards ease-out;
+            @include navbar-menu-holder-close-open
+        }
 
-                &.open {
-                    display: block !important;
-                    top: 100%;
-                    animation: dropdownAnimation .5s forwards ease-out;
-                    @include navbar-menu-holder-close-open
-                }
-
-                .main-menu {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
+        .main-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 }
@@ -221,7 +169,7 @@
 
 @keyframes dropdownAnimation {
     0% {
-        top: -100%;
+        top: 0;
     }
 
     100% {

@@ -1,22 +1,43 @@
 @import "./\ variables";
 
-.opinion-header {
-    font-family: $specialFont;
-    color: $pinkSecond;
+.opinion-context {
+    background: rgba(255, 0, 128, 0.142);
 }
 
-.opinion-holder {
-    margin-top: 5rem;
-    cursor: default;
+.slider-arrow-right {
+    transition: all .3s ease-in-out;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 2rem;
+    cursor: pointer;
 
-    .opinion-context {
-        user-select: none;
-        background: rgba(255, 0, 128, 0.142);
-        padding: 20px;
-        border-radius: 15px;
-        font-size: 17px;
+    &:hover {
+        fill: #ff0080;
+        transform: translateX(10px);
+    }
+
+    @media (max-width:564px) {
+        display: none !important;
     }
 }
+
+.slider-arrow-left {
+    transition: all .3s ease-in-out;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        fill: #ff0080;
+        transform: translateX(-10px);
+    }
+
+    @media (max-width:564px) {
+        display: none !important;
+    }
+}
+
 
 .slider {
     display: flex;
@@ -29,7 +50,12 @@
         display: flex;
         justify-content: center;
     }
+
+    @media (max-width: 1445px) {
+        width: 85%;
+    }
 }
+
 
 .slick-next {
     fill: rgb(0, 0, 0);
@@ -42,29 +68,23 @@
     }
 }
 
-
-.slick-prev {
-    fill: rgb(0, 0, 0);
-    transition: all .3s ease-in-out;
-    width: 40px;
-    height: 40px;
-
-    &:hover {
-        fill: white;
-    }
-}
-
-.slick-next {
-    display: none;
-}
 
 .slick-arrow {
-    transition: all .5s ease-in-out;
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    border-radius: 50px !important;
+    width: 40px !important;
+    height: 40px !important;
 
-    &:hover {
-        background-color: rgb(255, 71, 164);
+    @media (max-width:564px) {
+        display: none !important;
     }
+}
+
+.w-90 {
+    @media (max-width: 1345px) {
+        width: 90%;
+    }
+}
+
+.mt-30 {
+    margin-top: 7rem;
 }

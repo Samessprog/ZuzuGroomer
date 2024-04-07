@@ -2,14 +2,31 @@
 $whiteMain: white;
 $pinkSecond: rgb(255, 71, 164);
 $navbarIconsPrimary: rgb(126, 126, 126);
-$tikTokIcon: #69c9d0;
-$mapIcon: rgb(225, 105, 91);
-$instagramIcon: #405de6;
-$facebookIcon: rgb(74, 115, 201);
+$tikTokIcon: #2eb9c3;
+$mapIcon: rgb(255, 119, 0);
+$instagramIcon: rgb(255, 0, 204);
+$facebookIcon: rgb(69, 116, 219);
 $specialFont: "Allura", Sans-serif;
 
 $px1d5: 1.5px;
 $px34: 34px;
+
+.fancy-text {
+    font-family: $specialFont;
+    color: $pinkSecond;
+}
+
+.color-pink {
+    color: $pinkSecond;
+}
+
+.special-font {
+    font-family: $specialFont;
+}
+
+.bg-pink {
+    background-color: $pinkSecond;
+}
 
 //mixins
 @mixin navbar-menu-holder-close-open {
@@ -20,21 +37,41 @@ $px34: 34px;
     background-color: $whiteMain;
 }
 
+@mixin sliderArrow {
+    fill: rgb(142, 142, 142);
+    transition: all .3s ease-in-out;
+    z-index: 999;
+
+    &:hover {
+        fill: rgb(255, 255, 255);
+    }
+}
 
 @mixin max-min-900 {
     max-height: 900px;
     min-height: 900px;
 }
 
-@mixin w-100-flex {
-    width: 100%;
-    display: flex;
+@mixin fullScreenSliderIcons {
+    fill: rgb(142, 142, 142);
+    transition: fill .3s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+        fill: white;
+    }
 }
 
 .fs-28 {
-    font-size: 28px;
+    font-size: 20px;
+
+    @media (max-width: 576px) {
+        font-size: 16px;
+    }
 }
 
 .fs-40 {
-    font-size: 40px;
+    font-size: 35px;
 }
