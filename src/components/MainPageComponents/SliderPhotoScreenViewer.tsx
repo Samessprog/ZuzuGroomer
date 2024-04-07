@@ -1,23 +1,18 @@
 import React, { useState } from "react";
-interface SliderPhotoScreenViewer {
+interface SliderPhotoScreenViewerInterface {
   imgUrl: string;
 }
 
-const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewer> = ({
+const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
   imgUrl,
 }) => {
   const [isGrabbing, setIsGrabbing] = useState(false);
 
-  const [loaded, setLoaded] = useState(false);
-  const handleImageLoad = () => {
-    setLoaded(true);
-  };
-
-  const handleMouseDown = () => {
+  const handleMouseDown = (): void => {
     setIsGrabbing(true);
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (): void => {
     setIsGrabbing(false);
   };
   return (

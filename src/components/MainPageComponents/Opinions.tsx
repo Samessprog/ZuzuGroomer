@@ -7,6 +7,9 @@ const Opinion = lazy(async () => await import("./Opinion"));
 interface MainOptions {
   displayWidth: number;
 }
+interface SampleNextArrowProps {
+  onClick: () => void;
+}
 
 const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   const opinions = [
@@ -29,9 +32,10 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
     {
       text: "Dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
       data: "04.03.2124",
-    }
+    },
   ];
-  function SampleNextArrow(props) {
+
+  function SampleNextArrow(props: SampleNextArrowProps): JSX.Element {
     const { onClick } = props;
     return (
       <div className="flex items-center">
@@ -49,7 +53,7 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
     );
   }
 
-  function SamplePrevArrow(props) {
+  function SamplePrevArrow(props: SampleNextArrowProps): JSX.Element {
     const { onClick } = props;
     return (
       <div className="flex items-center">

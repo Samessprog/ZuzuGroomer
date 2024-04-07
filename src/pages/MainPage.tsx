@@ -1,4 +1,4 @@
-import { lazy, Suspense, type CSSProperties } from "react";
+import React, { lazy, Suspense, type CSSProperties } from "react";
 import { useSelector } from "react-redux";
 import { PulseLoader } from "react-spinners";
 import MainBio from "../components/MainPageComponents/Biography";
@@ -7,22 +7,22 @@ import ServicesInfoSection from "../components/MainPageComponents/ServicesInfoSe
 import LazyFullscreenImageViewer from "../components/MainPageComponents/FullscreenImageViewer";
 
 const MainSlider = lazy(
-  async () => await import("../components/MainPageComponents/SliderMainPage")
+  async () => await import("../components/MainPageComponents/SliderMainPage"),
 );
 const Numbers = lazy(
-  async () => await import("../components/MainPageComponents/CompanyNumbers")
+  async () => await import("../components/MainPageComponents/CompanyNumbers"),
 );
 const LazyPetCareSection = lazy(
-  async () => await import("../components/MainPageComponents/PetCareSection")
+  async () => await import("../components/MainPageComponents/PetCareSection"),
 );
 const LazyMainOpinions = lazy(
-  async () => await import("../components/MainPageComponents/Opinions")
+  async () => await import("../components/MainPageComponents/Opinions"),
 );
 const LazyGallery = lazy(
-  async () => await import("../components/MainPageComponents/Gallery")
+  async () => await import("../components/MainPageComponents/Gallery"),
 );
 const LazySummaryMain = lazy(
-  async () => await import("../components/MainPageComponents/Summary")
+  async () => await import("../components/MainPageComponents/Summary"),
 );
 
 interface MainPageProps {
@@ -32,7 +32,7 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = ({ userScroll, displayWidth }) => {
   const fullScreenFlag: boolean = useSelector(
-    (state) => state.generalStates.fullScreen
+    (state) => state.generalStates.fullScreen,
   );
 
   const override: CSSProperties = {
@@ -98,7 +98,7 @@ const MainPage: React.FC<MainPageProps> = ({ userScroll, displayWidth }) => {
           <path d="M450-332h60v-182l74 74 42-42-146-146-146 146 42 42 74-74v182Zm30 252q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z" />
         </svg>
       </a>
-      {fullScreenFlag.isOpen && <LazyFullscreenImageViewer />}
+      {fullScreenFlag.isOpen === true && <LazyFullscreenImageViewer />}
     </main>
   );
 };

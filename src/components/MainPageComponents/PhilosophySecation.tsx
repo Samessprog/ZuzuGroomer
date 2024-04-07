@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, type SpringValues } from "react-spring";
 
 const PhilosophySection: React.FC = () => {
   const [philosophyElement, elementInView] = useInView({
@@ -8,7 +8,10 @@ const PhilosophySection: React.FC = () => {
     threshold: 0.3,
   });
 
-  const philosophyAnimate = (elementInView: boolean, translateX: string) => {
+  const philosophyAnimate = (
+    elementInView: boolean,
+    translateX: string,
+  ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
       transform: elementInView ? `translateX(0%)` : `translateX(${translateX})`,

@@ -29,11 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
         </div>
         <div
           className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5 navbar-menu-holder 
-            ${isMenuOpen && displayWidth ? "open w-full flex-col items-center" : "close"}
+            ${isMenuOpen && !(displayWidth === 0) ? "open w-full flex-col items-center" : "close"}
             `}
         >
           <ul
-            className={`flex justify-end font-medium main-menu ${isMenuOpen && displayWidth ? " flex-col mt-11 open" : "close"}`}
+            className={`flex justify-end font-medium main-menu ${isMenuOpen && !(displayWidth !== 0) ? " flex-col mt-11 open" : "close"}`}
           >
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}

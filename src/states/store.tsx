@@ -21,7 +21,7 @@ const initialPhotoState: PhotoState = {
 
 function generalStates(
   state: PhotoState = initialPhotoState,
-  action: SetFullScreenAction
+  action: SetFullScreenAction,
 ): PhotoState {
   switch (action.type) {
     case "SET_FULL_SCREEN":
@@ -35,7 +35,7 @@ function generalStates(
 }
 
 const rootReducer = combineReducers({
-  generalStates
+  generalStates,
 });
 
 const store = createStore(rootReducer);

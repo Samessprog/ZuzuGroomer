@@ -31,7 +31,7 @@ const FullscreenImageViewer: React.FC = () => {
 
   const [autoPlayOn, setAutoPlay] = useState<boolean>(false);
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const {
@@ -41,9 +41,9 @@ const FullscreenImageViewer: React.FC = () => {
   const sliderRef = useRef<Slider>(null);
 
   useEffect(() => {
-    if (autoPlayOn && sliderRef.current) {
+    if (autoPlayOn && sliderRef.current != null) {
       sliderRef.current.slickPlay();
-    } else if (sliderRef.current) {
+    } else if (sliderRef.current != null) {
       sliderRef.current.slickPause();
     }
   }, [autoPlayOn]);
@@ -59,7 +59,7 @@ const FullscreenImageViewer: React.FC = () => {
     afterChange: (currentSlide: number) => {
       dispatch(
         dispatch(
-          setFullScreen({ isOpen: true, params: { index: currentSlide } })
+          setFullScreen({ isOpen: true, params: { index: currentSlide } }),
         ),
       );
     },
@@ -122,8 +122,8 @@ const FullscreenImageViewer: React.FC = () => {
       </div>
       <div className="div-slider">
         <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
-          {photos.map((imgUrl) => (
-            <SliderPhotoScreenViewer imgUrl={imgUrl} />
+          {photos.map((imgUrl, id) => (
+            <SliderPhotoScreenViewer imgUrl={imgUrl} key={id} />
           ))}
         </Slider>
       </div>

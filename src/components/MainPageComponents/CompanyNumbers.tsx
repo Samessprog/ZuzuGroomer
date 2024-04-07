@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 
@@ -8,17 +8,18 @@ interface AnimatedNumberProps {
   isVisible: boolean;
 }
 
-const Numbers = () => {
-  const [countedHasStarted, setHasStarted] = useState(false);
-
+const Numbers: React.FC = () => {
   const [numberRefElement, elementInView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
 
-  const AnimatedNumber = ({ value, from }: AnimatedNumberProps) => {
+  const AnimatedNumber = ({
+    value,
+    from,
+  }: AnimatedNumberProps): JSX.Element => {
     const { number } = useSpring({
-      from: { number: countedHasStarted ? from : 0 },
+      from: { number: from },
       to: { number: elementInView ? value : 0 },
       config: { duration: 2000 },
     });

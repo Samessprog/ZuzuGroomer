@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { Suspense, type CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
 import { PulseLoader } from "react-spinners";
@@ -7,14 +8,13 @@ import "../Style/CSS/index.css";
 import "../src/input.css";
 const App = React.lazy(async () => await import("./App.tsx"));
 
-const Preloader = () => {
+const Preloader: React.FC = () => {
   const override: CSSProperties = {
     position: "fixed",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
-
   return (
     <Suspense
       fallback={

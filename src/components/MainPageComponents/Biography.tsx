@@ -16,7 +16,7 @@ const MainBio: React.FC = () => {
   });
 
   const [loaded, setLoaded] = useState(false);
-  const handleImageLoad = () => {
+  const handleImageLoad = (): void => {
     setLoaded(true);
   };
 

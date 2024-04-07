@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, type SpringValues } from "react-spring";
 
 const ServicesInfoSection: React.FC = () => {
   const [servicesRefElement, elementInView] = useInView({
@@ -8,7 +8,10 @@ const ServicesInfoSection: React.FC = () => {
     threshold: 0.4,
   });
 
-  const servicesInfoAnimate = (elementInView: boolean, translate: string) => {
+  const servicesInfoAnimate = (
+    elementInView: boolean,
+    translate: string,
+  ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
       transform: elementInView ? `translateX(0%)` : `${translate}`,

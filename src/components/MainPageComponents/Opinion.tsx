@@ -10,11 +10,11 @@ interface OpinionProps {
 const Opinion: React.FC<OpinionProps> = ({ elm }) => {
   const [isGrabbing, setIsGrabbing] = useState(false);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (): void => {
     setIsGrabbing(true);
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (): void => {
     setIsGrabbing(false);
   };
   return (

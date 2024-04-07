@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("./TwentyTwentyAnimation")
+  async () => await import("./TwentyTwentyAnimation"),
 );
 
 const PetCareSection: React.FC = () => {

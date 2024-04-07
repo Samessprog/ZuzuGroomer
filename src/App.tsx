@@ -1,13 +1,13 @@
+import React, { useEffect, useState } from "react";
 import Navbar from "../src/components/Navbar";
 import MainPage from "./pages/MainPage";
-import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 
-function App() {
+const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
 
   useEffect(() => {
-    const setFixed = () => {
+    const setFixed = (): void => {
       setUserScroll(window.scrollY >= 1);
     };
     window.addEventListener("scroll", setFixed);
@@ -18,7 +18,7 @@ function App() {
 
   const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       setDisplayWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
@@ -34,6 +34,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

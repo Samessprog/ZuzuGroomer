@@ -11,7 +11,7 @@ const MainSlider: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) =>
-        prevIndex === groomingSalonImg.length - 1 ? 0 : prevIndex + 1
+        prevIndex === groomingSalonImg.length - 1 ? 0 : prevIndex + 1,
       );
     }, 7000);
 
@@ -21,9 +21,8 @@ const MainSlider: React.FC = () => {
   }, [groomingSalonImg.length]);
 
   useEffect(() => {
-    if (imgSliderRef.current) {
+    if (imgSliderRef.current != null) {
       imgSliderRef.current.classList.remove("animate");
-      imgSliderRef.current.offsetWidth;
       imgSliderRef.current.classList.add("animate");
     }
   }, [imageIndex]);
