@@ -5,14 +5,18 @@ const PriceList: React.FC = () => {
   return (
     <div>
       <div className="w-full overflow-hidden relative priceList-img">
-        <img src={p1} alt="loading err" className="w-full priceList-img" />
+        <img
+          src={p1}
+          alt="loading err"
+          className="w-full priceList-img object-cover"
+        />
         <div className="absolute z-1 price-list-text flex flex-col">
           <i className="text-6xl fancy-text tracking-wide">Cennik</i>
-          <span className="text-4xl font-bold">Pielęgnacji</span>
+          <span className="text-3xl sm:text-4xl font-bold">Pielęgnacji</span>
         </div>
       </div>
       <div className=" flex justify-center items-center mt-10 ">
-        <section className="w-8/12 text-center">
+        <section className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0">
           <p>
             {" "}
             W naszym salonie szczególną wagę przykładamy do komfortu naszych
@@ -35,39 +39,39 @@ const PriceList: React.FC = () => {
         </section>
       </div>
       <div className="mt-20 priceList-container"></div>
-      <div className="ml-10 mt-10 w-8/12 flex flex-col">
+      <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col">
         <span>
           Prosimy o punktualne przybycie na umówioną wizytę. Zastrzegamy sobie
           prawo do przełożenia, anulowania lub doliczenia <b>50%</b> wartości
           pielęgnacji w przypadku spóźnienia <b>powyżej 15 minut</b>.
         </span>
         <b className="mt-5">Ponad to:</b>
-        <ul className="mt-2 list-disc">
-          <li className="mb-1">
+        <ul className="mt-2 list-disc ">
+          <li className="mb-2">
             Rozczesywanie sierści z kołtunów – dodatkowo płatne
             <b className="ml-1 color-pink">60 zł/godzina</b>
           </li>
-          <li className="mb-1">
+          <li className="mb-3 sm:mb-1">
             Psy problemowe (wymagające drugiej osoby do pomocy) – dodatkowo
             płatne - <b className="color-pink ">40 zł</b>
           </li>
-          <li className="mb-1">
+          <li className="mb-3 sm:mb-1">
             Kąpiel przeciwpchelna – <b className="color-pink ">30 zł</b>
           </li>
-          <li className="mb-1">
+          <li className="mb-3 sm:mb-1">
             Obcinanie pazurków – <b className="color-pink ">30 zł</b>
           </li>
-          <li className="mb-1">
+          <li className="mb-3 sm:mb-1">
             Usuwanie włosów z uszu – <b className="color-pink ">20 zł</b>
           </li>
         </ul>
       </div>
-      <div className="w-full mt-20 mb-20">
-        <span className=" mb-10 flex justify-center font-semibold text-xl">
+      <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
+        <span className=" mb-10 flex justify-center font-semibold text-2xl">
           Cennik akcesoriów sklepowych
         </span>
         <div className="flex justify-center mt-5">
-          <table className="table-spacing rounded-md">
+          <table className="table-spacing rounded-md w-11/12 sm:w-8/12">
             <thead>
               <tr>
                 <th className="w-3/12">Nazwa</th>
@@ -78,21 +82,21 @@ const PriceList: React.FC = () => {
             <tbody>
               <tr>
                 <td className="w-3/12 text-center break-all br-1">Sanki</td>
-                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 ">
+                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 text-sm sm:text-base">
                   Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}
                 </td>
-                <td className="w-3/12 text-center">100zł</td>
+                <td className="w-3/12 text-center text-sm sm:text-base">100zł</td>
               </tr>
               <tr>
-                <td className="w-3/12 text-center break-all br-1">Sanki</td>
-                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 pb-5">
+                <td className="w-3/12 text-center break-all br-1 text-sm sm:text-base">Sanki</td>
+                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 pb-5 text-sm sm:text-base">
                   Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}
                 </td>
-                <td className="w-3/12 text-center">100zł</td>
+                <td className="w-3/12 text-center text-sm sm:text-base">100zł</td>
               </tr>
             </tbody>
           </table>
