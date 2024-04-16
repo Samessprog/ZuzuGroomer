@@ -1,0 +1,31 @@
+.priceList-img {
+    height: 300px !important;
+
+    .price-list-text {
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.priceList-container {
+    background-image: url('../../src/assets/lapyTlo.webp');
+    height: 500px;
+}
+
+
+.table-spacing tr {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.br-1 {
+    border-right: 1px solid black;
+}
+
+.w-60 {
+    width: 60%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

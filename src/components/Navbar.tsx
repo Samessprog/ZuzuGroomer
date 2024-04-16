@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 interface NavbarProps {
   displayWidth: number;
@@ -20,13 +21,16 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
-        <div className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5">
+        <Link
+          className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5"
+          to="/"
+        >
           <img
             src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
             alt="loading logo err"
             className="navbar-logo ml-0 sm:ml=4 h-11 w-54 md:w-64 cursor-pointer"
           />
-        </div>
+        </Link>
         <div
           className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5 navbar-menu-holder 
             ${isMenuOpen && !(displayWidth === 0) ? "open w-full flex-col items-center" : "close"}
@@ -45,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative " href="#">
+              <a className="item-context relative" href="#">
                 Usługi
               </a>
             </li>
@@ -73,9 +77,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Cennik">
                 Cennik
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}

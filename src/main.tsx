@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./states/store.js";
 import "../Style/CSS/index.css";
 import "../src/input.css";
+import { BrowserRouter } from "react-router-dom";
 const App = React.lazy(async () => await import("./App.tsx"));
 
 const Preloader: React.FC = () => {
@@ -16,21 +17,23 @@ const Preloader: React.FC = () => {
     transform: "translate(-50%, -50%)",
   };
   return (
-    <Suspense
-      fallback={
-        <PulseLoader
-          color="#ff00cc"
-          margin={15}
-          speedMultiplier={0.5}
-          aria-label="Loading Spinner"
-          cssOverride={override}
-        />
-      }
-    >
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </Suspense>
+    <BrowserRouter>
+      <Suspense
+        fallback={
+          <PulseLoader
+            color="#ff00cc"
+            margin={15}
+            speedMultiplier={0.5}
+            aria-label="Loading Spinner"
+            cssOverride={override}
+          />
+        }
+      >
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </Suspense>
+    </BrowserRouter>
   );
 };
 

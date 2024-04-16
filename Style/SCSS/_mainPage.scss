@@ -45,20 +45,6 @@
     }
 
 
-    .arrow-up-holder {
-        background-color: $pinkSecond;
-        fill: $whiteMain;
-        position: fixed;
-        right: 1%;
-        bottom: 20px;
-        transition: all .2s ease-out;
-        z-index: 999;
-
-        &:hover {
-            transform: translateY(-10px);
-        }
-    }
-
     .google-maps-container {
         height: 600px;
     }
@@ -97,5 +83,19 @@
         .slider-holder {
             height: 50px;
         }
+    }
+}
+
+.arrow-up-holder {
+    background-color: $pinkSecond;
+    fill: $whiteMain;
+    position: fixed;
+    right: 1%;
+    bottom: 20px;
+    transition: all .2s ease-out;
+    z-index: 999;
+
+    &:hover {
+        transform: translateY(-10px);
     }
 }
