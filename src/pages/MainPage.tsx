@@ -7,22 +7,22 @@ import ServicesInfoSection from "../components/MainPageComponents/ServicesInfoSe
 import LazyFullscreenImageViewer from "../components/MainPageComponents/FullscreenImageViewer";
 
 const MainSlider = lazy(
-  async () => await import("../components/MainPageComponents/SliderMainPage")
+  async () => await import("../components/MainPageComponents/SliderMainPage"),
 );
 const Numbers = lazy(
-  async () => await import("../components/MainPageComponents/CompanyNumbers")
+  async () => await import("../components/MainPageComponents/CompanyNumbers"),
 );
 const LazyPetCareSection = lazy(
-  async () => await import("../components/MainPageComponents/PetCareSection")
+  async () => await import("../components/MainPageComponents/PetCareSection"),
 );
 const LazyMainOpinions = lazy(
-  async () => await import("../components/MainPageComponents/Opinions")
+  async () => await import("../components/MainPageComponents/Opinions"),
 );
 const LazyGallery = lazy(
-  async () => await import("../components/MainPageComponents/Gallery")
+  async () => await import("../components/MainPageComponents/Gallery"),
 );
 const LazySummaryMain = lazy(
-  async () => await import("../components/MainPageComponents/Summary")
+  async () => await import("../components/MainPageComponents/Summary"),
 );
 
 interface MainPageProps {
@@ -32,7 +32,7 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = ({ userScroll, displayWidth }) => {
   const fullScreenFlag: boolean = useSelector(
-    (state) => state.generalStates.fullScreen
+    (state) => state.generalStates.fullScreen,
   );
 
   const override: CSSProperties = {

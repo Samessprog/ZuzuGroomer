@@ -5,6 +5,7 @@ import React, {
   Suspense,
   type CSSProperties,
 } from "react";
+
 import Navbar from "../src/components/Navbar";
 import MainPage from "./pages/MainPage";
 import Footer from "./components/Footer";
@@ -12,7 +13,9 @@ import { Route, Routes } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
+const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
+const LazyRegulation = lazy(async () => await import("./pages/regulations"));
 
 const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
@@ -26,7 +29,7 @@ const App: React.FC = () => {
       window.removeEventListener("scroll", setFixed);
     };
   }, []);
- 
+
   const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
   useEffect(() => {
     const handleResize = (): void => {
@@ -39,10 +42,11 @@ const App: React.FC = () => {
   }, []);
 
   const override: CSSProperties = {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "10rem",
+    marginTop: "10rem",
   };
 
   return (
@@ -71,6 +75,42 @@ const App: React.FC = () => {
               }
             >
               <LazyPriceList />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/Regulamin"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyRegulation />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/Kontakt"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyContactInfo />
             </Suspense>
           }
         />

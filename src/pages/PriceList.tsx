@@ -71,7 +71,7 @@ const PriceList: React.FC = () => {
           Cennik akcesoriów sklepowych
         </span>
         <div className="flex justify-center mt-5">
-          <table className="table-spacing rounded-md w-11/12 sm:w-8/12">
+          <table className="table-spacing rounded-md  sm:w-8/12">
             <thead>
               <tr>
                 <th className="w-3/12">Nazwa</th>
@@ -87,16 +87,22 @@ const PriceList: React.FC = () => {
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}
                 </td>
-                <td className="w-3/12 text-center text-sm sm:text-base">100zł</td>
+                <td className="w-3/12 text-center text-sm sm:text-base">
+                  100zł
+                </td>
               </tr>
               <tr>
-                <td className="w-3/12 text-center break-all br-1 text-sm sm:text-base">Sanki</td>
+                <td className="w-3/12 text-center break-all br-1 text-sm sm:text-base">
+                  Sanki
+                </td>
                 <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 pb-5 text-sm sm:text-base">
                   Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}
                 </td>
-                <td className="w-3/12 text-center text-sm sm:text-base">100zł</td>
+                <td className="w-3/12 text-center text-sm sm:text-base">
+                  100zł
+                </td>
               </tr>
             </tbody>
           </table>
