@@ -4,29 +4,7 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 1.5rem;
     column-gap: 1.5rem;
-
-    .gallery {
-        cursor: pointer;
-        box-shadow: .5px .5px 3px .5px rgb(147, 147, 147);
-
-        .gallery-img {
-            height: 100%;
-            
-            @media (min-width: 1536px) {
-                height: 400px;
-            }
-
-
-            &:hover {
-                animation: zoomPhotoAnimation 1s forwards;
-
-            }
-
-            &:not(:hover) {
-                animation: reverseZoomAnimation 1s forwards;
-            }
-        }
-    }
+    @include galleryStyle;
 }
 
 .full-screen-IMG-holder {

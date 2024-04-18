@@ -70,9 +70,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Galeria">
                 Galeria
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}

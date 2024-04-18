@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
+const LzayGalleryPage = lazy(async () => await import("./pages/Gallery"));
 const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
 const LazyRegulation = lazy(async () => await import("./pages/regulations"));
@@ -114,6 +115,24 @@ const App: React.FC = () => {
             </Suspense>
           }
         />
+        <Route
+          path="/Galeria"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LzayGalleryPage />
+            </Suspense>
+          }
+        ></Route>
       </Routes>
       <a
         className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth cursor-pointer z-10 mr-1 sm:mr-0" : "none"}`}

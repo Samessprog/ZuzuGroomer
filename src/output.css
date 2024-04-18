@@ -783,6 +783,10 @@ video {
   display: none;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
 .h-11 {
   height: 2.75rem;
 }

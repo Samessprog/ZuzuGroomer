@@ -64,6 +64,32 @@ $px34: 34px;
     }
 }
 
+
+@mixin galleryStyle {
+    .gallery {
+        cursor: pointer;
+        box-shadow: .5px .5px 3px .5px rgb(147, 147, 147);
+
+        .gallery-img {
+            height: 100%;
+
+            @media (min-width: 1536px) {
+                height: 400px;
+            }
+
+
+            &:hover {
+                animation: zoomPhotoAnimation 1s forwards;
+
+            }
+
+            &:not(:hover) {
+                animation: reverseZoomAnimation 1s forwards;
+            }
+        }
+    }
+}
+
 .fs-28 {
     font-size: 20px;
 
