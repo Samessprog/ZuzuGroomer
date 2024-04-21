@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -34,24 +35,46 @@ const Footer: React.FC = () => {
             <label className="mb-3 font-semibold text-lg text-white">
               Menu:
             </label>
+            <Link
+              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              to="/"
+            >
+              Strona główna
+            </Link>
             <a
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               href="#"
             >
               Usługi
             </a>
-            <a
+            <Link
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              href="#"
+              to="/Cennik"
             >
+              {" "}
               Cennik
-            </a>
-            <a
+            </Link>
+            <Link
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              href="#"
+              to="/Kontakt"
             >
+              {" "}
               Kontakt
-            </a>
+            </Link>
+
+            <Link
+              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              to="/Galeria"
+            >
+              Galeria
+            </Link>
+
+            <Link
+              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              to="/Regulamin"
+            >
+              Regulamin
+            </Link>
             <a
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               href="#"
@@ -63,18 +86,6 @@ const Footer: React.FC = () => {
               href="#"
             >
               Program lojalnościowy
-            </a>
-            <a
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              href="#"
-            >
-              Galeria
-            </a>
-            <a
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              href="#"
-            >
-              Regulamin
             </a>
           </div>
         </div>

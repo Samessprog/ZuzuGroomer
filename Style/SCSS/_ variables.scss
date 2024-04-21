@@ -72,6 +72,10 @@ $px34: 34px;
 
         .gallery-img {
             height: 100%;
+            max-height: 400px;
+            min-height: 400px;
+            overflow: hidden;
+            // object-fit: cover;
 
             @media (min-width: 1536px) {
                 height: 400px;

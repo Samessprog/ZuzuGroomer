@@ -1,10 +1,29 @@
 import React from "react";
-import imagineLeft from "../../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import imagineRight from "../../assets/puppy-2785074_640.jpg";
 import TwentyTwenty from "react-compare-image";
 
-const TwentyTwentyAnimation: React.FC = () => {
-  return <TwentyTwenty leftImage={imagineLeft} rightImage={imagineRight} />;
+interface twentyTwentyInterface {
+  firstPhoto: string;
+  secondPhoto: string;
+}
+
+const TwentyTwentyAnimation: React.FC<twentyTwentyInterface> = ({
+  firstPhoto,
+  secondPhoto,
+}) => {
+  return (
+    <div className="gallery-page-class cursor-pointer ">
+      {" "}
+      <TwentyTwenty leftImage={firstPhoto} rightImage={secondPhoto} />
+      <div className="absolute twentyTwenty-description left-0 flex justify-between w-full opacity-0 transform-all ease-in-out duration-200 text-base bottom-2">
+        <div className="twentyTwenty-description-item pl-4 pr-4 pt-1.5 pb1.5">
+          Przed zmianą
+        </div>
+        <div className="twentyTwenty-description-item pl-4 pr-4 pt-1.5 pb1.">
+          Po zmianie
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default TwentyTwentyAnimation;

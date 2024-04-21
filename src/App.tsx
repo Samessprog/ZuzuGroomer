@@ -9,11 +9,14 @@ import React, {
 import Navbar from "../src/components/Navbar";
 import MainPage from "./pages/MainPage";
 import Footer from "./components/Footer";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
-const LzayGalleryPage = lazy(async () => await import("./pages/Gallery"));
+const LazyDogBehaviorist = lazy(
+  async () => await import("./pages/DogBehaviorist")
+);
+const LazyGalleryPage = lazy(async () => await import("./pages/Gallery"));
 const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
 const LazyRegulation = lazy(async () => await import("./pages/regulations"));
@@ -129,10 +132,29 @@ const App: React.FC = () => {
                 />
               }
             >
-              <LzayGalleryPage />
+              <LazyGalleryPage />
             </Suspense>
           }
         ></Route>
+        <Route
+          path="/PsiBehawiorysta"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyDogBehaviorist />
+            </Suspense>
+          }
+        ></Route>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <a
         className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth cursor-pointer z-10 mr-1 sm:mr-0" : "none"}`}

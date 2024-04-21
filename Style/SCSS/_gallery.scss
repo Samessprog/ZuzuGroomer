@@ -76,7 +76,10 @@
 
 @media (max-width: 1024px) {
     .gallery-holder {
+        transition: all .2s ease-in-out;
         grid-template-columns: repeat(2, 1fr);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -84,10 +87,20 @@
     .gallery-holder {
         transition: all .2s ease-in-out;
         grid-template-columns: repeat(2, 1fr);
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
     }
 }
+
+@media (max-width: 573px) {
+    .gallery-holder {
+        transition: all .2s ease-in-out;
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+}
+
 
 
 @keyframes zoomPhotoAnimation {

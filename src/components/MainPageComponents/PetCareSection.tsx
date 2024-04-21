@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 const TwentyTwentyAnimation = lazy(
   async () => await import("./TwentyTwentyAnimation"),
@@ -19,6 +20,11 @@ const PetCareSection: React.FC = () => {
     duration: 600,
     config: { tension: 180, friction: 70 },
   });
+
+  const p1 =
+    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
+  const p4 =
+    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
 
   return (
     <section ref={petRef}>
@@ -65,7 +71,7 @@ const PetCareSection: React.FC = () => {
                   />
                 }
               >
-                <TwentyTwentyAnimation />
+                <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
               </Suspense>
 
               <div className="absolute twentyTwenty-description left-0 flex justify-between w-full opacity-0 transform-all ease-in-out duration-200 text-base bottom-2">
@@ -78,7 +84,7 @@ const PetCareSection: React.FC = () => {
               </div>
             </div>
             <div className="w-10/12 flex justify-end mt-2  text-gray-500 text-sm">
-              <a href="#">Więcej zmian tutaj!</a>
+              <Link to="/Galeria">Więcej zmian tutaj!</Link>
             </div>
           </div>
         </div>

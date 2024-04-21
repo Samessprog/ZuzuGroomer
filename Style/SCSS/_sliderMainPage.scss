@@ -2,19 +2,18 @@
     background-color: rgba(0, 0, 0, 0.880);
 
     @media (min-width:1536px) {
-        height: 940px;
+        height: 750px;
     }
 
     .img-slider {
-
 
         @media (min-width:560px) {
             @include max-min-900;
         }
 
         @media (min-width:1536px) {
-            max-height: 940px;
-            min-height: 940px;
+            max-height: 750px;;
+            min-height: 750px;;
         }
     }
 

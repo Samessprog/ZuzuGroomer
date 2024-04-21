@@ -10,7 +10,7 @@ const PriceList: React.FC = () => {
           alt="loading err"
           className="w-full priceList-img object-cover"
         />
-        <div className="absolute z-1 price-list-text flex flex-col">
+        <div className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2">
           <i className="text-6xl fancy-text tracking-wide">Cennik</i>
           <span className="text-3xl sm:text-4xl font-bold">Pielęgnacji</span>
         </div>
@@ -81,8 +81,10 @@ const PriceList: React.FC = () => {
             </thead>
             <tbody>
               <tr>
-                <td className="w-3/12 text-center break-all br-1">Sanki</td>
-                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 text-sm sm:text-base">
+                <td className="w-3/12 text-center break-all border-solid border-1 border-black">
+                  Sanki
+                </td>
+                <td className="   border-solid border-1 border-black w-3/5 pl-5 pr-5 break-all pt-5 pb-5  text-sm sm:text-base">
                   Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}
@@ -92,10 +94,10 @@ const PriceList: React.FC = () => {
                 </td>
               </tr>
               <tr>
-                <td className="w-3/12 text-center break-all br-1 text-sm sm:text-base">
+                <td className="w-3/12 text-center break-all   border-solid border-1 border-black text-sm sm:text-base">
                   Sanki
                 </td>
-                <td className=" br-1 w-60 pl-5 pr-5 break-all pt-5 pb-5 text-sm sm:text-base">
+                <td className="    w-3/5 pl-5 pr-5 break-all pt-5 pb-5 text-sm sm:text-base">
                   Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
                   patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
                   jedzie{" "}

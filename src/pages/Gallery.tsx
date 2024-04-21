@@ -2,6 +2,8 @@ import React from "react";
 import p11 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import GalleryPhoto from "../components/MainPageComponents/GalleryPhoto";
 import TwentyTwentyAnimation from "../components/MainPageComponents/TwentyTwentyAnimation";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const Gallery: React.FC = () => {
   const p1 =
@@ -19,6 +21,17 @@ const Gallery: React.FC = () => {
 
   const photos = [p1, p2, p3, p4, p5, p6];
 
+  const [galleryRefElement, elementInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.22,
+  });
+
+  const galleryAnimate = useSpring({
+    opacity: elementInView ? 1 : 0,
+    transform: elementInView ? `scale(1)` : `scale(0.01)`,
+    config: { tension: 250, friction: 50 },
+  });
+
   return (
     <div>
       <div className="relative">
@@ -27,7 +40,7 @@ const Gallery: React.FC = () => {
           src={p11}
           className="w-full gallery-start-img  object-cover"
         />
-        <span className="absolute gallery-text fancy-text text-5xl">
+        <span className="absolute gallery-text fancy-text text-5xl top-1/2 left-1/2">
           <i> Galeria</i>
         </span>
       </div>
@@ -48,29 +61,29 @@ const Gallery: React.FC = () => {
         </span>
       </section>
       <main>
-        <section>
+        <section ref={galleryRefElement}>
           <span className="flex justify-center mt-16 text-3xl font-semibold">
             {" "}
             <i>Zdjęcia</i>
           </span>
-          <div className="grid gallery-container mt-10">
+          <div className="grid gallery-container mt-10 pl-4 pr-4">
             {photos.map((imgUrl, index) => (
-              <div key={index}>
+              <animated.div style={galleryAnimate} key={index}>
                 <GalleryPhoto imgUrl={imgUrl} index={index} />
-              </div>
+              </animated.div>
             ))}
           </div>
         </section>
         <section>
           <span className="flex justify-center mt-16 text-3xl font-semibold">
-            <i>Zmiany</i>
+            <i>Nasze zmiany</i>
           </span>
-          <div className="grid gallery-container mt-10 mb-20">
-            <TwentyTwentyAnimation />
-            <TwentyTwentyAnimation />
-            <TwentyTwentyAnimation />
-            <TwentyTwentyAnimation />
-            <TwentyTwentyAnimation />
+          <div className="grid twenty-twenty-container mt-10 mb-20 pl-4 pr-4">
+            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
           </div>
         </section>
       </main>
