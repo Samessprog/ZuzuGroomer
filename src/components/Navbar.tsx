@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
 interface NavbarProps {
   displayWidth: number;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (displayWidth > 1280) {
+      setIsMenuOpen(false);
+    }
+  }, [displayWidth]);
 
   return (
     <nav className="flex justify-center sticky top-0 z-10 opacity-95 bg-white border-b border-gray-300">
@@ -32,12 +37,12 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           />
         </Link>
         <div
-          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5 navbar-menu-holder 
+          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5
             ${isMenuOpen && !(displayWidth === 0) ? "open w-full flex-col items-center" : "close"}
             `}
         >
           <ul
-            className={`flex justify-end font-medium main-menu ${isMenuOpen && !(displayWidth !== 0) ? " flex-col mt-11 open" : "close"}`}
+            className={`flex justify-end font-medium main-menu  ${isMenuOpen && !(displayWidth !== 0) ? " flex-col mt-11 open" : "close"}`}
           >
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}

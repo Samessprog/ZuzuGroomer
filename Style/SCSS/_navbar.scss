@@ -127,7 +127,7 @@
     }
 }
 
-//Width 1450 
+//Width 1280 
 @media (max-width: 1280px) {
     .logo-holder {
         width: 75%;
@@ -143,6 +143,7 @@
     }
 
     .navbar-menu-holder {
+
         &.close {
             top: 10%;
             animation: closeAnimation .5s forwards ease-in;
@@ -159,6 +160,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 1rem;
+
         }
     }
 }

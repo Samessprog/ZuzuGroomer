@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { Suspense, type CSSProperties } from "react";
+import React, { StrictMode, Suspense, type CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
 import { PulseLoader } from "react-spinners";
 import { Provider } from "react-redux";
@@ -17,23 +17,25 @@ const Preloader: React.FC = () => {
     transform: "translate(-50%, -50%)",
   };
   return (
-    <BrowserRouter>
-      <Suspense
-        fallback={
-          <PulseLoader
-            color="#ff00cc"
-            margin={15}
-            speedMultiplier={0.5}
-            aria-label="Loading Spinner"
-            cssOverride={override}
-          />
-        }
-      >
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </Suspense>
-    </BrowserRouter>
+    <StrictMode>
+      <BrowserRouter>
+        <Suspense
+          fallback={
+            <PulseLoader
+              color="#ff00cc"
+              margin={15}
+              speedMultiplier={0.5}
+              aria-label="Loading Spinner"
+              cssOverride={override}
+            />
+          }
+        >
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </Suspense>
+      </BrowserRouter>
+    </StrictMode>
   );
 };
 

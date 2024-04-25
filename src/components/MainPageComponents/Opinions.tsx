@@ -8,7 +8,7 @@ interface MainOptions {
   displayWidth: number;
 }
 interface SampleNextArrowProps {
-  onClick: () => void;
+  onClickHandleronClickHandler: () => void;
 }
 
 const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {

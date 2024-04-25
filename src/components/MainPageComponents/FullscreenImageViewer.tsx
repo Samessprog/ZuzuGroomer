@@ -31,7 +31,7 @@ const FullscreenImageViewer: React.FC = () => {
 
   const [autoPlayOn, setAutoPlay] = useState<boolean>(false);
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const {
@@ -58,11 +58,10 @@ const FullscreenImageViewer: React.FC = () => {
     initialSlide: index,
     afterChange: (currentSlide: number) => {
       dispatch(
-        dispatch(
-          setFullScreen({ isOpen: true, params: { index: currentSlide } }),
-        ),
+        setFullScreen({ isOpen: true, params: { index: currentSlide } })
       );
     },
+
     nextArrow: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

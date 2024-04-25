@@ -14,12 +14,12 @@ import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
 const LazyDogBehaviorist = lazy(
-  async () => await import("./pages/DogBehaviorist")
+  async () => await import("./pages/DogBehaviorist"),
 );
 const LazyGalleryPage = lazy(async () => await import("./pages/Gallery"));
 const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
-const LazyRegulation = lazy(async () => await import("./pages/regulations"));
+const LazyRegulation = lazy(async () => await import("./pages/Regulations"));
 
 const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
@@ -58,12 +58,7 @@ const App: React.FC = () => {
       <Navbar displayWidth={displayWidth} />
       <ScrollToTop />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <MainPage userScroll={userScroll} displayWidth={displayWidth} />
-          }
-        />
+        <Route path="/" element={<MainPage displayWidth={displayWidth} />} />
         <Route
           path="/Cennik"
           element={
