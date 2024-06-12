@@ -5,6 +5,10 @@
         height: 750px;
     }
 
+    @media (min-width:2000px) {
+        height: 950px;
+    }
+
     .img-slider {
 
         @media (min-width:560px) {
@@ -12,8 +16,14 @@
         }
 
         @media (min-width:1536px) {
-            max-height: 750px;;
-            min-height: 750px;;
+            max-height: 750px;
+            min-height: 750px;
+
+        }
+
+        @media (min-width:2000px) {
+            max-height: 950px;
+            min-height: 950px;
         }
     }
 

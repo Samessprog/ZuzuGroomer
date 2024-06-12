@@ -4,6 +4,7 @@ interface PhotoState {
   fullScreen: {
     isOpen: boolean;
     params: string;
+    photos: string[];
   };
 }
 
@@ -12,16 +13,17 @@ interface SetFullScreenAction extends Action {
   payload: {
     isOpen: boolean;
     params: string;
+    photos: string[];
   };
 }
 
 const initialPhotoState: PhotoState = {
-  fullScreen: { isOpen: false, params: "" },
+  fullScreen: { isOpen: false, params: "", photos: [] },
 };
 
 function generalStates(
   state: PhotoState = initialPhotoState,
-  action: SetFullScreenAction,
+  action: SetFullScreenAction
 ): PhotoState {
   switch (action.type) {
     case "SET_FULL_SCREEN":

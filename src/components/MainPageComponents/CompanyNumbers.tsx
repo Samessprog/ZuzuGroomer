@@ -35,7 +35,7 @@ const Numbers: React.FC = () => {
     <section ref={numberRefElement}>
       {elementInView && (
         <div className="number-holder mt-20 p-8 flex justify-center items-center flex-col bg-[#f9f9f9] color-pink">
-          <div className="flex number-header justify-center font-semibold  text-3xl md:text-4xl mb-8 tracking-wide">
+          <div className="flex number-header justify-center font-semibold text-3xl md:text-4xl mb-8 tracking-wide mr-0 xl:mr-20">
             My w liczbach
           </div>
           <div className="flex justify-between items-center w-full 2xl:w-9/12 flex-col xl:flex-row">

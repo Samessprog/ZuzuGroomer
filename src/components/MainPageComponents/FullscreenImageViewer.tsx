@@ -12,33 +12,31 @@ interface RootState {
       params: {
         index: number;
       };
+      photos: string[];
     };
   };
 }
 
 const FullscreenImageViewer: React.FC = () => {
-  const p1 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p2 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p3 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p4 =
-    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
-  const photos = [p1, p2, p3, p4];
-
   const dispatch = useDispatch();
 
   const [autoPlayOn, setAutoPlay] = useState<boolean>(false);
+
   const data = useSelector(
     (state: RootState) => state.generalStates.fullScreen
   );
+
+  const refData = useRef(data);
+
+  const {
+    current: { photos: photosCollection },
+  } = refData;
 
   const {
     params: { index },
   } = data;
 
-  const sliderRef = useRef<Slider>(null);
+  const sliderRef = useRef<Slider | null>(null);
 
   useEffect(() => {
     if (autoPlayOn && sliderRef.current != null) {
@@ -58,7 +56,10 @@ const FullscreenImageViewer: React.FC = () => {
     initialSlide: index,
     afterChange: (currentSlide: number) => {
       dispatch(
-        setFullScreen({ isOpen: true, params: { index: currentSlide } })
+        setFullScreen({
+          isOpen: true,
+          params: { index: currentSlide },
+        })
       );
     },
 
@@ -91,7 +92,7 @@ const FullscreenImageViewer: React.FC = () => {
         className={`${autoPlayOn ? "progress-bar absolute rounded-md z-50" : ""}`}
       ></div>
       <div className="icons-holder absolute w-full pl-10 pt-5">
-        <div className="text-white z-50 count-slider">{`${index + 1} / ${photos.length}`}</div>
+        <div className="text-white z-50 count-slider">{`${index + 1} / ${photosCollection.length}`}</div>
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +101,7 @@ const FullscreenImageViewer: React.FC = () => {
             width="30"
             className="close-icon"
             onClick={() =>
-              dispatch(setFullScreen({ isOpen: false, params: {} }))
+              dispatch(setFullScreen({ isOpen: false, photos: [] }))
             }
           >
             <path d="m251.333-198.29-53.043-53.043L426.957-480 198.29-708.667l53.043-53.043L480-533.043 708.667-761.71l53.043 53.043L533.043-480 761.71-251.333l-53.043 53.043L480-426.957 251.333-198.29Z" />
@@ -121,7 +122,7 @@ const FullscreenImageViewer: React.FC = () => {
       </div>
       <div className="div-slider">
         <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
-          {photos.map((imgUrl, id) => (
+          {photosCollection.map((imgUrl, id) => (
             <SliderPhotoScreenViewer imgUrl={imgUrl} key={id} />
           ))}
         </Slider>

@@ -60,7 +60,7 @@ const PetCareSection: React.FC = () => {
             <label className="text-sm text-gray-500 flex justify-center mb-3">
               Przesuń suwak i sprawdź...
             </label>
-            <div className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center w-full">
+            <div className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center w-9/12 ">
               <Suspense
                 fallback={
                   <PulseLoader

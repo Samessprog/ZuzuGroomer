@@ -747,6 +747,10 @@ video {
   margin-top: 5rem;
 }
 
+.mt-28 {
+  margin-top: 7rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -769,10 +773,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-28 {
-  margin-top: 7rem;
 }
 
 .block {
@@ -861,10 +861,6 @@ video {
 
 .w-7 {
   width: 1.75rem;
-}
-
-.w-7\/12 {
-  width: 58.333333%;
 }
 
 .w-8\/12 {
@@ -1088,14 +1084,6 @@ video {
   padding: 0.625rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-3\.5 {
-  padding: 0.875rem;
-}
-
 .p-5 {
   padding: 1.25rem;
 }
@@ -1216,10 +1204,6 @@ video {
   padding-top: 1.25rem;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -1252,6 +1236,10 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .text-\[15px\] {
@@ -1300,6 +1288,11 @@ video {
 
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+
+.text-\[\#2c2cff\] {
+  --tw-text-opacity: 1;
+  color: rgb(44 44 255 / var(--tw-text-opacity));
 }
 
 .text-\[\#AAAAB1\] {
@@ -1380,6 +1373,22 @@ video {
 
 .hover\:border-b-\[2px\]:hover {
   border-bottom-width: 2px;
+}
+
+.hover\:fill-white:hover {
+  fill: #fff;
+}
+
+.hover\:fill-\[\#ff47a4\]:hover {
+  fill: #ff47a4;
+}
+
+.hover\:fill-\[\#ff96ca\]:hover {
+  fill: #ff96ca;
+}
+
+.hover\:fill-\[\#fd84c1\]:hover {
+  fill: #fd84c1;
 }
 
 .hover\:text-white:hover {
@@ -1653,6 +1662,22 @@ video {
     flex-direction: row;
   }
 
+  .lg\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .lg\:pl-20 {
+    padding-left: 5rem;
+  }
+
+  .lg\:pr-20 {
+    padding-right: 5rem;
+  }
+
+  .lg\:text-start {
+    text-align: start;
+  }
+
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1683,6 +1708,10 @@ video {
 
   .xl\:mr-12 {
     margin-right: 3rem;
+  }
+
+  .xl\:mr-20 {
+    margin-right: 5rem;
   }
 
   .xl\:mt-0 {
@@ -1757,6 +1786,10 @@ video {
     padding-right: 0px;
   }
 
+  .xl\:pr-20 {
+    padding-right: 5rem;
+  }
+
   .xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1769,6 +1802,10 @@ video {
 }
 
 @media (min-width: 1536px) {
+  .\32xl\:flex {
+    display: flex;
+  }
+
   .\32xl\:w-3\/12 {
     width: 25%;
   }

@@ -8,16 +8,16 @@ const DogBehaviorist: React.FC = () => {
         <img
           src={p1}
           alt="loading err"
-          className="w-full object-cover dog-behaviorist-img"
+          className="w-full object-cover dog-behaviorist-img "
         />
         <span className="absolute dog-behaviorist-text fancy-text text-5xl top-1/2 left-1/2">
           Psi Behawiorysta
         </span>
       </div>
-      <main className="pl-20 pr-20">
-        <section className="flex mt-20 ">
-          <div className="w-8/12 pr-20 text-lg text-wrap">
-            <p>
+      <main className="lg:pl-20 lg:pr-20 pl-5 pr-5">
+        <section className="flex mt-20 justify-center flex-col xl:flex-row">
+          <div className="w-full xl:w-8/12 pr-5 xl:pr-20 text-lg text-wrap ">
+            <p className="">
               Współczesne psy stają się nieodłącznymi członkami naszych rodzin.
               Podobnie jak my, mogą mieć trudności, z którymi samodzielnie sobie
               nie radzą. Niektóre ich zachowania nie są wynikiem złośliwości,
@@ -27,7 +27,7 @@ const DogBehaviorist: React.FC = () => {
               kategorie przyczyn zachowań niepożądanych:{" "}
             </p>
             <p className="flex flex-col mt-5">
-              <ul className="list-disc ml-4">
+              <ul className="list-disc ml-4 ">
                 <li>
                   {" "}
                   <b>Czynniki wrodzone</b>, takie jak uwarunkowania genetyczne,
@@ -55,7 +55,7 @@ const DogBehaviorist: React.FC = () => {
               jak bawić się z nim i jakie zabawki wybrać? Zapraszam do
               skorzystania z moich usług behawiorystycznych dla psów!
             </p>
-            <p className="mt-5">
+            <p className="mt-5 text-center lg:text-start">
               {" "}
               <b>
                 Dysponuję doświadczeniem oraz odpowiednim wykształceniem,
@@ -64,19 +64,19 @@ const DogBehaviorist: React.FC = () => {
               </b>
             </p>
           </div>
-          <div className="w-4/12">
+          <div className="w-full xl:w-4/12  2xl:flex mt-10 xl:mt-0">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
         </section>
-        <section className="mt-28 flex">
-          <div className="w-4/12">
+        <section className="mt-28 flex justify-center ">
+          <div className="w-4/12 hidden 2xl:flex">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
-          <div className="w-8/12 text-lg pl-10">
+          <div className="w-full xl:w-8/12 text-lg lg:pl-10">
             <span className="mb-20 text-2xl font-bold">
               Kim jest behawiorysta psów?
             </span>
-            <div className="pl-20 mt-5 text-wrap">
+            <div className="pl-5 lg:pl-20 mt-5 text-wrap">
               <p>
                 Behawiorysta psów, zwany także psi psychologiem, jest
                 specjalistą zajmującym się analizą zachowania tych zwierząt oraz

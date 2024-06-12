@@ -7,31 +7,38 @@ import ServicesInfoSection from "../components/MainPageComponents/ServicesInfoSe
 import LazyFullscreenImageViewer from "../components/MainPageComponents/FullscreenImageViewer";
 
 const MainSlider = lazy(
-  async () => await import("../components/MainPageComponents/SliderMainPage")
+  async () => await import("../components/MainPageComponents/SliderMainPage"),
 );
 const Numbers = lazy(
-  async () => await import("../components/MainPageComponents/CompanyNumbers")
+  async () => await import("../components/MainPageComponents/CompanyNumbers"),
 );
 const LazyPetCareSection = lazy(
-  async () => await import("../components/MainPageComponents/PetCareSection")
+  async () => await import("../components/MainPageComponents/PetCareSection"),
 );
 const LazyMainOpinions = lazy(
-  async () => await import("../components/MainPageComponents/Opinions")
+  async () => await import("../components/MainPageComponents/Opinions"),
 );
 const LazyGallery = lazy(
-  async () => await import("../components/MainPageComponents/Gallery")
+  async () => await import("../components/MainPageComponents/Gallery"),
 );
 const LazySummaryMain = lazy(
-  async () => await import("../components/MainPageComponents/Summary")
+  async () => await import("../components/MainPageComponents/Summary"),
 );
 
 interface MainPageProps {
   displayWidth: number;
 }
+interface RootState {
+  generalStates: {
+    fullScreen: {
+      isOpen: boolean;
+    };
+  };
+}
 
 const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
-  const fullScreenFlag: boolean = useSelector(
-    (state) => state.generalStates.fullScreen
+  const fullScreenFlag = useSelector(
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const override: CSSProperties = {
@@ -71,11 +78,10 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
           </div>
           <iframe
             title="google-map"
-            className="w-full h-full rounded-lg "
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12138.98564959422!2d19.118283106725848!3d50.23763521599856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c528fdfa72db%3A0x4b638e90ac47fd42!2sKebab%20u%20Alika%202!5e0!3m2!1spl!2spl!4v1710866304136!5m2!1spl!2spl"
+            className="w-full h-full rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.523344024832!2d19.128241984731773!3d50.24480917800197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c53eb21b961b%3A0xe929c76059b771df!2sWielka%20Skotnica%203%2C%2041-400%20Mys%C5%82owice!5e0!3m2!1spl!2spl!4v1718215740020!5m2!1spl!2spl"
             width="600"
             height="450"
-            allowFullScreen
             loading="lazy"
           ></iframe>
         </div>
@@ -84,7 +90,7 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
         <LazyGallery />
         <LazySummaryMain />
       </Suspense>
-      {fullScreenFlag.isOpen === true && <LazyFullscreenImageViewer />}
+      {fullScreenFlag.isOpen && <LazyFullscreenImageViewer />}
     </main>
   );
 };

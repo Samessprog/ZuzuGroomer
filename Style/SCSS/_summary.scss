@@ -11,12 +11,10 @@
     color: #2a2f38dc;
 }
 
-
 .icon-holder {
-    
     transition: all .4s ease-in-out;
     transform-origin: center;
-
+    padding: .8rem;
     &:hover {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;
@@ -36,7 +34,6 @@
         transform: scale(1);
     }
 }
-
 
 .c-black-600 {
     color: #191a1cdc;

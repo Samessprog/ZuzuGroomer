@@ -16,6 +16,7 @@
 
     .bio-img {
         border-radius: 0px 150px 0px 170px;
+        border: solid 1px rgb(70, 70, 70);
         height: 500px;
         overflow: hidden;
 
@@ -32,7 +33,7 @@
             width: 80%;
             height: 450px;
         }
-       
+
     }
 
 
@@ -47,6 +48,10 @@
 
     .google-maps-container {
         height: 600px;
+
+        @media (min-width:1920px) {
+            height: 750px;
+        }
     }
 
     .fs-responsive-maps {
