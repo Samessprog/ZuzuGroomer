@@ -53,12 +53,10 @@ $px34: 34px;
 }
 
 @mixin fullScreenSliderIcons {
-    fill: rgb(142, 142, 142);
     transition: fill .3s ease-in-out;
     position: absolute;
     cursor: pointer;
     z-index: 999;
-
     &:hover {
         fill: white;
     }

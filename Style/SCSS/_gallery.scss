@@ -30,9 +30,15 @@
             @include fullScreenSliderIcons;
         }
 
-        .play-icon {
-            top: 50%;
+        .full-screen-icon {
+            top: 65%;
             right: 4.5%;
+            @include fullScreenSliderIcons;
+        }
+
+        .play-icon {
+            top: 67%;
+            right: 7%;
             @include fullScreenSliderIcons;
         }
 

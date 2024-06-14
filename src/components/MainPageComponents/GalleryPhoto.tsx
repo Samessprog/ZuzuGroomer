@@ -30,9 +30,9 @@ const GalleryPhoto: React.FC<GalleryProps> = ({
         dispatch(
           setFullScreen({
             isOpen: true,
-            photos: mainPhotos?.length ? mainPhotos : galleryPhotos,
+            photos: mainPhotos?.length > 0 ? mainPhotos : galleryPhotos,
             params: { index },
-          })
+          }),
         )
       }
     >

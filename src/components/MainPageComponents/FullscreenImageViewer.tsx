@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "../../states/action";
 import Slider from "react-slick";
@@ -19,11 +19,13 @@ interface RootState {
 
 const FullscreenImageViewer: React.FC = () => {
   const dispatch = useDispatch();
-
-  const [autoPlayOn, setAutoPlay] = useState<boolean>(false);
+  const [autoPlay, setAutoPlay] = useState(false);
+  const [fullScreenFlag, setFullScreenFlag] = useState();
+  const elementRef = useRef(null);
+  const sliderRef = useRef(null);
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const refData = useRef(data);
@@ -36,30 +38,21 @@ const FullscreenImageViewer: React.FC = () => {
     params: { index },
   } = data;
 
-  const sliderRef = useRef<Slider | null>(null);
-
-  useEffect(() => {
-    if (autoPlayOn && sliderRef.current != null) {
-      sliderRef.current.slickPlay();
-    } else if (sliderRef.current != null) {
-      sliderRef.current.slickPause();
-    }
-  }, [autoPlayOn]);
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 1000,
-    autoplay: autoPlayOn,
-    autoplaySpeed: 4000,
     slidesToShow: 1,
     initialSlide: index,
+    pauseOnHover: false,
+    autoplay: autoPlay,
+    autoplaySpeed: 5000,
     afterChange: (currentSlide: number) => {
       dispatch(
         setFullScreen({
           isOpen: true,
           params: { index: currentSlide },
-        })
+        }),
       );
     },
 
@@ -86,11 +79,56 @@ const FullscreenImageViewer: React.FC = () => {
     ),
   };
 
+  const enterFullscreen = (): void => {
+    const element = elementRef.current;
+    const requestFullscreen =
+      element.requestFullscreen ||
+      element.mozRequestFullScreen ||
+      element.webkitRequestFullscreen ||
+      element.msRequestFullscreen;
+
+    if (requestFullscreen) {
+      setFullScreenFlag(true);
+      requestFullscreen.call(element);
+    }
+  };
+
+  const exitFullscreen = (): void => {
+    const exitFullscreen =
+      document.exitFullscreen ||
+      document.mozCancelFullScreen ||
+      document.webkitExitFullscreen ||
+      document.msExitFullscreen;
+
+    if (exitFullscreen) {
+      setFullScreenFlag(false);
+      exitFullscreen.call(document);
+    }
+  };
+
+  const handleWheel = (event) => {
+    if (event.deltaY > 0) {
+      sliderRef.current.slickNext();
+    } else {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const autoPlayON = (): void => {
+    setAutoPlay(true);
+    sliderRef.current.slickPlay();
+  };
+
+  const autoPlayOFF = (): void => {
+    setAutoPlay(false);
+    sliderRef.current.slickPause();
+  };
+
   return (
-    <div className="full-screen-IMG-holder fixed top-0 left-0 overflow-hidden h-lvh z-50">
-      <div
-        className={`${autoPlayOn ? "progress-bar absolute rounded-md z-50" : ""}`}
-      ></div>
+    <div
+      ref={elementRef}
+      className="full-screen-IMG-holder fixed top-0 left-0 overflow-hidden h-lvh z-50"
+    >
       <div className="icons-holder absolute w-full pl-10 pt-5">
         <div className="text-white z-50 count-slider">{`${index + 1} / ${photosCollection.length}`}</div>
         <div>
@@ -99,29 +137,75 @@ const FullscreenImageViewer: React.FC = () => {
             height="30"
             viewBox="0 -960 960 960"
             width="30"
-            className="close-icon"
+            className="close-icon fill-[#8e8e8e]"
             onClick={() =>
               dispatch(setFullScreen({ isOpen: false, photos: [] }))
             }
           >
             <path d="m251.333-198.29-53.043-53.043L426.957-480 198.29-708.667l53.043-53.043L480-533.043 708.667-761.71l53.043 53.043L533.043-480 761.71-251.333l-53.043 53.043L480-426.957 251.333-198.29Z" />
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="25"
-            viewBox="0 -960 960 960"
-            width="25"
-            className={`play-icon mr-5 md:mr-2 xl:mr-1 mt-0.5 ${autoPlayOn ? "autoplay-active" : ""}`}
-            onClick={() => {
-              setAutoPlay(!autoPlayOn);
-            }}
-          >
-            <path d="M378.087-296.652 663.348-480 378.087-663.348v366.696ZM480-71.869q-84.913 0-159.345-32.118t-129.491-87.177q-55.059-55.059-87.177-129.491Q71.869-395.087 71.869-480t32.118-159.345q32.118-74.432 87.177-129.491 55.059-55.059 129.491-87.177Q395.087-888.131 480-888.131t159.345 32.118q74.432 32.118 129.491 87.177 55.059 55.059 87.177 129.491Q888.131-564.913 888.131-480t-32.118 159.345q-32.118 74.432-87.177 129.491-55.059 55.059-129.491 87.177Q564.913-71.869 480-71.869Zm0-91.001q133.043 0 225.087-92.043Q797.13-346.957 797.13-480t-92.043-225.087Q613.043-797.13 480-797.13t-225.087 92.043Q162.87-613.043 162.87-480t92.043 225.087Q346.957-162.87 480-162.87ZM480-480Z" />
-          </svg>
+        </div>
+        <div>
+          {!fullScreenFlag && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+              className="full-screen-icon fill-[#8e8e8e]"
+              onClick={enterFullscreen}
+            >
+              <path d="M120-120v-200h80v120h120v80H120Zm520 0v-80h120v-120h80v200H640ZM120-640v-200h200v80H200v120h-80Zm640 0v-120H640v-80h200v200h-80Z" />
+            </svg>
+          )}
+
+          {fullScreenFlag && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+              className="full-screen-icon fill-[#8e8e8e]"
+              onClick={exitFullscreen}
+            >
+              <path d="M240-120v-120H120v-80h200v200h-80Zm400 0v-200h200v80H720v120h-80ZM120-640v-80h120v-120h80v200H120Zm520 0v-200h80v120h120v80H640Z" />
+            </svg>
+          )}
+        </div>
+        <div>
+          {!autoPlay && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+              className="play-icon fill-[#8e8e8e]"
+              onClick={autoPlayON}
+            >
+              <path d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg>
+          )}
+
+          {autoPlay && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+              className="play-icon fill-red-500"
+              onClick={autoPlayOFF}
+            >
+              <path d="M360-320h80v-320h-80v320Zm160 0h80v-320h-80v320ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg>
+          )}
         </div>
       </div>
-      <div className="div-slider">
-        <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+      <div className="div-slider" onWheel={handleWheel}>
+        <Slider ref={sliderRef} {...settings}>
           {photosCollection.map((imgUrl, id) => (
             <SliderPhotoScreenViewer imgUrl={imgUrl} key={id} />
           ))}
