@@ -13,10 +13,15 @@
 
     .progress-bar {
         height: 10px;
-        animation: slider 4.9s ease-in-out infinite;
+        position: absolute;
+        z-index: 999;
+        background-color: red;
+        border-radius: 30px;
+
     }
 
     .icons-holder {
+        margin-top: .4rem;
 
         .count-slider {
             left: 2%;

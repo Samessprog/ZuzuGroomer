@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "../../states/action";
 import Slider from "react-slick";
@@ -25,7 +25,7 @@ const FullscreenImageViewer: React.FC = () => {
   const sliderRef = useRef(null);
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const refData = useRef(data);
@@ -38,6 +38,22 @@ const FullscreenImageViewer: React.FC = () => {
     params: { index },
   } = data;
 
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    if (autoPlay) {
+      interval = setInterval(() => {
+        setProgress((prevProgress) =>
+          prevProgress >= 100 ? 0 : prevProgress + 1
+        );
+      }, 50);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [autoPlay]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -47,15 +63,6 @@ const FullscreenImageViewer: React.FC = () => {
     pauseOnHover: false,
     autoplay: autoPlay,
     autoplaySpeed: 5000,
-    afterChange: (currentSlide: number) => {
-      dispatch(
-        setFullScreen({
-          isOpen: true,
-          params: { index: currentSlide },
-        }),
-      );
-    },
-
     nextArrow: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +86,7 @@ const FullscreenImageViewer: React.FC = () => {
     ),
   };
 
-  const enterFullscreen = (): void => {
+  const enterFullscreen = () => {
     const element = elementRef.current;
     const requestFullscreen =
       element.requestFullscreen ||
@@ -88,12 +95,11 @@ const FullscreenImageViewer: React.FC = () => {
       element.msRequestFullscreen;
 
     if (requestFullscreen) {
-      setFullScreenFlag(true);
       requestFullscreen.call(element);
     }
   };
 
-  const exitFullscreen = (): void => {
+  const exitFullscreen = () => {
     const exitFullscreen =
       document.exitFullscreen ||
       document.mozCancelFullScreen ||
@@ -101,10 +107,38 @@ const FullscreenImageViewer: React.FC = () => {
       document.msExitFullscreen;
 
     if (exitFullscreen) {
-      setFullScreenFlag(false);
       exitFullscreen.call(document);
     }
   };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const isFullscreen =
+        document.fullscreenElement ||
+        document.mozFullScreenElement ||
+        document.webkitFullscreenElement ||
+        document.msFullscreenElement;
+
+      setFullScreenFlag(!!isFullscreen);
+    };
+
+    const events = [
+      "fullscreenchange",
+      "webkitfullscreenchange",
+      "mozfullscreenchange",
+      "MSFullscreenChange",
+    ];
+
+    events.forEach((event) =>
+      document.addEventListener(event, handleFullscreenChange)
+    );
+
+    return () => {
+      events.forEach((event) =>
+        document.removeEventListener(event, handleFullscreenChange)
+      );
+    };
+  }, []);
 
   const handleWheel = (event) => {
     if (event.deltaY > 0) {
@@ -124,11 +158,35 @@ const FullscreenImageViewer: React.FC = () => {
     sliderRef.current.slickPause();
   };
 
+  const handleSliderClick = (): void => {
+    setAutoPlay(false);
+    setProgress(0);
+  };
+
+  const handleClickOutside = (event) => {
+    console.log(sliderRef.current)
+    if (sliderRef.current && !sliderRef.current.contains(event.target)) {
+      console.log("Kliknięcie poza sliderem");
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
       ref={elementRef}
       className="full-screen-IMG-holder fixed top-0 left-0 overflow-hidden h-lvh z-50"
     >
+      {autoPlay && (
+        <div className="progress-bar-container">
+          <div className="progress-bar" style={{ width: `${progress}%` }} />
+        </div>
+      )}
       <div className="icons-holder absolute w-full pl-10 pt-5">
         <div className="text-white z-50 count-slider">{`${index + 1} / ${photosCollection.length}`}</div>
         <div>
@@ -204,7 +262,11 @@ const FullscreenImageViewer: React.FC = () => {
           )}
         </div>
       </div>
-      <div className="div-slider" onWheel={handleWheel}>
+      <div
+        className="div-slider"
+        onWheel={handleWheel}
+        onMouseDown={handleSliderClick}
+      >
         <Slider ref={sliderRef} {...settings}>
           {photosCollection.map((imgUrl, id) => (
             <SliderPhotoScreenViewer imgUrl={imgUrl} key={id} />
