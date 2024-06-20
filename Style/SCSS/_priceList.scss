@@ -8,9 +8,25 @@
 
 .priceList-container {
     background-image: url('../../src/assets/lapyTlo.webp');
-    height: 500px;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
+.price-list-item-holder {
+    border: 1px solid rgb(210, 210, 210);
+    padding: 1rem;
+    border-radius: 20px;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+        background-color: rgba(244, 244, 244, 0.579);
+        transform: translate(-5px, -20px);
+        box-shadow: 3px 3px 3px 3px rgb(91, 91, 91);
+        border: 1px solid rgb(117, 117, 117);
+    }
+}
 
 .table-spacing tr {
     border: 1px solid black;
