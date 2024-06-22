@@ -25,7 +25,7 @@ const FullscreenImageViewer: React.FC = () => {
   const sliderRef = useRef(null);
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const refData = useRef(data);
@@ -45,7 +45,7 @@ const FullscreenImageViewer: React.FC = () => {
     if (autoPlay) {
       interval = setInterval(() => {
         setProgress((prevProgress) =>
-          prevProgress >= 100 ? 0 : prevProgress + 1
+          prevProgress >= 100 ? 0 : prevProgress + 1,
         );
       }, 50);
     }
@@ -129,14 +129,14 @@ const FullscreenImageViewer: React.FC = () => {
       "MSFullscreenChange",
     ];
 
-    events.forEach((event) =>
-      document.addEventListener(event, handleFullscreenChange)
-    );
+    events.forEach((event) => {
+      document.addEventListener(event, handleFullscreenChange);
+    });
 
     return () => {
-      events.forEach((event) =>
-        document.removeEventListener(event, handleFullscreenChange)
-      );
+      events.forEach((event) => {
+        document.removeEventListener(event, handleFullscreenChange);
+      });
     };
   }, []);
 
@@ -164,7 +164,7 @@ const FullscreenImageViewer: React.FC = () => {
   };
 
   const handleClickOutside = (event) => {
-    console.log(sliderRef.current)
+    console.log(sliderRef.current);
     if (sliderRef.current && !sliderRef.current.contains(event.target)) {
       console.log("Kliknięcie poza sliderem");
     }

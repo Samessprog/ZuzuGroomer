@@ -18,6 +18,7 @@ const LazyDogBehaviorist = lazy(
   async () => await import("./pages/DogBehaviorist"),
 );
 const LazyGalleryPage = lazy(async () => await import("./pages/Gallery"));
+const LazyAboutUs = lazy(async () => await import("./pages/AboutUs"));
 const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
 const LazyRegulation = lazy(async () => await import("./pages/Regulations"));
@@ -150,6 +151,24 @@ const App: React.FC = () => {
               }
             >
               <LazyDogBehaviorist />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/oNas"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyAboutUs />
             </Suspense>
           }
         ></Route>

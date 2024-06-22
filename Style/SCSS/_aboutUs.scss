@@ -1,0 +1,15 @@
+.about-us-img {
+    height: 300px;
+}
+
+.about-info-text {
+    transform: translate(-50%, -50%);
+}
+
+.about-img-holder {
+    overflow: hidden;
+
+    .about-img {
+        border-radius: 5px;
+    }
+}
