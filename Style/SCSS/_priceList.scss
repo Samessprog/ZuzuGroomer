@@ -20,6 +20,26 @@
     border-radius: 20px;
     transition: all ease-in-out .3s;
 
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 30px; 
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 16px; 
+            height: 16px; 
+            background-image: url('../../src/assets/PETS.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
     &:hover {
         background-color: rgba(244, 244, 244, 0.579);
         transform: translate(-5px, -20px);

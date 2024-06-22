@@ -875,16 +875,16 @@ video {
   width: 100%;
 }
 
-.max-w-4xl {
-  max-width: 56rem;
+.w-7\/12 {
+  width: 58.333333%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-screen-2xl {
   max-width: 1536px;
-}
-
-.max-w-xl {
-  max-width: 36rem;
 }
 
 .transform {
@@ -1655,6 +1655,10 @@ video {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
   }
 
   .lg\:pl-10 {

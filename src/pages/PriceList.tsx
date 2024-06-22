@@ -39,13 +39,13 @@ const PriceList: React.FC = () => {
           </p>
         </section>
       </div>
-      <div className="mt-20 priceList-container w-full flex ">
-        <div className="w-4/12 flex justify-center flex-col items-center price-list-item-holder">
+      <div className="mt-20 priceList-container w-full flex flex-col items-center lg:flex-row lg:items-start">
+        <div className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0">
           <div className="text-xl font-semibold border-b-2 border-black color-pink">
             Strzyżenie z kąpielą i pełną kosmetyką
           </div>
           <div>
-            <ul className="list-disc mt-8">
+            <ul className="list-disc mt-8 pl-2">
               <li className="mb-1">
                 Yorkshire Terrier:{" "}
                 <span className="color-pink font-semibold">140zł</span>
@@ -136,11 +136,11 @@ const PriceList: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="w-4/12 flex flex-col items-center price-list-item-holder ml-5">
+        <div className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0">
           <div className="text-xl font-semibold border-b-2 border-black color-pink">
-            Strzyżenie z kąpielą i pełną kosmetyką
+            Trymowanie z kąpielą i pełną kosmetyką
           </div>
-          <ul className="list-disc mt-8">
+          <ul className="list-disc mt-8  pl-2">
             <li className="mb-1">
               Springer Spaniel angielski:{" "}
               <span className="color-pink font-semibold">350zł</span>
@@ -211,11 +211,11 @@ const PriceList: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="w-4/12 flex flex-col items-center price-list-item-holder ml-5 ">
+        <div className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 ">
           <div className="text-xl font-semibold border-b-2 border-black color-pink">
-            Strzyżenie z kąpielą i pełną kosmetyką
+            Kosmetyka I kąpiel
           </div>
-          <ul className="list-disc mt-8 ">
+          <ul className="list-disc mt-8  pl-2">
             <li className="mb-1">
               Owczarek szkocki długowłosy:{" "}
               <span className="color-pink font-semibold">290zł</span>

@@ -15,6 +15,17 @@ const ContactInfo: React.FC = () => {
         </span>
       </div>
       <main>
+        <div className="w-full flex justify-center mt-10">
+          <div className="w-7/12 text-center">
+            <b> Skontaktuj się z nami</b>, jeśli masz jakiekolwiek pytania
+            dotyczące naszych usług. Czy masz wątpliwości co do ceny lub czasu
+            trwania strzyżenia? A może interesuje Cię coś innego? Chętnie
+            udzielimy Ci wszelkich informacji! Jesteśmy tutaj, aby pomóc i
+            rozwiać wszelkie Twoje wątpliwości. Możesz do nas zadzwonić, wysłać
+            e-mail lub odwiedzić nas osobiście w naszym salonie.{" "}
+            <b>Czekamy na Twój kontakt!</b>
+          </div>
+        </div>
         <section className="flex justify-center mt-20">
           <div className="w-9/12 flex text-lg md:text-lg">
             <div className="flex flex-col w-full xl:w-7/12 items-center xl:items-start">
@@ -59,7 +70,7 @@ const ContactInfo: React.FC = () => {
                     <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
                   </svg>
                   <span>
-                    <a href="#">ul. Wieśnia 16/2a</a>
+                    <a href="#myAddress">ul. Wieśnia 16/2a</a>
                   </span>
                 </div>
               </div>
@@ -111,6 +122,18 @@ const ContactInfo: React.FC = () => {
             </div>
           </div>
         </section>
+        <section className="flex justify-center w-5/12 mt-10 text-2xl font-bold">
+          <div className="w-full flex justify-center flex-col items-center">
+            <div>Umów wizyte na Booksy!</div>
+            <div>
+              <button className="booksy-button">
+                <a href="" target="_blank">
+                  Booksy
+                </a>
+              </button>
+            </div>
+          </div>
+        </section>
         <section>
           <div className="mt-10 pl-10 flex flex-col pr-5  items-center xl:items-start">
             <span>
@@ -125,6 +148,7 @@ const ContactInfo: React.FC = () => {
         </section>
         <section>
           <iframe
+            id="myAddress"
             title="google-map"
             className="w-full mt-20 map-container mb-5 pl-5 pr-5"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12138.98564959422!2d19.118283106725848!3d50.23763521599856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c528fdfa72db%3A0x4b638e90ac47fd42!2sKebab%20u%20Alika%202!5e0!3m2!1spl!2spl!4v1710866304136!5m2!1spl!2spl"
