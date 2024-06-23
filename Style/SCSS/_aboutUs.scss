@@ -1,3 +1,5 @@
+@import "./\ variables";
+
 .about-us-img {
     height: 300px;
 }
@@ -7,9 +9,80 @@
 }
 
 .about-img-holder {
-    overflow: hidden;
+
+    @media (max-width: 875px) {
+        height: 30rem;
+
+    }
 
     .about-img {
         border-radius: 5px;
+        object-fit: cover;
+    }
+}
+
+.appointment-button {
+    background-color: $pinkSecond;
+    padding: 8px 15px 8px 15px;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+        background-color: rgb(255, 115, 185);
+    }
+}
+
+
+
+.bg-Tick {
+    background-color: #2eb9c3;
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+
+.bg-insta {
+    background-color: rgb(255, 0, 204);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.bg-facebook {
+    background-color: rgb(69, 116, 219);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.bg-maps {
+    background-color: rgb(255, 119, 0);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+@keyframes iconHoverAnimate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
