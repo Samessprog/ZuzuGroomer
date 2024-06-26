@@ -126,7 +126,7 @@ const ContactInfo: React.FC = () => {
           <div className="w-full flex justify-center flex-col items-center">
             <div>Umów wizyte na Booksy!</div>
             <div>
-              <button className="booksy-button">
+              <button className="booksy-button bg-black text-white">
                 <a href="" target="_blank">
                   Booksy
                 </a>

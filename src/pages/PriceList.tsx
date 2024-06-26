@@ -1,8 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import { useInView } from "react-intersection-observer";
+import { useSpring, animated } from "react-spring";
 
 const PriceList: React.FC = () => {
+  const [priceListRef, elementInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+
+  const PriceListItemAnimate = useSpring({
+    opacity: elementInView ? 1 : 0,
+    config: { tension: 200, friction: 20 },
+  });
+
+  const [priceListExtra, elementInViewFirst] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+
+  const AboutUsAnimate = useSpring({
+    opacity: elementInViewFirst ? 1 : 0,
+    transform: elementInViewFirst ? "translateX(0%)" : "translateX(-100%)",
+    config: { tension: 190, friction: 65 },
+  });
+
   return (
     <div>
       <div className="w-full overflow-hidden relative priceList-img">
@@ -39,305 +62,330 @@ const PriceList: React.FC = () => {
           </p>
         </section>
       </div>
-      <div className="mt-20 priceList-container w-full flex flex-col items-center lg:flex-row lg:items-start">
-        <div className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0">
-          <div className="text-xl font-semibold border-b-2 border-black color-pink">
-            Strzyżenie z kąpielą i pełną kosmetyką
-          </div>
-          <div>
-            <ul className="list-disc mt-8 pl-2">
+      <section>
+        <div
+          className="mt-20 priceList-container p-12 w-full flex flex-col items-center lg:flex-row lg:items-start"
+          ref={priceListRef}
+        >
+          <animated.div
+            className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl"
+            style={PriceListItemAnimate}
+          >
+            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+              Strzyżenie z kąpielą i pełną kosmetyką
+            </div>
+            <div>
+              <ul className="list-disc mt-8 pl-2">
+                <li className="mb-1">
+                  Yorkshire Terrier:{" "}
+                  <span className="color-pink font-semibold">140zł</span>
+                </li>
+                <li className="mb-1">
+                  Maltańczyk:{" "}
+                  <span className="color-pink font-semibold">150zł</span>
+                </li>
+                <li className="mb-1">
+                  Shih Tzu:{" "}
+                  <span className="color-pink font-semibold">160zł</span>
+                </li>
+                <li className="mb-1">
+                  Sznaucer miniatura:{" "}
+                  <span className="color-pink font-semibold">160zł</span>
+                </li>
+                <li className="mb-1">
+                  West Highland White Terrier:{" "}
+                  <span className="color-pink font-semibold">170zł</span>
+                </li>
+                <li className="mb-1">
+                  Sznaucer średni:{" "}
+                  <span className="color-pink font-semibold">200zł</span>
+                </li>
+                <li className="mb-1">
+                  Bichon Frise (fryzura komercyjna):{" "}
+                  <span className="color-pink font-semibold">170zł</span>
+                </li>
+                <li className="mb-1">
+                  Szpic miniaturowy:{" "}
+                  <span className="color-pink font-semibold">150zł</span>
+                </li>
+                <li className="mb-1">
+                  Szpic mały:{" "}
+                  <span className="color-pink font-semibold">160zł</span>
+                </li>
+                <li className="mb-1">
+                  Kerry Blue Terrier:{" "}
+                  <span className="color-pink font-semibold">320zł</span>
+                </li>
+                <li className="mb-1">
+                  Golden Retriever:{" "}
+                  <span className="color-pink font-semibold">250zł</span>
+                </li>
+                <li className="mb-1">
+                  Fox Terrier:{" "}
+                  <span className="color-pink font-semibold">180zł</span>
+                </li>
+                <li className="mb-1">
+                  Terrier Walijski:{" "}
+                  <span className="color-pink font-semibold">180zł</span>
+                </li>
+                <li className="mb-1">
+                  Pudel Toy:{" "}
+                  <span className="color-pink font-semibold">170zł</span>
+                </li>
+                <li className="mb-1">
+                  Pudel miniaturowy:{" "}
+                  <span className="color-pink font-semibold">180zł</span>
+                </li>
+                <li className="mb-1">
+                  Pudel średni (fryzura komercyjna):{" "}
+                  <span className="color-pink font-semibold">190zł</span>
+                </li>
+                <li className="mb-1">
+                  Pudel duży (fryzura komercyjna):{" "}
+                  <span className="color-pink font-semibold">300zł</span>
+                </li>
+                <li className="mb-1">
+                  Maltipoo:{" "}
+                  <span className="color-pink font-semibold">170zł</span>
+                </li>
+                <li className="mb-1">
+                  Pekińczyk:{" "}
+                  <span className="color-pink font-semibold">150zł</span>
+                </li>
+                <li className="mb-1">
+                  Cavapoo:{" "}
+                  <span className="color-pink font-semibold">200zł</span>
+                </li>
+                <li className="mb-1">
+                  Terrier szkocki:{" "}
+                  <span className="color-pink font-semibold">200zł</span>
+                </li>
+                <li className="mb-1">
+                  Cockapoo:{" "}
+                  <span className="color-pink font-semibold">220zł</span>
+                </li>
+              </ul>
+            </div>
+          </animated.div>
+          <animated.div
+            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl"
+            style={PriceListItemAnimate}
+          >
+            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+              Trymowanie z kąpielą i pełną kosmetyką
+            </div>
+            <ul className="list-disc mt-8  pl-2">
               <li className="mb-1">
-                Yorkshire Terrier:{" "}
-                <span className="color-pink font-semibold">140zł</span>
+                Springer Spaniel angielski:{" "}
+                <span className="color-pink font-semibold">350zł</span>
               </li>
               <li className="mb-1">
-                Maltańczyk:{" "}
-                <span className="color-pink font-semibold">150zł</span>
-              </li>
-              <li className="mb-1">
-                Shih Tzu:{" "}
-                <span className="color-pink font-semibold">160zł</span>
-              </li>
-              <li className="mb-1">
-                Sznaucer miniatura:{" "}
-                <span className="color-pink font-semibold">160zł</span>
-              </li>
-              <li className="mb-1">
-                West Highland White Terrier:{" "}
-                <span className="color-pink font-semibold">170zł</span>
+                Sznaucer miniaturowy:{" "}
+                <span className="color-pink font-semibold">230zł</span>
               </li>
               <li className="mb-1">
                 Sznaucer średni:{" "}
+                <span className="color-pink font-semibold">320zł</span>
+              </li>
+              <li className="mb-1">
+                Airedale Terrier:{" "}
+                <span className="color-pink font-semibold">450zł</span>
+              </li>
+              <li className="mb-1">
+                Jack Russell Terrier:{" "}
+                <span className="color-pink font-semibold">180zł</span>
+              </li>
+              <li className="mb-1">
+                Border Terrier:{" "}
+                <span className="color-pink font-semibold">180zł</span>
+              </li>
+              <li className="mb-1">
+                West Highland White Terrier:{" "}
+                <span className="color-pink font-semibold">220zł</span>
+              </li>
+              <li className="mb-1">
+                Cavalier King Charles Spaniel:{" "}
+                <span className="color-pink font-semibold">190zł</span>
+              </li>
+              <li className="mb-1">
+                Cocker Spaniel angielski:{" "}
+                <span className="color-pink font-semibold">270zł</span>
+              </li>
+              <li className="mb-1">
+                Flat Coated Retriever:{" "}
+                <span className="color-pink font-semibold">340zł</span>
+              </li>
+              <li className="mb-1">
+                Fox Terrier:{" "}
+                <span className="color-pink font-semibold">250zł</span>
+              </li>
+              <li className="mb-1">
+                Terrier walijski:{" "}
+                <span className="color-pink font-semibold">250zł</span>
+              </li>
+              <li className="mb-1">
+                Gryfonik belgijski i brukselski:{" "}
+                <span className="color-pink font-semibold">180zł</span>
+              </li>
+              <li className="mb-1">
+                Jamnik szorstko włosy standard:{" "}
+                <span className="color-pink font-semibold">190zł</span>
+              </li>
+              <li className="mb-1">
+                Terrier szkocki:{" "}
+                <span className="color-pink font-semibold">250zł</span>
+              </li>
+              <li className="mb-1">
+                Cairn Terrier:{" "}
+                <span className="color-pink font-semibold">220zł</span>
+              </li>
+              <li className="mb-1">
+                Terrier irlandzki:{" "}
+                <span className="color-pink font-semibold">260zł</span>
+              </li>
+            </ul>
+          </animated.div>
+          <animated.div
+            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
+            style={PriceListItemAnimate}
+          >
+            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+              Kosmetyka I kąpiel
+            </div>
+            <ul className="list-disc mt-8  pl-2">
+              <li className="mb-1">
+                Owczarek szkocki długowłosy:{" "}
+                <span className="color-pink font-semibold">290zł</span>
+              </li>
+              <li className="mb-1">
+                Owczarek niemiecki długowłosy:{" "}
+                <span className="color-pink font-semibold">280zł</span>
+              </li>
+              <li className="mb-1">
+                Owczarek niemiecki krótkowłosy:{" "}
+                <span className="color-pink font-semibold">250zł</span>
+              </li>
+              <li className="mb-1">
+                Samoyed: <span className="color-pink font-semibold">400zł</span>
+              </li>
+              <li className="mb-1">
+                Border Collie:{" "}
                 <span className="color-pink font-semibold">200zł</span>
               </li>
               <li className="mb-1">
-                Bichon Frise (fryzura komercyjna):{" "}
-                <span className="color-pink font-semibold">170zł</span>
+                Bichon: <span className="color-pink font-semibold">100zł</span>
               </li>
               <li className="mb-1">
-                Szpic miniaturowy:{" "}
+                Chow Chow:{" "}
+                <span className="color-pink font-semibold">280zł</span>
+              </li>
+              <li className="mb-1">
+                Maltańczyk:{" "}
+                <span className="color-pink font-semibold">80zł</span>
+              </li>
+              <li className="mb-1">
+                Maltańczyk z pełnym włosem:{" "}
                 <span className="color-pink font-semibold">150zł</span>
               </li>
               <li className="mb-1">
-                Szpic mały:{" "}
+                Cocker Spaniel:{" "}
                 <span className="color-pink font-semibold">160zł</span>
               </li>
               <li className="mb-1">
                 Kerry Blue Terrier:{" "}
+                <span className="color-pink font-semibold">200zł</span>
+              </li>
+              <li className="mb-1">
+                Akita długowłosa:{" "}
                 <span className="color-pink font-semibold">320zł</span>
               </li>
               <li className="mb-1">
+                Labrador:{" "}
+                <span className="color-pink font-semibold">230zł</span>
+              </li>
+              <li className="mb-1">
                 Golden Retriever:{" "}
-                <span className="color-pink font-semibold">250zł</span>
+                <span className="color-pink font-semibold">220zł</span>
               </li>
               <li className="mb-1">
-                Fox Terrier:{" "}
-                <span className="color-pink font-semibold">180zł</span>
+                Shi-Tzu: <span className="color-pink font-semibold">100zł</span>
               </li>
               <li className="mb-1">
-                Terrier Walijski:{" "}
+                Shi-Tzu w pełnym włosie:{" "}
                 <span className="color-pink font-semibold">180zł</span>
               </li>
               <li className="mb-1">
                 Pudel Toy:{" "}
-                <span className="color-pink font-semibold">170zł</span>
+                <span className="color-pink font-semibold">120zł</span>
               </li>
               <li className="mb-1">
-                Pudel miniaturowy:{" "}
-                <span className="color-pink font-semibold">180zł</span>
+                Pudel Miniatura:{" "}
+                <span className="color-pink font-semibold">130zł</span>
               </li>
               <li className="mb-1">
-                Pudel średni (fryzura komercyjna):{" "}
-                <span className="color-pink font-semibold">190zł</span>
+                Pudel Średni:{" "}
+                <span className="color-pink font-semibold">140zł</span>
               </li>
               <li className="mb-1">
-                Pudel duży (fryzura komercyjna):{" "}
-                <span className="color-pink font-semibold">300zł</span>
+                Syberyjski Husky:{" "}
+                <span className="color-pink font-semibold">320zł</span>
               </li>
               <li className="mb-1">
-                Maltipoo:{" "}
-                <span className="color-pink font-semibold">170zł</span>
+                Papillon:{" "}
+                <span className="color-pink font-semibold">130zł</span>
               </li>
               <li className="mb-1">
-                Pekińczyk:{" "}
-                <span className="color-pink font-semibold">150zł</span>
-              </li>
-              <li className="mb-1">
-                Cavapoo: <span className="color-pink font-semibold">200zł</span>
-              </li>
-              <li className="mb-1">
-                Terrier szkocki:{" "}
-                <span className="color-pink font-semibold">200zł</span>
-              </li>
-              <li className="mb-1">
-                Cockapoo:{" "}
-                <span className="color-pink font-semibold">220zł</span>
+                Mops: <span className="color-pink font-semibold">130zł</span>
               </li>
             </ul>
-          </div>
+          </animated.div>
         </div>
-        <div className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0">
-          <div className="text-xl font-semibold border-b-2 border-black color-pink">
-            Trymowanie z kąpielą i pełną kosmetyką
-          </div>
-          <ul className="list-disc mt-8  pl-2">
-            <li className="mb-1">
-              Springer Spaniel angielski:{" "}
-              <span className="color-pink font-semibold">350zł</span>
+      </section>
+      <section ref={priceListExtra}>
+        <animated.div
+          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col"
+          style={AboutUsAnimate}
+        >
+          <span>
+            Prosimy o punktualne przybycie na umówioną wizytę. Zastrzegamy sobie
+            prawo do przełożenia, anulowania lub doliczenia <b>50%</b> wartości
+            pielęgnacji w przypadku spóźnienia <b>powyżej 15 minut</b>.
+          </span>
+          <b className="mt-5">Ponad to:</b>
+          <ul className="mt-2 list-disc ">
+            <li className="mb-2">
+              Rozczesywanie sierści z kołtunów – dodatkowo płatne
+              <b className="ml-1 color-pink">60 zł/godzina</b>
             </li>
-            <li className="mb-1">
-              Sznaucer miniaturowy:{" "}
-              <span className="color-pink font-semibold">230zł</span>
+            <li className="mb-3 sm:mb-1">
+              Psy problemowe (wymagające drugiej osoby do pomocy) – dodatkowo
+              płatne - <b className="color-pink ">40 zł</b>
             </li>
-            <li className="mb-1">
-              Sznaucer średni:{" "}
-              <span className="color-pink font-semibold">320zł</span>
+            <li className="mb-3 sm:mb-1">
+              Kąpiel przeciwpchelna – <b className="color-pink ">30 zł</b>
             </li>
-            <li className="mb-1">
-              Airedale Terrier:{" "}
-              <span className="color-pink font-semibold">450zł</span>
+            <li className="mb-3 sm:mb-1">
+              Obcinanie pazurków – <b className="color-pink ">30 zł</b>
             </li>
-            <li className="mb-1">
-              Jack Russell Terrier:{" "}
-              <span className="color-pink font-semibold">180zł</span>
+            <li className="mb-3 sm:mb-1">
+              Usuwanie włosów z uszu – <b className="color-pink ">20 zł</b>
             </li>
-            <li className="mb-1">
-              Border Terrier:{" "}
-              <span className="color-pink font-semibold">180zł</span>
+            <li className="mb-3 sm:mb-1">
+              Wizyta adaptacyjna - Darmowa usługa.{" "}
+              <Link to="" className="text-sky-600 border-b-2 border-sky-600">
+                Więcej dowiesz się tutaj.
+              </Link>{" "}
             </li>
-            <li className="mb-1">
-              West Highland White Terrier:{" "}
-              <span className="color-pink font-semibold">220zł</span>
-            </li>
-            <li className="mb-1">
-              Cavalier King Charles Spaniel:{" "}
-              <span className="color-pink font-semibold">190zł</span>
-            </li>
-            <li className="mb-1">
-              Cocker Spaniel angielski:{" "}
-              <span className="color-pink font-semibold">270zł</span>
-            </li>
-            <li className="mb-1">
-              Flat Coated Retriever:{" "}
-              <span className="color-pink font-semibold">340zł</span>
-            </li>
-            <li className="mb-1">
-              Fox Terrier:{" "}
-              <span className="color-pink font-semibold">250zł</span>
-            </li>
-            <li className="mb-1">
-              Terrier walijski:{" "}
-              <span className="color-pink font-semibold">250zł</span>
-            </li>
-            <li className="mb-1">
-              Gryfonik belgijski i brukselski:{" "}
-              <span className="color-pink font-semibold">180zł</span>
-            </li>
-            <li className="mb-1">
-              Jamnik szorstko włosy standard:{" "}
-              <span className="color-pink font-semibold">190zł</span>
-            </li>
-            <li className="mb-1">
-              Terrier szkocki:{" "}
-              <span className="color-pink font-semibold">250zł</span>
-            </li>
-            <li className="mb-1">
-              Cairn Terrier:{" "}
-              <span className="color-pink font-semibold">220zł</span>
-            </li>
-            <li className="mb-1">
-              Terrier irlandzki:{" "}
-              <span className="color-pink font-semibold">260zł</span>
+            <li className="mb-3 sm:mb-1">
+              Wizyta zapoznawcza - Cena wizyty adaptacyjnej jest ustalana
+              indywidualnie.{" "}
+              <Link className="text-sky-600 border-b-2 border-sky-600" to="">
+                Więcej dowiesz się tutaj.
+              </Link>
             </li>
           </ul>
-        </div>
-        <div className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 ">
-          <div className="text-xl font-semibold border-b-2 border-black color-pink">
-            Kosmetyka I kąpiel
-          </div>
-          <ul className="list-disc mt-8  pl-2">
-            <li className="mb-1">
-              Owczarek szkocki długowłosy:{" "}
-              <span className="color-pink font-semibold">290zł</span>
-            </li>
-            <li className="mb-1">
-              Owczarek niemiecki długowłosy:{" "}
-              <span className="color-pink font-semibold">280zł</span>
-            </li>
-            <li className="mb-1">
-              Owczarek niemiecki krótkowłosy:{" "}
-              <span className="color-pink font-semibold">250zł</span>
-            </li>
-            <li className="mb-1">
-              Samoyed: <span className="color-pink font-semibold">400zł</span>
-            </li>
-            <li className="mb-1">
-              Border Collie:{" "}
-              <span className="color-pink font-semibold">200zł</span>
-            </li>
-            <li className="mb-1">
-              Bichon: <span className="color-pink font-semibold">100zł</span>
-            </li>
-            <li className="mb-1">
-              Chow Chow: <span className="color-pink font-semibold">280zł</span>
-            </li>
-            <li className="mb-1">
-              Maltańczyk: <span className="color-pink font-semibold">80zł</span>
-            </li>
-            <li className="mb-1">
-              Maltańczyk z pełnym włosem:{" "}
-              <span className="color-pink font-semibold">150zł</span>
-            </li>
-            <li className="mb-1">
-              Cocker Spaniel:{" "}
-              <span className="color-pink font-semibold">160zł</span>
-            </li>
-            <li className="mb-1">
-              Kerry Blue Terrier:{" "}
-              <span className="color-pink font-semibold">200zł</span>
-            </li>
-            <li className="mb-1">
-              Akita długowłosa:{" "}
-              <span className="color-pink font-semibold">320zł</span>
-            </li>
-            <li className="mb-1">
-              Labrador: <span className="color-pink font-semibold">230zł</span>
-            </li>
-            <li className="mb-1">
-              Golden Retriever:{" "}
-              <span className="color-pink font-semibold">220zł</span>
-            </li>
-            <li className="mb-1">
-              Shi-Tzu: <span className="color-pink font-semibold">100zł</span>
-            </li>
-            <li className="mb-1">
-              Shi-Tzu w pełnym włosie:{" "}
-              <span className="color-pink font-semibold">180zł</span>
-            </li>
-            <li className="mb-1">
-              Pudel Toy: <span className="color-pink font-semibold">120zł</span>
-            </li>
-            <li className="mb-1">
-              Pudel Miniatura:{" "}
-              <span className="color-pink font-semibold">130zł</span>
-            </li>
-            <li className="mb-1">
-              Pudel Średni:{" "}
-              <span className="color-pink font-semibold">140zł</span>
-            </li>
-            <li className="mb-1">
-              Syberyjski Husky:{" "}
-              <span className="color-pink font-semibold">320zł</span>
-            </li>
-            <li className="mb-1">
-              Papillon: <span className="color-pink font-semibold">130zł</span>
-            </li>
-            <li className="mb-1">
-              Mops: <span className="color-pink font-semibold">130zł</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col">
-        <span>
-          Prosimy o punktualne przybycie na umówioną wizytę. Zastrzegamy sobie
-          prawo do przełożenia, anulowania lub doliczenia <b>50%</b> wartości
-          pielęgnacji w przypadku spóźnienia <b>powyżej 15 minut</b>.
-        </span>
-        <b className="mt-5">Ponad to:</b>
-        <ul className="mt-2 list-disc ">
-          <li className="mb-2">
-            Rozczesywanie sierści z kołtunów – dodatkowo płatne
-            <b className="ml-1 color-pink">60 zł/godzina</b>
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Psy problemowe (wymagające drugiej osoby do pomocy) – dodatkowo
-            płatne - <b className="color-pink ">40 zł</b>
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Kąpiel przeciwpchelna – <b className="color-pink ">30 zł</b>
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Obcinanie pazurków – <b className="color-pink ">30 zł</b>
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Usuwanie włosów z uszu – <b className="color-pink ">20 zł</b>
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Wizyta adaptacyjna - Darmowa usługa.{" "}
-            <Link to="" className="text-sky-600 border-b-2 border-sky-600">
-              Więcej dowiesz się tutaj.
-            </Link>{" "}
-          </li>
-          <li className="mb-3 sm:mb-1">
-            Wizyta zapoznawcza - Cena wizyty adaptacyjnej jest ustalana
-            indywidualnie.{" "}
-            <Link className="text-sky-600 border-b-2 border-sky-600" to="">
-              Więcej dowiesz się tutaj.
-            </Link>
-          </li>
-        </ul>
-      </div>
+        </animated.div>
+      </section>
       <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
         <span className=" mb-10 flex justify-center font-semibold text-2xl">
           Cennik akcesoriów sklepowych

@@ -1,5 +1,7 @@
 @import "./\ variables";
 
+
+
 .menu-navbar-item {
     font-family: -apple-system,
         BlinkMacSystemFont,
@@ -15,6 +17,8 @@
         animation: fadeIn 1s forwards;
         opacity: 0;
     }
+
+
 
     .item-context {
         &:after {

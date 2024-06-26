@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+
 interface NavbarProps {
   displayWidth: number;
 }
@@ -14,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   }, [displayWidth]);
 
   return (
-    <nav className="flex justify-center sticky top-0 z-10 opacity-95 bg-white border-b border-gray-300">
+    <nav className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300">
       <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3 mt-7 max-w-screen-2xl">
         <div
           className={`hamburger w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
@@ -27,13 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
         <Link
-          className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5"
+          className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center"
           to="/"
         >
           <img
-            src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
+            src={logo}
             alt="loading logo err"
-            className="navbar-logo ml-0 sm:ml=4 h-11 w-54 md:w-64 cursor-pointer"
+            className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
           />
         </Link>
         <div

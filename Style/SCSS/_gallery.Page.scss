@@ -33,6 +33,12 @@
     }
 }
 
+.gallery-paw-icon {
+    transform: rotateZ(20deg);
+    filter: drop-shadow(4px 5px 1px rgba(77, 77, 77, 0.5));
+}
+
+
 @include galleryStyle;
 
 
