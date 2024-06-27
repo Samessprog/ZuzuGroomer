@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import { useInView } from "react-intersection-observer";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, type SpringValues } from "react-spring";
 
 const PriceList: React.FC = () => {
   const [priceListRef, elementInView] = useInView({
@@ -20,11 +20,18 @@ const PriceList: React.FC = () => {
     threshold: 0.4,
   });
 
-  const AboutUsAnimate = useSpring({
-    opacity: elementInViewFirst ? 1 : 0,
-    transform: elementInViewFirst ? "translateX(0%)" : "translateX(-100%)",
-    config: { tension: 190, friction: 65 },
-  });
+  const servicesInfoAnimate = (
+    elementInViewFirst: boolean,
+    translate: string,
+    delayNumber: number,
+  ): SpringValues<React.CSSProperties> => {
+    return useSpring({
+      opacity: elementInViewFirst ? 1 : 0,
+      transform: elementInViewFirst ? `translateX(0%)` : `${translate}`,
+      delay: delayNumber,
+      config: { tension: 150, friction: 70 },
+    });
+  };
 
   return (
     <div>
@@ -342,10 +349,7 @@ const PriceList: React.FC = () => {
         </div>
       </section>
       <section ref={priceListExtra}>
-        <animated.div
-          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col"
-          style={AboutUsAnimate}
-        >
+        <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col">
           <span>
             Prosimy o punktualne przybycie na umówioną wizytę. Zastrzegamy sobie
             prawo do przełożenia, anulowania lub doliczenia <b>50%</b> wartości
@@ -353,38 +357,87 @@ const PriceList: React.FC = () => {
           </span>
           <b className="mt-5">Ponad to:</b>
           <ul className="mt-2 list-disc ">
-            <li className="mb-2">
+            <animated.li
+              className="mb-2"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                100,
+              )}
+            >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
               <b className="ml-1 color-pink">60 zł/godzina</b>
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                200,
+              )}
+            >
               Psy problemowe (wymagające drugiej osoby do pomocy) – dodatkowo
               płatne - <b className="color-pink ">40 zł</b>
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                300,
+              )}
+            >
               Kąpiel przeciwpchelna – <b className="color-pink ">30 zł</b>
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                400,
+              )}
+            >
               Obcinanie pazurków – <b className="color-pink ">30 zł</b>
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                500,
+              )}
+            >
               Usuwanie włosów z uszu – <b className="color-pink ">20 zł</b>
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                550,
+              )}
+            >
               Wizyta adaptacyjna - Darmowa usługa.{" "}
               <Link to="" className="text-sky-600 border-b-2 border-sky-600">
                 Więcej dowiesz się tutaj.
               </Link>{" "}
-            </li>
-            <li className="mb-3 sm:mb-1">
+            </animated.li>
+            <animated.li
+              className="mb-3 sm:mb-1"
+              style={servicesInfoAnimate(
+                elementInViewFirst,
+                "translateX(-100%)",
+                570,
+              )}
+            >
               Wizyta zapoznawcza - Cena wizyty adaptacyjnej jest ustalana
               indywidualnie.{" "}
               <Link className="text-sky-600 border-b-2 border-sky-600" to="">
                 Więcej dowiesz się tutaj.
               </Link>
-            </li>
+            </animated.li>
           </ul>
-        </animated.div>
+        </div>
       </section>
       <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
         <span className=" mb-10 flex justify-center font-semibold text-2xl">

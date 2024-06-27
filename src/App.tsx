@@ -7,15 +7,15 @@ import React, {
 } from "react";
 
 import { useSelector } from "react-redux";
-import Navbar from "../src/components/Navbar";
+import Navbar from "./components/GeneralComponents/Navbar";
 import MainPage from "./pages/MainPage";
-import Footer from "./components/Footer";
+import Footer from "./components/GeneralComponents/Footer";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
 const LazyDogBehaviorist = lazy(
-  async () => await import("./pages/DogBehaviorist"),
+  async () => await import("./pages/DogBehaviorist")
 );
 const LazyGalleryPage = lazy(async () => await import("./pages/Gallery"));
 const LazyAboutUs = lazy(async () => await import("./pages/AboutUs"));
@@ -27,7 +27,7 @@ const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
   const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
   const fullScreenIsOpen = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   useEffect(() => {

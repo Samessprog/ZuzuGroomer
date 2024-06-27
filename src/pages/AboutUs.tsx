@@ -1,10 +1,10 @@
 import React from "react";
-import GalleryPhoto from "../components/MainPageComponents/GalleryPhoto";
+import GalleryPhoto from "../components/GalleryComponents/GalleryPhoto";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { useSelector } from "react-redux";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import FullscreenImageViewer from "../components/MainPageComponents/FullscreenImageViewer";
+import FullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 
 const photos = [
   "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({

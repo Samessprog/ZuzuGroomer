@@ -1,7 +1,20 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const DogBehaviorist: React.FC = () => {
+  const [BehawioElementRef, elementInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const BehawioAnimate = useSpring({
+    opacity: elementInView ? 1 : 0,
+    transform: elementInView ? `scale(1)` : `scale(0.01)`,
+    config: { tension: 250, friction: 70 },
+  });
+
   return (
     <div>
       <div className="relative  ">
@@ -72,11 +85,17 @@ const DogBehaviorist: React.FC = () => {
           <div className="w-4/12 hidden 2xl:flex">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
-          <div className="w-full xl:w-8/12 text-lg lg:pl-10">
+          <div
+            className="w-full xl:w-8/12 text-lg lg:pl-10"
+            ref={BehawioElementRef}
+          >
             <span className="mb-20 text-2xl font-bold">
               Kim jest behawiorysta psów?
             </span>
-            <div className="pl-5 lg:pl-20 mt-5 text-wrap">
+            <animated.div
+              className="pl-5 lg:pl-20 mt-5 text-wrap"
+              style={BehawioAnimate}
+            >
               <p>
                 Behawiorysta psów, zwany także psi psychologiem, jest
                 specjalistą zajmującym się analizą zachowania tych zwierząt oraz
@@ -127,7 +146,7 @@ const DogBehaviorist: React.FC = () => {
                   właścicieli.
                 </b>
               </p>
-            </div>
+            </animated.div>
           </div>
         </section>
         <section className="mt-28 flex justify-center mb-10 ">

@@ -32,7 +32,7 @@ const GalleryPhoto: React.FC<GalleryProps> = ({
             isOpen: true,
             photos: mainPhotos?.length > 0 ? mainPhotos : galleryPhotos,
             params: { index },
-          })
+          }),
         )
       }
     >

@@ -1,10 +1,10 @@
 import React from "react";
 import p11 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import GalleryPhoto from "../components/MainPageComponents/GalleryPhoto";
-import TwentyTwentyAnimation from "../components/MainPageComponents/TwentyTwentyAnimation";
+import GalleryPhoto from "../components/GalleryComponents/GalleryPhoto";
+import TwentyTwentyAnimation from "../components/GalleryComponents/TwentyTwentyAnimation";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import LazyFullscreenImageViewer from "../components/MainPageComponents/FullscreenImageViewer";
+import LazyFullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 import { useSelector } from "react-redux";
 
 const Gallery: React.FC = () => {
