@@ -42,6 +42,14 @@
     }
 }
 
+.test {
+    display: inline;
+}
+
+.no-select {
+    user-select: none;
+}
+
 .table-spacing tr {
     border: 1px solid black;
     border-radius: 10px;

@@ -8,3 +8,14 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.regulations-holder {
+    background-image: url("../../src/assets/Untitled-12.webp");
+    padding-top: 20px;
+    padding-bottom: 10px;
+    .list-decimal>li::marker {
+        font-weight: bold;
+
+    }
+
+}

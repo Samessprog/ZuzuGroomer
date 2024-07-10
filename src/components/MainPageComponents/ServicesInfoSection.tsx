@@ -10,7 +10,7 @@ const ServicesInfoSection: React.FC = () => {
 
   const servicesInfoAnimate = (
     elementInView: boolean,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -27,12 +27,12 @@ const ServicesInfoSection: React.FC = () => {
           className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-full sm:w-4/12 mt-8 sm:mt-0"
         >
           <label className="info-header special-font color-pink tracking-wide">
-            Przyjazny
+            Profesjonalny
           </label>
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
             GROOMING
           </label>
-          <label className=" text-sm">DOKŁADNY • BEZPIECZNY • DELIKATNY</label>
+          <label className=" text-sm">BEZPIECZNY • DOKŁADNY • ŁAGODNY</label>
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateY(100%)")}
@@ -44,19 +44,19 @@ const ServicesInfoSection: React.FC = () => {
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
             BEHAWIORYSTA
           </label>
-          <label className=" text-sm">WNIKLIWY • UWAŻNY • KREATYWNY</label>
+          <label className=" text-sm">WYROZUMIAŁY • SPOKOJNY • WYTRWAŁY</label>
         </animated.div>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(100%)")}
           className="flex flex-col w-full sm:w-4/12 items-center item-services sm:mb-16 xl:mb-0 text-center"
         >
           <label className="info-header special-font color-pink tracking-wide">
-            Komfortowy
+            Komfortowa
           </label>
           <label className="pb-4 font-bold fs-28 transition-all ease-out duration-300">
-            DOMOWY HOTELIK
+            PIERWSZA WIZYTA
           </label>
-          <label className="text-sm ">CAŁODOBOWY • RODZINNY • KAMERALNY</label>
+          <label className="text-sm ">SPOKOJNA • PRZYJEMNA • POUCZAJĄCA</label>
         </animated.div>
       </div>
     </section>

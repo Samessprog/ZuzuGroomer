@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number,
+    delayNumber: number
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -43,7 +43,6 @@ const PriceList: React.FC = () => {
         />
         <div className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2">
           <i className="text-6xl fancy-text tracking-wide">Cennik</i>
-          <span className="text-3xl sm:text-4xl font-bold">Pielęgnacji</span>
         </div>
       </div>
       <div className=" flex justify-center items-center mt-10 ">
@@ -56,16 +55,12 @@ const PriceList: React.FC = () => {
             jednak pielęgnacji bez kąpieli pieska. Właśnie kąpiel oraz suszenie
             jest kluczowe w czasie zabiegu, gdyż przygotowuje ona włos do
             strzyżenia, trymowania lub wyczesywania oraz zapewnia higienę pracy.
-            do nas!
           </p>
           <p className="mt-5">
-            Cena jest uzależniona od stanu pieska i jego zachowania. W przypadku
-            psa z sierścią skołtunioną dopłata do usługi wynosi 50 zł. Również w
-            przypadku psów agresywnych naliczana jest dodatkowa opłata,
-            uzależniona od rasy psa.{" "}
-          </p>
-          <p className="mt-5 font-bold">
-            Cena jest uzależniona od stanu pieska i jego zachowania.
+            <b>
+              W przypadku pupila z sierścią skołtunioną dopłata jest uzależniona
+              od stanu szaty oraz jego zachowania.{" "}
+            </b>
           </p>
         </section>
       </div>
@@ -75,14 +70,14 @@ const PriceList: React.FC = () => {
           ref={priceListRef}
         >
           <animated.div
-            className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl"
+            className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
             <div className="text-xl font-semibold border-b-2 border-black color-pink">
               Strzyżenie z kąpielą i pełną kosmetyką
             </div>
             <div>
-              <ul className="list-disc mt-8 pl-2">
+              <ul className="list-disc mt-8 pl-2 no-select">
                 <li className="mb-1">
                   Yorkshire Terrier:{" "}
                   <span className="color-pink font-semibold">140zł</span>
@@ -167,21 +162,21 @@ const PriceList: React.FC = () => {
                   Terrier szkocki:{" "}
                   <span className="color-pink font-semibold">200zł</span>
                 </li>
-                <li className="mb-1">
+                <li className="mb-1 ">
                   Cockapoo:{" "}
-                  <span className="color-pink font-semibold">220zł</span>
+                  <span className="color-pink font-semibold price">220zł</span>
                 </li>
               </ul>
             </div>
           </animated.div>
           <animated.div
-            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl"
+            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
             <div className="text-xl font-semibold border-b-2 border-black color-pink">
               Trymowanie z kąpielą i pełną kosmetyką
             </div>
-            <ul className="list-disc mt-8  pl-2">
+            <ul className="list-disc mt-8 pl-2 no-select">
               <li className="mb-1">
                 Springer Spaniel angielski:{" "}
                 <span className="color-pink font-semibold">350zł</span>
@@ -259,7 +254,7 @@ const PriceList: React.FC = () => {
             <div className="text-xl font-semibold border-b-2 border-black color-pink">
               Kosmetyka I kąpiel
             </div>
-            <ul className="list-disc mt-8  pl-2">
+            <ul className="list-disc mt-8 pl-2 no-select">
               <li className="mb-1">
                 Owczarek szkocki długowłosy:{" "}
                 <span className="color-pink font-semibold">290zł</span>
@@ -349,11 +344,14 @@ const PriceList: React.FC = () => {
         </div>
       </section>
       <section ref={priceListExtra}>
-        <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col">
+        <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20">
           <span>
-            Prosimy o punktualne przybycie na umówioną wizytę. Zastrzegamy sobie
-            prawo do przełożenia, anulowania lub doliczenia <b>50%</b> wartości
-            pielęgnacji w przypadku spóźnienia <b>powyżej 15 minut</b>.
+            Prosimy o punktualne przybycie na umówioną wizytę. W przypadku nie
+            przybycia na czas prosimy o kontakt telefoniczny.{" "}
+            <p>
+              W przypadku spóźnienia powyżej <b>15 minut</b> nie gwarantujemy
+              pełnego wykonania usługi.
+            </p>
           </span>
           <b className="mt-5">Ponad to:</b>
           <ul className="mt-2 list-disc ">
@@ -362,62 +360,47 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100,
+                100
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
-              <b className="ml-1 color-pink">60 zł/godzina</b>
+              <b className="ml-1 color-pink">
+                zależności od stanu sierści oraz wielkości psa
+              </b>
             </animated.li>
             <animated.li
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                200,
+                400
               )}
             >
-              Psy problemowe (wymagające drugiej osoby do pomocy) – dodatkowo
-              płatne - <b className="color-pink ">40 zł</b>
+              Obcinanie pazurków – <b className="color-pink ">20 zł</b>
             </animated.li>
             <animated.li
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                300,
+                500
               )}
             >
-              Kąpiel przeciwpchelna – <b className="color-pink ">30 zł</b>
+              Czyszczenie uszu – <b className="color-pink ">10 zł</b>
             </animated.li>
             <animated.li
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400,
+                550
               )}
             >
-              Obcinanie pazurków – <b className="color-pink ">30 zł</b>
-            </animated.li>
-            <animated.li
-              className="mb-3 sm:mb-1"
-              style={servicesInfoAnimate(
-                elementInViewFirst,
-                "translateX(-100%)",
-                500,
-              )}
-            >
-              Usuwanie włosów z uszu – <b className="color-pink ">20 zł</b>
-            </animated.li>
-            <animated.li
-              className="mb-3 sm:mb-1"
-              style={servicesInfoAnimate(
-                elementInViewFirst,
-                "translateX(-100%)",
-                550,
-              )}
-            >
-              Wizyta adaptacyjna - Darmowa usługa.{" "}
+              Wizyta zapoznawcza -{" "}
+              <span className="color-pink">
+                {" "}
+                <b>Darmowa usługa.</b>
+              </span>{" "}
               <Link to="" className="text-sky-600 border-b-2 border-sky-600">
                 Więcej dowiesz się tutaj.
               </Link>{" "}
@@ -427,11 +410,14 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570,
+                570
               )}
             >
-              Wizyta zapoznawcza - Cena wizyty adaptacyjnej jest ustalana
-              indywidualnie.{" "}
+              Wizyta adaptacyjna -{" "}
+              <span className="color-pink">
+                {" "}
+                <b> Cena wizyty adaptacyjnej jest ustalana indywidualnie.</b>
+              </span>{" "}
               <Link className="text-sky-600 border-b-2 border-sky-600" to="">
                 Więcej dowiesz się tutaj.
               </Link>
@@ -439,7 +425,7 @@ const PriceList: React.FC = () => {
           </ul>
         </div>
       </section>
-      <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
+      {/* <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
         <span className=" mb-10 flex justify-center font-semibold text-2xl">
           Cennik akcesoriów sklepowych
         </span>
@@ -482,7 +468,7 @@ const PriceList: React.FC = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

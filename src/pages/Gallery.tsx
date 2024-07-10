@@ -56,15 +56,15 @@ const Gallery: React.FC = () => {
         <span className="w-8/12 text-center">
           <p>
             {" "}
-            Witaj w naszej galerii zdjęć, gdzie pragniemy podzielić się z Tobą
-            efektami naszej pracy w salonie groomerki. Przejrzyj nasze
-            fotografie, aby zobaczyć, jak dbamy o wygląd i dobrostan naszych
-            futrzastych klientów.
+            Zapraszam do obserwowania naszych prac wykonanych z dbałością i
+            pełną estetyką zgodnie ze wzorzem FCI{" "}
           </p>
           <p className="mt-3">
-            Każde zdjęcie to historia zanurzona w pielęgnacji, miłości i
-            zaufaniu. Odkryj urok naszej galerii i dołącz do nas w podróży przez
-            świat pielęgnacji zwierząt domowych
+            W mojej galerii znajdziesz zdjęcia różnych ras i stylów strzyżenia,
+            które podkreślają naturalne piękno każdego pupila. Moje podejście
+            opiera się na indywidualnym podejściu do każdego klienta, dzięki
+            czemu każda fryzura jest dopasowana do specyficznych potrzeb i
+            charakteru psa.
           </p>
         </span>
       </section>

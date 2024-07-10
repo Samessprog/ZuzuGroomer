@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -68,19 +68,22 @@ const AboutUs: React.FC = () => {
       </div>
       <main className="pl-5 pr-10">
         <article>
-          <div className="mt-10  text-justify text-sm md:text-base flex leading-relaxed">
-            Cześc jestem Zuza! bla bla blaaaa blaa blaaaaa bla blaaaa bla bla
-            blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-            blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa blaa
-            blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla
-            blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-            blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-            blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla
-            blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-            blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa
+          <div className="flex justify-center mb-16">
+            <div className="mt-10 text-sm md:text-base leading-relaxed text-center w-8/12">
+              <span className="font-semibold">
+               Cześć, Nazywam się Zuzanna Hassa, jestem certyfikowanym Groomerem i
+                Opiekunem Zwierząt.
+              </span>{" "}
+              Nieustannie poszerzam i doskonalę swoją wiedzę oraz umiejętności,
+              uczestnicząc w różnego rodzaju seminariach i szkoleniach.
+              Zapraszam do skorzystania z moich usług, gdzie profesjonalizm
+              łączy się z miłością do zwierząt. Gwarantuję, że każda wizyta
+              będzie przyjemnym i bezstresowym doświadczeniem dla Twojego
+              pupila.
+            </div>
           </div>
           <div
-            className="mt-5 md:mt-10 flex flex-col md:flex-row"
+            className="mt-20 md:mt-10 flex flex-col md:flex-row"
             ref={AboutUsFirstTabRefElement}
           >
             <div className="md:w-5/12 w-full ml-0 md:ml-5 rounded">
@@ -93,44 +96,45 @@ const AboutUs: React.FC = () => {
             <div className="w-full md:w-7/12 pl-0 md:pl-5 text-justify mt-5 md:mt-0 text-sm md:text-base leading-relaxed">
               <div>
                 {" "}
-                blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla
-                bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa
-                bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa
-                bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla
-                blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaabla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla
-                bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa
-                bla blaaaabla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa
-                bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaabla bla blaaaa blaa blaaaaa bla blaaaa bla bla
-                blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa
-                blaa blaaaaa bla blaaaabla bla blaaaa blaa blaaaaa bla blaaaa
-                bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla
-                bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa blaa blaaaaa
-                bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa
-                bla bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla
-                bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa
-                bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa
-                bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla blaaaabla bla
-                blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaa bla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa
-                blaa blaaaaa bla blaaaa bla bla blaaaa blaa blaaaaa bla
-                blaaaabla bla blaaaa blaa blaaaaa bla blaaaa bla bla blaaaa blaa
-                blaaaaa bla blaaaa bla bla
+                <p>
+                  W moim salonie głównym priorytetem jest komfort pupila. Z
+                  wielką uwagą przygotowuję psa do bezstresowej wizyty, dbając o
+                  to, aby czuł się <b> bezpiecznie i komfortowo</b> od samego
+                  początku. Po wielu ukończonych szkoleniach zdobyłam
+                  odpowiednie{" "}
+                  <b>
+                    doświadczenie związane z behawioryzmem oraz profesjonalną
+                    pielęgnacją psa.
+                  </b>{" "}
+                  Dzięki temu jestem w stanie lepiej zrozumieć potrzeby i
+                  zachowania moich czworonożnych klientów. U nas zawsze panuje{" "}
+                  <b>cisza i spokój</b>, co pozwala na jeszcze lepsze
+                  porozumienie między mną a psem. Tworzę przyjazną atmosferę,
+                  która minimalizuje stres zwierzęcia, co jest niezwykle ważne
+                  podczas zabiegów pielęgnacyjnych.{" "}
+                  <b>
+                    Przywiązuję dużą wagę do czystości i starannego wykonywania
+                    swoich obowiązków, co gwarantuje higieniczne i bezpieczne
+                    warunki dla każdego pupila.
+                  </b>
+                </p>
+                <p className="mt-4">
+                  <b>
+                    {" "}
+                    Stale poszerzam swoją wiedzę i umiejętności, uczestnicząc w
+                    kursach i szkoleniach, aby móc oferować usługi na najwyższym
+                    poziomie.
+                  </b>{" "}
+                  Wierzę, że spokojna i pełna miłości atmosfera podczas zabiegów
+                  wpływa pozytywnie na doświadczenia moich czworonożnych
+                  klientów, dzięki czemu każda wizyta staje się przyjemnością.
+                </p>
+                <p className="mt-4 font-semibold">
+                  Wierzę, że relacja oparta na zaufaniu między groomerem a
+                  zwierzęciem jest kluczem do sukcesu. Dlatego zawsze staram się
+                  budować pozytywną więź z każdym psem, który trafia do mojego
+                  salonu.
+                </p>
               </div>
             </div>
           </div>

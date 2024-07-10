@@ -13,7 +13,7 @@
 
 .twenty-twenty-container {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 20px;
+    grid-gap: 25px;
 
     .gallery-page-class {
         overflow: hidden;
@@ -21,6 +21,12 @@
         position: relative;
         border-radius: 20px;
         max-height: 400px;
+
+        .z {
+            [data-testid="container"] {
+                position: static !important;
+            }
+        }
 
         .twentyTwenty-description-item {
             background-color: rgba(255, 255, 255, 0.616);

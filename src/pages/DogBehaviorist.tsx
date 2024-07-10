@@ -62,26 +62,12 @@ const DogBehaviorist: React.FC = () => {
                 </li>
               </ul>
             </p>
-            <p className="mt-5">
-              Potrzebujesz pomocy w zrozumieniu zachowań swojego psa? Chcesz,
-              aby był łagodniejszy i bardziej przyjazny? Może interesuje Cię,
-              jak bawić się z nim i jakie zabawki wybrać? Zapraszam do
-              skorzystania z moich usług behawiorystycznych dla psów!
-            </p>
-            <p className="mt-5 text-center lg:text-start">
-              {" "}
-              <b>
-                Dysponuję doświadczeniem oraz odpowiednim wykształceniem,
-                potwierdzonymi certyfikatami, które gwarantują moją wiedzę i
-                umiejętności w dziedzinie behawiorystyki zwierząt.
-              </b>
-            </p>
           </div>
-          <div className="w-full xl:w-4/12  2xl:flex mt-10 xl:mt-0">
+          <div className="w-full xl:w-4/12  2xl:flex mt-10 xl:mt-0 h-1/2">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
         </section>
-        <section className="mt-28 flex justify-center ">
+        <section className="mt-28 flex justify-center mb-20">
           <div className="w-4/12 hidden 2xl:flex">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
@@ -147,17 +133,6 @@ const DogBehaviorist: React.FC = () => {
                 </b>
               </p>
             </animated.div>
-          </div>
-        </section>
-        <section className="mt-28 flex justify-center mb-10 ">
-          <div className="flex-col ">
-            <span className="text-2xl font-semibold">
-              Cennik konsultacji behawioralnej
-            </span>
-            <ul className="list-disc ml-4 mt-4">
-              <li>Pierwsza konsultacja 250 zł</li>
-              <li>Kolejna konsultacja 150 zł</li>
-            </ul>
           </div>
         </section>
       </main>

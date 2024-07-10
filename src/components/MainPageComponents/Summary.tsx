@@ -13,7 +13,7 @@ const SummaryMain: React.FC = () => {
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: inView ? 1 : 0,
@@ -41,13 +41,13 @@ const SummaryMain: React.FC = () => {
             U mnie każdy pupil{" "}
           </div>
           <div className="text-2xl lg:text-4xl font-bold text-center">
-            CZUJE SIĘ JAK W NIEBIE
+            CZUJE SIĘ ZAOPIEKOWANY
           </div>
           <p className="text-base text-center w-full pl-3 sm:pl-2 pr-3 sm:pr-2 mt-16 mb-5 sm:mb-0">
-            Profesjonalną i kompleksową obsługę zapewnia{" "}
+            Profesjonalną obsługę zapewnia{" "}
             <b>certyfikowany groomer (psi fryzjer) i behawiorysta</b>. Jestem do
-            dyspozycji moich klientów w mieście Mysłowice, w szczególności w
-            dzielnicy <b>Bończyk, Wielka Skotnica, Rymera, Wesoła, Janów</b>.{" "}
+            dyspozycji moich klientów w mieście Mysłowice, w dzielnicy{" "}
+            <b> Wielka Skotnica</b>
           </p>
         </animated.div>
         <animated.div

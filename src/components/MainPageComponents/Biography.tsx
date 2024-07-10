@@ -57,34 +57,34 @@ const MainBio: React.FC = () => {
                 </h1>
                 <div className="fs-3 text-base sm:text-[15px] bio-main w-full xl:w-9/12 pr-8 xl:pr-0 pl-8 xl:pl-0">
                   <p className="mb-5 xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet,
+                    Od najmłodszych lat zwierzęta towarzyszyły mi w życiu.
+                    Zawsze pasjonowałam się ich życiem i emocjami. Już jako
+                    dziecko trenowałam jazdę konną i opiekowałam się różnymi
+                    zwierzętami domowymi. Obecnie jestem szczęśliwą właścicielką
+                    kochanego psa rasy Shih Tzu o imieniu Shaggy.
                   </p>
                   <p className="mb-5 xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet, consectetur
+                    Psy zawsze były ważną częścią mojego życia, dlatego
+                    postanowiłam zawodowo związać się z groomingiem. Swoją
+                    karierę rozpoczęłam od podstawowego kursu u Katarzyny Palka
+                    w Canis Salon. Po ukończeniu kursu zaczęłam praktykować i
+                    uczyć się profesjonalnej pielęgnacji psów. Przez trzy lata
+                    współpracowałam z jednym z najlepszych specjalistów w
+                    Polsce, zdobywając cenną wiedzę i doświadczenie.
                   </p>
                   <p className="mb-5 xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet, consectetur
+                    Jestem profesjonalistką z dużymi pokładami empatii,
+                    wyrozumiałości i miłości do zwierząt. Pracuję ze wszystkimi
+                    rodzajami okrywy włosowej, w tym głównie z psami
+                    wymagającymi trymowania.
                   </p>
                   <p className="mb-5 xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet, consectetur
-                  </p>
-                  <p className="mb-5 xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet, consectetur
-                  </p>
-                  <p className="xl:ml-5">
-                    Nazywam się zuzu hasu Lorem ipsum dolor sit amet,
-                    consectetur Lorem ipsum dolor sit amet, consectetur Lorem
-                    ipsum dolor sit amet, consectetur
+                    Moim celem jako groomerki jest nie tylko dbanie o wygląd
+                    psów, ale także o ich komfort i dobre samopoczucie. Każde
+                    zwierzę traktuję indywidualnie, dostosowując pielęgnację do
+                    jego potrzeb i charakteru. Wierzę, że spokojna i pełna
+                    miłości atmosfera podczas zabiegów wpływa pozytywnie na
+                    doświadczenia moich czworonożnych klientów.
                   </p>
                 </div>
                 <h2 className="bio-footer font-bold flex justify-end w-12/12 xl:w-9/12 text-3xl tracking-wider mr-12 mt-8">

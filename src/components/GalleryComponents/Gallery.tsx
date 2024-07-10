@@ -39,7 +39,7 @@ const Gallery: React.FC = () => {
             </div>
             <div className="mt-8 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full ">
               Zobacz jak Twój pupil będzie wyglądać po kompleksowej pielęgnacji
-              w ZUZU HASU
+              w <b>Shaggy grooming atelier</b>
             </div>
           </div>
           <div className={`gallery-holder w-12/12 pr-20 pl-20 grid`}>
