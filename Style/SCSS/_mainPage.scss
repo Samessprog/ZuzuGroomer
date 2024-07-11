@@ -16,6 +16,7 @@
 
     .bio-img {
         border-radius: 0px 150px 0px 170px;
+        border: solid 1px rgb(70, 70, 70);
         height: 500px;
         overflow: hidden;
 
@@ -32,7 +33,7 @@
             width: 80%;
             height: 450px;
         }
-       
+
     }
 
 
@@ -45,22 +46,12 @@
     }
 
 
-    .arrow-up-holder {
-        background-color: $pinkSecond;
-        fill: $whiteMain;
-        position: fixed;
-        right: 1%;
-        bottom: 20px;
-        transition: all .2s ease-out;
-        z-index: 999;
-
-        &:hover {
-            transform: translateY(-10px);
-        }
-    }
-
     .google-maps-container {
         height: 600px;
+
+        @media (min-width:1920px) {
+            height: 750px;
+        }
     }
 
     .fs-responsive-maps {
@@ -97,5 +88,19 @@
         .slider-holder {
             height: 50px;
         }
+    }
+}
+
+.arrow-up-holder {
+    background-color: $pinkSecond;
+    fill: $whiteMain;
+    position: fixed;
+    right: 1%;
+    bottom: 20px;
+    transition: all .2s ease-out;
+    z-index: 999;
+
+    &:hover {
+        transform: translateY(-10px);
     }
 }

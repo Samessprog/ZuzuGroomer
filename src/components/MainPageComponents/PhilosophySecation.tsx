@@ -11,7 +11,7 @@ const PhilosophySection: React.FC = () => {
   const philosophyAnimate = (
     elementInView: boolean,
     translateX: string,
-  ): SpringValues<React.CSSProperties> => {
+  ): SpringValues => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
       transform: elementInView ? `translateX(0%)` : `translateX(${translateX})`,

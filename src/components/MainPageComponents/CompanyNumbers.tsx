@@ -35,22 +35,26 @@ const Numbers: React.FC = () => {
     <section ref={numberRefElement}>
       {elementInView && (
         <div className="number-holder mt-20 p-8 flex justify-center items-center flex-col bg-[#f9f9f9] color-pink">
-          <div className="flex number-header justify-center font-semibold  text-3xl md:text-4xl mb-8 tracking-wide">
+          <div className="flex number-header justify-center font-semibold text-3xl md:text-4xl mb-8 tracking-wide mr-0 xl:mr-20">
             My w liczbach
           </div>
           <div className="flex justify-between items-center w-full 2xl:w-9/12 flex-col xl:flex-row">
             <div className="flex flex-col mt-5 xl:mt-0">
               <span className="font-semibold number-item text-3xl md:text-4xl  ">
-                <AnimatedNumber value={7} from={20} isVisible={elementInView} />{" "}
-                lat
+                <AnimatedNumber value={3} from={10} isVisible={elementInView} />{" "}
+                lata
               </span>
               <span className="font-semibold text-sm md:text-base text-center">
-                na rynku
+                doświadczenia
               </span>
             </div>
             <div className="flex flex-col items-center  mt-7 xl:mt-0">
               <span className="font-semibold number-item text-3xl md:text-4xl ">
-                <AnimatedNumber value={7} from={20} isVisible={elementInView} />
+                <AnimatedNumber
+                  value={623}
+                  from={700}
+                  isVisible={elementInView}
+                />
               </span>
               <span className="font-semibold text-sm md:text-base">
                 Zadowolonych piesków
@@ -70,11 +74,7 @@ const Numbers: React.FC = () => {
             </div>
             <div className="flex flex-col items-center  mt-7 xl:mt-0">
               <span className="font-semibold number-item text-3xl md:text-4xl ">
-                <AnimatedNumber
-                  value={20}
-                  from={30}
-                  isVisible={elementInView}
-                />
+                <AnimatedNumber value={9} from={18} isVisible={elementInView} />
               </span>
               <span className="font-semibold  text-sm md:text-base">
                 Certyfikatów
@@ -82,14 +82,10 @@ const Numbers: React.FC = () => {
             </div>
             <div className="flex flex-col items-center  mt-7 xl:mt-0">
               <span className="font-semibold number-item text-3xl md:text-4xl  ">
-                <AnimatedNumber
-                  value={20}
-                  from={30}
-                  isVisible={elementInView}
-                />
+                <AnimatedNumber value={1} from={5} isVisible={elementInView} />
               </span>
               <span className="font-semibold  text-sm md:text-base">
-                Zdobyte nagrody i wyróżnienia
+                Udział w zawodach
               </span>
             </div>
           </div>

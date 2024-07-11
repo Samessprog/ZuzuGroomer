@@ -4,29 +4,7 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 1.5rem;
     column-gap: 1.5rem;
-
-    .gallery {
-        cursor: pointer;
-        box-shadow: .5px .5px 3px .5px rgb(147, 147, 147);
-
-        .gallery-img {
-            height: 100%;
-            
-            @media (min-width: 1536px) {
-                height: 400px;
-            }
-
-
-            &:hover {
-                animation: zoomPhotoAnimation 1s forwards;
-
-            }
-
-            &:not(:hover) {
-                animation: reverseZoomAnimation 1s forwards;
-            }
-        }
-    }
+    @include galleryStyle;
 }
 
 .full-screen-IMG-holder {
@@ -35,10 +13,15 @@
 
     .progress-bar {
         height: 10px;
-        animation: slider 4.9s ease-in-out infinite;
+        position: absolute;
+        z-index: 999;
+        background-color: red;
+        border-radius: 30px;
+
     }
 
     .icons-holder {
+        margin-top: .4rem;
 
         .count-slider {
             left: 2%;
@@ -52,9 +35,15 @@
             @include fullScreenSliderIcons;
         }
 
-        .play-icon {
-            top: 50%;
+        .full-screen-icon {
+            top: 65%;
             right: 4.5%;
+            @include fullScreenSliderIcons;
+        }
+
+        .play-icon {
+            top: 67%;
+            right: 7%;
             @include fullScreenSliderIcons;
         }
 
@@ -98,7 +87,10 @@
 
 @media (max-width: 1024px) {
     .gallery-holder {
+        transition: all .2s ease-in-out;
         grid-template-columns: repeat(2, 1fr);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -106,10 +98,20 @@
     .gallery-holder {
         transition: all .2s ease-in-out;
         grid-template-columns: repeat(2, 1fr);
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
     }
 }
+
+@media (max-width: 573px) {
+    .gallery-holder {
+        transition: all .2s ease-in-out;
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+}
+
 
 
 @keyframes zoomPhotoAnimation {

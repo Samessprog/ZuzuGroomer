@@ -1,0 +1,56 @@
+.priceList-img {
+    height: 300px !important;
+
+    .price-list-text {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.priceList-container {
+    background-image: url('../../src/assets/lapyTlo.webp');
+}
+
+.price-list-item-holder {
+    border: 1px solid rgb(210, 210, 210);
+    transition: all ease-in-out .3s;
+
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url('../../src/assets/PETS.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &:hover {
+        background-color: rgba(244, 244, 244, 0.579);
+        transform: translate(-5px, -20px);
+        box-shadow: 3px 3px 3px 3px rgb(91, 91, 91);
+        border: 1px solid rgb(117, 117, 117);
+    }
+}
+
+.test {
+    display: inline;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.table-spacing tr {
+    border: 1px solid black;
+    border-radius: 10px;
+}

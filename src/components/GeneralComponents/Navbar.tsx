@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 interface NavbarProps {
   displayWidth: number;
@@ -6,13 +8,24 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [inClicked, setIsClicked] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (displayWidth > 1280) {
+      setIsMenuOpen(false);
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
+    }
+  }, [displayWidth]);
 
   return (
-    <nav className="flex justify-center sticky top-0 z-10 opacity-95 bg-white border-b border-gray-300">
-      <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3 mt-7 max-w-screen-2xl">
+    <nav className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300">
+      <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3  max-w-screen-2xl">
         <div
-          className={`hamburger w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
+          className={`hamburger pt-7  w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
           onClick={(): void => {
+            setIsClicked(true);
             setIsMenuOpen(!isMenuOpen);
           }}
         >
@@ -20,80 +33,85 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
-        <div className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5">
-          <img
-            src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_414,h_80/http://www.mojasfora.pl/wp-content/uploads/2018/11/moja-sfora.png"
-            alt="loading logo err"
-            className="navbar-logo ml-0 sm:ml=4 h-11 w-54 md:w-64 cursor-pointer"
-          />
-        </div>
-        <div
-          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5 navbar-menu-holder 
-            ${isMenuOpen && !(displayWidth === 0) ? "open w-full flex-col items-center" : "close"}
-            `}
+        <Link
+          className="2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center"
+          to="/"
         >
-          <ul
-            className={`flex justify-end font-medium main-menu ${isMenuOpen && !(displayWidth !== 0) ? " flex-col mt-11 open" : "close"}`}
-          >
+          <img
+            src={logo}
+            alt="loading logo err"
+            className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
+          />
+        </Link>
+
+        <div
+          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5  
+    ${isMenuOpen && displayWidth !== 0 ? "open w-full flex-col items-center " : inClicked ? "close pt-7" : "hidden"}
+  `}
+        >
+          <ul className={`flex justify-end font-medium main-menu  k2`}>
             <li
-              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
             >
-              <a className="item-context relative" href="#">
+              <Link className="item-context relative" to="oNas">
                 O nas
-              </a>
+              </Link>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative " href="#">
+              <a className="item-context relative" href="#">
                 Usługi
               </a>
             </li>
             <li
               className={`menu-navbar-item  text-base  cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/PsiBehawiorysta">
                 Psi Behawiorysta
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink
+                className="item-context relative"
+                to="ProgramLojalnosciowy"
+              >
                 Program lojalnościowy
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Galeria">
                 Galeria
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Cennik">
                 Cennik
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Kontakt">
                 Kontakt
-              </a>
+              </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-5 justify-center items-center open" : ""}`}
             >
-              <a className="item-context relative" href="#">
+              <NavLink className="item-context relative" to="/Regulamin">
                 Regulamin
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
-        <div className="w-2/12 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
+        <div className="w-2/12 pt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
-              id="tikTok-icon "
+              id="tikTok-icon"
               className="cursor-pointer transition-fill easy-in-out duration-300 sm:h-[23px] sm:w-[23px] w-[21px] h-[21px] mb-0"
             >
               <path d="M 9 4 C 6.2495759 4 4 6.2495759 4 9 L 4 41 C 4 43.750424 6.2495759 46 9 46 L 41 46 C 43.750424 46 46 43.750424 46 41 L 46 9 C 46 6.2495759 43.750424 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.671576 6 44 7.3284241 44 9 L 44 41 C 44 42.671576 42.671576 44 41 44 L 9 44 C 7.3284241 44 6 42.671576 6 41 L 6 9 C 6 7.3284241 7.3284241 6 9 6 z M 26.042969 10 A 1.0001 1.0001 0 0 0 25.042969 10.998047 C 25.042969 10.998047 25.031984 15.873262 25.021484 20.759766 C 25.016184 23.203017 25.009799 25.64879 25.005859 27.490234 C 25.001922 29.331679 25 30.496833 25 30.59375 C 25 32.409009 23.351421 33.892578 21.472656 33.892578 C 19.608867 33.892578 18.121094 32.402853 18.121094 30.539062 C 18.121094 28.675273 19.608867 27.1875 21.472656 27.1875 C 21.535796 27.1875 21.663054 27.208245 21.880859 27.234375 A 1.0001 1.0001 0 0 0 23 26.240234 L 23 22.039062 A 1.0001 1.0001 0 0 0 22.0625 21.041016 C 21.906673 21.031216 21.710581 21.011719 21.472656 21.011719 C 16.223131 21.011719 11.945313 25.289537 11.945312 30.539062 C 11.945312 35.788589 16.223131 40.066406 21.472656 40.066406 C 26.72204 40.066409 31 35.788588 31 30.539062 L 31 21.490234 C 32.454611 22.653646 34.267517 23.390625 36.269531 23.390625 C 36.542588 23.390625 36.802305 23.374442 37.050781 23.351562 A 1.0001 1.0001 0 0 0 37.958984 22.355469 L 37.958984 17.685547 A 1.0001 1.0001 0 0 0 37.03125 16.6875 C 33.886609 16.461891 31.379838 14.012216 31.052734 10.896484 A 1.0001 1.0001 0 0 0 30.058594 10 L 26.042969 10 z M 27.041016 12 L 29.322266 12 C 30.049047 15.2987 32.626734 17.814404 35.958984 18.445312 L 35.958984 21.310547 C 33.820114 21.201935 31.941489 20.134948 30.835938 18.453125 A 1.0001 1.0001 0 0 0 29 19.003906 L 29 30.539062 C 29 34.707538 25.641273 38.066406 21.472656 38.066406 C 17.304181 38.066406 13.945312 34.707538 13.945312 30.539062 C 13.945312 26.538539 17.066083 23.363182 21 23.107422 L 21 25.283203 C 18.286416 25.535721 16.121094 27.762246 16.121094 30.539062 C 16.121094 33.483274 18.528445 35.892578 21.472656 35.892578 C 24.401892 35.892578 27 33.586491 27 30.59375 C 27 30.64267 27.001859 29.335571 27.005859 27.494141 C 27.009759 25.65271 27.016224 23.20692 27.021484 20.763672 C 27.030884 16.376775 27.039186 12.849206 27.041016 12 z" />

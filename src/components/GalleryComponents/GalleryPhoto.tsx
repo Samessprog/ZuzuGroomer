@@ -6,9 +6,16 @@ import { setFullScreen } from "../../states/action";
 interface GalleryProps {
   imgUrl: string;
   index: number;
+  mainPhotos: string[];
+  galleryPhotos: string[];
 }
 
-const GalleryPhoto: React.FC<GalleryProps> = ({ imgUrl, index }) => {
+const GalleryPhoto: React.FC<GalleryProps> = ({
+  imgUrl,
+  index,
+  mainPhotos,
+  galleryPhotos,
+}) => {
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
 
@@ -20,7 +27,13 @@ const GalleryPhoto: React.FC<GalleryProps> = ({ imgUrl, index }) => {
     <div
       className="gallery w-12/12 h-100 rounded-md overflow-hidden"
       onClick={() =>
-        dispatch(setFullScreen({ isOpen: true, params: { imgUrl, index } }))
+        dispatch(
+          setFullScreen({
+            isOpen: true,
+            photos: mainPhotos?.length > 0 ? mainPhotos : galleryPhotos,
+            params: { index },
+          }),
+        )
       }
     >
       {!loaded && (

@@ -3,10 +3,17 @@
 @import "./sliderMainPage";
 @import "./philosophy";
 @import "./services";
-@import "./petCareSection.scss";
-@import "./summary.scss";
-@import "./opinion.scss";
-@import "./gallery.scss";
+@import "./petCareSection";
+@import "./summary";
+@import "./opinion";
+@import "./gallery";
+@import "./priceList";
+@import "./regulations";
+@import "./contact";
+@import "./gallery.Page";
+@import "./dogBehaviorist";
+@import "./aboutUs";
+@import "./loyaltyProgram";
 // @import "./footer";
 // @import "./companyNumber.scss";
 
@@ -16,3 +23,4 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(255, 255, 255);
 }
+

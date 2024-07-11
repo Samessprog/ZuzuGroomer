@@ -1,0 +1,110 @@
+@import "./\ variables";
+
+.about-us-img {
+    height: 300px;
+}
+
+.about-info-text {
+    transform: translate(-50%, -50%);
+}
+
+.about-img-holder {
+    @media (max-width: 875px) {
+        height: 30rem;
+
+    }
+}
+
+.appointment-button {
+    background-color: $pinkSecond;
+    padding: 8px 15px 8px 15px;
+    font-size: 18px;
+    transition: all ease-in-out .3s;
+    animation: shakingButton 3s ease 2;
+    animation-delay: 3.5s;
+
+    &:hover {
+        background-color: rgb(255, 115, 185);
+    }
+}
+
+
+.bg-Tick {
+    background-color: #2eb9c3;
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.bg-insta {
+    background-color: rgb(255, 0, 204);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.bg-facebook {
+    background-color: rgb(69, 116, 219);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.bg-maps {
+    background-color: rgb(255, 119, 0);
+
+    &:hover {
+        opacity: 85%;
+        animation: iconHoverAnimate 1s infinite ease-in-out;
+    }
+}
+
+.list-icon {
+    transition: all ease-in-out .3s;
+
+    &:hover {
+        fill: $pinkSecond;
+    }
+}
+
+@keyframes iconHoverAnimate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shakingButton {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(4deg);
+    }
+
+    50% {
+        transform: rotateZ(0deg);
+    }
+
+    75% {
+        transform: rotateZ(-4deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
