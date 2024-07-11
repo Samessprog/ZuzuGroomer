@@ -8,19 +8,24 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [inClicked, setIsClicked] = useState<boolean>(false);
 
   useEffect(() => {
     if (displayWidth > 1280) {
       setIsMenuOpen(false);
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
     }
   }, [displayWidth]);
 
   return (
     <nav className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300">
-      <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3 mt-7 max-w-screen-2xl">
+      <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3  max-w-screen-2xl">
         <div
-          className={`hamburger w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
+          className={`hamburger pt-7  w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
           onClick={(): void => {
+            setIsClicked(true);
             setIsMenuOpen(!isMenuOpen);
           }}
         >
@@ -29,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
         <Link
-          className="2xl:w-3/12 xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center"
+          className="2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center"
           to="/"
         >
           <img
@@ -38,16 +43,15 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
           />
         </Link>
+
         <div
-          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5
-            ${isMenuOpen && !(displayWidth === 0) ? "open w-full flex-col items-center" : "close"}
-            `}
+          className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5  
+    ${isMenuOpen && displayWidth !== 0 ? "open w-full flex-col items-center " : inClicked ? "close pt-7" : "hidden"}
+  `}
         >
-          <ul
-            className={`flex justify-end font-medium main-menu  ${isMenuOpen && !(displayWidth !== 0) ? " flex-col mt-11 open" : "close"}`}
-          >
+          <ul className={`flex justify-end font-medium main-menu  k2`}>
             <li
-              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
+              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
             >
               <Link className="item-context relative" to="oNas">
                 O nas
@@ -107,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             </li>
           </ul>
         </div>
-        <div className="w-2/12 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
+        <div className="w-2/12 pt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
             <svg
               xmlns="http://www.w3.org/2000/svg"
