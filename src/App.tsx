@@ -15,19 +15,22 @@ import { PulseLoader } from "react-spinners";
 import ScrollToTop from "./utils/ScrollToUp";
 
 const LazyDogBehaviorist = lazy(
-  async () => await import("./pages/DogBehaviorist")
+  async () => await import("./pages/DogBehaviorist"),
 );
 const LazyGalleryPage = lazy(async () => await import("./pages/Gallery"));
 const LazyAboutUs = lazy(async () => await import("./pages/AboutUs"));
 const LazyContactInfo = lazy(async () => await import("./pages/Contact"));
 const LazyPriceList = lazy(async () => await import("./pages/PriceList"));
 const LazyRegulation = lazy(async () => await import("./pages/Regulations"));
+const LazyLoyaltyProgram = lazy(
+  async () => await import("./pages/LoyaltyProgram"),
+);
 
 const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
   const [displayWidth, setDisplayWidth] = useState<number>(window.innerWidth);
   const fullScreenIsOpen = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   useEffect(() => {
@@ -133,6 +136,24 @@ const App: React.FC = () => {
               }
             >
               <LazyGalleryPage />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/ProgramLojalnosciowy"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyLoyaltyProgram />
             </Suspense>
           }
         ></Route>

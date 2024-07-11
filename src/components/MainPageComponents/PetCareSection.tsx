@@ -5,7 +5,7 @@ import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("../GalleryComponents/TwentyTwentyAnimation")
+  async () => await import("../GalleryComponents/TwentyTwentyAnimation"),
 );
 
 const PetCareSection: React.FC = () => {

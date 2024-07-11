@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -71,8 +71,8 @@ const AboutUs: React.FC = () => {
           <div className="flex justify-center mb-16">
             <div className="mt-10 text-sm md:text-base leading-relaxed text-center w-8/12">
               <span className="font-semibold">
-               Cześć, Nazywam się Zuzanna Hassa, jestem certyfikowanym Groomerem i
-                Opiekunem Zwierząt.
+                Cześć, Nazywam się Zuzanna Hassa, jestem certyfikowanym
+                Groomerem i Opiekunem Zwierząt.
               </span>{" "}
               Nieustannie poszerzam i doskonalę swoją wiedzę oraz umiejętności,
               uczestnicząc w różnego rodzaju seminariach i szkoleniach.

@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -360,7 +360,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100
+                100,
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -373,7 +373,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400
+                400,
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -383,7 +383,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500
+                500,
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -393,7 +393,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550
+                550,
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -410,7 +410,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570
+                570,
               )}
             >
               Wizyta adaptacyjna -{" "}

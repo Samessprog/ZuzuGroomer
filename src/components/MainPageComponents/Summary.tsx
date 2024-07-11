@@ -13,7 +13,7 @@ const SummaryMain: React.FC = () => {
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
-    translate: string
+    translate: string,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: inView ? 1 : 0,

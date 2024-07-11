@@ -10,7 +10,7 @@ const ServicesInfoSection: React.FC = () => {
 
   const servicesInfoAnimate = (
     elementInView: boolean,
-    translate: string
+    translate: string,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
