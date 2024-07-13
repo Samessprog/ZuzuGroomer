@@ -58,12 +58,20 @@
     height: 100%;
     color: white;
 
-    div {
-        height: 100% !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .slick-active {
+        div {
+            display: flex;
+            justify-content: center;
+        }
     }
+
+    .slick-slide {
+        div {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
 }
 
 .img-slider-viewer {
@@ -72,7 +80,7 @@
 }
 
 .img-viewer {
-    height: 100%;
+    height: 100% !important;
 }
 
 #slider-arrow-right {

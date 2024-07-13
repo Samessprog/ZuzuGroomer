@@ -1,0 +1,37 @@
+@import "./\ variables";
+
+.services-font {
+    font-size: 80px;
+    text-shadow: 5px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.services-button-visiting {
+    background-color: $pinkSecond;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+        background-color: rgb(255, 0, 128);
+        animation: puls-animate 1s infinite;
+    }
+}
+
+@keyframes puls-animate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.97);
+    }
+
+    0% {
+        transform: scale(1);
+    }
+}

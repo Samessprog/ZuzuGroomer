@@ -25,6 +25,7 @@ const LazyRegulation = lazy(async () => await import("./pages/Regulations"));
 const LazyLoyaltyProgram = lazy(
   async () => await import("./pages/LoyaltyProgram"),
 );
+const LazyServicesPage = lazy(async () => await import("./pages/Services"));
 
 const App: React.FC = () => {
   const [userScroll, setUserScroll] = useState<boolean>(false);
@@ -136,6 +137,25 @@ const App: React.FC = () => {
               }
             >
               <LazyGalleryPage />
+            </Suspense>
+          }
+        ></Route>
+
+        <Route
+          path="/Usługi"
+          element={
+            <Suspense
+              fallback={
+                <PulseLoader
+                  color="#ff00cc"
+                  margin={15}
+                  speedMultiplier={0.5}
+                  aria-label="Loading Spinner"
+                  cssOverride={override}
+                />
+              }
+            >
+              <LazyServicesPage />
             </Suspense>
           }
         ></Route>

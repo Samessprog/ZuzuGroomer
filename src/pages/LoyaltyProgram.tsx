@@ -105,7 +105,9 @@ const LoyaltyProgram: React.FC = () => {
           </div>
           <div className="w-5/12 ml-10">
             <img src={p1} alt="loading err" />
-            <span className="flex justify-end mt-2 text-sm text-gray-500 mr-2">Więcej informacji w lokalu!</span>
+            <span className="flex justify-end mt-2 text-sm text-gray-500 mr-2">
+              Więcej informacji w lokalu!
+            </span>
           </div>
         </section>
       </main>

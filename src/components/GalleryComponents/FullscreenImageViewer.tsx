@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, MutableRefObject } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "../../states/action";
 import Slider from "react-slick";
-
 import SliderPhotoScreenViewer from "../MainPageComponents/SliderPhotoScreenViewer";
 
 interface RootState {
@@ -20,12 +19,13 @@ interface RootState {
 const FullscreenImageViewer: React.FC = () => {
   const dispatch = useDispatch();
   const [autoPlay, setAutoPlay] = useState(false);
-  const [fullScreenFlag, setFullScreenFlag] = useState();
-  const elementRef = useRef(null);
-  const sliderRef = useRef(null);
+  const [fullScreenFlag, setFullScreenFlag] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const elementRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const sliderRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const refData = useRef(data);
@@ -38,14 +38,19 @@ const FullscreenImageViewer: React.FC = () => {
     params: { index },
   } = data;
 
+  useEffect(() => {
+    setCurrentIndex(index);
+  }, [index]);
+
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let interval;
+    let interval: number | NodeJS.Timeout | undefined;
+
     if (autoPlay) {
       interval = setInterval(() => {
         setProgress((prevProgress) =>
-          prevProgress >= 100 ? 0 : prevProgress + 1,
+          prevProgress >= 100 ? 0 : prevProgress + 1
         );
       }, 50);
     }
@@ -63,6 +68,9 @@ const FullscreenImageViewer: React.FC = () => {
     pauseOnHover: false,
     autoplay: autoPlay,
     autoplaySpeed: 5000,
+    afterChange: (current: number): void => {
+      setCurrentIndex(current);
+    },
     nextArrow: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +94,7 @@ const FullscreenImageViewer: React.FC = () => {
     ),
   };
 
-  const enterFullscreen = () => {
+  const enterFullscreen = (): void => {
     const element = elementRef.current;
     const requestFullscreen =
       element.requestFullscreen ||
@@ -99,7 +107,7 @@ const FullscreenImageViewer: React.FC = () => {
     }
   };
 
-  const exitFullscreen = () => {
+  const exitFullscreen = (): void => {
     const exitFullscreen =
       document.exitFullscreen ||
       document.mozCancelFullScreen ||
@@ -112,7 +120,7 @@ const FullscreenImageViewer: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleFullscreenChange = () => {
+    const handleFullscreenChange = (): void => {
       const isFullscreen =
         document.fullscreenElement ||
         document.mozFullScreenElement ||
@@ -140,7 +148,7 @@ const FullscreenImageViewer: React.FC = () => {
     };
   }, []);
 
-  const handleWheel = (event) => {
+  const handleWheel = (event): void => {
     if (event.deltaY > 0) {
       sliderRef.current.slickNext();
     } else {
@@ -163,20 +171,6 @@ const FullscreenImageViewer: React.FC = () => {
     setProgress(0);
   };
 
-  const handleClickOutside = (event) => {
-    console.log(sliderRef.current);
-    if (sliderRef.current && !sliderRef.current.contains(event.target)) {
-      console.log("Kliknięcie poza sliderem");
-    }
-  };
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div
       ref={elementRef}
@@ -188,7 +182,10 @@ const FullscreenImageViewer: React.FC = () => {
         </div>
       )}
       <div className="icons-holder absolute w-full pl-10 pt-5">
-        <div className="text-white z-50 count-slider">{`${index + 1} / ${photosCollection.length}`}</div>
+        <div className="text-white z-50 count-slider">
+          {" "}
+          {`${currentIndex + 1} / ${photosCollection.length}`}
+        </div>
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
