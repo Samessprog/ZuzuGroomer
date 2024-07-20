@@ -46,10 +46,13 @@
 }
 
 .x {
+
     div {
         display: flex;
         justify-content: center;
     }
+
+
 
     @media (max-width: 1445px) {
         width: 85%;

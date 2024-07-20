@@ -6,29 +6,19 @@ import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import LazyFullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 import { useSelector } from "react-redux";
+import photos from "../context/GalleryPhotos";
+import SocialIcons from "../components/OttherComponents/SocialIcons";
 
 const Gallery: React.FC = () => {
-  const p1 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p2 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p3 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p4 =
-    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
-  const p5 =
-    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
-  const p6 =
-    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
-  const p7 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-
-  const photos = [p1, p2, p3, p4, p5, p6, p7];
-
   const [galleryRefElement, elementInView] = useInView({
     triggerOnce: true,
     threshold: 0.22,
   });
+
+  const p1 =
+    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
+  const p4 =
+    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
 
   const galleryAnimate = useSpring({
     opacity: elementInView ? 1 : 0,
@@ -37,7 +27,7 @@ const Gallery: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   return (
@@ -57,14 +47,18 @@ const Gallery: React.FC = () => {
           <p>
             {" "}
             Zapraszam do obserwowania naszych prac wykonanych z dbałością i
-            pełną estetyką zgodnie ze wzorzem FCI{" "}
+            pełną estetyką zgodnie ze{" "}
+            <span className="font-semibold"> wzorcem FCI</span>{" "}
           </p>
           <p className="mt-3">
             W mojej galerii znajdziesz zdjęcia różnych ras i stylów strzyżenia,
             które podkreślają naturalne piękno każdego pupila. Moje podejście
-            opiera się na indywidualnym podejściu do każdego klienta, dzięki
-            czemu każda fryzura jest dopasowana do specyficznych potrzeb i
-            charakteru psa.
+            opiera się na indywidualnym podejściu do każdego klienta,{" "}
+            <span className="font-semibold">
+              {" "}
+              dzięki czemu każda fryzura jest dopasowana do specyficznych
+              potrzeb i charakteru psa.
+            </span>
           </p>
         </span>
       </section>
@@ -99,8 +93,17 @@ const Gallery: React.FC = () => {
           </div>
         </section>
         <section>
-          <span className="flex justify-center mt-16 text-5xl md:text-6xl font-semibold fancy-text tracking-wide text-shadow">
+          <span className="flex justify-center mt-20 text-5xl md:text-6xl font-semibold fancy-text tracking-wide text-shadow items-center">
             <i>Magiczne zmiany</i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48px"
+              viewBox="0 -960 960 960"
+              width="48px"
+              className="ml-4 fill-yellow-400"
+            >
+              <path d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z" />
+            </svg>
           </span>
           <div className="grid twenty-twenty-container mt-10 mb-20 pl-4 pr-4">
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
@@ -111,6 +114,12 @@ const Gallery: React.FC = () => {
           </div>
         </section>
       </main>
+      <section className="mb-20">
+        <div className="flex justify-center w-full font-semibold text-4xl color-pink">
+          Zobacz również
+        </div>
+        <SocialIcons />
+      </section>
       {fullScreenFlag.isOpen === true && <LazyFullscreenImageViewer />}
     </div>
   );

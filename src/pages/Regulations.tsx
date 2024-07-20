@@ -18,23 +18,23 @@ const Regulations: React.FC = () => {
       </div>
       <section className="pb-20">
         <div className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink">
-          REGULAMIN SALONU SHAGGY GROOMING ATELIER:
+          <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
         </div>
         <div className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed ">
           <ol className="list-decimal flex flex-col items-start text-justify w-10/12">
             <li className="">
               W celu umówienia wizyty należy zarezerwować termin telefonicznie
-              pod nr. <b>512 785 857</b> lub osobiście, informując groomera o
-              stanie szaty i zdrowiu psa. Jeśli to pierwsza wizyta pieska w
-              salonie prosimy o poinformowanie o tym fakcie w celu
+              pod nr. <strong>512 785 857</strong> lub osobiście, informując
+              groomera o stanie szaty i zdrowiu psa. Jeśli to pierwsza wizyta
+              pieska w salonie prosimy o poinformowanie o tym fakcie w celu
               zarezerwowania dla pupila większej ilości czasu, żeby przyzwyczaić
               go do zabiegów pielęgnacyjnych.
             </li>
             <li className="mt-4">
               W przypadku nieodwołania wizyty w określonym terminie i chęci
               ponownego umówienia się
-              <b> klient musi zapłacić 50% kosztów wizyty</b>, na której się nie
-              pojawił
+              <strong> klient musi zapłacić 50% kosztów wizyty</strong>, na
+              której się nie pojawił
             </li>
             <li className="mt-4 font-semibold">
               Klienci, którzy wizyty nie odwołują i nie pojawiają się na niej
@@ -52,10 +52,10 @@ const Regulations: React.FC = () => {
             </li>
             <li className="mt-4">
               Pies przyprowadzony do salonu musi{" "}
-              <b>
+              <strong>
                 bezwzględnie posiadać aktualne szczepienie przeciwko
                 wściekliźnie.
-              </b>{" "}
+              </strong>{" "}
               W przypadku pogryzienia właściciel zobowiązany jest do okazania
               zaświadczenia o szczepieniu psa. Brak aktualnego szczepienia
               skutkuje zgłoszeniem właściciela psa do odpowiednich służb. W
@@ -75,10 +75,10 @@ const Regulations: React.FC = () => {
             <li className="mt-4">
               Cena za usługę ustalana jest indywidualnie w zależności od stopnia
               trudności i rodzaju problemu.{" "}
-              <b>
+              <strong>
                 W skrajnych przypadkach salon ma prawo odmówienia usługi bądź
                 odstąpienia od niej.
-              </b>
+              </strong>
             </li>
             <li className="mt-4">
               Usługi wykonywane są bez podania jakichkolwiek środków
@@ -97,7 +97,8 @@ const Regulations: React.FC = () => {
               miejscu po obejrzeniu pieska.
             </li>
             <li className="mt-4">
-              W salonie używane są <b>tylko profesjonalne kosmetyki</b> dla psów
+              W salonie używane są{" "}
+              <strong>tylko profesjonalne kosmetyki</strong> dla psów
               posiadające atest.
             </li>
             <li className="mt-4">
@@ -131,10 +132,10 @@ const Regulations: React.FC = () => {
             </li>
             <li className="mt-4">
               Wszelkie wątpliwości i zastrzeżenia co do jakości bądź sposobu
-              wykonania fryzury należy zgłaszać do <b>24h</b> od wykonanej
-              usługi . Jeżeli reklamacja zostanie zgłoszona w nieprzekraczalnym
-              terminie i uznana za zasadną salon zobowiązany jest do poprawienia
-              niedociągnięć
+              wykonania fryzury należy zgłaszać do <strong>24h</strong> od
+              wykonanej usługi . Jeżeli reklamacja zostanie zgłoszona w
+              nieprzekraczalnym terminie i uznana za zasadną salon zobowiązany
+              jest do poprawienia niedociągnięć
             </li>
             <li className="mt-4">
               Salon ma prawo do wykorzystania wizerunku psa w celach

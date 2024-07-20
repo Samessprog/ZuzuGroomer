@@ -2,6 +2,7 @@ import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import SocialIcons from "../components/OttherComponents/SocialIcons";
 
 const DogBehaviorist: React.FC = () => {
   const [BehawioElementRef, elementInView] = useInView({
@@ -29,7 +30,7 @@ const DogBehaviorist: React.FC = () => {
       </div>
       <main className="lg:pl-20 lg:pr-20 pl-5 pr-5">
         <section className="flex mt-20 justify-center flex-col xl:flex-row">
-          <div className="w-full xl:w-8/12 pr-5 xl:pr-20 text-lg text-wrap ">
+          <div className="w-full xl:w-8/12 pr-5 xl:pr-20 text-base text-wrap ">
             <p className="">
               Współczesne psy stają się nieodłącznymi członkami naszych rodzin.
               Podobnie jak my, mogą mieć trudności, z którymi samodzielnie sobie
@@ -72,7 +73,7 @@ const DogBehaviorist: React.FC = () => {
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
           <div
-            className="w-full xl:w-8/12 text-lg lg:pl-10"
+            className="w-full xl:w-8/12 text-base lg:pl-10"
             ref={BehawioElementRef}
           >
             <span className="mb-20 text-2xl font-bold">
@@ -134,6 +135,10 @@ const DogBehaviorist: React.FC = () => {
               </p>
             </animated.div>
           </div>
+        </section>
+        <section className="pb-20 w-full flex justify-center flex-col items-center pt-10">
+          <div className="text-3xl font-semibold mb-5">Zobacz również </div>
+          <SocialIcons />
         </section>
       </main>
     </div>
