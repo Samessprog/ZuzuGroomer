@@ -1,4 +1,9 @@
-import React, { useState, useRef, useEffect, MutableRefObject } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  type MutableRefObject,
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "../../states/action";
 import Slider from "react-slick";
@@ -25,7 +30,7 @@ const FullscreenImageViewer: React.FC = () => {
   const sliderRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const refData = useRef(data);
@@ -50,7 +55,7 @@ const FullscreenImageViewer: React.FC = () => {
     if (autoPlay) {
       interval = setInterval(() => {
         setProgress((prevProgress) =>
-          prevProgress >= 100 ? 0 : prevProgress + 1
+          prevProgress >= 100 ? 0 : prevProgress + 1,
         );
       }, 50);
     }

@@ -66,7 +66,7 @@
 }
 
 .list-icon {
-    transition: all ease-in-out .3s;
+    transition: fill ease-in-out .3s;
 
     &:hover {
         fill: $pinkSecond;

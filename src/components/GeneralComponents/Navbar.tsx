@@ -33,16 +33,15 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
-        <Link
-          className="2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center"
-          to="/"
-        >
-          <img
-            src={logo}
-            alt="loading logo err"
-            className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
-          />
-        </Link>
+        <div className="2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center">
+          <Link to="/">
+            <img
+              src={logo}
+              alt="loading logo err"
+              className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
+            />
+          </Link>
+        </div>
 
         <div
           className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5  
@@ -51,12 +50,13 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
         >
           <ul className={`flex justify-end font-medium main-menu  k2`}>
             <li
-              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
+              className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <Link className="item-context relative" to="oNas">
+              <NavLink className="item-context relative" to="/oNas">
                 O nas
-              </Link>
+              </NavLink>
             </li>
+
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
@@ -111,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             </li>
           </ul>
         </div>
-        <div className="w-2/12 pt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
+        <div className="w-2/12 mt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
             <svg
               xmlns="http://www.w3.org/2000/svg"

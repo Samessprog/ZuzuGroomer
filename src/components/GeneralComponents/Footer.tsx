@@ -34,9 +34,9 @@ const Footer: React.FC = () => {
               </label>
             </label>
           </a>
-          <label className="mt-1 lg:mt-7 mb-2 text-sm">NIP: 2220928857</label>
-          <label className="mt-1 lg:mt-2 mb-2 text-sm">REGON: 528623838</label>
-          <label className="mt-3 lg:mt-7 mb-2 text-sm">
+          <label className="mt-1 lg:mt-5 mb-2 text-sm">NIP: 2220928857</label>
+          <label className="mt-1 lg:mt-1 mb-2 text-sm">REGON: 528623838</label>
+          <label className="mt-3 lg:mt-5 mb-2 text-sm">
             Prosze o kontakt telefoniczny lub mailowy w celu umówienia wizyty
           </label>
         </div>
@@ -51,12 +51,31 @@ const Footer: React.FC = () => {
             >
               Strona główna
             </Link>
-
             <Link
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Usługi"
             >
               Usługi
+            </Link>
+            <Link
+              to="/PsiBehawiorysta"
+              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+            >
+              {" "}
+              Psi Behawiorysta
+            </Link>
+            <Link
+              className=" mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              to="ProgramLojalnosciowy"
+            >
+              {" "}
+              Program lojalnościowy
+            </Link>
+            <Link
+              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              to="/Galeria"
+            >
+              Galeria
             </Link>
             <Link
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
@@ -72,35 +91,11 @@ const Footer: React.FC = () => {
               {" "}
               Kontakt
             </Link>
-
-            <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              to="/Galeria"
-            >
-              Galeria
-            </Link>
-
             <Link
               className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Regulamin"
             >
               Regulamin
-            </Link>
-
-            <Link
-              to="/PsiBehawiorysta"
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-            >
-              {" "}
-              Psi Behawiorysta
-            </Link>
-
-            <Link
-              className=" mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
-              to="ProgramLojalnosciowy"
-            >
-              {" "}
-              Program lojalnościowy
             </Link>
           </div>
         </div>
@@ -114,7 +109,7 @@ const Footer: React.FC = () => {
             <label className="mb-2 text-sm">PT: 9:00 - 15:00</label>
             <label className="mb-2 text-sm">Sobota: Nieczynne</label>
             <label className="mb-2 text-sm">Niedziela: Nieczynne</label>
-            <div className="flex items-center mt-3 ">
+            <div className="flex items-center mt-7 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="19"
@@ -191,7 +186,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-7">
             <img
               alt="loading err"
               src={XD}
