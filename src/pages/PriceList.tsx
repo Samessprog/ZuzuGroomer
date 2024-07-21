@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -34,7 +34,7 @@ const PriceList: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="w-full overflow-hidden relative priceList-img">
         <img
           src={p1}
@@ -76,7 +76,7 @@ const PriceList: React.FC = () => {
             <div className="text-xl font-semibold border-b-2 border-black color-pink">
               Strzyżenie z kąpielą i pełną kosmetyką
             </div>
-            <div>
+            <>
               <ul className="list-disc mt-8 pl-2 no-select">
                 <li className="mb-1">
                   Yorkshire Terrier:{" "}
@@ -167,7 +167,7 @@ const PriceList: React.FC = () => {
                   <span className="color-pink font-semibold price">220zł</span>
                 </li>
               </ul>
-            </div>
+            </>
           </animated.div>
           <animated.div
             className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
@@ -360,7 +360,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100
+                100,
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -373,7 +373,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400
+                400,
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -383,7 +383,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500
+                500,
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -393,7 +393,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550
+                550,
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -410,7 +410,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570
+                570,
               )}
             >
               Wizyta adaptacyjna -{" "}
@@ -469,7 +469,7 @@ const PriceList: React.FC = () => {
           </table>
         </div>
       </div> */}
-    </div>
+    </>
   );
 };
 

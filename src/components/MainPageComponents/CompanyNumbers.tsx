@@ -35,10 +35,18 @@ const Numbers: React.FC = () => {
     <section ref={numberRefElement}>
       {elementInView && (
         <div className="number-holder mt-20 p-8 flex justify-center items-center flex-col bg-[#f9f9f9] color-pink">
-          <div className="flex number-header justify-center font-semibold text-3xl md:text-4xl mb-8 tracking-wide mr-0 xl:mr-20">
+          <div
+            className="flex number-header justify-center font-semibold text-3xl md:text-4xl mb-8 tracking-wide mr-0 xl:mr-20"
+            role="heading"
+            aria-level={1}
+          >
             My w liczbach
           </div>
-          <div className="flex justify-between items-center w-full 2xl:w-9/12 flex-col xl:flex-row">
+          <div
+            className="flex justify-between items-center w-full 2xl:w-9/12 flex-col xl:flex-row"
+            role="group"
+            aria-labelledby="years-description"
+          >
             <div className="flex flex-col mt-5 xl:mt-0">
               <span className="font-semibold number-item text-3xl md:text-4xl  ">
                 <AnimatedNumber value={3} from={10} isVisible={elementInView} />{" "}

@@ -3,7 +3,7 @@ import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 
 const LoyaltyProgram: React.FC = () => {
   return (
-    <div>
+    <>
       <section>
         <div className="relative">
           <img
@@ -42,7 +42,7 @@ const LoyaltyProgram: React.FC = () => {
               lojalnosciowy dam dam damaaam dam damda damdaad Program
               lojalnosciowy dam dam damaaam dam damda damdaad Program
               lojalnosciowy dam dam damaaam dam damda damdaad Program
-              <div>
+              <>
                 <span className="text-xl color-pink mt-2">
                   Zalety naszego programu:
                 </span>
@@ -100,7 +100,7 @@ const LoyaltyProgram: React.FC = () => {
                     Zniżki
                   </li>
                 </ul>
-              </div>
+              </>
             </div>
           </div>
           <div className="w-5/12 ml-10">
@@ -111,7 +111,7 @@ const LoyaltyProgram: React.FC = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 

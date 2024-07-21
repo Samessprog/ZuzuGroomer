@@ -21,6 +21,7 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
       src={imgUrl}
+      role="slider"
       className={`img-viewer w-full lg:w-7/12 xl:6/12 cursor-grab ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
     />
   );

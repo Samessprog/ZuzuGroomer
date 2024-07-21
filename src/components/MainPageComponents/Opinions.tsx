@@ -84,7 +84,12 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
     <section className="mb-20">
       <div className="flex flex-col items-center mt-30">
         <div className="color-pink special-font text-5xl mb-2">Opinie</div>
-        <div className="font-bold xl:text-4xl tracking-wide text-2xl text-center pl-3 pr-3 xl:pl-0 xl:pr-0 ">
+        <div
+          className="font-bold xl:text-4xl tracking-wide text-2xl text-center pl-3 pr-3 xl:pl-0 xl:pr-0 "
+          role="header"
+          aria-level="1"
+          tabIndex={0}
+        >
           JAK WIDZĄ NAS KLIENCI?
         </div>
       </div>

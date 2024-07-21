@@ -40,7 +40,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="relative">
         <img
           alt="loading err"
@@ -259,7 +259,7 @@ const Services: React.FC = () => {
             </div>
           </div>
           <div className="mt-10 flex justify-center mb-10">
-            <button className="services-button-visiting ">
+            <button className="services-button-visiting text-white">
               Umów się na wizytę!
             </button>
           </div>
@@ -371,7 +371,7 @@ const Services: React.FC = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 export default Services;

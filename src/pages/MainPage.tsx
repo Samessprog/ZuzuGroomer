@@ -68,7 +68,7 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
       <MainBio />
       <PhilosophySection />
       <ServicesInfoSection />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<>Loading...</>}>
         <LazyPetCareSection />
         <Numbers />
         <LazyMainOpinions displayWidth={displayWidth} />
@@ -86,7 +86,7 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
           ></iframe>
         </div>
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<>Loading...</>}>
         <LazyGallery />
         <LazySummaryMain />
       </Suspense>

@@ -27,22 +27,42 @@ const Gallery: React.FC = () => {
   });
 
   return (
-    <section ref={galleryRefElement} className="mt-20">
+    <section
+      ref={galleryRefElement}
+      className="mt-20"
+      aria-labelledby="gallery-heading"
+      aria-describedby="gallery-description"
+    >
       {elementInView && (
-        <div>
+        <>
           <div className="flex flex-col items-center pt-20 mb-8">
-            <div className="fancy-header text-4xl sm:text-4xl md:text-5xl text-center color-pink special-font ">
+            <div
+              className="fancy-header text-4xl sm:text-4xl md:text-5xl text-center color-pink special-font "
+              role="heading"
+              aria-level={1}
+            >
               Galeria Zdjęć
             </div>
-            <div className=" text-4xl sm:text-3xl md:text-4xl  font-bold mt-3 text-center">
+            <div
+              className=" text-4xl sm:text-3xl md:text-4xl  font-bold mt-3 text-center"
+              role="heading"
+              aria-level={2}
+            >
               Nasze dzieła
             </div>
-            <div className="mt-8 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full ">
+            <div
+              className="mt-8 md:text-lg text-base sm:text-sm  w-10/12 text-center md:w-full "
+              role="note"
+            >
               Zobacz jak Twój pupil będzie wyglądać po kompleksowej pielęgnacji
               w <b>Shaggy grooming atelier</b>
             </div>
           </div>
-          <div className={`gallery-holder w-12/12 pr-20 pl-20 grid`}>
+          <div
+            className={`gallery-holder w-12/12 pr-20 pl-20 grid`}
+            role="list"
+            aria-label="Photo gallery"
+          >
             {photos.map((imgUrl, index) => (
               <animated.div style={galleryAnimate} key={index}>
                 <GalleryPhoto
@@ -53,10 +73,13 @@ const Gallery: React.FC = () => {
               </animated.div>
             ))}
           </div>
-          <div className="mt-10 flex justify-end w-11/12 text-gray-500 cursor-pointer text-sm">
+          <div
+            className="mt-10 flex justify-end w-11/12 text-gray-500 cursor-pointer text-sm"
+            role="link"
+          >
             <Link to="/Galeria">Zobacz więcej!</Link>
           </div>
-        </div>
+        </>
       )}
     </section>
   );

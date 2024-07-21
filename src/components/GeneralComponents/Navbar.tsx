@@ -20,7 +20,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
   }, [displayWidth]);
 
   return (
-    <nav className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300">
+    <nav
+      className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
       <div className="flex w-full items-center flex-wrap mb-0 sm:mb-3  max-w-screen-2xl">
         <div
           className={`hamburger pt-7  w-1/12 order-1 hidden cursor-pointer pl-2 sm:pl-0 pb-3 sm:pb-0  ${isMenuOpen ? "open" : ""}`}
@@ -39,6 +43,8 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
               src={logo}
               alt="loading logo err"
               className="navbar-logo ml-0 sm:ml=4 h-full w-full md:w-64 cursor-pointer"
+              aria-label="Back to main page"
+              role="menuitem"
             />
           </Link>
         </div>
@@ -52,7 +58,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <NavLink className="item-context relative" to="/oNas">
+              <NavLink
+                className="item-context relative"
+                to="/oNas"
+                role="menuitem"
+              >
                 O nas
               </NavLink>
             </li>
@@ -60,14 +70,22 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <NavLink className="item-context relative" to="/Usługi">
+              <NavLink
+                className="item-context relative"
+                to="/Usługi"
+                role="menuitem"
+              >
                 Usługi
               </NavLink>
             </li>
             <li
               className={`menu-navbar-item  text-base  cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <NavLink className="item-context relative" to="/PsiBehawiorysta">
+              <NavLink
+                className="item-context relative"
+                to="/PsiBehawiorysta"
+                role="menuitem"
+              >
                 Psi Behawiorysta
               </NavLink>
             </li>
@@ -84,28 +102,44 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <NavLink className="item-context relative" to="/Galeria">
+              <NavLink
+                className="item-context relative"
+                to="/Galeria"
+                role="menuitem"
+              >
                 Galeria
               </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
-              <NavLink className="item-context relative" to="/Cennik">
+              <NavLink
+                className="item-context relative"
+                to="/Cennik"
+                role="menuitem"
+              >
                 Cennik
               </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : ""}`}
             >
-              <NavLink className="item-context relative" to="/Kontakt">
+              <NavLink
+                className="item-context relative"
+                to="/Kontakt"
+                role="menuitem"
+              >
                 Kontakt
               </NavLink>
             </li>
             <li
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-5 justify-center items-center open" : ""}`}
             >
-              <NavLink className="item-context relative" to="/Regulamin">
+              <NavLink
+                className="item-context relative"
+                to="/Regulamin"
+                role="menuitem"
+              >
                 Regulamin
               </NavLink>
             </li>

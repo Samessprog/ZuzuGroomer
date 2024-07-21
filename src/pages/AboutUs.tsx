@@ -55,7 +55,7 @@ const AboutUs: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <div className="relative">
         <img
           alt="loading err"
@@ -94,7 +94,7 @@ const AboutUs: React.FC = () => {
               />
             </div>
             <div className="w-full md:w-7/12 pl-0 md:pl-5 text-justify mt-5 md:mt-0 text-sm md:text-base leading-relaxed">
-              <div>
+              <>
                 {" "}
                 <p>
                   W moim salonie głównym priorytetem jest komfort pupila. Z
@@ -135,7 +135,7 @@ const AboutUs: React.FC = () => {
                   budować pozytywną więź z każdym psem, który trafia do mojego
                   salonu.
                 </p>
-              </div>
+              </>
             </div>
           </div>
           <div
@@ -224,7 +224,7 @@ const AboutUs: React.FC = () => {
                 </ul>
               </div>
               <div className="mt-5  mb-8 md:mb-0">
-                <button className="appointment-button text-white rounded-3xl">
+                <button className="appointment-button text-white rounded-3xl text-lg">
                   Zapisz się na wizytę online
                 </button>
               </div>
@@ -331,7 +331,7 @@ const AboutUs: React.FC = () => {
         </article>
       </main>
       {fullScreenFlag.isOpen && <FullscreenImageViewer />}
-    </div>
+    </>
   );
 };
 

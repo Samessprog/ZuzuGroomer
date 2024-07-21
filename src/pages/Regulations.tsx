@@ -3,14 +3,14 @@ import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 
 const Regulations: React.FC = () => {
   return (
-    <div>
+    <>
       <div className="relative regulamin-img">
         <img
           src={p1}
           className="w-full h-1/12 regulamin-img relative object-cover"
           alt="loading err"
         />
-        <div className="absolute regulation-text">
+        <div className="absolute regulation-text text-center top-1/2 left-1/2">
           <span className=" object-cover text-6xl fancy-text tracking-wide">
             Regulamin
           </span>
@@ -20,7 +20,7 @@ const Regulations: React.FC = () => {
         <div className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink">
           <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
         </div>
-        <div className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed ">
+        <div className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5">
           <ol className="list-decimal flex flex-col items-start text-justify w-10/12">
             <li className="">
               W celu umówienia wizyty należy zarezerwować termin telefonicznie
@@ -156,7 +156,7 @@ const Regulations: React.FC = () => {
           </span>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

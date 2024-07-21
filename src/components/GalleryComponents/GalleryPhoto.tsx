@@ -23,6 +23,19 @@ const GalleryPhoto: React.FC<GalleryProps> = ({
     setLoaded(true);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      dispatch(
+        setFullScreen({
+          isOpen: true,
+          photos: mainPhotos?.length > 0 ? mainPhotos : galleryPhotos,
+          params: { index },
+        }),
+      );
+      event.preventDefault();
+    }
+  };
+
   return (
     <div
       className="gallery w-12/12 h-100 rounded-md overflow-hidden"
@@ -35,6 +48,11 @@ const GalleryPhoto: React.FC<GalleryProps> = ({
           }),
         )
       }
+      role="button"
+      aria-label="Open image in full screen"
+      aria-live="polite"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       {!loaded && (
         <div className="gallery-img h-100 w-full">

@@ -27,11 +27,11 @@ const Gallery: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   return (
-    <div>
+    <>
       <div className="relative">
         <img
           alt="loading err"
@@ -121,7 +121,7 @@ const Gallery: React.FC = () => {
         <SocialIcons />
       </section>
       {fullScreenFlag.isOpen === true && <LazyFullscreenImageViewer />}
-    </div>
+    </>
   );
 };
 

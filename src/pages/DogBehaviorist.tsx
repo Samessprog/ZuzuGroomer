@@ -17,7 +17,7 @@ const DogBehaviorist: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <div className="relative  ">
         <img
           src={p1}
@@ -141,7 +141,7 @@ const DogBehaviorist: React.FC = () => {
           <SocialIcons />
         </section>
       </main>
-    </div>
+    </>
   );
 };
 
