@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -61,8 +61,13 @@ const AboutUs: React.FC = () => {
           alt="loading err"
           className="contact-img w-full object-cover"
           src={p1}
+          role="img"
         />
-        <span className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2">
+        <span
+          className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+          role="header"
+          aria-level={1}
+        >
           <i>O nas</i>
         </span>
       </div>
@@ -141,10 +146,13 @@ const AboutUs: React.FC = () => {
           <div
             className="mt-10 flex flex-col md:flex-row"
             ref={AboutUsFirstTabRefElement}
+            aria-labelledby="about-us-section"
           >
             <animated.div
               className="w-full md:w-6/12 pl-5 text-justify"
               style={AboutUsAnimate}
+              role="region"
+              aria-labelledby="about-us-content"
             >
               <div className="text-4xl font-semibold color-pink mb-5 flex items-center">
                 <div className="mr-5 ">
@@ -155,6 +163,8 @@ const AboutUs: React.FC = () => {
                     width="35px"
                     fill="#000000"
                     className="rotate-12"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180-160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm240 0q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180 160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z" />
                   </svg>
@@ -168,7 +178,7 @@ const AboutUs: React.FC = () => {
                 spokojną i przyjazną atmosferę podczas zabiegów pielęgnacyjnych.
               </div>
               <div className="">
-                <ul>
+                <ul aria-label="service list">
                   <li className="text-xl flex items-center list-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -177,6 +187,8 @@ const AboutUs: React.FC = () => {
                       width="21px"
                       fill="#00000"
                       className="mr-2"
+                      focusable="true"
+                      aria-label="  Zaufana opieka"
                     >
                       <path d="M380-80q-59 0-99.5-40.5T240-220q0-9 2.5-14t-.5-8q-3-3-8-.5t-14 2.5q-59 0-99.5-40.5T80-380q0-59 40.5-99.5T220-520q23 0 42 6t36 18l166-166q-12-17-18-36t-6-42q0-59 40.5-99.5T580-880q59 0 99.5 40.5T720-740q0 9-2.5 14t.5 8q3 3 8 .5t14-2.5q59 0 99.5 40.5T880-580q0 59-40.5 99.5T740-440q-23 0-42-6t-36-18L496-298q12 17 18 36t6 42q0 59-40.5 99.5T380-80Zm0-80q26 0 43-17t17-43q0-9-2.5-17.5T430-254q-17-24-14-51.5t24-48.5l166-166q21-21 48.5-24t51.5 14q8 5 16.5 7.5T740-520q26 0 43-17t17-43q0-26-17-43t-43-17q-35 0-49-3.5T662-662q-15-15-18.5-29t-3.5-49q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 11 2 18.5t8 15.5q17 24 14 51.5T520-606L354-440q-21 21-48.5 24T254-430q-8-5-16.5-7.5T220-440q-26 0-43 17t-17 43q0 26 17 43t43 17q35 0 49 3.5t29 18.5q15 15 18.5 29t3.5 49q0 26 17 43t43 17Zm100-320Z" />
                     </svg>
@@ -190,6 +202,8 @@ const AboutUs: React.FC = () => {
                       width="21px"
                       fill="#00000"
                       className="mr-2"
+                      focusable="true"
+                      aria-label="Profesjonalna pielęgnacja"
                     >
                       <path d="M380-80q-59 0-99.5-40.5T240-220q0-9 2.5-14t-.5-8q-3-3-8-.5t-14 2.5q-59 0-99.5-40.5T80-380q0-59 40.5-99.5T220-520q23 0 42 6t36 18l166-166q-12-17-18-36t-6-42q0-59 40.5-99.5T580-880q59 0 99.5 40.5T720-740q0 9-2.5 14t.5 8q3 3 8 .5t14-2.5q59 0 99.5 40.5T880-580q0 59-40.5 99.5T740-440q-23 0-42-6t-36-18L496-298q12 17 18 36t6 42q0 59-40.5 99.5T380-80Zm0-80q26 0 43-17t17-43q0-9-2.5-17.5T430-254q-17-24-14-51.5t24-48.5l166-166q21-21 48.5-24t51.5 14q8 5 16.5 7.5T740-520q26 0 43-17t17-43q0-26-17-43t-43-17q-35 0-49-3.5T662-662q-15-15-18.5-29t-3.5-49q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 11 2 18.5t8 15.5q17 24 14 51.5T520-606L354-440q-21 21-48.5 24T254-430q-8-5-16.5-7.5T220-440q-26 0-43 17t-17 43q0 26 17 43t43 17q35 0 49 3.5t29 18.5q15 15 18.5 29t3.5 49q0 26 17 43t43 17Zm100-320Z" />
                     </svg>
@@ -203,6 +217,8 @@ const AboutUs: React.FC = () => {
                       width="21px"
                       fill="#00000"
                       className="mr-2"
+                      focusable="true"
+                      aria-label="Indywidualne podejście"
                     >
                       <path d="M380-80q-59 0-99.5-40.5T240-220q0-9 2.5-14t-.5-8q-3-3-8-.5t-14 2.5q-59 0-99.5-40.5T80-380q0-59 40.5-99.5T220-520q23 0 42 6t36 18l166-166q-12-17-18-36t-6-42q0-59 40.5-99.5T580-880q59 0 99.5 40.5T720-740q0 9-2.5 14t.5 8q3 3 8 .5t14-2.5q59 0 99.5 40.5T880-580q0 59-40.5 99.5T740-440q-23 0-42-6t-36-18L496-298q12 17 18 36t6 42q0 59-40.5 99.5T380-80Zm0-80q26 0 43-17t17-43q0-9-2.5-17.5T430-254q-17-24-14-51.5t24-48.5l166-166q21-21 48.5-24t51.5 14q8 5 16.5 7.5T740-520q26 0 43-17t17-43q0-26-17-43t-43-17q-35 0-49-3.5T662-662q-15-15-18.5-29t-3.5-49q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 11 2 18.5t8 15.5q17 24 14 51.5T520-606L354-440q-21 21-48.5 24T254-430q-8-5-16.5-7.5T220-440q-26 0-43 17t-17 43q0 26 17 43t43 17q35 0 49 3.5t29 18.5q15 15 18.5 29t3.5 49q0 26 17 43t43 17Zm100-320Z" />
                     </svg>
@@ -216,6 +232,8 @@ const AboutUs: React.FC = () => {
                       width="21px"
                       fill="#00000"
                       className="mr-2"
+                      focusable="true"
+                      aria-label="Najlepsze kosmetyki"
                     >
                       <path d="M380-80q-59 0-99.5-40.5T240-220q0-9 2.5-14t-.5-8q-3-3-8-.5t-14 2.5q-59 0-99.5-40.5T80-380q0-59 40.5-99.5T220-520q23 0 42 6t36 18l166-166q-12-17-18-36t-6-42q0-59 40.5-99.5T580-880q59 0 99.5 40.5T720-740q0 9-2.5 14t.5 8q3 3 8 .5t14-2.5q59 0 99.5 40.5T880-580q0 59-40.5 99.5T740-440q-23 0-42-6t-36-18L496-298q12 17 18 36t6 42q0 59-40.5 99.5T380-80Zm0-80q26 0 43-17t17-43q0-9-2.5-17.5T430-254q-17-24-14-51.5t24-48.5l166-166q21-21 48.5-24t51.5 14q8 5 16.5 7.5T740-520q26 0 43-17t17-43q0-26-17-43t-43-17q-35 0-49-3.5T662-662q-15-15-18.5-29t-3.5-49q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 11 2 18.5t8 15.5q17 24 14 51.5T520-606L354-440q-21 21-48.5 24T254-430q-8-5-16.5-7.5T220-440q-26 0-43 17t-17 43q0 26 17 43t43 17q35 0 49 3.5t29 18.5q15 15 18.5 29t3.5 49q0 26 17 43t43 17Zm100-320Z" />
                     </svg>
@@ -224,13 +242,18 @@ const AboutUs: React.FC = () => {
                 </ul>
               </div>
               <div className="mt-5  mb-8 md:mb-0">
-                <button className="appointment-button text-white rounded-3xl text-lg">
+                <button
+                  className="appointment-button text-white rounded-3xl text-lg"
+                  role="button"
+                  tabIndex={0}
+                >
                   Zapisz się na wizytę online
                 </button>
               </div>
             </animated.div>
             <div className=" -holder w-full md:w-6/12 ml-0 md:ml-5 rounded">
               <img
+                role="img"
                 alt="loading err"
                 className="  w-full h-full object-cover rounded"
                 src={p1}
@@ -240,14 +263,25 @@ const AboutUs: React.FC = () => {
         </article>
         <article className="w-full flex justify-center">
           <div className="mt-12 ">
-            <div className="text-lg md:text-2xl font-semibold text-center">
+            <div
+              className="text-lg md:text-2xl font-semibold text-center"
+              aria-label="Zapraszam do odwiedzenia moich social mediów"
+              role="header"
+              aria-level={2}
+            >
               Zapraszam do odwiedzenia moich social mediów
             </div>
-            <div className="flex justify-center mt-5 flex-col md:flex-row items-center md:items-start ">
+            <div
+              className="flex justify-center mt-5 flex-col md:flex-row items-center md:items-start"
+              role="group"
+              aria-label="Social media icons"
+            >
               <div className="flex  social-holder">
                 <animated.div
                   className=" rounded-full cursor-pointer p-[10px] bg-Tick"
                   style={iconsAnimate}
+                  role="link"
+                  aria-label="TikTok"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -262,6 +296,8 @@ const AboutUs: React.FC = () => {
                 <animated.div
                   className=" rounded-full ml-5 cursor-pointer p-[10px] bg-insta"
                   style={iconsAnimate}
+                  role="link"
+                  aria-label="Instagram"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -278,6 +314,8 @@ const AboutUs: React.FC = () => {
               <animated.div
                 className="flex  social-holder mt-4 md:mt-0"
                 style={iconsAnimate}
+                role="link"
+                aria-label="Facebook"
               >
                 <div className="  rounded-full ml-0 md:ml-5 cursor-pointer p-[11px] bg-facebook">
                   <svg
@@ -294,6 +332,8 @@ const AboutUs: React.FC = () => {
                 <animated.div
                   className="  rounded-full ml-5 cursor-pointer p-[10px] bg-maps"
                   style={iconsAnimate}
+                  role="link"
+                  aria-label="Google maps"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -313,10 +353,13 @@ const AboutUs: React.FC = () => {
           className="w-full flex mt-10 flex-col items-center"
           ref={galleryRefElement}
         >
-          <div className="text-2xl font-semibold ">Dyplomy i osiągnięcia</div>
+          <div className="text-2xl font-semibold " role="header" aria-level={3}>
+            Dyplomy i osiągnięcia
+          </div>
           <div ref={iconsRef}></div>
           <div
             className={`gallery-holder w-12/12 pr-20 pl-20 grid mt-10 mb-20`}
+            role="img"
           >
             {photos.map((imgUrl, index) => (
               <animated.div style={galleryAnimate} key={index}>

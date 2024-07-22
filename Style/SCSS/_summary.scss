@@ -1,7 +1,8 @@
 @import "./\ variables";
 
 .summary-holder {
-    background-image: url("../../src/assets/lapyTlo.webp");;
+    background-image: url("../../src/assets/lapyTlo.webp");
+    ;
 }
 
 .des-holder-elm {
@@ -15,6 +16,8 @@
     transition: all .4s ease-in-out;
     transform-origin: center;
     padding: .8rem;
+
+    &:focus,
     &:hover {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;

@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { Blurhash } from "react-blurhash";
 
 const MainBio: React.FC = () => {
+  const [loaded, setLoaded] = useState(false);
+
   const [bioRefElement, elementInView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -15,7 +17,6 @@ const MainBio: React.FC = () => {
     config: { tension: 190, friction: 65 },
   });
 
-  const [loaded, setLoaded] = useState(false);
   const handleImageLoad = (): void => {
     setLoaded(true);
   };

@@ -46,6 +46,7 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
           width="300"
           height="190"
           onClick={onClick}
+          tabIndex={0}
         >
           <path d="M494.667-480.667 301.334-674l73.999-74 267.334 267.333-267.334 267.334-73.999-74 193.333-193.334Z" />
         </svg>
@@ -62,6 +63,7 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
           viewBox="0 -960 960 960"
           className="slider-arrow-left rounded-full"
           onClick={onClick}
+          tabIndex={0}
         >
           <path d="M560.667-213.333 293.333-480.667 560.667-748l73.999 74-193.333 193.333 193.333 193.334-73.999 74Z" />
         </svg>
@@ -88,7 +90,6 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
           className="font-bold xl:text-4xl tracking-wide text-2xl text-center pl-3 pr-3 xl:pl-0 xl:pr-0 "
           role="header"
           aria-level="1"
-          tabIndex={0}
         >
           JAK WIDZĄ NAS KLIENCI?
         </div>

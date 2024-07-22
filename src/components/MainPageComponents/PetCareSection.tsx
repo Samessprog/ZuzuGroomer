@@ -5,7 +5,7 @@ import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("../GalleryComponents/TwentyTwentyAnimation"),
+  async () => await import("../GalleryComponents/TwentyTwentyAnimation")
 );
 
 const PetCareSection: React.FC = () => {
@@ -61,6 +61,7 @@ const PetCareSection: React.FC = () => {
             <button
               className="special-button bg-pink font-semibold flex items-center text-white rounded-3xl pl-7 pr-5 p-2.5 mt-8 xl:mt-0 transform hover:transform-x-0 transition-all ease-out duration-200"
               aria-label="Learn more about grooming services"
+              tabIndex={0}
             >
               <>Dowiedz się więcej</>
               <svg

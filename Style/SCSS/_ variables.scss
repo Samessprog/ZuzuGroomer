@@ -57,6 +57,7 @@ $px34: 34px;
     position: absolute;
     cursor: pointer;
     z-index: 999;
+
     &:hover {
         fill: white;
     }
@@ -79,7 +80,7 @@ $px34: 34px;
                 height: 400px;
             }
 
-
+            &:focus,
             &:hover {
                 animation: zoomPhotoAnimation 1s forwards;
 

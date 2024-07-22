@@ -5,6 +5,11 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
 const Gallery: React.FC = () => {
+  const [galleryRefElement, elementInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const photos = [
     "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
     "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
@@ -13,11 +18,6 @@ const Gallery: React.FC = () => {
     "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais",
     "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais",
   ];
-
-  const [galleryRefElement, elementInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
 
   const galleryAnimate = useSpring({
     opacity: elementInView ? 1 : 0,

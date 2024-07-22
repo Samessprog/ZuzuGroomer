@@ -15,6 +15,7 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
   const handleMouseUp = (): void => {
     setIsGrabbing(false);
   };
+
   return (
     <img
       onMouseDown={handleMouseDown}

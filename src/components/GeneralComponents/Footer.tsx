@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <div className="flex w-full pl-10 pr-10 pt-20 pb-20 footer-container flex-col xl:flex-row justify-center xl:justify-start items-center xl:items-start">
         <div className="flex flex-col text-[#AAAAB1] w-full xl:w-4/12 items-center xl:items-start ">
           <a
-            className="cursor-pointer hover:text-white transition ease-in-out duration-300"
+            className="cursor-pointer hover:text-white focus:text-white] transition ease-in-out duration-300"
             href="https://www.google.com/maps/dir//Stokrotek+1,+41-400+Mys%C5%82owice/@50.2333112,19.0387012,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4716c528fdfa72db:0x4b638e90ac47fd42!2m2!1d19.1210828!2d50.233337?entry=ttu"
             target="_blank"
             rel="noreferrer"
@@ -62,14 +62,14 @@ const Footer: React.FC = () => {
               Menu:
             </label>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white  cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/"
               aria-label="Go to homepage"
             >
               Strona główna
             </Link>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Usługi"
               aria-label="Go to services page"
             >
@@ -77,14 +77,14 @@ const Footer: React.FC = () => {
             </Link>
             <Link
               to="/PsiBehawiorysta"
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               aria-label="Go to dog behaviorist page"
             >
               {" "}
               Psi Behawiorysta
             </Link>
             <Link
-              className=" mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className=" mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="ProgramLojalnosciowy"
               aria-label="Go to dog loyalty program  page"
             >
@@ -92,14 +92,14 @@ const Footer: React.FC = () => {
               Program lojalnościowy
             </Link>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Galeria"
               aria-label="Go to dog gallery  page"
             >
               Galeria
             </Link>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Cennik"
               aria-label="Go to price list page"
             >
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               Cennik
             </Link>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
               to="/Kontakt"
               aria-label="Go to contact info page"
             >
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
               Kontakt
             </Link>
             <Link
-              className="mb-2 hover:text-white cursor-pointer transition ease-in-out duration-300 text-sm"
+              className="mb-2 hover:text-white focus:text-white   cursor-pointer transition ease-in-out duration-300 text-sm k"
               to="/Regulamin"
               aria-label="Go to statute page"
             >
@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
                 viewBox="0 0 24 24"
                 width="30px"
                 height="30px"
-                className="fill-[#ff47a4]  mr-2 hover:fill-[#fd84c1] transition-all ease-in-out duration-300"
+                className="fill-[#ff47a4]  mr-2 hover:fill-[#fd84c1] focus:fill-[#fd84c1] transition-all ease-in-out duration-300"
                 role="img"
                 aria-labelledby="facebook-icon"
               >
@@ -205,7 +205,7 @@ const Footer: React.FC = () => {
                 viewBox="0 0 24 24"
                 width="30px"
                 height="30px"
-                className="fill-[#ff47a4] mr-2 hover:fill-[#fd84c1] transition-all ease-in-out duration-300"
+                className="fill-[#ff47a4] mr-2 hover:fill-[#fd84c1] focus:fill-[#fd84c1] transition-all ease-in-out duration-300"
                 role="img"
                 aria-labelledby="instagram-icon"
               >
@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
                 viewBox="0 0 50 50"
                 width="30px"
                 height="30px"
-                className="fill-[#ff47a4] mr-2 hover:fill-[#fd84c1] transition-all ease-in-out duration-300"
+                className="fill-[#ff47a4] mr-2 hover:fill-[#fd84c1] focus:fill-[#fd84c1] transition-all ease-in-out duration-300"
                 role="img"
                 aria-labelledby="google-maps-icon"
               >
@@ -232,7 +232,7 @@ const Footer: React.FC = () => {
                 viewBox="0 0 50 50"
                 width="30px"
                 height="30px"
-                className="fill-[#ff47a4] hover:fill-[#fd84c1] transition-all ease-in-out duration-300"
+                className="fill-[#ff47a4] hover:fill-[#fd84c1] focus:fill-[#fd84c1] transition-all ease-in-out duration-300"
                 role="img"
                 aria-labelledby="TikTok-icon"
               >
@@ -256,7 +256,7 @@ const Footer: React.FC = () => {
           realizacja
           <a
             target="_blank"
-            className="ml-2 text-[#AAAAB1] hover:border-b-[2px] border-orange-500"
+            className="ml-2 text-[#AAAAB1] hover:border-b-[2px] focus:border-b-[2px] border-orange-500"
             href="https://github.com/Samessprog?tab=repositories"
             rel="noreferrer"
             role="link"

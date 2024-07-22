@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number,
+    delayNumber: number
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -41,12 +41,20 @@ const PriceList: React.FC = () => {
           alt="loading err"
           className="w-full priceList-img object-cover"
         />
-        <div className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2">
+        <div
+          className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2"
+          role="header"
+          aria-level={1}
+        >
           <i className="text-6xl fancy-text tracking-wide">Cennik</i>
         </div>
       </div>
       <div className=" flex justify-center items-center mt-10 ">
-        <section className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0">
+        <section
+          className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0"
+          role="document"
+          aria-label="preliminary information"
+        >
           <p>
             {" "}
             W naszym salonie szczególną wagę przykładamy do komfortu naszych
@@ -64,20 +72,33 @@ const PriceList: React.FC = () => {
           </p>
         </section>
       </div>
-      <section>
+      <section
+        aria-label="price lists"
+        role="group"
+        aria-labelledby="price-Lists-group"
+      >
         <div
           className="mt-20 priceList-container p-12 w-full flex flex-col items-center lg:flex-row lg:items-start"
           ref={priceListRef}
+          id="price-Lists-group"
         >
           <animated.div
             className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
-            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+            <div
+              className="text-xl font-semibold border-b-2 border-black color-pink"
+              role="group"
+              aria-labelledby="Clipping-group"
+            >
               Strzyżenie z kąpielą i pełną kosmetyką
             </div>
             <>
-              <ul className="list-disc mt-8 pl-2 no-select">
+              <ul
+                className="list-disc mt-8 pl-2 no-select"
+                id="Clipping-group"
+                role="list"
+              >
                 <li className="mb-1">
                   Yorkshire Terrier:{" "}
                   <span className="color-pink font-semibold">140zł</span>
@@ -172,11 +193,16 @@ const PriceList: React.FC = () => {
           <animated.div
             className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
+            role="group"
+            aria-labelledby="Trimming-group"
           >
-            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+            <div
+              className="text-xl font-semibold border-b-2 border-black color-pink"
+              id="Trimming-group"
+            >
               Trymowanie z kąpielą i pełną kosmetyką
             </div>
-            <ul className="list-disc mt-8 pl-2 no-select">
+            <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
                 Springer Spaniel angielski:{" "}
                 <span className="color-pink font-semibold">350zł</span>
@@ -250,11 +276,19 @@ const PriceList: React.FC = () => {
           <animated.div
             className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
             style={PriceListItemAnimate}
+            role="group"
+            aria-labelledby="Cosmetology-group"
           >
-            <div className="text-xl font-semibold border-b-2 border-black color-pink">
+            <div
+              className="text-xl font-semibold border-b-2 border-black color-pink"
+              id="Cosmetology-group"
+            >
               Kosmetyka I kąpiel
             </div>
-            <ul className="list-disc mt-8 pl-2 no-select">
+            <ul
+              className="list-disc mt-8 pl-2 no-select"
+              role="Cosmetology-group"
+            >
               <li className="mb-1">
                 Owczarek szkocki długowłosy:{" "}
                 <span className="color-pink font-semibold">290zł</span>
@@ -344,7 +378,11 @@ const PriceList: React.FC = () => {
         </div>
       </section>
       <section ref={priceListExtra}>
-        <div className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20">
+        <div
+          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20"
+          role="group"
+          aria-labelledby="extra-info"
+        >
           <span>
             Prosimy o punktualne przybycie na umówioną wizytę. W przypadku nie
             przybycia na czas prosimy o kontakt telefoniczny.{" "}
@@ -353,14 +391,17 @@ const PriceList: React.FC = () => {
               pełnego wykonania usługi.
             </p>
           </span>
-          <b className="mt-5">Ponad to:</b>
-          <ul className="mt-2 list-disc ">
+          <b className="mt-5" role="header" aria-level={2}>
+            Ponad to:
+          </b>
+          <ul className="mt-2 list-disc " role="list" id="extra-info">
             <animated.li
+              aria-live="polite"
               className="mb-2"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100,
+                100
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -369,31 +410,34 @@ const PriceList: React.FC = () => {
               </b>
             </animated.li>
             <animated.li
+              aria-live="polite"
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400,
+                400
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
             </animated.li>
             <animated.li
+              aria-live="polite"
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500,
+                500
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
             </animated.li>
             <animated.li
+              aria-live="polite"
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550,
+                550
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -401,16 +445,21 @@ const PriceList: React.FC = () => {
                 {" "}
                 <b>Darmowa usługa.</b>
               </span>{" "}
-              <Link to="" className="text-sky-600 border-b-2 border-sky-600">
+              <Link
+                to=""
+                className="text-sky-600 border-b-2 border-sky-600"
+                role="link"
+              >
                 Więcej dowiesz się tutaj.
               </Link>{" "}
             </animated.li>
             <animated.li
+              aria-live="polite"
               className="mb-3 sm:mb-1"
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570,
+                570
               )}
             >
               Wizyta adaptacyjna -{" "}
@@ -418,7 +467,11 @@ const PriceList: React.FC = () => {
                 {" "}
                 <b> Cena wizyty adaptacyjnej jest ustalana indywidualnie.</b>
               </span>{" "}
-              <Link className="text-sky-600 border-b-2 border-sky-600" to="">
+              <Link
+                className="text-sky-600 border-b-2 border-sky-600"
+                to=""
+                role="link"
+              >
                 Więcej dowiesz się tutaj.
               </Link>
             </animated.li>

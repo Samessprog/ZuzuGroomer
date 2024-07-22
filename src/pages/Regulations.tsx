@@ -11,17 +11,36 @@ const Regulations: React.FC = () => {
           alt="loading err"
         />
         <div className="absolute regulation-text text-center top-1/2 left-1/2">
-          <span className=" object-cover text-6xl fancy-text tracking-wide">
+          <span
+            className=" object-cover text-6xl fancy-text tracking-wide"
+            role="header"
+            aria-level={1}
+            aria-label="Regulamin"
+          >
             Regulamin
           </span>
         </div>
       </div>
       <section className="pb-20">
-        <div className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink">
+        <div
+          className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink"
+          role="header"
+          aria-level={2}
+          aria-label="REGULAMIN SALONU SHAGGY"
+        >
           <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
         </div>
-        <div className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5">
-          <ol className="list-decimal flex flex-col items-start text-justify w-10/12">
+        <div
+          className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5"
+          role="group"
+          aria-labelledby="regGroup"
+        >
+          <ol
+            className="list-decimal flex flex-col items-start text-justify w-10/12"
+            id="regGroup"
+            role="list"
+            aria-label="List of regulations"
+          >
             <li className="">
               W celu umówienia wizyty należy zarezerwować termin telefonicznie
               pod nr. <strong>512 785 857</strong> lub osobiście, informując
@@ -150,7 +169,10 @@ const Regulations: React.FC = () => {
           </ol>
         </div>
         <div className="ml-10 mt-16 font-bold">
-          <span className=" border-b-2 border-black pb-0.5">
+          <span
+            className=" border-b-2 border-black pb-0.5"
+            aria-label="statute summary"
+          >
             Pozostawiając zwierzaka pod opieką salonu SHAGGY GROOMING ATELIER,
             klient akceptuje wszystkie warunki regulaminu.
           </span>
