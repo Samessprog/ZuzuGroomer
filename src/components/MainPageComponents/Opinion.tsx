@@ -29,8 +29,7 @@ const Opinion: React.FC<OpinionProps> = ({ elm }) => {
         <p className="opinion-context p-5 rounded-2xl text-base select-none">
           <span
             className="text-center flex "
-            aria-label={` Opinion ${elm?.text}`}
-            tabIndex={0}
+            aria-label={`Opinion ${elm?.text}`}
           >
             {elm?.text}
           </span>

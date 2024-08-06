@@ -6,14 +6,12 @@ import { useSelector } from "react-redux";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import FullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 
-const photos = [
-  "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
-  "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
-  "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png",
-  "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais",
-  "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais",
-  "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais",
-];
+//tests
+import c1 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2775_001-1.png";
+import c2 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2777_001-1.png";
+import c3 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2781_001-1.png";
+
+const photos = [c1, c2, c3];
 
 const AboutUs: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
@@ -65,7 +63,7 @@ const AboutUs: React.FC = () => {
         />
         <span
           className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
-          role="header"
+          role="heading"
           aria-level={1}
         >
           <i>O nas</i>
@@ -266,7 +264,7 @@ const AboutUs: React.FC = () => {
             <div
               className="text-lg md:text-2xl font-semibold text-center"
               aria-label="Zapraszam do odwiedzenia moich social mediów"
-              role="header"
+              role="heading"
               aria-level={2}
             >
               Zapraszam do odwiedzenia moich social mediów
@@ -353,7 +351,7 @@ const AboutUs: React.FC = () => {
           className="w-full flex mt-10 flex-col items-center"
           ref={galleryRefElement}
         >
-          <div className="text-2xl font-semibold " role="header" aria-level={3}>
+          <div className="text-2xl font-semibold " role="heading" aria-level={3}>
             Dyplomy i osiągnięcia
           </div>
           <div ref={iconsRef}></div>

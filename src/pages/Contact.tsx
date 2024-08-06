@@ -1,5 +1,6 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import QRcode from "../assets/QRcontactCode.png";
 
 const ContactInfo: React.FC = () => {
   return (
@@ -11,17 +12,17 @@ const ContactInfo: React.FC = () => {
           className="contact-img w-full object-cover"
           role="img"
         />
-        <span
+        <h1
           className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
-          role="header"
+          role="heading"
           aria-level={1}
         >
           <i>Kontakt</i>
-        </span>
+        </h1>
       </div>
       <main>
         <div className="w-full flex justify-center mt-10">
-          <div className="w-7/12 text-center" role="document">
+          <div className="w-8/12 text-center" role="document">
             <b> Skontaktuj się z nami</b>, jeśli masz jakiekolwiek pytania
             dotyczące naszych usług. Czy masz wątpliwości co do ceny lub czasu
             trwania strzyżenia? A może interesuje Cię coś innego? Chętnie
@@ -36,7 +37,7 @@ const ContactInfo: React.FC = () => {
             <div className="flex flex-col w-full xl:w-7/12 items-center xl:items-start">
               <span
                 className="text-3xl sm:text-4xl font-semibold"
-                role="header"
+                role="heading"
                 aria-level={2}
               >
                 Dane kontaktowe
@@ -99,7 +100,7 @@ const ContactInfo: React.FC = () => {
               <div className="mt-5 w-full">
                 <span
                   className="text-2xl  xl:text-2xl font-semibold flex xl:justify-start justify-center w-full xl:w-5/12"
-                  role="header"
+                  role="heading"
                   aria-level={3}
                 >
                   Sprawdź również
@@ -157,14 +158,14 @@ const ContactInfo: React.FC = () => {
               </div>
             </div>
             <div className="w-5/12  justify-center hidden xl:flex">
-              <img src={p1} alt="loading err" className="w-full h-full" />
+              <img src={QRcode} alt="loading err" className="w-full h-full" />
             </div>
           </div>
         </section>
         <section className="flex justify-center w-5/12 mt-10 text-2xl font-bold">
           <div
             className="w-full flex justify-center flex-col items-center"
-            role="header"
+            role="heading"
             aria-level={4}
           >
             <>Umów wizyte na Booksy!</>
@@ -189,14 +190,16 @@ const ContactInfo: React.FC = () => {
             </span>
           </div>
         </section>
-        <section>
+        <section className="mb-20 mt-10 ">
           <iframe
-            id="myAddress"
             title="google-map"
-            className="w-full mt-20 map-container mb-5 pl-5 pr-5"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12138.98564959422!2d19.118283106725848!3d50.23763521599856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c528fdfa72db%3A0x4b638e90ac47fd42!2sKebab%20u%20Alika%202!5e0!3m2!1spl!2spl!4v1710866304136!5m2!1spl!2spl"
-            allowFullScreen
+            className="w-full h-full rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.523344024832!2d19.128241984731773!3d50.24480917800197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c53eb21b961b%3A0xe929c76059b771df!2sWielka%20Skotnica%203%2C%2041-400%20Mys%C5%82owice!5e0!3m2!1spl!2spl!4v1718215740020!5m2!1spl!2spl"
+            width="600"
+            height="450"
             loading="lazy"
+            role="img"
+            aria-label="google maps"
           ></iframe>
         </section>
       </main>

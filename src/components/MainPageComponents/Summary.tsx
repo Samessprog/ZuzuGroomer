@@ -57,7 +57,7 @@ const SummaryMain: React.FC = () => {
           <img src={p2} alt="loading Err" title="Grooming" />
         </animated.div>
       </div>
-      <div className="flex des-holder  w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 ">
+      <div className="flex des-holder  w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 text-justify">
         <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-4  pl-8 pr-8 text-base text-[15px]">
           <p className="mb-4 ">
             {" "}

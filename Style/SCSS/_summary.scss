@@ -2,7 +2,6 @@
 
 .summary-holder {
     background-image: url("../../src/assets/lapyTlo.webp");
-    ;
 }
 
 .des-holder-elm {
@@ -19,24 +18,10 @@
 
     &:focus,
     &:hover {
-        opacity: 85%;
-        animation: iconHoverAnimate 1s infinite ease-in-out;
+        @include HoverAnimate;
     }
 }
 
-@keyframes iconHoverAnimate {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(0.9);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
 
 .c-black-600 {
     color: #191a1cdc;

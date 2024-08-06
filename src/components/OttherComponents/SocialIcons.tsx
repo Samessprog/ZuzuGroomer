@@ -29,8 +29,12 @@ const SocialIcons: React.FC = () => {
           </svg>
         </a>
         <a
+          href="https://www.youtube.com/watch?v=0hqhAIjE_8I"
+          target="_blank"
+          rel="noopener noreferrer"
           className=" rounded-full ml-5 cursor-pointer p-[10px] bg-insta"
           role="link"
+          aria-label="Instagram"
           tabIndex={0}
         >
           <svg
@@ -48,9 +52,13 @@ const SocialIcons: React.FC = () => {
       </div>
       <div className="flex social-holder mt-4 md:mt-0">
         <a
+          href="https://www.youtube.com/watch?v=0hqhAIjE_8I"
+          target="_blank"
+          rel="noopener noreferrer"
           className=" rounded-full ml-0 md:ml-5 cursor-pointer p-[11px] bg-facebook "
           role="link"
           tabIndex={0}
+          aria-label="Facebook"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,8 +73,12 @@ const SocialIcons: React.FC = () => {
           </svg>
         </a>
         <a
+          href="https://www.youtube.com/watch?v=0hqhAIjE_8I"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full ml-5 cursor-pointer p-[10px] bg-maps"
           role="link"
+          aria-label="GoogleMaps"
           tabIndex={0}
         >
           <svg

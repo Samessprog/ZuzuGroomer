@@ -93,6 +93,29 @@ $px34: 34px;
     }
 }
 
+//animates
+
+@mixin HoverAnimate {
+    opacity: 85%;
+    animation: iconHoverAnimate 1s infinite ease-in-out;
+
+    @keyframes iconHoverAnimate {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.9);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+
+
 .fs-28 {
     font-size: 20px;
 

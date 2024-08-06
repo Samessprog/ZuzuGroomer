@@ -10,7 +10,7 @@ const PhilosophySection: React.FC = () => {
 
   const philosophyAnimate = (
     elementInView: boolean,
-    translateX: string,
+    translateX: string
   ): SpringValues => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -23,11 +23,7 @@ const PhilosophySection: React.FC = () => {
     <section ref={philosophyElement} className="overflow-hidden">
       <div className={`flex flex-col items-center mt-20 md:mt-28 `}>
         <animated.div style={philosophyAnimate(elementInView, "100%")}>
-          <header
-            className="motto-header w-full color-pink special-font text-8xl md:text-9xl mb-5 md:mb-0 text-center tracking-wide transition-all ease-in-out duration-300"
-            role="heading"
-            aria-level={1}
-          >
+          <header className="motto-header w-full color-pink special-font text-8xl md:text-9xl mb-5 md:mb-0 text-center tracking-wide transition-all ease-in-out duration-300">
             <i
               style={{ textShadow: "5px 3px 4px rgba(0, 0, 0, 0.5)" }}
               role="heading"

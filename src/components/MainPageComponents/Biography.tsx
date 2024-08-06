@@ -61,7 +61,7 @@ const MainBio: React.FC = () => {
                 <i className="xl:ml-5">Cześć,</i>
               </h1>
             </header>
-            <div className="fs-3 text-base sm:text-[15px] bio-main w-full xl:w-9/12 pr-8 xl:pr-0 pl-8 xl:pl-0">
+            <div className="fs-3 text-base sm:text-[15px] bio-main w-full xl:w-10/12 pr-8 xl:pr-0 pl-8 xl:pl-0 text-justify">
               <p className="mb-5 xl:ml-5">
                 Od najmłodszych lat zwierzęta towarzyszyły mi w życiu. Zawsze
                 pasjonowałam się ich życiem i emocjami. Już jako dziecko
@@ -93,15 +93,15 @@ const MainBio: React.FC = () => {
                 czworonożnych klientów.
               </p>
             </div>
-            <footer>
+            <div>
               <h2
-                className="bio-footer font-bold flex justify-end w-12/12 xl:w-9/12 text-3xl tracking-wider mr-12 mt-8"
+                className="bio-footer font-bold flex justify-end w-12/12 xl:w-10/12 text-3xl tracking-wider mt-5"
                 role="heading"
                 aria-level="2"
               >
                 <i>Zuzanna Hassa</i>
               </h2>
-            </footer>
+            </div>
           </animated.div>
         </article>
       </div>

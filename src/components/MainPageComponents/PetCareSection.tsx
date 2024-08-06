@@ -36,28 +36,28 @@ const PetCareSection: React.FC = () => {
             role="region"
             aria-labelledby="petSectionHeader"
           >
-            <label
+            <div
               id="petSectionHeader"
               className="special-font color-pink mb-5 xl:mb-0 md:text-5xl tracking-wider transition-all ease-in-out duration-200 text-5xl"
               role="heading"
               aria-level="1"
             >
               Zmiany, zmiany, zmiany
-            </label>
-            <label
+            </div>
+            <div
               className="fs-40 font-semibold mb-10 small-font-resp pl-2 pr-2 text-center"
               role="heading"
               aria-level="2"
             >
               BO KAŻDY CHCE, WYGLĄDAĆ DOBRZE
-            </label>
-            <label
+            </div>
+            <div
               className="font-semibold mb-5 responsive-font pl-2 pr-2 text-base"
               role="heading"
               aria-level="3"
             >
               Zapraszam na kompleksową pielęgnację małe i duże psy
-            </label>
+            </div>
             <button
               className="special-button bg-pink font-semibold flex items-center text-white rounded-3xl pl-7 pr-5 p-2.5 mt-8 xl:mt-0 transform hover:transform-x-0 transition-all ease-out duration-200"
               aria-label="Learn more about grooming services"
@@ -82,13 +82,13 @@ const PetCareSection: React.FC = () => {
             role="region"
             aria-labelledby="twentyTwentyDescription"
           >
-            <label
+            <div
               id="twentyTwentyDescription"
               className="text-sm text-gray-500 flex justify-center mb-3"
               aria-label="Slide the slider to compare images"
             >
               Przesuń suwak i sprawdź...
-            </label>
+            </div>
             <div
               className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center w-9/12"
               aria-live="polite"

@@ -35,7 +35,7 @@ const MainSlider: React.FC = () => {
           src={groomingSalonImg[imageIndex]}
           alt="img err"
           className="img-slider block w-full h-[30.5rem]  sm:h-full opacity-0 sm:object-cover"
-          role="slider"
+          role="img"
         />
       </figure>
     </div>

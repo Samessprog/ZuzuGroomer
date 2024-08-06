@@ -43,7 +43,7 @@ const PriceList: React.FC = () => {
         />
         <div
           className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2"
-          role="header"
+          role="heading"
           aria-level={1}
         >
           <i className="text-6xl fancy-text tracking-wide">Cennik</i>
@@ -285,10 +285,7 @@ const PriceList: React.FC = () => {
             >
               Kosmetyka I kąpiel
             </div>
-            <ul
-              className="list-disc mt-8 pl-2 no-select"
-              role="Cosmetology-group"
-            >
+            <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
                 Owczarek szkocki długowłosy:{" "}
                 <span className="color-pink font-semibold">290zł</span>
@@ -391,10 +388,14 @@ const PriceList: React.FC = () => {
               pełnego wykonania usługi.
             </p>
           </span>
-          <b className="mt-5" role="header" aria-level={2}>
+          <b className="mt-5" role="heading" aria-level={2}>
             Ponad to:
           </b>
-          <ul className="mt-2 list-disc " role="list" id="extra-info">
+          <ul
+            className="mt-2 list-disc extra-info-holder"
+            role="list"
+            id="extra-info"
+          >
             <animated.li
               aria-live="polite"
               className="mb-2"

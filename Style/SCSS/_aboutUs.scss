@@ -64,8 +64,7 @@
 
     &:hover,
     &:focus {
-        opacity: 85%;
-        animation: iconHoverAnimate 1s infinite ease-in-out;
+        @include HoverAnimate;
     }
 }
 
