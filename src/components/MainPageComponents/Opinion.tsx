@@ -23,13 +23,21 @@ const Opinion: React.FC<OpinionProps> = ({ elm }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      aria-label="opinion holder"
     >
-      <div>
+      <>
         <p className="opinion-context p-5 rounded-2xl text-base select-none">
-          <span className="text-center flex ">{elm?.text}</span>
+          <span
+            className="text-center flex "
+            aria-label={`Opinion ${elm?.text}`}
+          >
+            {elm?.text}
+          </span>
         </p>
+      </>
+      <div className="mt-5" aria-label="opinion data">
+        {elm?.data}
       </div>
-      <div className="mt-5">{elm?.data}</div>
     </div>
   );
 };

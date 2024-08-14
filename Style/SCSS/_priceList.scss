@@ -54,3 +54,26 @@
     border: 1px solid black;
     border-radius: 10px;
 }
+
+.extra-info-holder {
+
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url('../../src/assets/PETS.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

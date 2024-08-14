@@ -1,7 +1,5 @@
 @import "./\ variables";
 
-
-
 .main-container {
     .slider-holder {
         margin: 0 auto;
@@ -100,6 +98,7 @@
     transition: all .2s ease-out;
     z-index: 999;
 
+    &:focus,
     &:hover {
         transform: translateY(-10px);
     }

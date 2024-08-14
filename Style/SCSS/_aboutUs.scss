@@ -18,12 +18,12 @@
 .appointment-button {
     background-color: $pinkSecond;
     padding: 8px 15px 8px 15px;
-    font-size: 18px;
     transition: all ease-in-out .3s;
     animation: shakingButton 3s ease 2;
     animation-delay: 3.5s;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: rgb(255, 115, 185);
     }
 }
@@ -32,7 +32,8 @@
 .bg-Tick {
     background-color: #2eb9c3;
 
-    &:hover {
+    &:hover,
+    &:focus {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;
     }
@@ -41,7 +42,8 @@
 .bg-insta {
     background-color: rgb(255, 0, 204);
 
-    &:hover {
+    &:hover,
+    &:focus {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;
     }
@@ -50,7 +52,8 @@
 .bg-facebook {
     background-color: rgb(69, 116, 219);
 
-    &:hover {
+    &:hover,
+    &:focus {
         opacity: 85%;
         animation: iconHoverAnimate 1s infinite ease-in-out;
     }
@@ -59,9 +62,9 @@
 .bg-maps {
     background-color: rgb(255, 119, 0);
 
-    &:hover {
-        opacity: 85%;
-        animation: iconHoverAnimate 1s infinite ease-in-out;
+    &:hover,
+    &:focus {
+        @include HoverAnimate;
     }
 }
 

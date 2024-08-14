@@ -3,25 +3,42 @@ import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 
 const Regulations: React.FC = () => {
   return (
-    <div>
+    <>
       <div className="relative regulamin-img">
         <img
           src={p1}
           className="w-full h-1/12 regulamin-img relative object-cover"
           alt="loading err"
         />
-        <div className="absolute regulation-text">
-          <span className=" object-cover text-6xl fancy-text tracking-wide">
+        <div className="absolute regulation-text text-center top-1/2 left-1/2">
+          <h1
+            className="object-cover text-6xl fancy-text tracking-wide"
+            aria-label="Regulamin"
+          >
             Regulamin
-          </span>
+          </h1>
         </div>
       </div>
       <section className="pb-20">
-        <div className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink">
+        <div
+          className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink"
+          role="heading"
+          aria-level={2}
+          aria-label="REGULAMIN SALONU SHAGGY"
+        >
           <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
         </div>
-        <div className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed ">
-          <ol className="list-decimal flex flex-col items-start text-justify w-10/12">
+        <div
+          className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5"
+          role="group"
+          aria-labelledby="regGroup"
+        >
+          <ol
+            className="list-decimal flex flex-col items-start text-justify w-10/12"
+            id="regGroup"
+            role="list"
+            aria-label="List of regulations"
+          >
             <li className="">
               W celu umówienia wizyty należy zarezerwować termin telefonicznie
               pod nr. <strong>512 785 857</strong> lub osobiście, informując
@@ -30,20 +47,19 @@ const Regulations: React.FC = () => {
               zarezerwowania dla pupila większej ilości czasu, żeby przyzwyczaić
               go do zabiegów pielęgnacyjnych.
             </li>
-            <li className="mt-4">
-              W przypadku nieodwołania wizyty w określonym terminie i chęci
-              ponownego umówienia się
-              <strong> klient musi zapłacić 50% kosztów wizyty</strong>, na
-              której się nie pojawił
-            </li>
             <li className="mt-4 font-semibold">
-              Klienci, którzy wizyty nie odwołują i nie pojawiają się na niej
-              nie będą już mieli możliwości korzystania z usług salonu.
+              W przypadku nieodwołania wizyty w określonym terminie i chęci
+              ponownego umówienia się klient musi zapłacić 50% kosztów wizyty na
+              której się nie pojawił
             </li>
             <li className="mt-4">
               Prosimy o punktualne przyprowadzanie i odbieranie swoich pupili.
               Każde spóźnienie o którym salon nie został poinformowany powyżej
-              15 min., wiąże się z niewykonaniem pełnej usługi
+              15 min, wiąże się z możliwością niewykonaniem pełnej usługi
+            </li>
+            <li className="mt-4">
+              Pieska przywozimy punktualnie na umówioną wizytę i odbieramy po
+              informacji telefonicznej, że jest gotowy.
             </li>
             <li className="mt-4">
               Bezpośrednio przed wizytą w salonie prosimy nie karmić psa oraz
@@ -51,12 +67,9 @@ const Regulations: React.FC = () => {
               fizjologicznych.
             </li>
             <li className="mt-4">
-              Pies przyprowadzony do salonu musi{" "}
-              <strong>
-                bezwzględnie posiadać aktualne szczepienie przeciwko
-                wściekliźnie.
-              </strong>{" "}
-              W przypadku pogryzienia właściciel zobowiązany jest do okazania
+              Pies przyprowadzony do salonu musi bezwzględnie posiadać{" "}
+              <strong> aktualne szczepienie przeciwko wściekliźnie.</strong> W
+              przypadku pogryzienia właściciel zobowiązany jest do okazania
               zaświadczenia o szczepieniu psa. Brak aktualnego szczepienia
               skutkuje zgłoszeniem właściciela psa do odpowiednich służb. W
               Polsce istnieje obowiązek szczepienia psów przeciwko wściekliźnie
@@ -74,13 +87,10 @@ const Regulations: React.FC = () => {
             </li>
             <li className="mt-4">
               Cena za usługę ustalana jest indywidualnie w zależności od stopnia
-              trudności i rodzaju problemu.{" "}
-              <strong>
-                W skrajnych przypadkach salon ma prawo odmówienia usługi bądź
-                odstąpienia od niej.
-              </strong>
+              trudności i rodzaju problemu. W skrajnych przypadkach salon ma
+              prawo odmówienia usługi bądź odstąpienia od niej.
             </li>
-            <li className="mt-4">
+            <li className="mt-4 font-semibold">
               Usługi wykonywane są bez podania jakichkolwiek środków
               farmakologicznych przez salon i przemocy wobec zwierząt. Jeżeli
               pies wymaga podania środków uspokajających robi to właściciel po
@@ -97,8 +107,7 @@ const Regulations: React.FC = () => {
               miejscu po obejrzeniu pieska.
             </li>
             <li className="mt-4">
-              W salonie używane są{" "}
-              <strong>tylko profesjonalne kosmetyki</strong> dla psów
+              W salonie używane są tylko profesjonalne kosmetyki dla psów
               posiadające atest.
             </li>
             <li className="mt-4">
@@ -111,31 +120,28 @@ const Regulations: React.FC = () => {
               wykonywanej usługi pod nieobecność właściciela pies jest
               spokojniejszy i chętniej współpracuje z groomerem.
             </li>
-            <li className="mt-4">
-              Pieska przywozimy punktualnie na umówioną wizytę i odbieramy po
-              informacji telefonicznej, że jest gotowy.
-            </li>
+
             <li className="mt-4">
               W przypadku wystąpienia jakichkolwiek podrażnień, problemów ze
               skórą lub alergii klient jest zobowiązany natychmiast poinformować
               salon o zaistniałej sytuacji aby przy następnej wizycie móc
               wyeliminować lub ograniczyć czynniki wpływające na stan skóry.
             </li>
-            <li className="mt-4">
+            <li className="mt-4 font-semibold">
               Każdorazowo informujemy klienta o uszkodzeniach skóry powstałych w
               wyniku strzyżenia (nie dotyczy zaciętych pazurków). Ranki są
               dezynfekowane i zabezpieczane.
             </li>
-            <li className="mt-4 font-semibold">
+            <li className="mt-4 ">
               Pies w naszym salonie zostaje wydany wyłącznie osobie, która go
               przyprowadziła lub przez nią wskazanej.
             </li>
             <li className="mt-4">
               Wszelkie wątpliwości i zastrzeżenia co do jakości bądź sposobu
-              wykonania fryzury należy zgłaszać do <strong>24h</strong> od
-              wykonanej usługi . Jeżeli reklamacja zostanie zgłoszona w
-              nieprzekraczalnym terminie i uznana za zasadną salon zobowiązany
-              jest do poprawienia niedociągnięć
+              wykonania fryzury należy zgłaszać do 24h od wykonanej usługi .
+              Jeżeli reklamacja zostanie zgłoszona w nieprzekraczalnym terminie
+              i uznana za zasadną salon zobowiązany jest do poprawienia
+              niedociągnięć
             </li>
             <li className="mt-4">
               Salon ma prawo do wykorzystania wizerunku psa w celach
@@ -150,13 +156,16 @@ const Regulations: React.FC = () => {
           </ol>
         </div>
         <div className="ml-10 mt-16 font-bold">
-          <span className=" border-b-2 border-black pb-0.5">
+          <span
+            className=" border-b-2 border-black pb-0.5"
+            aria-label="statute summary"
+          >
             Pozostawiając zwierzaka pod opieką salonu SHAGGY GROOMING ATELIER,
             klient akceptuje wszystkie warunki regulaminu.
           </span>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

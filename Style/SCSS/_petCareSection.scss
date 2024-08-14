@@ -1,6 +1,7 @@
-.special-button:hover .special-button-animate {
+.special-button:hover .special-button-animate .special-button:focus {
     transform: translateX(3px);
 }
+
 
 .Twentytwenty-container {
     box-shadow: 1px 1px 10px 1px black;

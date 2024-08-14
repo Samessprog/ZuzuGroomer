@@ -220,6 +220,7 @@ const App: React.FC = () => {
           className={` ${userScroll ? "arrow-up-holder fixed rounded-full scroll-smooth cursor-pointer z-10 mr-1 sm:mr-0" : "none"}`}
           href="#"
           aria-label="up-page"
+          role="link"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
