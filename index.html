@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self';
+    img-src 'self';
+    frame-src 'self' https://www.google.com https://maps.google.com;
+"
+    />
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -19,15 +31,11 @@
     <title>Groomer Zuzu</title>
     <link rel="stylesheet" href="./src/output.css" async />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
       rel="stylesheet"
     />
-    <!-- <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com"
-    /> -->
   </head>
   <body>
     <div id="root"></div>

@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -402,7 +402,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100
+                100,
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -416,7 +416,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400
+                400,
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -427,7 +427,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500
+                500,
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -438,7 +438,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550
+                550,
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -447,7 +447,7 @@ const PriceList: React.FC = () => {
                 <b>Darmowa usługa.</b>
               </span>{" "}
               <Link
-                to=""
+                to="/Usługi#ServicesAnchor"
                 className="text-sky-600 border-b-2 border-sky-600"
                 role="link"
               >
@@ -460,7 +460,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570
+                570,
               )}
             >
               Wizyta adaptacyjna -{" "}
@@ -470,7 +470,7 @@ const PriceList: React.FC = () => {
               </span>{" "}
               <Link
                 className="text-sky-600 border-b-2 border-sky-600"
-                to=""
+                to="/Usługi#ServicesAnchor"
                 role="link"
               >
                 Więcej dowiesz się tutaj.
@@ -479,50 +479,6 @@ const PriceList: React.FC = () => {
           </ul>
         </div>
       </section>
-      {/* <div className="w-full mt-10 sm:mt-[5rem]  mb-20">
-        <span className=" mb-10 flex justify-center font-semibold text-2xl">
-          Cennik akcesoriów sklepowych
-        </span>
-        <div className="flex justify-center mt-5">
-          <table className="table-spacing rounded-md  sm:w-8/12">
-            <thead>
-              <tr>
-                <th className="w-3/12">Nazwa</th>
-                <th className="w-6/12">Do czego</th>
-                <th className="w-3/12">Cenna</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="w-3/12 text-center break-all border-solid border-1 border-black">
-                  Sanki
-                </td>
-                <td className="   border-solid border-1 border-black w-3/5 pl-5 pr-5 break-all pt-5 pb-5  text-sm sm:text-base">
-                  Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
-                  patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
-                  jedzie{" "}
-                </td>
-                <td className="w-3/12 text-center text-sm sm:text-base">
-                  100zł
-                </td>
-              </tr>
-              <tr>
-                <td className="w-3/12 text-center break-all   border-solid border-1 border-black text-sm sm:text-base">
-                  Sanki
-                </td>
-                <td className="    w-3/5 pl-5 pr-5 break-all pt-5 pb-5 text-sm sm:text-base">
-                  Zjeżdzanie Szybkie bez patrzenia na l;udzi do czesania i
-                  patrzenia na ludzi jak szybko jedzie tak bo szybako bardzo
-                  jedzie{" "}
-                </td>
-                <td className="w-3/12 text-center text-sm sm:text-base">
-                  100zł
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> */}
     </>
   );
 };

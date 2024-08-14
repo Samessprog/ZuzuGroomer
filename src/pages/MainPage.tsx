@@ -5,6 +5,7 @@ import MainBio from "../components/MainPageComponents/Biography";
 import PhilosophySection from "../components/MainPageComponents/PhilosophySecation";
 import ServicesInfoSection from "../components/MainPageComponents/ServicesInfoSection";
 import LazyFullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
+import ErrorBoundary from "../components/OttherComponents/ErrorBoundary";
 
 const MainSlider = lazy(
   async () => await import("../components/MainPageComponents/SliderMainPage")
@@ -79,7 +80,7 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
           <iframe
             title="google-map"
             className="w-full h-full rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.523344024832!2d19.128241984731773!3d50.24480917800197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c53eb21b961b%3A0xe929c76059b771df!2sWielka%20Skotnica%203%2C%2041-400%20Mys%C5%82owice!5e0!3m2!1spl!2spl!4v1718215740020!5m2!1spl!2spl"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1275.749937757046!2d19.128365866055635!3d50.24524755663986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c53eb21b961b%3A0xe929c76059b771df!2sWielka%20Skotnica%203%2C%2041-400%20Mys%C5%82owice!5e0!3m2!1spl!2spl!4v1723399035286!5m2!1spl!2spl"
             width="600"
             height="450"
             loading="lazy"
@@ -92,7 +93,11 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
         <LazyGallery />
         <LazySummaryMain />
       </Suspense>
-      {fullScreenFlag.isOpen && <LazyFullscreenImageViewer />}
+      {fullScreenFlag.isOpen && (
+        <ErrorBoundary>
+          <LazyFullscreenImageViewer />
+        </ErrorBoundary>
+      )}
     </main>
   );
 };

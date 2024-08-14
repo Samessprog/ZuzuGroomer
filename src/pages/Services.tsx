@@ -1,35 +1,33 @@
-import React from "react";
-import SocialIcons from "../components/OttherComponents/SocialIcons";
-import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, type SpringValues } from "react-spring";
+import { useLocation } from "react-router-dom";
+import SocialIcons from "../components/OttherComponents/SocialIcons";
+import ServicesCard from "../components/OttherComponents/ServicesCard";
+import ServicesExtraInfo from "../components/OttherComponents/ServicesExtraInfo";
+import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 
 const Services: React.FC = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
   const [ServicesListAnimateRef, elementInView] = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
 
-  const [ServicesExtraInfoRef, servicesExtraInfoView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-
-  const servicesExtraInf = (
-    servicesExtraInfoView: boolean,
-    translate: string
-  ): SpringValues<React.CSSProperties> => {
-    return useSpring({
-      opacity: servicesExtraInfoView ? 1 : 0,
-      transform: servicesExtraInfoView ? `translateX(0%)` : `${translate}`,
-      config: { tension: 170, friction: 70 },
-    });
-  };
-
   const ServicesListAnimate = (
     elementInView: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -105,7 +103,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    25
+                    25,
                   )}
                 >
                   <svg
@@ -126,7 +124,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    100
+                    100,
                   )}
                 >
                   <svg
@@ -146,7 +144,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    150
+                    150,
                   )}
                 >
                   <svg
@@ -166,7 +164,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    170
+                    170,
                   )}
                 >
                   <svg
@@ -186,7 +184,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    200
+                    200,
                   )}
                 >
                   <svg
@@ -206,7 +204,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    50
+                    50,
                   )}
                 >
                   <svg
@@ -258,90 +256,46 @@ const Services: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <span
-                  className="flex justify-center mt-3 mb-3 text-lg font-semibold"
-                  role="heading"
-                  aria-level={5}
-                >
-                  <i>Kąpiel oraz Pielęgnacja</i>
-                </span>
-                <div
-                  className="text-justify"
-                  role="note"
-                  aria-label="services-info"
-                >
+                <ServicesCard title="Kąpiel oraz pielęgnacja">
                   W naszym salonie staramy się o jak najbardziej bezstresowo i
                   komfortowo przeprowadzoną kapiel. Pielęgnacja wykonywana jest
                   przy użyciu profesionalnych kosmetyków bezpiecznych dla
                   zwierząt. Produkty dobierane są indywidualnie do każdego
                   pupila w zależności od rodzaju jego sierści oraz stanu jego
                   skóry.
-                </div>
+                </ServicesCard>
               </div>
               <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5">
                 <img alt="loading err" src={p1} />
-                <span
-                  className="flex justify-center mt-3 mb-3 text-lg font-semibold"
-                  role="heading"
-                  aria-level={5}
-                >
-                  <i>Trymowanie</i>
-                </span>
-                <div
-                  className="text-justify"
-                  role="note"
-                  aria-label="services-info"
-                >
+                <ServicesCard title="Trymowanie">
                   Celem trymowania jest usunięcie martwych włosów. Co pomaga
                   utrzymać zdrową sierść i skórę oraz poprawia wygląd
                   zwierzęcia. Polega ono na regularnym wyciągnieciu włosa za
                   pomocą specialistycznych narzędzi takich jak kamień trymerski
                   lub nożyk. Usługa wykonywana jest ręcznie i jest dostosowana
                   do rasy psa, zgonie z wzorcem FCI.
-                </div>
+                </ServicesCard>
               </div>
               <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5 mt-8">
                 <img alt="loading err" src={p1} />
-                <span
-                  className="flex justify-center mt-3 mb-3 text-lg font-semibold"
-                  role="heading"
-                  aria-level={5}
-                >
-                  <i>Strzyżenie</i>
-                </span>
-                <div
-                  className="text-justify"
-                  role="note"
-                  aria-label="services-info"
-                >
+                <ServicesCard title="Strzyżenie">
+                  {" "}
                   W salonie strzyżenie wykonywane jest po uprzedniej kapieli, co
                   zapewnia lepsze rezultaty i ułatwia pracę. Usługa dobrana jest
                   odpowiednio do rasy psa, sierści oraz kondycji włosa. Stan
                   sierści oceniany jest indywidalnie tak aby dostosować
                   odpowiednią technike strzyżenia zgodnie z wymaganiami klienta
-                  oraz wzorcem FCI.
-                </div>
+                </ServicesCard>
               </div>
               <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5 mt-8">
                 <img alt="loading err" src={p1} />
-                <span
-                  className="flex justify-center mt-3 mb-3 text-lg font-semibold"
-                  role="heading"
-                  aria-level={5}
-                >
-                  <i>Czyszczenie uszów i obcinanie pazurków</i>
-                </span>
-                <div
-                  className="text-justify"
-                  role="note"
-                  aria-label="services-info"
-                >
+                <ServicesCard title="Czyszczenie uszów i obcinanie pazurków">
                   Pielęgnacja uszu polega na delikatnym wyskubaniu nadmiaru
                   włosków oraz przeczyszczeniu płatków uszu odpowiednim
                   preparatem. Podczas obcinania pazurków w naszym salonie
                   staramy się zapewnić komfort dla pupila, używając technik
                   zapewnijących bezpieczeństwo oraz precyzyjność.
-                </div>
+                </ServicesCard>
               </div>
             </div>
           </div>
@@ -351,121 +305,7 @@ const Services: React.FC = () => {
             </button>
           </div>
         </section>
-        <section
-          className="pl-10 pr-10 overflow-hidden"
-          ref={ServicesExtraInfoRef}
-        >
-          <div
-            className="font-semibold text-2xl color-pink flex justify-center mb-5 mt-5"
-            role="heading"
-            aria-level={4}
-          >
-            Dowiedz się więcej o:
-          </div>
-          <div className="flex justify-center">
-            <animated.div
-              className="mt-5 text-justify text-md w-6/12 mr-8 flex flex-col services-frame p-5"
-              style={servicesExtraInf(
-                servicesExtraInfoView,
-                "translateX(-100%)"
-              )}
-            >
-              <span
-                className="font-semibold text-xl color-pink flex justify-center mb-2 "
-                role="heading"
-                aria-level={5}
-                aria-label="Wizyta Zapoznawcza dla Psów"
-              >
-                Wizyta Zapoznawcza dla Psów
-              </span>{" "}
-              Wizyta zapoznawcza jest idealnym rozwiązaniem dla szczeniąt oraz
-              psów dorosłych które nigdy dotąd niekorzystających z usług
-              groomerskich lub które miały trudne doświadczenia w przeszłości.
-              Polega ona na 30 minutowym zapoznaniu się psa z groomerem oraz
-              salonem. Na tej wizycie nie są przeprowadzane żadne zabiegi
-              groomerskie.{" "}
-              <p
-                className="mt-2 font-semibold color-pink text-lg"
-                role="heading"
-                aria-level={6}
-                aria-label="Wizyta zapoznawcza obejmuje:"
-              >
-                Wizyta zapoznawcza obejmuje:
-              </p>
-              <ul className=" mt-2 ml-4 mb-2" id="adaptationServices">
-                <li>Komfortowe wprowadzenie psa do salonu</li>
-                <li>Zapoznanie groomera z psem</li>
-                <li>
-                  Sprawdzanie odruchów psa na różnego rodzaje dźwięki oraz szumy
-                </li>
-                <li>
-                  Edukacja klienta jak powinna wyglądać prawidłowa pielęgnacja w
-                  domu tak aby pies komfortowo odbywał wszelkie zabiegi
-                  kosmetyczne.
-                </li>
-              </ul>
-              <strong>
-                {" "}
-                Wizyta zapoznawcza jest całkowicie darmowo ponieważ ma ona
-                polegać na poinstruowaniu właściciela jak prawidłowo pracować z
-                własnym pupilem dla ich wspólnego komfortu.
-              </strong>
-            </animated.div>
-            <animated.div
-              className="mt-5 text-justify text-md w-6/12 ml-8 flex flex-col services-frame p-5 img-bg"
-              style={servicesExtraInf(
-                servicesExtraInfoView,
-                "translateX(100%)"
-              )}
-            >
-              <span
-                className="font-semibold text-xl color-pink flex justify-center mb-2 "
-                role="heading"
-                aria-level={5}
-                aria-label="Wizyta Adaptacyjna dla Psów"
-              >
-                Wizyta Adaptacyjna dla Psów
-              </span>{" "}
-              Wizyta adaptacyjna jest idealnym rozwiązaniem dla psów, które
-              nigdy wcześniej nie korzystały z usług groomera lub miały trudne
-              doświadczenia w przeszłości. Ta usługa jest także odpowiednia dla
-              psów lękliwych, nielubiących pielęgnacji oraz tych, które przeżyły
-              traumę. Ważne jest, aby właściciel poinformował nas o wszelkich
-              problemach behawioralnych przed umówieniem wizyty.{" "}
-              <p
-                className="mt-2 font-semibold color-pink text-lg"
-                id="introductoryVisit"
-              >
-                Wizyta adaptacyjna obejmuje:
-              </p>
-              <ul className="list-disc mt-2 ml-4 mb-2">
-                <li>
-                  Stopniowe wprowadzenie psa do zabiegów pielęgnacyjnych w
-                  bezstresowej atmosferze.
-                </li>
-                <li>
-                  {" "}
-                  Indywidualne podejście i dostosowanie zabiegów do potrzeb oraz
-                  zachowania psa.
-                </li>
-                <li>
-                  Delikatne zabiegi pielęgnacyjne, które mają na celu zbudowanie
-                  zaufania i komfortu psa.
-                </li>
-                <li>
-                  Wsparcie i wskazówki dla właściciela, jak przygotować psa do
-                  regularnych wizyt u groomera.
-                </li>
-              </ul>
-              Cena wizyty adaptacyjnej jest ustalana indywidualnie na podstawie
-              wielkości psa oraz jego potrzeb. W celu uzyskania szczegółowych
-              informacji oraz umówienia wizyty prosimy o kontakt telefoniczny
-              lub osobistą wizytę w salonie. Wierzymy, że dzięki naszej wizytom
-              adaptacyjnym, każdy pies może czuć się bezpiecznie i komfortowo
-              podczas pielęgnacji.
-            </animated.div>
-          </div>
-        </section>
+        <ServicesExtraInfo />
         <section className="pb-20 pt-20">
           <div className="w-full flex justify-center flex-col items-center">
             <span className="font-semibold color-pink text-4xl">

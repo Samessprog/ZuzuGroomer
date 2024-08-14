@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import Slider from "react-slick";
+import ErrorBoundary from "../OttherComponents/ErrorBoundary";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -14,24 +15,28 @@ interface SampleNextArrowProps {
 const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
   const opinions = [
     {
-      text: "Miejsce stworzone dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
-      data: "04.03.2024",
+      text: "Jestem zachwycona opieką nad moim psem! Zawsze wraca do domu wypielęgnowany, zadowolony i co najważniejsze, bez żadnego stresu. To miejsce to prawdziwe spa dla naszych pupili!",
+      data: "12.08.2024",
     },
     {
-      text: "zzzzzzzzzzzzzzzzz zzzzz zzzzz z.",
-      data: "04.03.2024",
+      text: "Moja kotka nigdy nie była tak spokojna po wizycie u groomera. Profesjonalizm i ciepłe podejście sprawiają, że możemy być spokojni o nasze futrzaki.",
+      data: "07.08.2024",
     },
     {
-      text: "Dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
-      data: "04.03.2124",
+      text: "Z całego serca polecam! Mój pies zawsze czuł stres przed wizytą u groomera, ale odkąd trafiliśmy tutaj, wszystko się zmieniło. Atmosfera pełna spokoju i zrozumienia!",
+      data: "02.08.2024",
     },
     {
-      text: "Dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
-      data: "04.03.2124",
+      text: "Wizyta tutaj to czysta przyjemność! Moja sunia czuje się tu jak w domu. Zawsze pięknie ostrzyżona i zadbana, a ja spokojny o jej komfort.",
+      data: "15.07.2024",
     },
     {
-      text: "Dla zwierząt oraz ich kochających właścicieli.Moja sunia jest z natury strachliwa i nieśmiała, każdy potencjalny  zabieg pielęgnacyjny był dla niej bardzo stresujący. Przy Pani  Elizie nie mamy tego problemu. Sunia jest zadowolona, zadbana.",
-      data: "04.03.2124",
+      text: "Niesamowite podejście do zwierząt! Mój królik nigdy nie był w lepszych rękach. Profesjonalne usługi i ciepła atmosfera sprawiają, że wracamy tutaj regularnie.",
+      data: "20.06.2024",
+    },
+    {
+      text: "Najlepszy salon groomerski, jaki znam! Mój piesek zawsze wraca zadowolony i pięknie odświeżony. Polecam wszystkim właścicielom zwierzaków!",
+      data: "05.08.2024",
     },
   ];
 
@@ -92,13 +97,15 @@ const MainOpinions: React.FC<MainOptions> = ({ displayWidth }) => {
       </div>
       <div className="flex justify-center items-center mt-20 cursor-default">
         <div className="w-8/12 mx-auto text-center x ">
-          <Slider {...settings}>
-            {opinions.map((elm) => (
-              <Suspense key={elm.data} fallback={<div>loading...</div>}>
-                <Opinion elm={elm} key={elm.data} />
-              </Suspense>
-            ))}
-          </Slider>
+          <ErrorBoundary>
+            <Slider {...settings}>
+              {opinions.map((elm) => (
+                <Suspense key={elm.data} fallback={<div>loading...</div>}>
+                  <Opinion elm={elm} key={elm.data} />
+                </Suspense>
+              ))}
+            </Slider>
+          </ErrorBoundary>
         </div>
       </div>
     </section>

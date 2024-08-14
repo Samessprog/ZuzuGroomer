@@ -11,7 +11,7 @@ const MainSlider: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) =>
-        prevIndex === groomingSalonImg.length - 1 ? 0 : prevIndex + 1
+        prevIndex === groomingSalonImg.length - 1 ? 0 : prevIndex + 1,
       );
     }, 7000);
 

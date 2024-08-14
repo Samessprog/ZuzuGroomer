@@ -131,7 +131,7 @@ const SummaryMain: React.FC = () => {
         </div>
       </div>
       <div className="mt-20 flex flex-col items-center mb-20 text-lag font-bold">
-        <p className="mb-10 c-black-600 text-center">
+        <p className="mb-10 c-black-600 text-center text-xl">
           Zuzu Groomer w mediach społecznościowych
         </p>
         <div className="flex  w-12/12 justify-between">

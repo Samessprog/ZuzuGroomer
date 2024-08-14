@@ -148,7 +148,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
         </div>
         <div className="w-2/12 mt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
-            <Link className="focus-icon-facebook">
+            <Link
+              className="focus-icon-facebook"
+              to="https://www.facebook.com/people/Shaggy-grooming-atelier/61559158540706/"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -159,7 +163,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 <path d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z" />
               </svg>
             </Link>
-            <Link className="focus-icon-instagram">
+            <Link
+              className="focus-icon-instagram"
+              to="https://www.instagram.com/shaggy_grooming_atelier_zh/"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -173,7 +181,11 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             </Link>
           </div>
           <div className="flex flex-col md:flex-row">
-            <Link className="focus-icon-google-maps ml-1">
+            <Link
+              className="focus-icon-google-maps ml-1"
+              to="https://www.google.com/maps/dir//Wielka+Skotnica+3,+41-400+Mys%C5%82owice/@50.2451156,19.128079,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4716c53eb21b961b:0xe929c76059b771df!2m2!1d19.1294092!2d50.2451943?entry=ttu"
+              target="_blank"
+            >
               {" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

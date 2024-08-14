@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import FullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 
-//tests
+// tests
 import c1 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2775_001-1.png";
 import c2 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2777_001-1.png";
 import c3 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2781_001-1.png";
@@ -27,7 +27,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -351,7 +351,11 @@ const AboutUs: React.FC = () => {
           className="w-full flex mt-10 flex-col items-center"
           ref={galleryRefElement}
         >
-          <div className="text-2xl font-semibold " role="heading" aria-level={3}>
+          <div
+            className="text-2xl font-semibold "
+            role="heading"
+            aria-level={3}
+          >
             Dyplomy i osiągnięcia
           </div>
           <div ref={iconsRef}></div>

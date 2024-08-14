@@ -58,20 +58,25 @@
     height: 100%;
     color: white;
     height: 100% !important;
-    .slick-active {
-        div {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+
+    .slick-active,
     .slick-slide {
+        display: flex !important;
+        justify-content: center;
+
         div {
-            max-height: 100% !important;
-            display: flex;
-            justify-content: center;
-            align-items: center !important;
+            height: 800px !important;
+            width: 800px !important;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
         }
     }
 
@@ -79,8 +84,16 @@
 
 .img-slider-viewer {
     height: 100vh;
+}
+
+.slick-track {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
 
 }
+
 
 .img-viewer {
     height: 100% !important;

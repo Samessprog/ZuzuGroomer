@@ -1,6 +1,5 @@
 import React from "react";
 import ReactCompareImage from "react-compare-image";
-
 interface TwentyTwentyInterface {
   firstPhoto: string;
   secondPhoto: string;

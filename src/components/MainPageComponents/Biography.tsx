@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { Blurhash } from "react-blurhash";
+import p1 from "../../assets/ZdjęciaPsów/3.jpeg"
 
 const MainBio: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,7 @@ const MainBio: React.FC = () => {
               </div>
             )}
             <img
-              src="https://www.gry-online.pl/i/h/22/431209879.jpg"
+              src={p1}
               alt="loading err w-full"
               className="w-full h-full object-cover bio-imgs"
               style={{

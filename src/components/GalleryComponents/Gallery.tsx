@@ -1,5 +1,6 @@
 import React from "react";
 import GalleryPhoto from "./GalleryPhoto";
+import ErrorBoundary from "../OttherComponents/ErrorBoundary";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -63,15 +64,17 @@ const Gallery: React.FC = () => {
             role="list"
             aria-label="Photo gallery"
           >
-            {photos.map((imgUrl, index) => (
-              <animated.div style={galleryAnimate} key={index}>
-                <GalleryPhoto
-                  imgUrl={imgUrl}
-                  index={index}
-                  mainPhotos={photos}
-                />
-              </animated.div>
-            ))}
+            <ErrorBoundary>
+              {photos.map((imgUrl, index) => (
+                <animated.div style={galleryAnimate} key={index}>
+                  <GalleryPhoto
+                    imgUrl={imgUrl}
+                    index={index}
+                    mainPhotos={photos}
+                  />
+                </animated.div>
+              ))}
+            </ErrorBoundary>
           </div>
           <div
             className="mt-10 flex justify-end w-11/12 text-gray-500 cursor-pointer text-sm"
