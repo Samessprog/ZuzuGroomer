@@ -12,7 +12,7 @@ import SocialIcons from "../components/OttherComponents/SocialIcons";
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
     triggerOnce: true,
-    threshold: 0.22,
+    threshold: 0.03,
   });
 
   const p1 =
@@ -22,12 +22,12 @@ const Gallery: React.FC = () => {
 
   const galleryAnimate = useSpring({
     opacity: elementInView ? 1 : 0,
-    transform: elementInView ? `scale(1)` : `scale(0.01)`,
+    transform: elementInView ? `scale(1)` : `scale(0.5)`,
     config: { tension: 250, friction: 50 },
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   return (
@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
         </span>
       </div>
       <section className="w-full flex justify-center mt-10 ">
-        <span className="w-8/12 text-center">
+        <span className="w-11/12 sm:w-8/12 text-center text-sm sm:text-base">
           <p>
             {" "}
             Zapraszam do obserwowania naszych prac wykonanych z dbałością i
@@ -63,8 +63,8 @@ const Gallery: React.FC = () => {
         </span>
       </section>
       <main>
-        <section ref={galleryRefElement}>
-          <span className="flex justify-center mt-16 text-5xl md:text-6xl font-semibold color-pink fancy-text item">
+        <section>
+          <span className="flex justify-center mt-16 text-4xl sm:text-5xl md:text-6xl font-semibold color-pink fancy-text item">
             {" "}
             <i>Nasze Dzieła</i>
             <svg
@@ -80,7 +80,10 @@ const Gallery: React.FC = () => {
               />
             </svg>
           </span>
-          <div className="grid gallery-container mt-10 pl-4 pr-4">
+          <div
+            className="grid gallery-container mt-10 pl-4 pr-4"
+            ref={galleryRefElement}
+          >
             {photos.map((imgUrl, index) => (
               <animated.div style={galleryAnimate} key={index}>
                 <GalleryPhoto
@@ -93,7 +96,7 @@ const Gallery: React.FC = () => {
           </div>
         </section>
         <section>
-          <span className="flex justify-center mt-20 text-5xl md:text-6xl font-semibold fancy-text tracking-wide text-shadow items-center">
+          <span className="flex justify-center mt-20 text-4xl md:text-6xl font-semibold fancy-text tracking-wide text-shadow items-center">
             <i>Magiczne zmiany</i>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +118,7 @@ const Gallery: React.FC = () => {
         </section>
       </main>
       <section className="mb-20">
-        <div className="flex justify-center w-full font-semibold text-4xl color-pink">
+        <div className="flex justify-center w-full font-semibold text-3xl sm:text-4xl color-pink">
           Zobacz również
         </div>
         <SocialIcons />

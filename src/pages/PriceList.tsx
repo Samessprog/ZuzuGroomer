@@ -7,7 +7,7 @@ import { useSpring, animated, type SpringValues } from "react-spring";
 const PriceList: React.FC = () => {
   const [priceListRef, elementInView] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.15,
   });
 
   const PriceListItemAnimate = useSpring({
@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number,
+    delayNumber: number
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -51,7 +51,7 @@ const PriceList: React.FC = () => {
       </div>
       <div className=" flex justify-center items-center mt-10 ">
         <section
-          className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0"
+          className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-sm sm:text-base"
           role="document"
           aria-label="preliminary information"
         >
@@ -78,12 +78,12 @@ const PriceList: React.FC = () => {
         aria-labelledby="price-Lists-group"
       >
         <div
-          className="mt-20 priceList-container p-12 w-full flex flex-col items-center lg:flex-row lg:items-start"
+          className="mt-20 priceList-container p-6 sm:p-12 w-full flex flex-col items-center lg:flex-row lg:items-start"
           ref={priceListRef}
           id="price-Lists-group"
         >
           <animated.div
-            className="w-10/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
+            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
             <div
@@ -191,7 +191,7 @@ const PriceList: React.FC = () => {
             </>
           </animated.div>
           <animated.div
-            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
+            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
             role="group"
             aria-labelledby="Trimming-group"
@@ -274,7 +274,7 @@ const PriceList: React.FC = () => {
             </ul>
           </animated.div>
           <animated.div
-            className="w-10/12 lg:w-4/12 flex flex-col items-center price-list-item-holder ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
+            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
             style={PriceListItemAnimate}
             role="group"
             aria-labelledby="Cosmetology-group"
@@ -376,7 +376,7 @@ const PriceList: React.FC = () => {
       </section>
       <section ref={priceListExtra}>
         <div
-          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20"
+          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20 text-sm sm:text-base"
           role="group"
           aria-labelledby="extra-info"
         >
@@ -392,7 +392,7 @@ const PriceList: React.FC = () => {
             Ponad to:
           </b>
           <ul
-            className="mt-2 list-disc extra-info-holder"
+            className="mt-2 list-disc extra-info-holder pr-2"
             role="list"
             id="extra-info"
           >
@@ -402,7 +402,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100,
+                100
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -416,7 +416,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400,
+                400
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -427,7 +427,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500,
+                500
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -438,7 +438,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550,
+                550
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -460,7 +460,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570,
+                570
               )}
             >
               Wizyta adaptacyjna -{" "}

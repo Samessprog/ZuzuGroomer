@@ -1,5 +1,9 @@
 .gallery-start-img {
     height: 300px;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 }
 
 .gallery-text {

@@ -11,9 +11,9 @@ const Services: React.FC = () => {
   const { hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
+    if (hash !== "") {
       const element = document.getElementById(hash.substring(1));
-      if (element) {
+      if (element !== null) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }

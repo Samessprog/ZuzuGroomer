@@ -23,7 +23,7 @@ const GalleryPhoto: React.FC<GalleryProps> = ({
     setLoaded(true);
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent): void => {
     if (event.key === "Enter" || event.key === " ") {
       dispatch(
         setFullScreen({

@@ -1,6 +1,10 @@
 .regulamin-img {
     height: 300px;
 
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+
     .regulation-text {
         transform: translate(-50%, -50%);
     }

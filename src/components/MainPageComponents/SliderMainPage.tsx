@@ -28,7 +28,7 @@ const MainSlider: React.FC = () => {
   }, [imageIndex]);
 
   return (
-    <div className="slider w-full h-[30rem] sm:h-full overflow-hidden relative ">
+    <div className="slider w-full  sm:h-full overflow-hidden relative ">
       <figure className="w-full">
         <img
           ref={imgSliderRef}

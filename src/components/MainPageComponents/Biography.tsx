@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { Blurhash } from "react-blurhash";
-import p1 from "../../assets/ZdjęciaPsów/3.jpeg"
+import p1 from "../../assets/ZdjęciaPsów/3.jpeg";
 
 const MainBio: React.FC = () => {
   const [loaded, setLoaded] = useState(false);

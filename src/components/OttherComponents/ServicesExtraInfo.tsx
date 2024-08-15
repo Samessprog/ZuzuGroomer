@@ -5,7 +5,7 @@ interface ServicesExtra {
   servicesExtraInfoView: boolean;
 }
 
-const ServicesExtraInfo: React.FC<ServicesExtra> = ({}) => {
+const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
   const [ServicesExtraInfoRef, servicesExtraInfoView] = useInView({
     triggerOnce: true,
     threshold: 0.4,

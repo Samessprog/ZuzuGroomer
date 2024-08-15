@@ -21,7 +21,7 @@ const Regulations: React.FC = () => {
       </div>
       <section className="pb-20">
         <div
-          className="flex justify-center mb-10 mt-10 text-2xl font-semibold color-pink"
+          className="mb-10 mt-10 text-2xl font-semibold color-pink text-center"
           role="heading"
           aria-level={2}
           aria-label="REGULAMIN SALONU SHAGGY"
@@ -29,12 +29,12 @@ const Regulations: React.FC = () => {
           <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
         </div>
         <div
-          className=" w-full pr-10 pl-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5"
+          className=" w-full pr-6 pl-6 sm:pl-10 sm:pr-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5 text-sm sm:text-base"
           role="group"
           aria-labelledby="regGroup"
         >
           <ol
-            className="list-decimal flex flex-col items-start text-justify w-10/12"
+            className="list-decimal flex flex-col items-start text-justify sm:w-10/12 w-full"
             id="regGroup"
             role="list"
             aria-label="List of regulations"
@@ -155,7 +155,7 @@ const Regulations: React.FC = () => {
             </li>
           </ol>
         </div>
-        <div className="ml-10 mt-16 font-bold">
+        <div className="sm:ml-10 mt-10 sm:mt-16 font-bold text-center sm:text-start text-sm sm:text-lg ml-5 mr-5 sm:mr-0">
           <span
             className=" border-b-2 border-black pb-0.5"
             aria-label="statute summary"
