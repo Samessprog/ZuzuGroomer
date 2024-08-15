@@ -1,5 +1,9 @@
 .priceList-img {
-    height: 300px !important;
+    height: 300px;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 
     .price-list-text {
         transform: translate(-50%, -50%);

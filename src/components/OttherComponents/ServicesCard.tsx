@@ -1,6 +1,11 @@
-import React, { Children } from "react";
+import React from "react";
 
-const ServicesCard: React.FC = ({ children, title }) => {
+interface ServicesInter {
+  children: object;
+  title: string;
+}
+
+const ServicesCard: React.FC<ServicesInter> = ({ children, title }) => {
   return (
     <>
       <span

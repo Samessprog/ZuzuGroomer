@@ -96,12 +96,14 @@ const PetCareSection: React.FC = () => {
             >
               <Suspense
                 fallback={
-                  <PulseLoader
-                    color="#ff00cc"
-                    margin={15}
-                    speedMultiplier={0.5}
-                    aria-label="Loading Spinner"
-                  />
+                  <div className="w-full mt-20">
+                    <PulseLoader
+                      color="#ff00cc"
+                      margin={15}
+                      speedMultiplier={0.5}
+                      aria-label="Loading Spinner"
+                    />
+                  </div>
                 }
               >
                 <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />

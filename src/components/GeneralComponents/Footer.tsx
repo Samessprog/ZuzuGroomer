@@ -186,7 +186,6 @@ const Footer: React.FC = () => {
             <Link
               to="https://www.facebook.com/people/Shaggy-grooming-atelier/61559158540706/"
               target="_blank"
-              target="_blank"
               aria-label="Facebook"
               role="link"
             >
@@ -208,7 +207,6 @@ const Footer: React.FC = () => {
               aria-label="Instagram"
               role="link"
               to="https://www.instagram.com/shaggy_grooming_atelier_zh/"
-              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

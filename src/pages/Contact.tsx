@@ -23,7 +23,10 @@ const ContactInfo: React.FC = () => {
       </div>
       <main>
         <div className="w-full flex justify-center mt-10">
-          <div className="w-8/12 text-center" role="document">
+          <div
+            className="md:w-8/12 w-11/12 text-center text-sm md:text-base "
+            role="document"
+          >
             <b> Skontaktuj się z nami</b>, jeśli masz jakiekolwiek pytania
             dotyczące naszych usług. Czy masz wątpliwości co do ceny lub czasu
             trwania strzyżenia? A może interesuje Cię coś innego? Chętnie
@@ -33,7 +36,7 @@ const ContactInfo: React.FC = () => {
             <b>Czekamy na Twój kontakt!</b>
           </div>
         </div>
-        <section className="flex justify-center mt-20">
+        <section className="flex justify-center mt-10 md:mt-20">
           <div className="w-9/12 flex text-lg md:text-lg">
             <div className="flex flex-col w-full xl:w-7/12 items-center xl:items-start">
               <span
@@ -43,7 +46,7 @@ const ContactInfo: React.FC = () => {
               >
                 Dane kontaktowe
               </span>
-              <div className="mt-4 flex flex-col text-slate-600 items-center xl:items-start">
+              <div className="mt-4 flex flex-col text-slate-600 xl:items-start">
                 <div className="flex items-center mb-2 mt-3 info-data-container-elm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -167,17 +170,17 @@ const ContactInfo: React.FC = () => {
                     </div>
                   </Link>
                 </div>
-                <div className="flex justify-start w-10/12 mt-10 text-2xl font-bold">
+                <div className="flex justify-center w-full mt-10 sm:text-2xl text-xl font-bold xl:w-4/12">
                   {" "}
                   <div
-                    className="w-full flex justify-center flex-col items-start"
+                    className="w-full flex justify-center flex-col items-center ml-10 sm:ml-0 text-center"
                     role="heading"
                     aria-level={4}
                   >
-                    <>Umów wizyte na Booksy!</>
-                    <div className="flex justify-center w-6/12">
+                    Umów wizyte na Booksy!
+                    <div className="flex justify-center w-full sm:w-6/12">
                       {" "}
-                      <button className="booksy-button bg-black text-white mt-2.5 text-xl rounded-[30px] transition-all ease-in-out delay-200">
+                      <button className="booksy-button bg-black text-white mt-2.5 text-xl rounded-[30px] transition-all ease-in-out delay-200 mr-4 sm:mr-0">
                         <a
                           href=""
                           target="_blank"
@@ -198,7 +201,7 @@ const ContactInfo: React.FC = () => {
           </div>
         </section>
         <section>
-          <div className="mt-10 pl-10 flex flex-col pr-5  items-center xl:items-start">
+          <div className=" mt-10 pl-5 sm:mt-10 sm:pl-10 flex flex-col pr-5  items-center xl:items-start text-sm sm:text-base">
             <span>
               <b>Masz pytania?</b> Dzwoń lub pisz, chętnie odpowiemy,
               podpowiemy, doradzimy.{" "}

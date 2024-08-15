@@ -1,5 +1,9 @@
 .contact-img {
     height: 300px;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 }
 
 .contact-info-text {

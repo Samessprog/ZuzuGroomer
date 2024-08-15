@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
 }
+
 interface ErrorBoundaryState {
   hasError: boolean;
 }
@@ -16,15 +17,15 @@ class ErrorBoundary extends React.Component<
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(): ErrorBoundaryState {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error("Błąd złapany w Error Boundary:", error, errorInfo);
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+    console.error("Błąd złapany:", error, errorInfo);
   }
 
-  render() {
+  render(): ReactNode {
     if (this.state.hasError) {
       return <h1>Coś poszło nie tak.</h1>;
     }
