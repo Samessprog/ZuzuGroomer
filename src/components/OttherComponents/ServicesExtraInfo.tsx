@@ -13,7 +13,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
 
   const servicesExtraInf = (
     servicesExtraInfoView: boolean,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: servicesExtraInfoView ? 1 : 0,
@@ -23,18 +23,19 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
   };
 
   return (
-    <section className="pl-10 pr-10 overflow-hidden">
+    <section className="pl-2 pr-2 lg:pl-10 lg:pr-10 overflow-hidden">
       <div
         className="font-semibold text-2xl color-pink flex justify-center mb-5 mt-5"
         role="heading"
         aria-level={4}
         id="ServicesAnchor"
+        ref={ServicesExtraInfoRef}
       >
         Dowiedz się więcej o:
       </div>
-      <div className="flex justify-center" ref={ServicesExtraInfoRef}>
+      <div className="flex justify-center flex-col lg:flex-row">
         <animated.div
-          className="mt-5 text-justify text-md w-6/12 mr-8 flex flex-col services-frame p-5 img-bg"
+          className="mt-5 text-justify text-md lg:w-6/12 lg:mr-8 flex flex-col services-frame p-5 img-bg"
           style={servicesExtraInf(servicesExtraInfoView, "translateX(-100%)")}
         >
           <span
@@ -77,7 +78,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
           </strong>
         </animated.div>
         <animated.div
-          className="mt-5 text-justify text-md w-6/12 ml-8 flex flex-col services-frame p-5 img-bg"
+          className="mt-5 text-justify text-md lg:w-6/12 lg:mr-8 flex flex-col services-frame p-5 img-bg"
           style={servicesExtraInf(servicesExtraInfoView, "translateX(100%)")}
         >
           <span
