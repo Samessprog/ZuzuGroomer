@@ -27,24 +27,55 @@
             left: 2%;
             top: 45%;
             @include fullScreenSliderIcons;
+
+
+
+
+            @media (max-width: 576px) {
+                top: 88%;
+            }
         }
 
         .close-icon {
             right: 2%;
             top: 45%;
             @include fullScreenSliderIcons;
+
+            @media (max-width: 576px) {
+                top: 88%;
+            }
         }
 
         .full-screen-icon {
             top: 65%;
             right: 4.5%;
             @include fullScreenSliderIcons;
+
+            @media (max-width: 1100px) {
+                right: 6%;
+                top: 65%;
+            }
+
+            @media (max-width: 576px) {
+                right: 10%;
+                top: 99%;
+            }
         }
 
         .play-icon {
             top: 67%;
             right: 7%;
             @include fullScreenSliderIcons;
+
+            @media (max-width: 1100px) {
+                right: 10%;
+                top: 65%;
+            }
+
+            @media (max-width: 576px) {
+                right: 18%;
+                top: 99%;
+            }
         }
 
         .autoplay-active {
