@@ -37,8 +37,8 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
-        <div className="2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center">
-          <Link to="/">
+        <div className=" 2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center  ">
+          <Link to="/" className="w-10/12 flex justify-center mr-3 sm:w-7/12 md:w-full">
             <img
               src={logo}
               alt="loading logo err"
@@ -48,7 +48,6 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             />
           </Link>
         </div>
-
         <div
           className={`navbar-menu-holder order-3 w-8/12 2xl:w-7/12 block pr-5  
     ${isMenuOpen && displayWidth !== 0 ? "open w-full flex-col items-center " : inClicked ? "close pt-7" : "hidden"}
@@ -146,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
             </li>
           </ul>
         </div>
-        <div className="w-2/12 mt-7 flex navbar-icons-holder order-3 border-l border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
+        <div className="w-2/12 mt-7 flex navbar-icons-holder order-3 border-l z-20 border-gray-300 pl-7 pr-1 sm:pr-0 md:pr-7">
           <div className="flex flex-col md:flex-row">
             <Link
               className="focus-icon-facebook"
@@ -180,7 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
               </svg>
             </Link>
           </div>
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row ">
             <Link
               className="focus-icon-google-maps ml-1"
               to="https://www.google.com/maps/dir//Wielka+Skotnica+3,+41-400+Mys%C5%82owice/@50.2451156,19.128079,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4716c53eb21b961b:0xe929c76059b771df!2m2!1d19.1294092!2d50.2451943?entry=ttu"

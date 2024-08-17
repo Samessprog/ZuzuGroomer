@@ -34,7 +34,7 @@ const PhilosophySection: React.FC = () => {
           </header>
         </animated.div>
         <animated.div style={philosophyAnimate(elementInView, "-100%")}>
-          <div className="text-lg mb-5 md:mb-0 mt-5 sm:mt-8">
+          <div className="text-lg mb-5 md:mb-0 mt-5 sm:mt-8 text-center w-full">
             Umysł • Ciało • Dusza
           </div>
         </animated.div>

@@ -70,7 +70,7 @@ const Services: React.FC = () => {
           className="pl-5 pr-5 lg:pl-10 lg:pr-10 mb-20 text-sm lg:text-base"
           ref={ServicesListAnimateRef}
         >
-          <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center xl:items-start">
+          <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
             <div
               className="w-full lg:w-7/12 lg:pr-10 text-justify flex flex-col"
               role="note"
@@ -123,7 +123,7 @@ const Services: React.FC = () => {
                 </animated.li>
 
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
@@ -143,7 +143,7 @@ const Services: React.FC = () => {
                   Komfortowe wizyty
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
@@ -163,7 +163,7 @@ const Services: React.FC = () => {
                   Bezpieczeństwo
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
@@ -183,7 +183,7 @@ const Services: React.FC = () => {
                   Profesjonalizm
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
@@ -203,7 +203,7 @@ const Services: React.FC = () => {
                   Staranność wykonywanych prac
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className="flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
@@ -224,14 +224,14 @@ const Services: React.FC = () => {
                 </animated.li>
               </ul>
             </div>
-            <div className="w-full xl:w-5/12 mt-10 xl:mt-0">
+            <div className="w-full lg:w-5/12 mt-10 xl:mt-0">
               <img alt="loading err" src={p1} className="h-full w-full" />
             </div>
           </div>
         </section>
         <section>
           <div
-            className="flex justify-center mt-10 mb-10"
+            className="flex justify-center lg:mt-10 lg:mb-10 mb-5"
             role="group"
             aria-label="Our services"
           >
@@ -243,8 +243,8 @@ const Services: React.FC = () => {
               Nasze usługi
             </span>
           </div>
-          <div className="flex justify-center flex-wrap  " id="services">
-            <div className="w-full flex justify-center flex-wrap ">
+          <div className="flex justify-center flex-wrap   " id="services">
+            <div className="w-full flex justify-center flex-wrap md:w-8/12 lg:w-full">
               <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5">
                 <img alt="loading err" src={p1} />
                 <ServicesCard title="Kąpiel oraz pielęgnacja ">
