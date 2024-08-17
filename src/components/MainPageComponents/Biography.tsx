@@ -100,7 +100,7 @@ const MainBio: React.FC = () => {
                 role="heading"
                 aria-level="2"
               >
-                <i>Zuzanna Hassa</i>
+                <i className="pr-5 ">Zuzanna Hassa</i>
               </h2>
             </div>
           </animated.div>

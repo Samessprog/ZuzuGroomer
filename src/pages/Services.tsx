@@ -27,7 +27,7 @@ const Services: React.FC = () => {
   const ServicesListAnimate = (
     elementInView: boolean,
     translate: string,
-    delayNumber: number,
+    delayNumber: number
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -56,7 +56,7 @@ const Services: React.FC = () => {
       </div>
       <main>
         <div className=" flex justify-center items-center mt-10 ">
-          <section className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0">
+          <section className="w-11/12 lg:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-sm lg:text-base">
             W naszym salonie oferujemy szeroki zakres profesjonalnych usług
             groomerskich, które sprawiają, że Twoje zwierzę będzie wyglądać i
             czuć się wyjątkowo. Dzięki naszemu doświadczeniu oraz indywidualnemu
@@ -66,10 +66,13 @@ const Services: React.FC = () => {
             wizyta była przyjemnością.
           </section>
         </div>
-        <section className="pl-10 pr-10 mb-20" ref={ServicesListAnimateRef}>
-          <div className="flex w-full mt-20">
+        <section
+          className="pl-5 pr-5 lg:pl-10 lg:pr-10 mb-20 text-sm lg:text-base"
+          ref={ServicesListAnimateRef}
+        >
+          <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
             <div
-              className="w-7/12 pr-10 text-justify flex flex-col"
+              className="w-full lg:w-7/12 lg:pr-10 text-justify flex flex-col"
               role="note"
               aria-label="About-our-services"
             >
@@ -90,20 +93,20 @@ const Services: React.FC = () => {
               z najwyższą starannością, co sprawia, że Twoje zwierzę wróci do
               domu nie tylko piękne, ale i pełne energii oraz zadowolenia.
               <div
-                className="color-pink font-semibold text-2xl mt-3 mb-2"
+                className="color-pink font-semibold text-2xl mt-3 mb-2 text-center lg:text-start"
                 role="heading"
                 aria-label="Why-we?"
                 aria-level={3}
               >
                 Dlaczego my?
               </div>
-              <ul id="whyWE">
+              <ul id="whyWE" className="text-base lg:text-xl">
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className="flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    25,
+                    25
                   )}
                 >
                   <svg
@@ -120,11 +123,11 @@ const Services: React.FC = () => {
                 </animated.li>
 
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    100,
+                    100
                   )}
                 >
                   <svg
@@ -140,11 +143,11 @@ const Services: React.FC = () => {
                   Komfortowe wizyty
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    150,
+                    150
                   )}
                 >
                   <svg
@@ -160,11 +163,11 @@ const Services: React.FC = () => {
                   Bezpieczeństwo
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    170,
+                    170
                   )}
                 >
                   <svg
@@ -180,11 +183,11 @@ const Services: React.FC = () => {
                   Profesjonalizm
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className=" flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    200,
+                    200
                   )}
                 >
                   <svg
@@ -200,11 +203,11 @@ const Services: React.FC = () => {
                   Staranność wykonywanych prac
                 </animated.li>
                 <animated.li
-                  className="text-xl flex items-center list-icon"
+                  className="flex items-center list-icon"
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    50,
+                    50
                   )}
                 >
                   <svg
@@ -221,14 +224,14 @@ const Services: React.FC = () => {
                 </animated.li>
               </ul>
             </div>
-            <div className="w-5/12">
+            <div className="w-full lg:w-5/12 mt-10 xl:mt-0">
               <img alt="loading err" src={p1} className="h-full w-full" />
             </div>
           </div>
         </section>
         <section>
           <div
-            className="flex justify-center mt-10 mb-10"
+            className="flex justify-center lg:mt-10 lg:mb-10 mb-5"
             role="group"
             aria-label="Our services"
           >
@@ -240,23 +243,11 @@ const Services: React.FC = () => {
               Nasze usługi
             </span>
           </div>
-          <div className="flex justify-center flex-wrap" id="services">
-            <div className="w-full flex justify-center flex-wrap">
-              <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5">
-                <div className="card">
-                  <div className="card-inner">
-                    <div className="card-front">
-                      <img alt="loading err" src={p1} />
-                    </div>
-                    <div className="card-back">
-                      <img
-                        alt="loading err"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxg429Pw7YU0EHrstWHBO99GuJoG7O3TAYA&s"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <ServicesCard title="Kąpiel oraz pielęgnacja">
+          <div className="flex justify-center flex-wrap   " id="services">
+            <div className="w-full flex justify-center flex-wrap md:w-8/12 lg:w-full">
+              <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5">
+                <img alt="loading err" src={p1} />
+                <ServicesCard title="Kąpiel oraz pielęgnacja ">
                   W naszym salonie staramy się o jak najbardziej bezstresowo i
                   komfortowo przeprowadzoną kapiel. Pielęgnacja wykonywana jest
                   przy użyciu profesionalnych kosmetyków bezpiecznych dla
@@ -265,7 +256,7 @@ const Services: React.FC = () => {
                   skóry.
                 </ServicesCard>
               </div>
-              <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5">
+              <div className="w-full  lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5">
                 <img alt="loading err" src={p1} />
                 <ServicesCard title="Trymowanie">
                   Celem trymowania jest usunięcie martwych włosów. Co pomaga
@@ -276,7 +267,7 @@ const Services: React.FC = () => {
                   do rasy psa, zgonie z wzorcem FCI.
                 </ServicesCard>
               </div>
-              <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5 mt-8">
+              <div className="w-full  lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5 mt-8">
                 <img alt="loading err" src={p1} />
                 <ServicesCard title="Strzyżenie">
                   {" "}
@@ -287,7 +278,7 @@ const Services: React.FC = () => {
                   odpowiednią technike strzyżenia zgodnie z wymaganiami klienta
                 </ServicesCard>
               </div>
-              <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 t mr-5 flex flex-col mb-5 mt-8">
+              <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5 mt-8">
                 <img alt="loading err" src={p1} />
                 <ServicesCard title="Czyszczenie uszów i obcinanie pazurków">
                   Pielęgnacja uszu polega na delikatnym wyskubaniu nadmiaru

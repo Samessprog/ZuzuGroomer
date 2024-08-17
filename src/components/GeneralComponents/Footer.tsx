@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           </a>
           <div className="mt-1 lg:mt-5 mb-2 text-sm">NIP: 2220928857</div>
           <div className="mt-1 lg:mt-1 mb-2 text-sm">REGON: 528623838</div>
-          <div className="mt-3 lg:mt-5 mb-2 text-sm">
+          <div className="mt-3 lg:mt-5 mb-2 text-sm text-center">
             Prosze o kontakt telefoniczny lub mailowy w celu umówienia wizyty
           </div>
         </div>

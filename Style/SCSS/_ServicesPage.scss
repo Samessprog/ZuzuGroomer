@@ -3,6 +3,11 @@
 .services-font {
     font-size: 80px;
     text-shadow: 5px 3px 4px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 768px) {
+        font-size: 60px;
+    }
+
 }
 
 .services-button-visiting {

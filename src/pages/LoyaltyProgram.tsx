@@ -13,7 +13,7 @@ const LoyaltyProgram: React.FC = () => {
             className="contact-img w-full object-cover"
           />
           <span
-            className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+            className="text-center absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
             role="heading"
             aria-level={1}
           >
@@ -22,9 +22,9 @@ const LoyaltyProgram: React.FC = () => {
         </div>
       </section>
       <main className="pb-20">
-        <section className="w-full flex justify-center mt-10 mb-10">
+        <section className="w-full flex justify-center mt-10 mb-10 text-sm lg:text-base">
           <div
-            className="w-8/12 text-center "
+            className="w-11/12 lg:w-8/12 text-center "
             role="note"
             aria-label="wstep do akrty lojalnosciowej"
           >
@@ -41,10 +41,10 @@ const LoyaltyProgram: React.FC = () => {
             </div>{" "}
           </div>
         </section>
-        <section className="flex pl-10 pr-10 mt-20">
-          <div className="w-7/12">
+        <section className="flex pl-5 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center">
+          <div className="lg:w-7/12">
             <span
-              className="flex justify-center mb-5 text-2xl font-semibold color-pink"
+              className="flex justify-center mb-5 text-2xl font-semibold color-pink text-center"
               role="heading"
               aria-level={2}
               aria-label="KARTA-LOJALNOŚCIOWA-SHAGGY"
@@ -52,7 +52,7 @@ const LoyaltyProgram: React.FC = () => {
               KARTA LOJALNOŚCIOWA SHAGGY
             </span>
             <div
-              className="text-justify flex flex-col"
+              className="text-justify flex flex-col mt-5 text-sm lg:text-base"
               role="note"
               aria-label="opis-karty-lojalnosciowej"
             >
@@ -62,7 +62,7 @@ const LoyaltyProgram: React.FC = () => {
               Klient zbiera pieczątki za wykonane usługi powyżej 50zł. Po
               uzyskaniu określonej liczby pieczątek, klient otrzymuje zniżkę na
               wybraną przez niego usługę powyżej 50zł z poniższymi zasadami:
-              <ul className="list-disc ml-8 mt-2 mb-2">
+              <ul className="list-disc ml-8 mt-5 lg:mt-2 mb-5 lg:mb-2">
                 <li>
                   <strong> 5 pieczątek </strong> - klient otrzymuje{" "}
                   <strong>10%</strong> zniżki na kolejny zakup.
@@ -78,7 +78,7 @@ const LoyaltyProgram: React.FC = () => {
               </strong>
               <>
                 <span
-                  className="text-xl color-pink mt-2"
+                  className="text-xl color-pink mt-5 lg:mt-2"
                   role="heading"
                   aria-level={3}
                   aria-label="Zalety naszego programu:"
@@ -86,7 +86,7 @@ const LoyaltyProgram: React.FC = () => {
                   Zalety naszego programu:
                 </span>
                 <ul
-                  className="loyalty-program-benefits"
+                  className="loyalty-program-benefits mb-5 lg:mb-0"
                   role="list"
                   aria-braillelabel="zaletyKarty"
                 >
@@ -137,7 +137,7 @@ const LoyaltyProgram: React.FC = () => {
               </>
             </div>
           </div>
-          <div className="w-5/12 ml-10">
+          <div className="w-12/12 lg:ml-10">
             <img src={p1} alt="loading err" />
             <span className="flex justify-end mt-2 text-sm text-gray-500 mr-2">
               Więcej informacji w lokalu!

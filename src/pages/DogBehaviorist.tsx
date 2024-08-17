@@ -28,10 +28,10 @@ const DogBehaviorist: React.FC = () => {
           Psi Behawiorysta
         </span>
       </div>
-      <main className="lg:pl-20 lg:pr-20 pl-5 pr-5">
-        <section className="flex mt-20 justify-center flex-col xl:flex-row">
-          <div className="w-full xl:w-8/12 pr-5 xl:pr-20 text-base text-wrap ">
-            <p className="">
+      <main className="lg:pl-20 lg:pr-20 pl-5 pr-5 text-base lg:text-base">
+        <section className="flex mt-10 lg:mt-20 justify-center flex-col xl:flex-row">
+          <div className="w-full xl:w-8/12 pr-5 xl:pr-20 text-sm lg:text-base+ text-wrap ">
+            <p className="text-justify">
               Współczesne psy stają się nieodłącznymi członkami naszych rodzin.
               Podobnie jak my, mogą mieć trudności, z którymi samodzielnie sobie
               nie radzą. Niektóre ich zachowania nie są wynikiem złośliwości,
@@ -68,15 +68,15 @@ const DogBehaviorist: React.FC = () => {
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
         </section>
-        <section className="mt-28 flex justify-center mb-20">
+        <section className="mt-10 lg:mt-28 flex justify-center mb-20">
           <div className="w-4/12 hidden 2xl:flex">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
           <div
-            className="w-full xl:w-8/12 text-base lg:pl-10"
+            className="w-full xl:w-8/12 text-base lg:pl-10 "
             ref={BehawioElementRef}
           >
-            <span className="mb-20 text-2xl font-bold">
+            <span className="mb-10 lg:mb-20 text-2xl font-bold ">
               Kim jest behawiorysta psów?
             </span>
             <animated.div

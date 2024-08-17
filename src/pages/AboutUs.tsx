@@ -27,7 +27,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -69,10 +69,10 @@ const AboutUs: React.FC = () => {
           <i>O nas</i>
         </span>
       </div>
-      <main className="pl-5 pr-10">
+      <main className="pl-5 pr-5 lg:pr-10">
         <article>
-          <div className="flex justify-center mb-16">
-            <div className="mt-10 text-sm md:text-base leading-relaxed text-center w-8/12">
+          <div className="flex justify-center mb-8 lg:mb-16">
+            <div className="mt-10 text-sm lg:text-base leading-relaxed text-center w-11/12 lg:8/12">
               <span className="font-semibold">
                 Cześć, Nazywam się Zuzanna Hassa, jestem certyfikowanym
                 Groomerem i Opiekunem Zwierząt.
@@ -86,17 +86,17 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
           <div
-            className="mt-20 md:mt-10 flex flex-col md:flex-row"
+            className=" lg:mt-10 flex flex-col lg:flex-row"
             ref={AboutUsFirstTabRefElement}
           >
-            <div className="md:w-5/12 w-full ml-0 md:ml-5 rounded">
+            <div className="lg:w-5/12 w-full ml-0 lg:ml-5 rounded">
               <img
                 alt="loading err"
-                className="  w-full h-full object-cover rounded"
+                className="w-full h-full object-cover rounded"
                 src={p1}
               />
             </div>
-            <div className="w-full md:w-7/12 pl-0 md:pl-5 text-justify mt-5 md:mt-0 text-sm md:text-base leading-relaxed">
+            <div className="w-full lg:w-7/12 pl-0 lg:pl-5 text-justify mt-8 lg:mt-0 text-sm lg:text-base leading-relaxed">
               <>
                 {" "}
                 <p>
@@ -142,18 +142,18 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
           <div
-            className="mt-10 flex flex-col md:flex-row"
+            className="mt-10 flex flex-col lg:flex-row"
             ref={AboutUsFirstTabRefElement}
             aria-labelledby="about-us-section"
           >
             <animated.div
-              className="w-full md:w-6/12 pl-5 text-justify"
+              className="w-full lg:w-6/12 lg:pl-5 text-justify"
               style={AboutUsAnimate}
               role="region"
               aria-labelledby="about-us-content"
             >
-              <div className="text-4xl font-semibold color-pink mb-5 flex items-center">
-                <div className="mr-5 ">
+              <div className="text-4xl font-semibold color-pink mb-5 flex items-center w-full justify-center lg:justify-start">
+                <div className="mr-3 lg:mr-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="35px"
@@ -239,7 +239,7 @@ const AboutUs: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div className="mt-5  mb-8 md:mb-0">
+              <div className="mt-5 mb-8 lg:mb-0 flex justify-center lg:justify-start">
                 <button
                   className="appointment-button text-white rounded-3xl text-lg"
                   role="button"
@@ -249,7 +249,7 @@ const AboutUs: React.FC = () => {
                 </button>
               </div>
             </animated.div>
-            <div className=" -holder w-full md:w-6/12 ml-0 md:ml-5 rounded">
+            <div className=" -holder w-full lg:w-6/12 ml-0 lg:ml-5 rounded">
               <img
                 role="img"
                 alt="loading err"
@@ -262,7 +262,7 @@ const AboutUs: React.FC = () => {
         <article className="w-full flex justify-center">
           <div className="mt-12 ">
             <div
-              className="text-lg md:text-2xl font-semibold text-center"
+              className="text-lg lg:text-2xl font-semibold text-center"
               aria-label="Zapraszam do odwiedzenia moich social mediów"
               role="heading"
               aria-level={2}
@@ -270,7 +270,7 @@ const AboutUs: React.FC = () => {
               Zapraszam do odwiedzenia moich social mediów
             </div>
             <div
-              className="flex justify-center mt-5 flex-col md:flex-row items-center md:items-start"
+              className="flex justify-center mt-5 flex-col lg:flex-row items-center lg:items-start"
               role="group"
               aria-label="Social media icons"
             >
@@ -310,12 +310,12 @@ const AboutUs: React.FC = () => {
                 </animated.div>
               </div>
               <animated.div
-                className="flex  social-holder mt-4 md:mt-0"
+                className="flex  social-holder mt-4 lg:mt-0"
                 style={iconsAnimate}
                 role="link"
                 aria-label="Facebook"
               >
-                <div className="  rounded-full ml-0 md:ml-5 cursor-pointer p-[11px] bg-facebook">
+                <div className="  rounded-full ml-0 lg:ml-5 cursor-pointer p-[11px] bg-facebook">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

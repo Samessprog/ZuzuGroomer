@@ -5,7 +5,7 @@ import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("../GalleryComponents/TwentyTwentyAnimation"),
+  async () => await import("../GalleryComponents/TwentyTwentyAnimation")
 );
 
 const PetCareSection: React.FC = () => {
@@ -90,7 +90,7 @@ const PetCareSection: React.FC = () => {
               Przesuń suwak i sprawdź...
             </div>
             <div
-              className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center w-9/12"
+              className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center sm:w-9/12 w-full"
               aria-live="polite"
               aria-label="Image comparison slider"
             >

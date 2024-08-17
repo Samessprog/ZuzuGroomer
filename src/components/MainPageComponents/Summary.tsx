@@ -13,7 +13,7 @@ const SummaryMain: React.FC = () => {
   const servicesInfoAnimate = (
     inView: boolean,
     duration: number,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: inView ? 1 : 0,
@@ -57,8 +57,8 @@ const SummaryMain: React.FC = () => {
           <img src={p2} alt="loading Err" title="Grooming" />
         </animated.div>
       </div>
-      <div className="flex des-holder  w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 text-justify">
-        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm ml-4  pl-8 pr-8 text-base text-[15px]">
+      <div className="flex des-holder w-full pl-3 pr-4 sm:pl-10 sm:pr-10 lg:flex-row flex-col mt-10 sm:mt-16 text-justify">
+        <div className="flex flex-col w-full lg:w-4/12  des-holder-elm md:ml-4 md:pl-8 md:pr-8 text-base text-[15px]">
           <p className="mb-4 ">
             {" "}
             <b className="text-black ">Psi fryzjer</b> – groomer – Warszawa
@@ -81,7 +81,7 @@ const SummaryMain: React.FC = () => {
             strzyżeniu i kompleksowej pielęgnacji w moim salonie psiej urody!
           </p>
         </div>
-        <div className="flex flex-col des-holder-elm w-full lg:w-4/12 pl-8 pr-8 text-[15px]">
+        <div className="flex flex-col des-holder-elm w-full lg:w-4/12 md:pl-8 md:pr-8 text-[15px]">
           <p className="mb-4">
             {" "}
             <b className="text-black">Behawiorystar</b> – Warszawa
@@ -106,7 +106,7 @@ const SummaryMain: React.FC = () => {
             zachowanie psa.
           </p>
         </div>
-        <div className="flex flex-col des-holder-elm mr-3 w-full lg:w-4/12 pl-8 pr-8  text-[15px]">
+        <div className="flex flex-col des-holder-elm md:mr-3 w-full lg:w-4/12 md:pl-8 md:pr-8  text-[15px]">
           <p className="mb-4">
             {" "}
             <b className="text-black">Hotelik dla psów</b> – Warszawa
@@ -131,7 +131,7 @@ const SummaryMain: React.FC = () => {
         </div>
       </div>
       <div className="mt-20 flex flex-col items-center mb-20 text-lag font-bold">
-        <p className="mb-10 c-black-600 text-center text-xl">
+        <p className="mb-10 c-black-600 text-center text-xl w-10/12 md:w-full">
           Zuzu Groomer w mediach społecznościowych
         </p>
         <div className="flex  w-12/12 justify-between">

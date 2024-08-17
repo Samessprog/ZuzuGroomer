@@ -173,7 +173,7 @@ const ContactInfo: React.FC = () => {
                 <div className="flex justify-center w-full mt-10 sm:text-2xl text-xl font-bold xl:w-4/12">
                   {" "}
                   <div
-                    className="w-full flex justify-center flex-col items-center ml-10 sm:ml-0 text-center"
+                    className="w-full flex justify-center flex-col items-center  sm:ml-0 text-center"
                     role="heading"
                     aria-level={4}
                   >
