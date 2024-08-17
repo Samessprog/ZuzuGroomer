@@ -19,6 +19,14 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
     }
   }, [displayWidth]);
 
+  const closeAnimationSmallScreen = (): void => {
+    if (displayWidth < 1280) {
+      setIsClicked(true);
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+  
+
   return (
     <nav
       className="flex justify-center sticky top-0 z-10 opacmenu-navbar-itemity-95 bg-white border-b border-gray-300"
@@ -38,7 +46,10 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
           <span className="bar block w-7 bg-black transition-all duration-300 ease-in-out"></span>
         </div>
         <div className=" 2xl:w-3/12 plank xl:w-2/12 logo-holder flex justify-center 2xl:justify-end order-2 pb-3 sm:pb-0 2xl:pr-10 pl-5 items-center  ">
-          <Link to="/" className="w-10/12 flex justify-center mr-3 sm:w-7/12 md:w-full">
+          <Link
+            to="/"
+            className="w-10/12 flex justify-center mr-3 sm:w-7/12 md:w-full"
+          >
             <img
               src={logo}
               alt="loading logo err"
@@ -61,6 +72,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/oNas"
                 aria-label="O nas"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 O nas
               </NavLink>
@@ -73,6 +87,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/Usługi"
                 aria-label="Usługi"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Usługi
               </NavLink>
@@ -84,6 +101,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/PsiBehawiorysta"
                 aria-label=" Psi Behawiorysta"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Psi Behawiorysta
               </NavLink>
@@ -95,6 +115,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="ProgramLojalnosciowy"
                 aria-label=" Program lojalnościowy"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Program lojalnościowy
               </NavLink>
@@ -106,6 +129,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/Galeria"
                 aria-label="Galeria"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Galeria
               </NavLink>
@@ -117,6 +143,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/Cennik"
                 aria-label="Cennik"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Cennik
               </NavLink>
@@ -128,6 +157,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/Kontakt"
                 aria-label="Kontakt"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Kontakt
               </NavLink>
@@ -139,6 +171,9 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
                 className="item-context relative"
                 to="/Regulamin"
                 aria-label="Regulamin"
+                onClick={(): void => {
+                  closeAnimationSmallScreen();
+                }}
               >
                 Regulamin
               </NavLink>
