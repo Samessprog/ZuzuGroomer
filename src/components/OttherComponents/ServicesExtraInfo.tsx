@@ -13,7 +13,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
 
   const servicesExtraInf = (
     servicesExtraInfoView: boolean,
-    translate: string
+    translate: string,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: servicesExtraInfoView ? 1 : 0,

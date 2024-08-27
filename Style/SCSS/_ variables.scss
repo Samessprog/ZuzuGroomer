@@ -49,12 +49,11 @@ $px34: 34px;
 
 @mixin max-min-900 {
     max-height: 900px;
-    min-height: 900px;
+    min-height: 200px;
 }
 
 @mixin fullScreenSliderIcons {
     transition: fill .3s ease-in-out;
-    position: absolute;
     cursor: pointer;
     z-index: 999;
 

@@ -25,7 +25,6 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
       setIsMenuOpen(!isMenuOpen);
     }
   };
-  
 
   return (
     <nav

@@ -27,7 +27,7 @@ const Gallery: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   return (

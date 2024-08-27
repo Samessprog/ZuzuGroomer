@@ -41,7 +41,7 @@ const LoyaltyProgram: React.FC = () => {
             </div>{" "}
           </div>
         </section>
-        <section className="flex pl-5 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center">
+        <section className="flex pl-5 pr-5 md:pr-0 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center">
           <div className="lg:w-7/12">
             <span
               className="flex justify-center mb-5 text-2xl font-semibold color-pink text-center"

@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -83,11 +83,11 @@ const PriceList: React.FC = () => {
           id="price-Lists-group"
         >
           <animated.div
-            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
+            className="w-full sm:w-9/12 md:w-7/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
             <div
-              className="text-xl font-semibold border-b-2 border-black color-pink"
+              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
               role="group"
               aria-labelledby="Clipping-group"
             >
@@ -191,13 +191,13 @@ const PriceList: React.FC = () => {
             </>
           </animated.div>
           <animated.div
-            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
+            className="w-full sm:w-9/12 md:w-7/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
             role="group"
             aria-labelledby="Trimming-group"
           >
             <div
-              className="text-xl font-semibold border-b-2 border-black color-pink"
+              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
               id="Trimming-group"
             >
               Trymowanie z kąpielą i pełną kosmetyką
@@ -274,13 +274,13 @@ const PriceList: React.FC = () => {
             </ul>
           </animated.div>
           <animated.div
-            className="w-full sm:w-9/12 md:w-8/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
+            className="w-full sm:w-9/12 md:w-7/12 lg:w-4/12 flex flex-col items-center price-list-item-holder sm:ml-5 mb-8 lg:mb-0 p-4 rounded-3xl"
             style={PriceListItemAnimate}
             role="group"
             aria-labelledby="Cosmetology-group"
           >
             <div
-              className="text-xl font-semibold border-b-2 border-black color-pink"
+              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
               id="Cosmetology-group"
             >
               Kosmetyka I kąpiel
@@ -402,7 +402,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100
+                100,
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -416,7 +416,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400
+                400,
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -427,7 +427,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500
+                500,
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -438,7 +438,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550
+                550,
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -460,7 +460,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570
+                570,
               )}
             >
               Wizyta adaptacyjna -{" "}

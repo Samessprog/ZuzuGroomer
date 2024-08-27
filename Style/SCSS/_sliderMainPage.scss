@@ -1,12 +1,15 @@
 .slider {
     background-color: rgba(0, 0, 0, 0.880);
-
     @media (min-width:1536px) {
         height: 750px;
     }
 
     @media (min-width:2000px) {
-        height: 950px;
+        height: 850px;
+    }
+
+    @media (max-width:565px) {
+        height: 400px;
     }
 
     .img-slider {
