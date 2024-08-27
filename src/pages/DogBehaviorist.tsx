@@ -68,7 +68,7 @@ const DogBehaviorist: React.FC = () => {
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
         </section>
-        <section className="mt-10 lg:mt-28 flex justify-center mb-20">
+        <section className="mt-10 lg:mt-28 flex justify-center mb-10 lg:mb-20">
           <div className="w-4/12 hidden 2xl:flex">
             <img src={p1} alt="loading err" className="w-full h-full" />
           </div>
@@ -136,7 +136,7 @@ const DogBehaviorist: React.FC = () => {
             </animated.div>
           </div>
         </section>
-        <section className="pb-20 w-full flex justify-center flex-col items-center pt-10">
+        <section className="pb-20 w-full flex justify-center flex-col items-center lg:pt-10">
           <div className="text-3xl font-semibold mb-5">Zobacz również </div>
           <SocialIcons />
         </section>

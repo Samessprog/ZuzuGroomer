@@ -5,13 +5,8 @@ import { useInView } from "react-intersection-observer";
 import { useSelector } from "react-redux";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import FullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
-
-// tests
-import c1 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2775_001-1.png";
-import c2 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2777_001-1.png";
-import c3 from "./../assets/certyfikaty/CUNIFLOW_21202YM23189_2781_001-1.png";
-
-const photos = [c1, c2, c3];
+import pp1 from "../assets/ZdjęciaPsów/3.jpeg";
+import certificates from "../context/Certyficates";
 
 const AboutUs: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
@@ -89,12 +84,14 @@ const AboutUs: React.FC = () => {
             className=" lg:mt-10 flex flex-col lg:flex-row"
             ref={AboutUsFirstTabRefElement}
           >
-            <div className="lg:w-5/12 w-full ml-0 lg:ml-5 rounded">
-              <img
-                alt="loading err"
-                className="w-full h-full object-cover rounded"
-                src={p1}
-              />
+            <div className="lg:w-5/12 ml-0 lg:ml-5 rounded flex justify-center about-us-img object-cover ">
+              <div className="w-full md:w-8/12 lg:w-full">
+                <img
+                  alt="loading err"
+                  className="w-full h-full object-cover rounded "
+                  src={pp1}
+                />
+              </div>
             </div>
             <div className="w-full lg:w-7/12 pl-0 lg:pl-5 text-justify mt-8 lg:mt-0 text-sm lg:text-base leading-relaxed">
               <>
@@ -249,13 +246,14 @@ const AboutUs: React.FC = () => {
                 </button>
               </div>
             </animated.div>
-            <div className=" -holder w-full lg:w-6/12 ml-0 lg:ml-5 rounded">
-              <img
-                role="img"
-                alt="loading err"
-                className="  w-full h-full object-cover rounded"
-                src={p1}
-              />
+            <div className="lg:w-5/12 ml-0 lg:ml-5 rounded flex justify-center about-us-img object-cover ">
+              <div className="w-full md:w-8/12 lg:w-full">
+                <img
+                  alt="loading err"
+                  className="w-full h-full object-cover rounded "
+                  src={pp1}
+                />
+              </div>
             </div>
           </div>
         </article>
@@ -363,12 +361,12 @@ const AboutUs: React.FC = () => {
             className={`gallery-holder w-12/12 pr-20 pl-20 grid mt-10 mb-20`}
             role="img"
           >
-            {photos.map((imgUrl, index) => (
+            {certificates.map((imgUrl, index) => (
               <animated.div style={galleryAnimate} key={index}>
                 <GalleryPhoto
                   imgUrl={imgUrl}
                   index={index}
-                  mainPhotos={photos}
+                  mainPhotos={certificates}
                 />
               </animated.div>
             ))}

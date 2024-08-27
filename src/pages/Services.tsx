@@ -71,8 +71,11 @@ const Services: React.FC = () => {
           ref={ServicesListAnimateRef}
         >
           <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
+            <div className="w-full md:w-10/12 lg:w-5/12 mt-5 lg:mt-10 xl:mt-0 lg:order-2 mb-10 lg:mb-0">
+              <img alt="loading err" src={p1} className="h-full w-full" />
+            </div>
             <div
-              className="w-full lg:w-7/12 lg:pr-10 text-justify flex flex-col"
+              className="w-full lg:w-7/12 lg:pr-10 text-justify flex flex-col lg:order-1"
               role="note"
               aria-label="About-our-services"
             >
@@ -223,9 +226,6 @@ const Services: React.FC = () => {
                   Program lojalnościowy
                 </animated.li>
               </ul>
-            </div>
-            <div className="w-full lg:w-5/12 mt-10 xl:mt-0">
-              <img alt="loading err" src={p1} className="h-full w-full" />
             </div>
           </div>
         </section>

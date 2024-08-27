@@ -111,3 +111,18 @@
         transform: rotateZ(0deg);
     }
 }
+
+.about-us-img {
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+body {
+    max-width: 2100px !important;
+    margin: 0 auto !important;
+    padding: 0 20px;
+    display: block;
+}
