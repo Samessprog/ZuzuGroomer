@@ -803,6 +803,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .block {
   display: block;
 }
@@ -1739,10 +1743,6 @@ video {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:w-3\/12 {
-    width: 25%;
   }
 
   .md\:flex-row {
