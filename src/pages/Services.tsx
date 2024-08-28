@@ -6,6 +6,7 @@ import SocialIcons from "../components/OttherComponents/SocialIcons";
 import ServicesCard from "../components/OttherComponents/ServicesCard";
 import ServicesExtraInfo from "../components/OttherComponents/ServicesExtraInfo";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
 
 const Services: React.FC = () => {
   const { hash } = useLocation();
@@ -71,8 +72,8 @@ const Services: React.FC = () => {
           ref={ServicesListAnimateRef}
         >
           <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
-            <div className="w-full md:w-10/12 lg:w-5/12 mt-5 lg:mt-10 xl:mt-0 lg:order-2 mb-10 lg:mb-0">
-              <img alt="loading err" src={p1} className="h-full w-full" />
+            <div className="w-full md:w-10/12 lg:w-5/12 mt-5 lg:mt-10 xl:mt-0 lg:order-2 mb-10 lg:mb-0 services-main-img-holder">
+              <img alt="loading err" src={pp1} className="h-full w-full " />
             </div>
             <div
               className="w-full lg:w-7/12 lg:pr-10 text-justify flex flex-col lg:order-1"
@@ -245,8 +246,8 @@ const Services: React.FC = () => {
           </div>
           <div className="flex justify-center flex-wrap   " id="services">
             <div className="w-full flex justify-center flex-wrap md:w-8/12 lg:w-full">
-              <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5">
-                <img alt="loading err" src={p1} />
+              <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5  ">
+                <img alt="loading err" src={pp1} className="services-img" />
                 <ServicesCard title="Kąpiel oraz pielęgnacja ">
                   W naszym salonie staramy się o jak najbardziej bezstresowo i
                   komfortowo przeprowadzoną kapiel. Pielęgnacja wykonywana jest
@@ -257,7 +258,7 @@ const Services: React.FC = () => {
                 </ServicesCard>
               </div>
               <div className="w-full  lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5">
-                <img alt="loading err" src={p1} />
+                <img alt="loading err" src={pp1} className="services-img" />
                 <ServicesCard title="Trymowanie">
                   Celem trymowania jest usunięcie martwych włosów. Co pomaga
                   utrzymać zdrową sierść i skórę oraz poprawia wygląd
