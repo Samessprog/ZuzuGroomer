@@ -1741,6 +1741,10 @@ video {
     width: 100%;
   }
 
+  .md\:w-3\/12 {
+    width: 25%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }

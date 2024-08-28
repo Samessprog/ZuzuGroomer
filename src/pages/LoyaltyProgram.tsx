@@ -1,5 +1,6 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
 
 const LoyaltyProgram: React.FC = () => {
   return (
@@ -137,8 +138,11 @@ const LoyaltyProgram: React.FC = () => {
               </>
             </div>
           </div>
-          <div className="w-12/12 lg:ml-10">
-            <img src={p1} alt="loading err" />
+          <div className="w-full sm:w-10/12 lg:w-5/12 lg:ml-10 ">
+            <div className="layality-program-img-holder">
+              <img src={pp1} alt="loading err" className="w-full h-full" />
+            </div>
+
             <span className="flex justify-end mt-2 text-sm text-gray-500 mr-2">
               Więcej informacji w lokalu!
             </span>
