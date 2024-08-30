@@ -13,10 +13,12 @@ const ServicesCard: React.FC<ServicesInter> = ({ children, title }) => {
         role="heading"
         aria-level={5}
       >
-        <i>{title}</i>
+        <h3>
+          <em>{title}</em>
+        </h3>
       </span>
       <div
-        className="text-justify text-sm lg:text-base"
+        className="text-justify text-base lg:text-base"
         role="note"
         aria-label="services-info"
       >

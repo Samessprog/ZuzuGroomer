@@ -57,17 +57,20 @@ const AboutUs: React.FC = () => {
           role="img"
         />
         <span
-          className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
           role="heading"
           aria-level={1}
         >
-          <i>O nas</i>
+          <h1>
+            {" "}
+            <em>O nas</em>
+          </h1>
         </span>
       </div>
       <main className="pl-5 pr-5 lg:pr-10">
         <article>
           <div className="flex justify-center mb-8 lg:mb-16">
-            <div className="mt-10 text-sm lg:text-base leading-relaxed text-center w-11/12 lg:8/12">
+            <div className="mt-10 text-base lg:text-base leading-relaxed text-center w-11/12 lg:8/12">
               <span className="font-semibold">
                 Cześć, Nazywam się Zuzanna Hassa, jestem certyfikowanym
                 Groomerem i Opiekunem Zwierząt.
@@ -93,7 +96,7 @@ const AboutUs: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="w-full lg:w-7/12 pl-0 lg:pl-5 text-justify mt-8 lg:mt-0 text-sm lg:text-base leading-relaxed">
+            <div className="w-full lg:w-7/12 pl-0 lg:pl-5 text-justify mt-8 lg:mt-0 text-base lg:text-base leading-relaxed">
               <>
                 {" "}
                 <p>
@@ -164,7 +167,9 @@ const AboutUs: React.FC = () => {
                     <path d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180-160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm240 0q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180 160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z" />
                   </svg>
                 </div>
-                <i>Psi fryzjer</i>
+                <h2>
+                  <i>Psi fryzjer</i>
+                </h2>
               </div>
               <div className="mb-5 text-justify">
                 W naszym salonie priorytetem jest nie tylko dbanie o komfort
@@ -265,7 +270,7 @@ const AboutUs: React.FC = () => {
               role="heading"
               aria-level={2}
             >
-              Zapraszam do odwiedzenia moich social mediów
+              <h2>Zapraszam do odwiedzenia moich social mediów</h2>
             </div>
             <div
               className="flex justify-center mt-5 flex-col lg:flex-row items-center lg:items-start"
@@ -354,7 +359,7 @@ const AboutUs: React.FC = () => {
             role="heading"
             aria-level={3}
           >
-            Dyplomy i osiągnięcia
+            <h2>Dyplomy i osiągnięcia</h2>
           </div>
           <div ref={iconsRef}></div>
           <div

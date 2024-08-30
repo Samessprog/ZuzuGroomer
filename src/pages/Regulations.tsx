@@ -12,7 +12,7 @@ const Regulations: React.FC = () => {
         />
         <div className="absolute regulation-text text-center top-1/2 left-1/2">
           <h1
-            className="object-cover text-6xl fancy-text tracking-wide"
+            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
             aria-label="Regulamin"
           >
             Regulamin
@@ -26,10 +26,12 @@ const Regulations: React.FC = () => {
           aria-level={2}
           aria-label="REGULAMIN SALONU SHAGGY"
         >
-          <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
+          <h2>
+            <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
+          </h2>
         </div>
         <div
-          className=" w-full pr-6 pl-6 sm:pl-10 sm:pr-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5 text-sm sm:text-base"
+          className=" w-full pr-6 pl-6 sm:pl-10 sm:pr-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5 text-base sm:text-base"
           role="group"
           aria-labelledby="regGroup"
         >
@@ -155,7 +157,7 @@ const Regulations: React.FC = () => {
             </li>
           </ol>
         </div>
-        <div className="sm:ml-10 mt-10 sm:mt-16 font-bold text-center sm:text-start text-sm sm:text-lg ml-5 mr-5 sm:mr-0">
+        <div className="sm:ml-10 mt-10 sm:mt-16 font-bold text-center sm:text-start text-base sm:text-lg ml-5 mr-5 sm:mr-0">
           <span
             className=" border-b-2 border-black pb-0.5"
             aria-label="statute summary"

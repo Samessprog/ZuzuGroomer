@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               id="menu-title"
               className="mb-3 font-semibold text-lg text-white"
             >
-              Menu:
+              <h2>Menu:</h2>
             </div>
             <Link
               className="mb-2 hover:text-white focus:text-white  cursor-pointer transition ease-in-out duration-300 text-sm"
@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
               className="mb-3 font-semibold text-white "
               id="business-hours-heading"
             >
-              Zapraszamy
+              <h2>Zapraszamy</h2>
             </div>
             <div className="mb-2 text-sm">Pon: 11:00 - 19:00</div>
             <div className="mb-2 text-sm">Wt: 9:00 - 17:00</div>

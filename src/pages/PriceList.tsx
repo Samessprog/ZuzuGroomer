@@ -23,7 +23,7 @@ const PriceList: React.FC = () => {
   const servicesInfoAnimate = (
     elementInViewFirst: boolean,
     translate: string,
-    delayNumber: number,
+    delayNumber: number
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInViewFirst ? 1 : 0,
@@ -46,12 +46,16 @@ const PriceList: React.FC = () => {
           role="heading"
           aria-level={1}
         >
-          <i className="text-6xl fancy-text tracking-wide">Cennik</i>
+          <h1>
+            <em className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink">
+              Cennik
+            </em>
+          </h1>
         </div>
       </div>
       <div className=" flex justify-center items-center mt-10 ">
         <section
-          className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-sm sm:text-base"
+          className="w-full sm:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-base sm:text-base"
           role="document"
           aria-label="preliminary information"
         >
@@ -91,7 +95,7 @@ const PriceList: React.FC = () => {
               role="group"
               aria-labelledby="Clipping-group"
             >
-              Strzyżenie z kąpielą i pełną kosmetyką
+              <h2>Strzyżenie z kąpielą i pełną kosmetyką</h2>
             </div>
             <>
               <ul
@@ -200,7 +204,7 @@ const PriceList: React.FC = () => {
               className="text-xl font-semibold border-b-2 border-black color-pink text-center"
               id="Trimming-group"
             >
-              Trymowanie z kąpielą i pełną kosmetyką
+              <h2>Trymowanie z kąpielą i pełną kosmetyką</h2>
             </div>
             <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
@@ -283,7 +287,7 @@ const PriceList: React.FC = () => {
               className="text-xl font-semibold border-b-2 border-black color-pink text-center"
               id="Cosmetology-group"
             >
-              Kosmetyka I kąpiel
+              <h2>Kosmetyka I kąpiel</h2>
             </div>
             <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
@@ -376,7 +380,7 @@ const PriceList: React.FC = () => {
       </section>
       <section ref={priceListExtra}>
         <div
-          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20 text-sm sm:text-base"
+          className="pl-2 pr-2 sm:pl-0 sm:pr-0 sm:ml-10 mt-10 w-full sm:w-8/12 flex flex-col mb-20 text-base sm:text-base"
           role="group"
           aria-labelledby="extra-info"
         >
@@ -388,9 +392,11 @@ const PriceList: React.FC = () => {
               pełnego wykonania usługi.
             </p>
           </span>
-          <b className="mt-5" role="heading" aria-level={2}>
-            Ponad to:
-          </b>
+          <h2>
+            <b className="mt-5" role="heading" aria-level={2}>
+              Ponad to:
+            </b>
+          </h2>
           <ul
             className="mt-2 list-disc extra-info-holder pr-2"
             role="list"
@@ -402,7 +408,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                100,
+                100
               )}
             >
               Rozczesywanie sierści z kołtunów – dodatkowo płatne
@@ -416,7 +422,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                400,
+                400
               )}
             >
               Obcinanie pazurków – <b className="color-pink ">20 zł</b>
@@ -427,7 +433,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                500,
+                500
               )}
             >
               Czyszczenie uszu – <b className="color-pink ">10 zł</b>
@@ -438,7 +444,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                550,
+                550
               )}
             >
               Wizyta zapoznawcza -{" "}
@@ -460,7 +466,7 @@ const PriceList: React.FC = () => {
               style={servicesInfoAnimate(
                 elementInViewFirst,
                 "translateX(-100%)",
-                570,
+                570
               )}
             >
               Wizyta adaptacyjna -{" "}

@@ -48,16 +48,18 @@ const Services: React.FC = () => {
           role="img"
         />
         <span
-          className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
           role="heading"
           aria-level={1}
         >
-          <i>Usługi</i>
+          <h1>
+            <em>Usługi</em>
+          </h1>
         </span>
       </div>
       <main>
         <div className=" flex justify-center items-center mt-10 ">
-          <section className="w-11/12 lg:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-sm lg:text-base">
+          <section className="w-11/12 lg:w-8/12 text-center ps-5 pr-5 sm:ps-0 sm:pr-0 text-base lg:text-base">
             W naszym salonie oferujemy szeroki zakres profesjonalnych usług
             groomerskich, które sprawiają, że Twoje zwierzę będzie wyglądać i
             czuć się wyjątkowo. Dzięki naszemu doświadczeniu oraz indywidualnemu
@@ -68,7 +70,7 @@ const Services: React.FC = () => {
           </section>
         </div>
         <section
-          className="pl-5 pr-5 lg:pl-10 lg:pr-10 mb-20 text-sm lg:text-base"
+          className="pl-5 pr-5 lg:pl-10 lg:pr-10 mb-20 text-base lg:text-base"
           ref={ServicesListAnimateRef}
         >
           <div className="flex w-full mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
@@ -102,7 +104,7 @@ const Services: React.FC = () => {
                 aria-label="Why-we?"
                 aria-level={3}
               >
-                Dlaczego my?
+                <h2>Dlaczego my?</h2>
               </div>
               <ul id="whyWE" className="text-base lg:text-xl">
                 <animated.li
@@ -241,7 +243,7 @@ const Services: React.FC = () => {
               role="heading"
               aria-level={2}
             >
-              Nasze usługi
+              <h2>Nasze usługi</h2>
             </span>
           </div>
           <div className="flex justify-center flex-wrap   " id="services">
@@ -301,7 +303,7 @@ const Services: React.FC = () => {
         <section className="pb-20 pt-20">
           <div className="w-full flex justify-center flex-col items-center">
             <span className="font-semibold color-pink text-4xl">
-              Zobacz również
+              <h2>Zobacz również</h2>
             </span>
             <SocialIcons />
           </div>
