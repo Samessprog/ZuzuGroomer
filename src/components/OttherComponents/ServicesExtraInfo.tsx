@@ -13,7 +13,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
 
   const servicesExtraInf = (
     servicesExtraInfoView: boolean,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: servicesExtraInfoView ? 1 : 0,
@@ -31,7 +31,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
         id="ServicesAnchor"
         ref={ServicesExtraInfoRef}
       >
-        Dowiedz się więcej o:
+        <h2>Dowiedz się więcej o:</h2>
       </div>
       <div className="flex justify-center flex-col lg:flex-row">
         <animated.div
@@ -44,7 +44,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
             aria-level={5}
             aria-label="Wizyta Zapoznawcza dla Psów"
           >
-            Wizyta Zapoznawcza dla Psów
+            <h3>Wizyta Zapoznawcza dla Psów</h3>
           </span>
           Wizyta zapoznawcza jest idealnym rozwiązaniem dla szczeniąt oraz psów
           dorosłych które nigdy dotąd niekorzystających z usług groomerskich lub
@@ -57,7 +57,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
             aria-level={6}
             aria-label="Wizyta zapoznawcza obejmuje:"
           >
-            Wizyta zapoznawcza obejmuje:
+            <h4>Wizyta zapoznawcza obejmuje:</h4>
           </p>
           <ul className=" mt-2 ml-4 mb-2" id="adaptationServices">
             <li>Komfortowe wprowadzenie psa do salonu</li>
@@ -88,7 +88,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
             aria-label="Wizyta Adaptacyjna dla Psów"
             id=""
           >
-            Wizyta Adaptacyjna dla Psów
+            <h3>Wizyta Adaptacyjna dla Psów</h3>
           </span>{" "}
           Wizyta adaptacyjna jest idealnym rozwiązaniem dla psów, które nigdy
           wcześniej nie korzystały z usług groomera lub miały trudne
@@ -100,7 +100,7 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
             className="mt-2 font-semibold color-pink text-lg"
             id="introductoryVisit"
           >
-            Wizyta adaptacyjna obejmuje:
+            <h4>Wizyta adaptacyjna obejmuje:</h4>
           </p>
           <ul className="list-disc mt-2 ml-4 mb-2">
             <li>

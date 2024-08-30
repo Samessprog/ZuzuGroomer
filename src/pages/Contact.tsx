@@ -14,11 +14,13 @@ const ContactInfo: React.FC = () => {
           role="img"
         />
         <h1
-          className="absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
           role="heading"
           aria-level={1}
         >
-          <i>Kontakt</i>
+          <h2>
+            <em>Kontakt</em>
+          </h2>
         </h1>
       </div>
       <main>
@@ -44,7 +46,7 @@ const ContactInfo: React.FC = () => {
                 role="heading"
                 aria-level={2}
               >
-                Dane kontaktowe
+                <h2>Dane kontaktowe</h2>
               </span>
               <div className="mt-4 flex flex-col text-slate-600 xl:items-start">
                 <div className="flex items-center mb-2 mt-3 info-data-container-elm">
@@ -177,7 +179,7 @@ const ContactInfo: React.FC = () => {
                     role="heading"
                     aria-level={4}
                   >
-                    Umów wizyte na Booksy!
+                    <h2>Umów wizyte na Booksy!</h2>
                     <div className="flex justify-center w-full sm:w-6/12">
                       {" "}
                       <button className="booksy-button bg-black text-white mt-2.5 text-xl rounded-[30px] transition-all ease-in-out delay-200 mr-4 sm:mr-0">

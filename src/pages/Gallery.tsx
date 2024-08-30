@@ -27,7 +27,7 @@ const Gallery: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   return (
@@ -38,12 +38,14 @@ const Gallery: React.FC = () => {
           src={p11}
           className="w-full gallery-start-img  object-cover"
         />
-        <span className="absolute gallery-text fancy-text text-5xl top-1/2 left-1/2">
-          <i> Galeria</i>
+        <span className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink">
+          <h1>
+            <em> Galeria</em>
+          </h1>
         </span>
       </div>
       <section className="w-full flex justify-center mt-10 ">
-        <span className="w-11/12 sm:w-8/12 text-center text-sm sm:text-base">
+        <span className="w-11/12 sm:w-8/12 text-center text-base sm:text-base">
           <p>
             {" "}
             Zapraszam do obserwowania naszych prac wykonanych z dbałością i
@@ -66,7 +68,9 @@ const Gallery: React.FC = () => {
         <section>
           <span className="flex justify-center mt-16 text-4xl sm:text-5xl md:text-6xl font-semibold color-pink fancy-text item">
             {" "}
-            <i>Nasze Dzieła</i>
+            <h2>
+              <em>Nasze Dzieła</em>
+            </h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="40px"
@@ -97,7 +101,9 @@ const Gallery: React.FC = () => {
         </section>
         <section>
           <span className="flex justify-center mt-20 text-4xl md:text-6xl font-semibold fancy-text tracking-wide text-shadow items-center">
-            <i>Magiczne zmiany</i>
+            <h2>
+              <em>Magiczne zmiany</em>
+            </h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="48px"
@@ -119,7 +125,7 @@ const Gallery: React.FC = () => {
       </main>
       <section className="mb-20">
         <div className="flex justify-center w-full font-semibold text-3xl sm:text-4xl color-pink">
-          Zobacz również
+          <h2>Zobacz również</h2>
         </div>
         <SocialIcons />
       </section>

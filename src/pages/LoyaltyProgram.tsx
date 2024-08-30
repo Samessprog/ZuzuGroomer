@@ -1,5 +1,6 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
 
 const LoyaltyProgram: React.FC = () => {
   return (
@@ -13,16 +14,18 @@ const LoyaltyProgram: React.FC = () => {
             className="contact-img w-full object-cover"
           />
           <span
-            className="text-center absolute text-6xl fancy-text tracking-wide contact-info-text z-1 left-1/2 top-1/2"
+            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
             role="heading"
             aria-level={1}
           >
-            <i>Program Lojalnościowy</i>
+            <h1>
+              <em>Program Lojalnościowy</em>
+            </h1>
           </span>
         </div>
       </section>
       <main className="pb-20">
-        <section className="w-full flex justify-center mt-10 mb-10 text-sm lg:text-base">
+        <section className="w-full flex justify-center mt-10 mb-10 text-base lg:text-base">
           <div
             className="w-11/12 lg:w-8/12 text-center "
             role="note"
@@ -41,7 +44,7 @@ const LoyaltyProgram: React.FC = () => {
             </div>{" "}
           </div>
         </section>
-        <section className="flex pl-5 pr-5 md:pr-0 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center">
+        <section className="flex pl-5 pr-5 md:pr-0 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
           <div className="lg:w-7/12">
             <span
               className="flex justify-center mb-5 text-2xl font-semibold color-pink text-center"
@@ -49,10 +52,10 @@ const LoyaltyProgram: React.FC = () => {
               aria-level={2}
               aria-label="KARTA-LOJALNOŚCIOWA-SHAGGY"
             >
-              KARTA LOJALNOŚCIOWA SHAGGY
+              <h2> KARTA LOJALNOŚCIOWA SHAGGY</h2>
             </span>
             <div
-              className="text-justify flex flex-col mt-5 text-sm lg:text-base"
+              className="text-justify flex flex-col mt-5 text-base "
               role="note"
               aria-label="opis-karty-lojalnosciowej"
             >
@@ -83,7 +86,7 @@ const LoyaltyProgram: React.FC = () => {
                   aria-level={3}
                   aria-label="Zalety naszego programu:"
                 >
-                  Zalety naszego programu:
+                  <h3>Zalety naszego programu:</h3>
                 </span>
                 <ul
                   className="loyalty-program-benefits mb-5 lg:mb-0"
@@ -137,9 +140,14 @@ const LoyaltyProgram: React.FC = () => {
               </>
             </div>
           </div>
-          <div className="w-12/12 lg:ml-10">
-            <img src={p1} alt="loading err" />
-            <span className="flex justify-end mt-2 text-sm text-gray-500 mr-2">
+          <div className="w-full sm:w-10/12 lg:w-5/12 lg:ml-10 ">
+            <div className="layality-program-img-holder testtt">
+              <img src={pp1} alt="loading err" className="w-full h-full z" />
+            </div>
+            <div className="layality-program-img-holder mt-24">
+              <img src={pp1} alt="loading err" className="w-full h-full" />
+            </div>
+            <span className="flex justify-end mt-2 text-base text-gray-500 mr-2">
               Więcej informacji w lokalu!
             </span>
           </div>
