@@ -55,7 +55,7 @@ const MainBio: React.FC = () => {
           <animated.div style={animatedDivProps} role="document">
             <header>
               <h1
-                className="bio-header font-bold mb-7 text-[2rem] tracking-wide flex items-start pr-8 pl-8 xl:pr-0 xl:pl-0"
+                className="bio-header font-bold mb-2 text-[2rem] tracking-wide flex items-start pr-8 pl-8 xl:pr-0 xl:pl-0"
                 role="heading"
                 aria-level="1"
               >

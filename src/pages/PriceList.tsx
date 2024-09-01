@@ -41,17 +41,19 @@ const PriceList: React.FC = () => {
           alt="loading err"
           className="w-full priceList-img object-cover"
         />
-        <div
-          className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2"
-          role="heading"
-          aria-level={1}
-        >
-          <h1>
-            <em className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink">
-              Cennik
-            </em>
-          </h1>
-        </div>
+        <header>
+          <div
+            className="absolute z-1 price-list-text flex flex-col top-1/2 left-1/2"
+            role="heading"
+            aria-level={1}
+          >
+            <h1>
+              <em className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink">
+                Cennik
+              </em>
+            </h1>
+          </div>
+        </header>
       </div>
       <div className=" flex justify-center items-center mt-10 ">
         <section
@@ -90,13 +92,15 @@ const PriceList: React.FC = () => {
             className="w-full sm:w-9/12 md:w-7/12 lg:w-4/12 flex justify-center flex-col items-center price-list-item-holder mb-8 lg:mb-0 rounded-3xl p-4"
             style={PriceListItemAnimate}
           >
-            <div
-              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
-              role="group"
-              aria-labelledby="Clipping-group"
-            >
-              <h2>Strzyżenie z kąpielą i pełną kosmetyką</h2>
-            </div>
+            <header>
+              <div
+                className="text-xl font-semibold border-b-2 border-black color-pink text-center"
+                role="group"
+                aria-labelledby="Clipping-group"
+              >
+                <h2>Strzyżenie z kąpielą i pełną kosmetyką</h2>
+              </div>
+            </header>
             <>
               <ul
                 className="list-disc mt-8 pl-2 no-select"
@@ -200,12 +204,14 @@ const PriceList: React.FC = () => {
             role="group"
             aria-labelledby="Trimming-group"
           >
-            <div
-              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
-              id="Trimming-group"
-            >
-              <h2>Trymowanie z kąpielą i pełną kosmetyką</h2>
-            </div>
+            <header>
+              <div
+                className="text-xl font-semibold border-b-2 border-black color-pink text-center"
+                id="Trimming-group"
+              >
+                <h2>Trymowanie z kąpielą i pełną kosmetyką</h2>
+              </div>
+            </header>
             <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
                 Springer Spaniel angielski:{" "}
@@ -283,12 +289,14 @@ const PriceList: React.FC = () => {
             role="group"
             aria-labelledby="Cosmetology-group"
           >
-            <div
-              className="text-xl font-semibold border-b-2 border-black color-pink text-center"
-              id="Cosmetology-group"
-            >
-              <h2>Kosmetyka I kąpiel</h2>
-            </div>
+            <header>
+              <div
+                className="text-xl font-semibold border-b-2 border-black color-pink text-center"
+                id="Cosmetology-group"
+              >
+                <h2>Kosmetyka I kąpiel</h2>
+              </div>
+            </header>
             <ul className="list-disc mt-8 pl-2 no-select" role="list">
               <li className="mb-1">
                 Owczarek szkocki długowłosy:{" "}
@@ -392,11 +400,13 @@ const PriceList: React.FC = () => {
               pełnego wykonania usługi.
             </p>
           </span>
-          <h2>
-            <b className="mt-5" role="heading" aria-level={2}>
-              Ponad to:
-            </b>
-          </h2>
+          <header>
+            <h2>
+              <b className="mt-5" role="heading" aria-level={2}>
+                Ponad to:
+              </b>
+            </h2>
+          </header>
           <ul
             className="mt-2 list-disc extra-info-holder pr-2"
             role="list"

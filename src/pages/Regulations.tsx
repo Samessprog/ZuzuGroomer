@@ -10,33 +10,37 @@ const Regulations: React.FC = () => {
           className="w-full h-1/12 regulamin-img relative object-cover"
           alt="loading err"
         />
-        <div className="absolute regulation-text text-center top-1/2 left-1/2">
-          <h1
-            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
-            aria-label="Regulamin"
-          >
-            Regulamin
-          </h1>
-        </div>
+        <header>
+          <div className="absolute regulation-text text-center top-1/2 left-1/2">
+            <h1
+              className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
+              aria-label="Regulamin"
+            >
+              Regulamin
+            </h1>
+          </div>
+        </header>
       </div>
       <section className="pb-20">
-        <div
-          className="mb-10 mt-10 text-2xl font-semibold color-pink text-center"
-          role="heading"
-          aria-level={2}
-          aria-label="REGULAMIN SALONU SHAGGY"
-        >
-          <h2>
-            <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
-          </h2>
-        </div>
+        <header>
+          <div
+            className="mb-10 mt-10 text-2xl font-semibold color-pink text-center"
+            role="heading"
+            aria-level={2}
+            aria-label="REGULAMIN SALONU SHAGGY"
+          >
+            <h2>
+              <em>REGULAMIN SALONU SHAGGY GROOMING ATELIER:</em>
+            </h2>
+          </div>
+        </header>
         <div
           className=" w-full pr-6 pl-6 sm:pl-10 sm:pr-10 flex justify-center regulations-holder bg-cover bg-fixed pt-5 pb-2.5 text-base sm:text-base"
           role="group"
           aria-labelledby="regGroup"
         >
           <ol
-            className="list-decimal flex flex-col items-start text-justify sm:w-10/12 w-full"
+            className="list-decimal flex flex-col items-start text-justify sm:w-10/12 w-full ml-2 sm:ml-0"
             id="regGroup"
             role="list"
             aria-label="List of regulations"

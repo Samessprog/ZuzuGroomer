@@ -13,15 +13,15 @@ const ContactInfo: React.FC = () => {
           className="contact-img w-full object-cover"
           role="img"
         />
-        <h1
-          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
-          role="heading"
-          aria-level={1}
-        >
-          <h2>
+        <header>
+          <h1
+            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
+            role="heading"
+            aria-level={1}
+          >
             <em>Kontakt</em>
-          </h2>
-        </h1>
+          </h1>
+        </header>
       </div>
       <main>
         <div className="w-full flex justify-center mt-10">
@@ -41,13 +41,15 @@ const ContactInfo: React.FC = () => {
         <section className="flex justify-center mt-10 md:mt-20">
           <div className="w-9/12 flex text-lg md:text-lg">
             <div className="flex flex-col w-full xl:w-7/12 items-center xl:items-start">
-              <span
-                className="text-3xl sm:text-4xl font-semibold"
-                role="heading"
-                aria-level={2}
-              >
-                <h2>Dane kontaktowe</h2>
-              </span>
+              <header>
+                <span
+                  className="text-3xl sm:text-4xl font-semibold"
+                  role="heading"
+                  aria-level={2}
+                >
+                  <h2>Dane kontaktowe</h2>
+                </span>
+              </header>
               <div className="mt-4 flex flex-col text-slate-600 xl:items-start">
                 <div className="flex items-center mb-2 mt-3 info-data-container-elm">
                   <svg
@@ -104,13 +106,15 @@ const ContactInfo: React.FC = () => {
                 </div>
               </div>
               <div className="mt-5 w-full">
-                <span
-                  className="text-2xl  xl:text-2xl font-semibold flex xl:justify-start justify-center w-full xl:w-5/12"
-                  role="heading"
-                  aria-level={3}
-                >
-                  Sprawdź również
-                </span>
+                <header>
+                  <span
+                    className="text-2xl  xl:text-2xl font-semibold flex xl:justify-start justify-center w-full xl:w-5/12"
+                    role="heading"
+                    aria-level={3}
+                  >
+                    Sprawdź również
+                  </span>
+                </header>
                 <div
                   className="flex justify-center xl:justify-between  xl:w-4/12 mt-7"
                   role="group"
@@ -179,7 +183,9 @@ const ContactInfo: React.FC = () => {
                     role="heading"
                     aria-level={4}
                   >
-                    <h2>Umów wizyte na Booksy!</h2>
+                    <header>
+                      <h2>Umów wizyte na Booksy!</h2>
+                    </header>
                     <div className="flex justify-center w-full sm:w-6/12">
                       {" "}
                       <button className="booksy-button bg-black text-white mt-2.5 text-xl rounded-[30px] transition-all ease-in-out delay-200 mr-4 sm:mr-0">

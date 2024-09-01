@@ -56,16 +56,18 @@ const AboutUs: React.FC = () => {
           src={p1}
           role="img"
         />
-        <span
-          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
-          role="heading"
-          aria-level={1}
-        >
-          <h1>
-            {" "}
-            <em>O nas</em>
-          </h1>
-        </span>
+        <header>
+          <span
+            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
+            role="heading"
+            aria-level={1}
+          >
+            <h1>
+              {" "}
+              <em>O nas</em>
+            </h1>
+          </span>
+        </header>
       </div>
       <main className="pl-5 pr-5 lg:pr-10">
         <article>
@@ -167,9 +169,11 @@ const AboutUs: React.FC = () => {
                     <path d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180-160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm240 0q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180 160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z" />
                   </svg>
                 </div>
-                <h2>
-                  <i>Psi fryzjer</i>
-                </h2>
+                <header>
+                  <h2>
+                    <i>Psi fryzjer</i>
+                  </h2>
+                </header>
               </div>
               <div className="mb-5 text-justify">
                 W naszym salonie priorytetem jest nie tylko dbanie o komfort
@@ -264,14 +268,16 @@ const AboutUs: React.FC = () => {
         </article>
         <article className="w-full flex justify-center">
           <div className="mt-12 ">
-            <div
-              className="text-lg lg:text-2xl font-semibold text-center"
-              aria-label="Zapraszam do odwiedzenia moich social mediów"
-              role="heading"
-              aria-level={2}
-            >
-              <h2>Zapraszam do odwiedzenia moich social mediów</h2>
-            </div>
+            <header>
+              <div
+                className="text-lg lg:text-2xl font-semibold text-center"
+                aria-label="Zapraszam do odwiedzenia moich social mediów"
+                role="heading"
+                aria-level={2}
+              >
+                <h2>Zapraszam do odwiedzenia moich social mediów</h2>
+              </div>
+            </header>
             <div
               className="flex justify-center mt-5 flex-col lg:flex-row items-center lg:items-start"
               role="group"
@@ -354,13 +360,15 @@ const AboutUs: React.FC = () => {
           className="w-full flex mt-10 flex-col items-center"
           ref={galleryRefElement}
         >
-          <div
-            className="text-2xl font-semibold "
-            role="heading"
-            aria-level={3}
-          >
-            <h2>Dyplomy i osiągnięcia</h2>
-          </div>
+          <header>
+            <div
+              className="text-2xl font-semibold "
+              role="heading"
+              aria-level={3}
+            >
+              <h2>Dyplomy i osiągnięcia</h2>
+            </div>
+          </header>
           <div ref={iconsRef}></div>
           <div
             className={`gallery-holder w-12/12 pr-20 pl-20 grid mt-10 mb-20`}

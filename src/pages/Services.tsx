@@ -47,15 +47,17 @@ const Services: React.FC = () => {
           src={p1}
           role="img"
         />
-        <span
-          className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
-          role="heading"
-          aria-level={1}
-        >
-          <h1>
-            <em>Usługi</em>
-          </h1>
-        </span>
+        <header>
+          <span
+            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
+            role="heading"
+            aria-level={1}
+          >
+            <h1>
+              <em>Usługi</em>
+            </h1>
+          </span>
+        </header>
       </div>
       <main>
         <div className=" flex justify-center items-center mt-10 ">
@@ -98,14 +100,16 @@ const Services: React.FC = () => {
               zaangażowaniu i dbałości o szczegóły, każda usługa jest wykonywana
               z najwyższą starannością, co sprawia, że Twoje zwierzę wróci do
               domu nie tylko piękne, ale i pełne energii oraz zadowolenia.
-              <div
-                className="color-pink font-semibold text-2xl mt-3 mb-2 text-center lg:text-start"
-                role="heading"
-                aria-label="Why-we?"
-                aria-level={3}
-              >
-                <h2>Dlaczego my?</h2>
-              </div>
+              <header>
+                <div
+                  className="color-pink font-semibold text-2xl mt-3 mb-2 text-center lg:text-start"
+                  role="heading"
+                  aria-label="Why-we?"
+                  aria-level={3}
+                >
+                  <h2>Dlaczego my?</h2>
+                </div>
+              </header>
               <ul id="whyWE" className="text-base lg:text-xl">
                 <animated.li
                   className="flex items-center list-icon"
@@ -233,19 +237,21 @@ const Services: React.FC = () => {
           </div>
         </section>
         <section>
-          <div
-            className="flex justify-center lg:mt-10 lg:mb-10 mb-5"
-            role="group"
-            aria-label="Our services"
-          >
-            <span
-              className="fancy-text font-semibold services-font"
-              role="heading"
-              aria-level={2}
+          <header>
+            <div
+              className="flex justify-center lg:mt-10 lg:mb-10 mb-5"
+              role="group"
+              aria-label="Our services"
             >
-              <h2>Nasze usługi</h2>
-            </span>
-          </div>
+              <span
+                className="fancy-text font-semibold services-font"
+                role="heading"
+                aria-level={2}
+              >
+                <h2>Nasze usługi</h2>
+              </span>
+            </div>
+          </header>
           <div className="flex justify-center flex-wrap   " id="services">
             <div className="w-full flex justify-center flex-wrap md:w-8/12 lg:w-full">
               <div className="w-full lg:w-5/12 xl:w-4/12 t mr-5 ml-5 flex flex-col mb-5  ">

@@ -13,15 +13,17 @@ const LoyaltyProgram: React.FC = () => {
             role="img"
             className="contact-img w-full object-cover"
           />
-          <span
-            className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
-            role="heading"
-            aria-level={1}
-          >
-            <h1>
-              <em>Program Lojalnościowy</em>
-            </h1>
-          </span>
+          <header>
+            <span
+              className="absolute dog-behaviorist-text text-4xl md:text-6xl top-1/2 left-1/2 font-semibold text-center color-pink"
+              role="heading"
+              aria-level={1}
+            >
+              <h1>
+                <em>Program Lojalnościowy</em>
+              </h1>
+            </span>
+          </header>
         </div>
       </section>
       <main className="pb-20">
@@ -46,14 +48,16 @@ const LoyaltyProgram: React.FC = () => {
         </section>
         <section className="flex pl-5 pr-5 md:pr-0 lg:pl-10 lg:pr-10 mt-10 lg:mt-20 flex-col lg:flex-row items-center lg:items-start">
           <div className="lg:w-7/12">
-            <span
-              className="flex justify-center mb-5 text-2xl font-semibold color-pink text-center"
-              role="heading"
-              aria-level={2}
-              aria-label="KARTA-LOJALNOŚCIOWA-SHAGGY"
-            >
-              <h2> KARTA LOJALNOŚCIOWA SHAGGY</h2>
-            </span>
+            <header>
+              <span
+                className="flex justify-center mb-5 text-2xl font-semibold color-pink text-center"
+                role="heading"
+                aria-level={2}
+                aria-label="KARTA-LOJALNOŚCIOWA-SHAGGY"
+              >
+                <h2> KARTA LOJALNOŚCIOWA SHAGGY</h2>
+              </span>
+            </header>
             <div
               className="text-justify flex flex-col mt-5 text-base "
               role="note"
@@ -80,14 +84,16 @@ const LoyaltyProgram: React.FC = () => {
                 <em>Zniżki nie łączą się z innymi promocjami.</em>
               </strong>
               <>
-                <span
-                  className="text-xl color-pink mt-5 lg:mt-2"
-                  role="heading"
-                  aria-level={3}
-                  aria-label="Zalety naszego programu:"
-                >
-                  <h3>Zalety naszego programu:</h3>
-                </span>
+                <header>
+                  <span
+                    className="text-xl color-pink mt-5 lg:mt-2"
+                    role="heading"
+                    aria-level={3}
+                    aria-label="Zalety naszego programu:"
+                  >
+                    <h3>Zalety naszego programu:</h3>
+                  </span>
+                </header>
                 <ul
                   className="loyalty-program-benefits mb-5 lg:mb-0"
                   role="list"

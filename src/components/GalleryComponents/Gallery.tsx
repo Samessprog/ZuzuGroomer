@@ -77,7 +77,7 @@ const Gallery: React.FC = () => {
             </ErrorBoundary>
           </div>
           <div
-            className="mt-5 md:mt-10 flex justify-end w-full md:w-11/12 text-gray-500 cursor-pointer text-sm"
+            className="mt-5 md:mt-5 flex justify-end w-full md:w-11/12 text-gray-500 cursor-pointer text-sm"
             role="link"
           >
             <Link to="/Galeria">Zobacz więcej!</Link>

@@ -24,28 +24,32 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
 
   return (
     <section className="pl-2 pr-2 lg:pl-10 lg:pr-10 overflow-hidden">
-      <div
-        className="font-semibold text-2xl color-pink flex justify-center mb-5 mt-5"
-        role="heading"
-        aria-level={4}
-        id="ServicesAnchor"
-        ref={ServicesExtraInfoRef}
-      >
-        <h2>Dowiedz się więcej o:</h2>
-      </div>
+      <header>
+        <div
+          className="font-semibold text-2xl color-pink flex justify-center mb-5 mt-5"
+          role="heading"
+          aria-level={4}
+          id="ServicesAnchor"
+          ref={ServicesExtraInfoRef}
+        >
+          <h2>Dowiedz się więcej o:</h2>
+        </div>
+      </header>
       <div className="flex justify-center flex-col lg:flex-row">
         <animated.div
           className="mt-5 text-justify text-md lg:w-6/12 lg:mr-8 flex flex-col services-frame p-5 img-bg"
           style={servicesExtraInf(servicesExtraInfoView, "translateX(-100%)")}
         >
-          <span
-            className="font-semibold text-xl color-pink flex justify-center mb-2"
-            role="heading"
-            aria-level={5}
-            aria-label="Wizyta Zapoznawcza dla Psów"
-          >
-            <h3>Wizyta Zapoznawcza dla Psów</h3>
-          </span>
+          <header>
+            <span
+              className="font-semibold text-xl color-pink flex justify-center mb-2"
+              role="heading"
+              aria-level={5}
+              aria-label="Wizyta Zapoznawcza dla Psów"
+            >
+              <h3>Wizyta Zapoznawcza dla Psów</h3>
+            </span>
+          </header>
           Wizyta zapoznawcza jest idealnym rozwiązaniem dla szczeniąt oraz psów
           dorosłych które nigdy dotąd niekorzystających z usług groomerskich lub
           które miały trudne doświadczenia w przeszłości. Polega ona na 30
@@ -81,15 +85,17 @@ const ServicesExtraInfo: React.FC<ServicesExtra> = () => {
           className="mt-5 text-justify text-md lg:w-6/12 lg:mr-8 flex flex-col services-frame p-5 img-bg"
           style={servicesExtraInf(servicesExtraInfoView, "translateX(100%)")}
         >
-          <span
-            className="font-semibold text-xl color-pink flex justify-center mb-2 "
-            role="heading"
-            aria-level={5}
-            aria-label="Wizyta Adaptacyjna dla Psów"
-            id=""
-          >
-            <h3>Wizyta Adaptacyjna dla Psów</h3>
-          </span>{" "}
+          <header>
+            <span
+              className="font-semibold text-xl color-pink flex justify-center mb-2 "
+              role="heading"
+              aria-level={5}
+              aria-label="Wizyta Adaptacyjna dla Psów"
+              id=""
+            >
+              <h3>Wizyta Adaptacyjna dla Psów</h3>
+            </span>{" "}
+          </header>
           Wizyta adaptacyjna jest idealnym rozwiązaniem dla psów, które nigdy
           wcześniej nie korzystały z usług groomera lub miały trudne
           doświadczenia w przeszłości. Ta usługa jest także odpowiednia dla psów
