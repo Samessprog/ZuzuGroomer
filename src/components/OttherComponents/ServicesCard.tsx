@@ -8,15 +8,17 @@ interface ServicesInter {
 const ServicesCard: React.FC<ServicesInter> = ({ children, title }) => {
   return (
     <>
-      <span
-        className="flex justify-center mt-3 mb-3 text-lg font-semibold"
-        role="heading"
-        aria-level={5}
-      >
-        <h3>
-          <em>{title}</em>
-        </h3>
-      </span>
+      <header>
+        <span
+          className="flex justify-center mt-3 mb-3 text-lg font-semibold"
+          role="heading"
+          aria-level={5}
+        >
+          <h3>
+            <em>{title}</em>
+          </h3>
+        </span>
+      </header>
       <div
         className="text-justify text-base lg:text-base"
         role="note"

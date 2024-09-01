@@ -25,11 +25,13 @@ const DogBehaviorist: React.FC = () => {
           alt="loading err"
           className="w-full object-cover dog-behaviorist-img "
         />
-        <span className="absolute dog-behaviorist-text text-4xl md:text-5xl top-1/2 left-1/2 font-semibold text-center color-pink">
-          <h1>
-            <em>PSI BEHAWIORYSTA</em>
-          </h1>
-        </span>
+        <header>
+          <span className="absolute dog-behaviorist-text text-4xl md:text-5xl top-1/2 left-1/2 font-semibold text-center color-pink">
+            <h1>
+              <em>PSI BEHAWIORYSTA</em>
+            </h1>
+          </span>
+        </header>
       </div>
       <main className="lg:pl-20 lg:pr-20 pl-5 pr-5 text-base lg:text-base">
         <section className="flex mt-10 lg:mt-20 justify-center flex-col xl:flex-row">
@@ -102,9 +104,11 @@ const DogBehaviorist: React.FC = () => {
           </div>
         </section>
         <section className="mt-10 lg:mt-28 flex justify-center mb-10 lg:mb-20 flex-col items-center">
-          <span className="mb-10 text-3xl md:text-3xl font-bold ">
-            <h2>Kim jest behawiorysta psów?</h2>
-          </span>
+          <header>
+            <span className="mb-10 text-3xl md:text-3xl font-bold ">
+              <h2>Kim jest behawiorysta psów?</h2>
+            </span>
+          </header>
           <div className="flex items-center">
             <div className="w-4/12 hidden 2xl:flex ">
               <img src={pp1} alt="loading err" className="w-full h-full" />
@@ -172,10 +176,12 @@ const DogBehaviorist: React.FC = () => {
           </div>
         </section>
         <section className="pb-20 w-full flex justify-center flex-col items-center lg:pt-10">
-          <div className="text-3xl font-semibold mb-5">
-            {" "}
-            <h2>Zobacz również </h2>
-          </div>
+          <header>
+            <div className="text-3xl font-semibold mb-5">
+              {" "}
+              <h2>Zobacz również </h2>
+            </div>
+          </header>
           <SocialIcons />
         </section>
       </main>

@@ -10,7 +10,7 @@ const ServicesInfoSection: React.FC = () => {
 
   const servicesInfoAnimate = (
     elementInView: boolean,
-    translate: string,
+    translate: string
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -30,9 +30,11 @@ const ServicesInfoSection: React.FC = () => {
         role="group"
         aria-labelledby="services-title"
       >
-        <h2 id="services-title" className="sr-only">
-          Nasze Usługi
-        </h2>
+        <header>
+          <h2 id="services-title" className="sr-only">
+            Nasze Usługi
+          </h2>
+        </header>
         <animated.div
           style={servicesInfoAnimate(elementInView, "translateX(-100%)")}
           className="flex flex-col items-center item-services mb-16 xl:mb-0 text-center w-full sm:w-4/12 mt-8 sm:mt-0"
