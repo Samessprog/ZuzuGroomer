@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import XD from "../../assets/Untitled-1.png";
+import XD from "../../assets/Untitled-1.webp";
 
 const Footer: React.FC = () => {
   return (
@@ -259,6 +259,7 @@ const Footer: React.FC = () => {
               alt="loading err"
               src={XD}
               style={{ filter: "invert(100%)" }}
+              className="w-full h-full"
             />
           </div>
         </div>

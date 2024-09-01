@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayWidth }) => {
               className={`menu-navbar-item text-base cursor-pointer mr-5 ${isMenuOpen ? "flex flex-col mb-3 justify-center items-center open" : " "}`}
             >
               <NavLink
-                className="item-context relative"
+                className="item-context relative mt-5 lg:mt-0"
                 to="/oNas"
                 aria-label="O nas"
                 onClick={(): void => {
