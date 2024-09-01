@@ -41,7 +41,7 @@
         }
 
         &.active {
-            color: $pinkSecond;
+            color: rgb(230, 0, 112);
 
             &:after {
                 position: absolute;
@@ -220,7 +220,7 @@
     }
 
     100% {
-        top: 12%;
+        top: 10%;
     }
 }
 

@@ -8,22 +8,22 @@ import LazyFullscreenImageViewer from "../components/GalleryComponents/Fullscree
 import ErrorBoundary from "../components/OttherComponents/ErrorBoundary";
 
 const MainSlider = lazy(
-  async () => await import("../components/MainPageComponents/SliderMainPage"),
+  async () => await import("../components/MainPageComponents/SliderMainPage")
 );
 const Numbers = lazy(
-  async () => await import("../components/MainPageComponents/CompanyNumbers"),
+  async () => await import("../components/MainPageComponents/CompanyNumbers")
 );
 const LazyPetCareSection = lazy(
-  async () => await import("../components/MainPageComponents/PetCareSection"),
+  async () => await import("../components/MainPageComponents/PetCareSection")
 );
 const LazyMainOpinions = lazy(
-  async () => await import("../components/MainPageComponents/Opinions"),
+  async () => await import("../components/MainPageComponents/Opinions")
 );
 const LazyGallery = lazy(
-  async () => await import("../components/GalleryComponents/Gallery"),
+  async () => await import("../components/GalleryComponents/Gallery")
 );
 const LazySummaryMain = lazy(
-  async () => await import("../components/MainPageComponents/Summary"),
+  async () => await import("../components/MainPageComponents/Summary")
 );
 
 interface MainPageProps {
@@ -39,7 +39,7 @@ interface RootState {
 
 const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const override: CSSProperties = {
@@ -71,6 +71,7 @@ const MainPage: React.FC<MainPageProps> = ({ displayWidth }) => {
       <MainBio />
       <PhilosophySection />
       <ServicesInfoSection />
+
       <Suspense fallback={<>Loading...</>}>
         <LazyPetCareSection />
         <Numbers />
