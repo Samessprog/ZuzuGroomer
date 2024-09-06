@@ -1,11 +1,6 @@
 import { defineConfig } from "vite";
-import autoprefixer from "autoprefixer";
-import cssnano from "cssnano";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [autoprefixer(), cssnano({ preset: "default" })],
-    },
-  },
+  plugins: [react()],
 });

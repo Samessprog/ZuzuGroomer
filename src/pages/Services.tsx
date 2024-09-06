@@ -28,7 +28,7 @@ const Services: React.FC = () => {
   const ServicesListAnimate = (
     elementInView: boolean,
     translate: string,
-    delayNumber: number
+    delayNumber: number,
   ): SpringValues<React.CSSProperties> => {
     return useSpring({
       opacity: elementInView ? 1 : 0,
@@ -116,7 +116,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    25
+                    25,
                   )}
                 >
                   <svg
@@ -137,7 +137,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    100
+                    100,
                   )}
                 >
                   <svg
@@ -157,7 +157,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    150
+                    150,
                   )}
                 >
                   <svg
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    170
+                    170,
                   )}
                 >
                   <svg
@@ -197,7 +197,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    200
+                    200,
                   )}
                 >
                   <svg
@@ -217,7 +217,7 @@ const Services: React.FC = () => {
                   style={ServicesListAnimate(
                     elementInView,
                     "translateX(-100%)",
-                    50
+                    50,
                   )}
                 >
                   <svg
