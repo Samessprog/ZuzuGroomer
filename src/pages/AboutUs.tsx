@@ -22,7 +22,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen
+    (state: RootState) => state.generalStates.fullScreen,
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
