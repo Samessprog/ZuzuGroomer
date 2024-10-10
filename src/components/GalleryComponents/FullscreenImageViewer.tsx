@@ -343,3 +343,11 @@ const FullscreenImageViewer: React.FC = () => {
 };
 
 export default FullscreenImageViewer;
+
+function slickNext() {
+  throw new Error("Function not implemented.");
+}
+function slickPrev() {
+  throw new Error("Function not implemented.");
+}
+

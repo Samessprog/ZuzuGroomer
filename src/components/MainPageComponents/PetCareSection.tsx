@@ -7,7 +7,7 @@ import p1 from "../../assets/X1.webp";
 import p4 from "../../assets/X2.webp";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("../GalleryComponents/TwentyTwentyAnimation")
+  async () => await import("../GalleryComponents/TwentyTwentyAnimation"),
 );
 
 const PetCareSection: React.FC = () => {
