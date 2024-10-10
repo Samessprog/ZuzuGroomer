@@ -16,12 +16,12 @@ const TwentyTwentyAnimation: React.FC<TwentyTwentyInterface> = ({
           leftImage={firstPhoto}
           rightImage={secondPhoto}
           leftImageCss={{
-            objectFit: "fill",
+            objectFit: "cover",
             width: "100%",
             height: "100%",
           }}
           rightImageCss={{
-            objectFit: "fill",
+            objectFit: "cover",
             width: "100%",
             height: "100%",
           }}

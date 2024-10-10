@@ -3,8 +3,8 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
-import p1 from "../../assets/X1.jpeg";
-import p4 from "../../assets/X2.jpeg";
+import p1 from "../../assets/X1.webp";
+import p4 from "../../assets/X2.webp";
 
 const TwentyTwentyAnimation = lazy(
   async () => await import("../GalleryComponents/TwentyTwentyAnimation")
@@ -87,7 +87,7 @@ const PetCareSection: React.FC = () => {
               Przesuń suwak i sprawdź...
             </div>
             <div
-              className="Twentytwenty-container xl:w-10/12 relative mb-2 overflow-hidden transition-all ease-in-out duration-200 text-center sm:w-9/12 w-full"
+              className="Twentytwenty-container xl:w-10/12 relative mb-2 transition-all ease-in-out duration-200 text-center sm:w-9/12 w-full"
               aria-live="polite"
               aria-label="Image comparison slider"
             >
