@@ -1,6 +1,6 @@
 import React from "react";
 import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
-import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
+
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import SocialIcons from "../components/OttherComponents/SocialIcons";
@@ -47,8 +47,8 @@ const DogBehaviorist: React.FC = () => {
               <strong>wzajemnym zaufaniu, zrozumieniu i miłości</strong>.
               Jednakże, podobnie jak my, psy mogą napotykać na różnorodne
               trudności, z którymi samodzielnie sobie nie radzą. Te problemy nie
-              zawsze wynikają z ich woli czy "złośliwości," ale często są
-              efektem <strong>nieumiejętności radzenia sobie</strong> w
+              zawsze wynikają z ich woli czy &quot;złośliwości,&quot; ale często
+              są efektem <strong>nieumiejętności radzenia sobie</strong> w
               określonych sytuacjach lub nadmiernego stresu.
             </p>
             <p className="mt-3">
