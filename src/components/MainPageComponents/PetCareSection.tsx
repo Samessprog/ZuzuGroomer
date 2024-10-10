@@ -3,9 +3,11 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
+import p1 from "../../assets/X1.jpeg";
+import p4 from "../../assets/X2.jpeg";
 
 const TwentyTwentyAnimation = lazy(
-  async () => await import("../GalleryComponents/TwentyTwentyAnimation"),
+  async () => await import("../GalleryComponents/TwentyTwentyAnimation")
 );
 
 const PetCareSection: React.FC = () => {
@@ -20,11 +22,6 @@ const PetCareSection: React.FC = () => {
     duration: 600,
     config: { tension: 180, friction: 70 },
   });
-
-  const p1 =
-    "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMThfaGFwcHlfc21pbGluZ19nb2xkZW5fcmV0cml2ZXJfcHVwcHlfb25fd2hpdGVfYl8xOTAzYWI3Ni04NjQzLTQxNzYtODY3ZS01MjUxNDk1MGExNTMucG5n.png";
-  const p4 =
-    "https://img.freepik.com/premium-zdjecie/japonka-pod-wisniowym-drzewem-krajobraz-anime-manga-ilustracja_691560-7776.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709942400&semt=ais";
 
   return (
     <section ref={petRef}>
@@ -106,7 +103,7 @@ const PetCareSection: React.FC = () => {
                   </div>
                 }
               >
-                <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+                <TwentyTwentyAnimation firstPhoto={p4} secondPhoto={p1} />
               </Suspense>
             </div>
             <div
