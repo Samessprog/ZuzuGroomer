@@ -9,6 +9,6 @@ import p9 from "../assets/B.jpg";
 import p10 from "../assets/A.jpg";
 import p11 from "../assets/ZdjęciaPsów/kek.jpg";
 
-const photos = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11];
+const photos = [p1, p2, p3, p4, p5, p6, p8, p9, p10, p11];
 
 export default photos;

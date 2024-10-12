@@ -12,6 +12,9 @@ import SocialIcons from "../components/OttherComponents/SocialIcons";
 import p1 from "../assets/XX1.jpg";
 import p4 from "../assets/XX2.jpg";
 
+import zz from "../assets/X1.webp";
+import xx from "../assets/X2.webp";
+
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
     triggerOnce: true,
@@ -120,10 +123,8 @@ const Gallery: React.FC = () => {
             </svg>
           </span>
           <div className="grid twenty-twenty-container mt-10 mb-20 pl-4 pr-4">
-            <div>
-              <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
-            </div>
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <TwentyTwentyAnimation firstPhoto={zz} secondPhoto={xx} />
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
