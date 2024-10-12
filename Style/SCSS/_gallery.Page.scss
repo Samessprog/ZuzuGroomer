@@ -26,6 +26,10 @@
         border-radius: 20px;
         max-height: 500px;
 
+        @media (min-width: 1900px) {
+            max-height: 800px;
+        }
+
         .z {
             [data-testid="container"] {
                 position: static !important;

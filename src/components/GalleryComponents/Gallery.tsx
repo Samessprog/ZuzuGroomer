@@ -6,6 +6,9 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
 import p1 from "../../assets/ZdjęciaPsów/kek.jpg";
+import p2 from "../../assets/A.jpg";
+import p3 from "../../assets/B.jpg";
+import p4 from "../../assets/C.jpg";
 
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
@@ -13,7 +16,7 @@ const Gallery: React.FC = () => {
     threshold: 0.1,
   });
 
-  const photos = [p1, p1, p1, p1, p1, p1];
+  const photos = [p1, p2, p3, p4, p1, p1];
 
   const galleryAnimate = useSpring({
     opacity: elementInView ? 1 : 0,

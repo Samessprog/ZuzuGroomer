@@ -120,7 +120,9 @@ const Gallery: React.FC = () => {
             </svg>
           </span>
           <div className="grid twenty-twenty-container mt-10 mb-20 pl-4 pr-4">
-            <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            <div>
+              <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
+            </div>
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
             <TwentyTwentyAnimation firstPhoto={p1} secondPhoto={p4} />
