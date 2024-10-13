@@ -1,5 +1,5 @@
 import React from "react";
-import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
+import pp1 from "../assets/ZdjęciaPsów/1a.jpg";
 
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";

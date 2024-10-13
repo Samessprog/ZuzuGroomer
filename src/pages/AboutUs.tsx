@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
 import FullscreenImageViewer from "../components/GalleryComponents/FullscreenImageViewer";
 import pp1 from "../assets/ZdjęciaPsów/3.jpeg";
-import pp2 from "../assets/Saloon/1.jpeg";
+import pp2 from "../assets/Saloon/K1.webp";
 import certificates from "../context/Certyficates";
 
 const AboutUs: React.FC = () => {

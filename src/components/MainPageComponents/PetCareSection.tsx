@@ -3,8 +3,8 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
 import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
-import p1 from "../../assets/X1.webp";
-import p4 from "../../assets/X2.webp";
+import p1 from "../../assets/ZdjęciaPsów/X1.webp";
+import p4 from "../../assets/ZdjęciaPsów/X2.webp";
 
 const TwentyTwentyAnimation = lazy(
   async () => await import("../GalleryComponents/TwentyTwentyAnimation"),

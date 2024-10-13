@@ -6,9 +6,9 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
 import p1 from "../../assets/ZdjęciaPsów/kek.jpg";
-import p2 from "../../assets/A.jpg";
-import p3 from "../../assets/B.jpg";
-import p4 from "../../assets/C.jpg";
+import p2 from "../../assets/ZdjęciaPsów/A.jpg";
+import p3 from "../../assets/ZdjęciaPsów/B.jpg";
+import p4 from "../../assets/ZdjęciaPsów/C.jpg";
 
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
