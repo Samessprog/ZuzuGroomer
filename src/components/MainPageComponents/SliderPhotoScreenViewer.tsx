@@ -18,7 +18,6 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
     setIsGrabbing(false);
   };
 
-  console.log(fullScreenFlag);
 
   return (
     <img
