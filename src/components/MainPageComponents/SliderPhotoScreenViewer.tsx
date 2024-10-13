@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 interface SliderPhotoScreenViewerInterface {
   imgUrl: string;
+  fullScreenFlag: boolean;
 }
 
 const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
   imgUrl,
+  fullScreenFlag,
 }) => {
   const [isGrabbing, setIsGrabbing] = useState(false);
 
@@ -16,6 +18,8 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
     setIsGrabbing(false);
   };
 
+  console.log(fullScreenFlag);
+
   return (
     <img
       onMouseDown={handleMouseDown}
@@ -23,7 +27,7 @@ const SliderPhotoScreenViewer: React.FC<SliderPhotoScreenViewerInterface> = ({
       onMouseLeave={handleMouseUp}
       src={imgUrl}
       role="slider"
-      className={`img-viewer w-full lg:w-7/12 xl:6/12 cursor-grab ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
+      className={`transition-all w-full ease-in-out delay-150 lg:w-7/12 xl:6/12 cursor-grab ${isGrabbing ? "cursor-grabbing" : "cursor-grab"} ${fullScreenFlag ? "img-on-full-screen" : "img-viewer"}`}
     />
   );
 };

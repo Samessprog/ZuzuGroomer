@@ -31,7 +31,7 @@ const FullscreenImageViewer: React.FC = () => {
   const sliderRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const data = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const refData = useRef(data);
@@ -56,7 +56,7 @@ const FullscreenImageViewer: React.FC = () => {
     if (autoPlay) {
       interval = setInterval(() => {
         setProgress((prevProgress) =>
-          prevProgress >= 100 ? 0 : prevProgress + 1,
+          prevProgress >= 100 ? 0 : prevProgress + 1
         );
       }, 50);
     }
@@ -333,7 +333,11 @@ const FullscreenImageViewer: React.FC = () => {
         <ErrorBoundary>
           <Slider ref={sliderRef} {...settings}>
             {photosCollection.map((imgUrl, id) => (
-              <SliderPhotoScreenViewer imgUrl={imgUrl} key={id} />
+              <SliderPhotoScreenViewer
+                imgUrl={imgUrl}
+                key={id}
+                fullScreenFlag={fullScreenFlag}
+              />
             ))}
           </Slider>
         </ErrorBoundary>
@@ -350,4 +354,3 @@ function slickNext() {
 function slickPrev() {
   throw new Error("Function not implemented.");
 }
-

@@ -96,8 +96,16 @@
 
 }
 
-.img-viewer {
+.img-on-full-screen {
     height: 100% !important;
+}
+
+.img-viewer {
+    height: 90% !important;
+
+    @media (min-width: 1900px) {
+        height: 100% !important;
+    }
 }
 
 #slider-arrow-right {
