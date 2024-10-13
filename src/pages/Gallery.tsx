@@ -9,16 +9,14 @@ import { useSelector } from "react-redux";
 import photos from "../context/GalleryPhotos";
 import SocialIcons from "../components/OttherComponents/SocialIcons";
 
-import p1 from "../assets/XX1.jpg";
-import p4 from "../assets/XX2.jpg";
-
-import a1 from "../assets/1a.jpg";
-import a2 from "../assets/2a.jpg";
-import b1 from "../assets/1b.jpg";
-import b2 from "../assets/2b.jpg";
-
-import zz from "../assets/X1.webp";
-import xx from "../assets/X2.webp";
+import p1 from "../assets/ZdjęciaPsów/XX1.jpg";
+import p4 from "../assets/ZdjęciaPsów/XX2.jpg";
+import a1 from "../assets/ZdjęciaPsów/1a.jpg";
+import a2 from "../assets/ZdjęciaPsów/2a.jpg";
+import b1 from "../assets/ZdjęciaPsów/1b.jpg";
+import b2 from "../assets/ZdjęciaPsów/2b.jpg";
+import zz from "../assets/ZdjęciaPsów/X1.webp";
+import xx from "../assets/ZdjęciaPsów/X2.webp";
 
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({

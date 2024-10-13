@@ -6,7 +6,7 @@ import SocialIcons from "../components/OttherComponents/SocialIcons";
 import ServicesCard from "../components/OttherComponents/ServicesCard";
 import ServicesExtraInfo from "../components/OttherComponents/ServicesExtraInfo";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
+import pp1 from "../assets/ZdjęciaPsów/1a.jpg";
 
 const Services: React.FC = () => {
   const { hash } = useLocation();

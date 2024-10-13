@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-
-import p1 from "../../assets/Saloon/1.webp";
-import p2 from "../../assets/Saloon/2.webp";
-import p3 from "../../assets/Saloon/3.webp";
+import groomingSalonImg from "../../context/SaloonPhotos";
 
 const MainSlider: React.FC = () => {
-  const groomingSalonImg = [p1, p2, p3];
   const [imageIndex, setImageIndex] = useState<number>(0);
   const imgSliderRef = useRef<HTMLImageElement>(null);
 
