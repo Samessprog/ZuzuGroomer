@@ -1,6 +1,6 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import QRcode from "../assets/QRcontactCode.png";
+import QRcode from "../assets/QRcontactCode.webp";
 import { Link } from "react-router-dom";
 
 const ContactInfo: React.FC = () => {
