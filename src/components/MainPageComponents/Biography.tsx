@@ -21,6 +21,7 @@ const MainBio: React.FC = () => {
   const handleImageLoad = (): void => {
     setLoaded(true);
   };
+  
 
   return (
     <section ref={bioRefElement}>
