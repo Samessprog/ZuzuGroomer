@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Blurhash } from "react-blurhash";
 import GalleryPhoto from "../components/GalleryComponents/GalleryPhoto";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
@@ -23,7 +24,7 @@ const AboutUs: React.FC = () => {
   });
 
   const fullScreenFlag = useSelector(
-    (state: RootState) => state.generalStates.fullScreen,
+    (state: RootState) => state.generalStates.fullScreen
   );
 
   const [AboutUsFirstTabRefElement, elementInViewFirst] = useInView({
@@ -47,6 +48,12 @@ const AboutUs: React.FC = () => {
     transform: elementInViewFirst ? "scale(1)" : "scale(0.1)",
     config: { tension: 150, friction: 50 },
   });
+
+  const [loaded, setLoaded] = useState(false);
+
+  const handleImageLoad = (): void => {
+    setLoaded(true);
+  };
 
   return (
     <>
@@ -92,10 +99,27 @@ const AboutUs: React.FC = () => {
           >
             <div className="lg:w-5/12 ml-0 lg:ml-5 rounded flex justify-center about-us-img object-cover ">
               <div className="w-full md:w-8/12 lg:w-full">
+                {!loaded && (
+                  <div className="bio-img pl-4 overflow-hidden">
+                    <Blurhash
+                      hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+                      width={800}
+                      height={800}
+                      resolutionX={32}
+                      resolutionY={32}
+                    />
+                  </div>
+                )}
                 <img
-                  alt="loading err"
-                  className="w-full h-full object-cover rounded "
                   src={pp1}
+                  alt="loading err w-full"
+                  className="w-full h-full object-cover bio-imgs"
+                  style={{
+                    filter: loaded ? "none" : "blur(10px)",
+                    display: loaded ? "block" : "none",
+                  }}
+                  onLoad={handleImageLoad}
+                  role="img"
                 />
               </div>
             </div>
@@ -256,12 +280,29 @@ const AboutUs: React.FC = () => {
                 </button>
               </div>
             </animated.div>
-            <div className="lg:w-5/12 ml-0 lg:ml-5 rounded flex justify-center about-us-img object-cover ">
+            <div className="lg:w-5/12 ml-0 lg:ml-28 rounded flex justify-center about-us-img object-cover ">
               <div className="w-full md:w-8/12 lg:w-full">
+                {!loaded && (
+                  <div className="bio-img pl-4 overflow-hidden">
+                    <Blurhash
+                      hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+                      width={800}
+                      height={800}
+                      resolutionX={32}
+                      resolutionY={32}
+                    />
+                  </div>
+                )}
                 <img
-                  alt="loading err"
-                  className="w-full h-full object-cover rounded "
                   src={pp2}
+                  alt="loading err w-full"
+                  className="w-full h-full object-cover rounded"
+                  style={{
+                    filter: loaded ? "none" : "blur(10px)",
+                    display: loaded ? "block" : "none",
+                  }}
+                  onLoad={handleImageLoad}
+                  role="img"
                 />
               </div>
             </div>
