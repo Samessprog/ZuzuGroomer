@@ -1,6 +1,6 @@
 import React from "react";
 import p1 from "../assets/beautiful-pet-portrait-dog_23-2149218450.avif";
-import pp1 from "../assets/ZdjęciaPsów/1.jpeg";
+import pp1 from "../assets/ZdjęciaPsów/1a.jpg";
 
 const LoyaltyProgram: React.FC = () => {
   return (

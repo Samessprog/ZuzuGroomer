@@ -18,6 +18,8 @@ import b2 from "../assets/ZdjęciaPsów/2b.jpg";
 import zz from "../assets/ZdjęciaPsów/X1.webp";
 import xx from "../assets/ZdjęciaPsów/X2.webp";
 
+
+
 const Gallery: React.FC = () => {
   const [galleryRefElement, elementInView] = useInView({
     triggerOnce: true,
